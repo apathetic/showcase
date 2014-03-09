@@ -1,0 +1,74 @@
+$magenta: #ec008c;
+
+@import "../bower_components/bootstrap-sass/lib/bootstrap";
+
+body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+// body > h1 {
+//     position: fixed;
+//     top: 20%;
+//     width: 100%;
+//     text-align: center;
+//     z-index: 20;
+//     display: block;
+// }
+
+#three > div {
+    text-align: left;
+}
+
+section {
+    position: relative;
+    text-align: center;
+    // > h3 {
+    //     position: absolute;
+    //     top: 80%;
+    //     width: 100%;
+    //     text-align: center;
+    //     z-index: 20;
+    //     display: block;
+    // }
+}
+
+html, body, article {
+    height: 100%;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+section {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    -webkit-transition: translate3d(0, 0, 0);
+}
+
+#one {
+    background-color: $magenta;
+}
+
+#two {
+    top: 100%;
+    background-color: #66FFA3;
+}
+
+#three {
+    top: 200%;
+    background-color: #008DEB;
+}
+
+#four {
+    top: 300%;
+    background-color: #EB5E00;
+}

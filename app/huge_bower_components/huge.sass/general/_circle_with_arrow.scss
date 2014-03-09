@@ -1,0 +1,34 @@
+// HUGE CIRCLE
+//
+
+@mixin circle-with-arrow($size, $color: inherit, $arrowColor: #000000) {
+    border-radius: 50%;
+    display: inline-block;
+    @if $color == inherit {
+        // If user wants to inherit the color,
+        // take advantage of the fact that border
+        // color defaults to the text color of the element.
+        border-width: $size / 2;
+        border-style: solid;
+        height: 0;
+        width: 0;
+    }
+    @else {
+        // Otherwise, just use background-color.
+        background-color: $color;
+        height: $size;
+        width: $size;
+    }
+    &:after {
+        margin-left: $size * .35;
+        margin-top: $size / 3;
+        content: " ";
+        display: inline-block;
+        border-left: 3px $arrowColor solid;
+        border-bottom: 3px $arrowColor solid;
+        height: $size / 3;
+        width: $size / 3;
+        background-color: transparent;
+        transform: rotate(-45deg);
+    }
+}

@@ -1,0 +1,173 @@
+---
+layout: full_screen
+title:  "Huge SASS Library"
+snippet: "Library of friendly sass mixins and stuff that'll probably make your life easier"
+stash_url: https://stash.hugeinc.com/projects/BOWER/repos/huge.sass/browse
+date:   2014-03-05 16:48:21
+categories: widget
+tags:
+- sass
+- css
+---
+<link rel="stylesheet" href="/css/posts/huge.sass.main.css">
+
+<nav>
+        <ul>
+            <li>
+                <a href="#general">General</a>
+                <ul>
+                    <li><a href="#circleWithArrow">Circle With Arrow</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#functions">Functions</a>
+                <ul>
+                    <li><a href="#pixelsToEms">Pixels to Ems</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#typography">Typography</a>
+                <ul>
+                    <li><a href="#">Something</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#typography">Format</a>
+                <ul>
+                    <li><a href="#unstyledList">Unstyled List</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <article>
+        <section id="general">
+            <h3>General</h3>
+            <div id="circleWithArrow">
+                <h4>Circle with Arrow</h4>
+                <dl>
+                    <dt>name</dt>
+                    <dd>circle-with-arrow</dd>
+
+                    <dt>arguments</dt>
+                    <dd>
+                        <dl>
+                            <dt>size</dt>
+                            <dd>Size of the circle you want</dd>
+
+                            <dt>circle color</dt>
+                            <dd>Color of the cirle</dd>
+
+                            <dt>arrow color</dt>
+                            <dd>arrow color you want (durr)</dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <h4>Example</h4>
+                <h6>Code:</h6>
+                {% highlight scss %}
+@include circle-with-arrow(50px, $magenta, #000);
+                {% endhighlight %}
+                <h6>Result:</h6>
+                <div class="example"></div>
+            </div>
+        </section>
+
+        <section id="functions">
+            <h3>Functions</h3>
+            <div id="pixelsToEms">
+                <h4>Pixel To Ems</h6>
+                    <dl>
+                        <dt>name</dt>
+                        <dd>huge-em</dd>
+
+                        <dt>type</dt>
+                        <dd>function</dd>
+
+                        <dt>arguments</dt>
+                        <dd>
+                            <dl>
+                                <dt>pixels</dt>
+                                <dd>px value you want to convert to ems</dd>
+
+                                <dt>base</dt>
+                                <dd>base px value to convert the ems off of</dd>
+                            </dl>
+                        </dd>
+                    </dl>
+
+                    <p>Maybe some more stuff here to explain about the plugin if it's kind of involved, and now some lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum nunc a sapien tincidunt, ullamcorper vestibulum sem hendrerit. Morbi ac erat odio. Aliquam eget interdum libero, id bibendum felis. Nullam vulputate fringilla fringilla. Maecenas viverra sapien in justo feugiat, eget rutrum ipsum laoreet. Sed at lorem at orci condimentum condimentum eu tincidunt lectus. Praesent vehicula dignissim orci ut faucibus. Sed et molestie augue. Fusce et sagittis nisi. Vestibulum enim urna, pretium id ligula semper, aliquam blandit tortor. Praesent fringilla felis sed elit tincidunt, ut interdum lectus faucibus. Nunc cursus non lectus et sagittis.</p>
+
+
+                    <h4>Example</h4>
+                    <h6>Code:</h6>
+                    {% highlight scss %}
+div#example {
+// first pair
+    &.m-1 { width: huge-em(300); }
+    &.m-2 { width: 300px; }
+    // second pair
+    &.m-3, &amp;.m-4 { font-size: 20px; }
+    &.m-3 { width: huge-em(400, 20); }
+    &.m-4 { width: 400px; }
+}
+                    {% endhighlight %}
+                    <h6>Result:</h6>
+                    <div class="example">
+                        <div class="m-1">Example 1</div>
+
+                        <div class="m-2">Example 2</div>
+
+                        <div class="m-3">Example 3</div>
+
+                        <div class="m-4">Example 4</div>
+                    </div>
+            </div>
+
+        </section>
+
+        <section id="typography">
+            <h3>Typography</h3>
+
+            <h4>Stuff to eventually go here</h4>
+        </section>
+
+        <section id="format">
+            <h3>Format</h3>
+
+            <div id="unstyledList">
+                <h4>Unstyled List</h4>
+                <dl>
+                    <dt>name</dt>
+                    <dd>huge-list-unstyled</dd>
+
+                    <dt>arguments</dt>
+                    <dd>
+                        <dl>
+                            <dt>no-margin</dt>
+                            <dd>whether or not you want a margin</dd>
+                        </dl>
+                    </dd>
+                </dl>
+
+                <h4>Example</h4>
+                <h6>Code:</h6>
+               {% highlight scss %}
+ul { @include list-unstyled; }
+                {% endhighlight %}
+                <h6>Result:</h6>
+                <div class="example">
+                    <ul>
+                        <li>Unstyled Item 1</li>
+                        <li>Unstyled Item 2</li>
+                        <li>Unstyled Item 3</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+    </article>
+

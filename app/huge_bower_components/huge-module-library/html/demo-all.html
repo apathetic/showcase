@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Module Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      /** Accordions */
+      .accordion {
+        overflow: hidden;
+        -webkit-transition: height 1s;
+      }
+
+      .accordion.contracted {
+        height: 0;
+      }
+
+      .accordion.expanded {
+        height: 100%;
+        z-index: 5;
+      }
+
+      .accordion-group {
+
+      }
+
+      .accordion-group .accordion {
+        float: left;
+        width: 50%;
+      }
+
+      /** Overlays */
+      .overlay-container,
+      .overlay.closed,
+      .dialog-container,
+      .dialog.closed,
+      .modal-container,
+      .modal.closed,
+      .modal-content {
+        display: none;
+      }
+
+      .overlay.opened {
+        background-color: rgba(250, 250, 250, 1);
+        border: 3px solid #000;
+        color: #000;
+        display: block;
+        margin: 50px;
+        padding: 30px;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+      }
+
+      .button.close.overlay-1 {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+      }
+
+      .overlay.dialog.opened {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+      }
+
+      .overlay.modal.opened {
+        background: transparent;
+        border: 0;
+      }
+      .overlay.modal.opened,
+      .overlay.modal.opened .screen,
+      .overlay.modal.opened .content-wrapper {
+        bottom: 0;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        right: 0;
+        top: 0;
+      }
+
+      .overlay.modal.opened .screen {
+        background-color: rgba(0, 0, 0, .65);
+      }
+
+      .overlay.modal.opened .content-wrapper {
+        height: 100%;
+        position: fixed;
+      }
+
+      .overlay.modal.opened .content {
+        background: white;
+        margin: 5%;
+        padding: 2%;
+        position: fixed;
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Module Demo</h1>
+
+    <h2>Carousel</h2>
+    <ul class="demo carousel-demo">
+      <li>
+        <h3>Base Carousel</h3>
+        <ul class="carousel carousel-1">
+          <li class="slide"><img src="http://placehold.it/300x250/f00/000"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/0f0/000"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/00f/fff"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/a00/fff"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/00a/fff"></li>
+        </ul>
+      </li>
+      <li>
+        <h3>Base Carousel w/Nagivation UI Bridge</h3>
+        <ul class="carousel carousel-2">
+          <li class="slide"><img src="http://placehold.it/300x250/f00/000"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/0f0/000"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/00f/fff"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/a00/fff"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/00a/fff"></li>
+        </ul>
+        <div class="navigation">
+          <span class="button cnav-prev">Previous</span>
+          <span class="button cnav-next">Next</span>
+        </div>
+      </li>
+      <li>
+        <h3>Base Carousel w/Pagination UI Bridge</h3>
+        <ul class="carousel carousel-3">
+          <li class="slide"><img src="http://placehold.it/300x250/f00/000"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/0f0/000"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/00f/fff"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/a00/fff"></li>
+          <li class="slide"><img src="http://placehold.it/300x250/00a/fff"></li>
+        </ul>
+        <span class="button goto" data-slide-id="0">1</span>
+        <span class="button goto" data-slide-id="1">2</span>
+        <span class="button goto" data-slide-id="2">3</span>
+        <span class="button goto" data-slide-id="3">4</span>
+        <span class="button goto" data-slide-id="4">5</span>
+      </li>
+    </ul>
+
+    <h2>Accordion</h2>
+    <ul class="demo accordion-demo">
+      <li>
+        <h3>Single Accordion</h3>
+        <span class="button show">Show</span>
+        <span class="button hide">Hide</span>
+        <span class="button toggle">Toggle</span>
+        <div class="accordion accordion-1">
+          <img src="http://placehold.it/300x500/f00/000" width="300" height="500">
+        </div>
+      </li>
+      <li class="colspan-2 accordion-group">
+        <h3>Accordion Group</h3>
+        <span class="button accordion-2-trigger">Accordion 2</span>
+        <span class="button accordion-3-trigger">Accordion 3</span>
+        <br>
+        <div class="accordion accordion-2">
+          <img src="http://placehold.it/300x500/a00/fff" width="300" height="500">
+        </div>
+        <div class="accordion accordion-3">
+          <img src="http://placehold.it/300x500/00a/fff" width="300" height="500">
+        </div>
+      </li>
+    </ul>
+
+    <h2>Overlay</h2>
+    <ul class="demo">
+      <li class="overlay-demo">
+        <h3>Generic Overlay</h3>
+        <span class="button open overlay-1">Open</span>
+        <div class="overlay-container">
+          <span class="button close overlay-1">Close</span>
+          <div class="title">OMG OVERLAY!!!</div>
+          <div class="content">
+            <p>80 days around the world, we'll find a pot of gold just sitting where the rainbow's ending. Time - we'll fight against the time, and we'll fly on the white wings of the wind. 80 days around the world, no we won't say a word before the ship is really back. Round, round, all around the world. Round, all around the world. Round, all around the world. Round, all around the world.</p>
+          </div>
+        </div>
+      </li>
+      <li class="overlay-demo">
+        <h3>Dialog</h3>
+        <span class="button open dialog-1">Open</span>
+        <div class="dialog-container">
+          <span class="button close dialog-1">Close</span>
+          <div class="title">OMG Dialog!!!</div>
+          <div class="content">
+            <p>80 days around the world, we'll find a pot of gold just sitting where the rainbow's ending. Time - we'll fight against the time, and we'll fly on the white wings of the wind. 80 days around the world, no we won't say a word before the ship is really back. Round, round, all around the world. Round, all around the world. Round, all around the world. Round, all around the world.</p>
+          </div>
+        </div>
+      </li>
+      <li class="overlay-demo">
+        <h3>Modal</h3>
+        <div class="modal-container">
+          <div class="screen"></div>
+          <div class="content-wrapper">
+            <div class="content"></div>
+          </div>
+        </div>
+        <span class="button open modal-1">Open modal 1</span>
+        <div class="modal-container modal-1-container">
+          <div class="screen"></div>
+          <div class="content">
+            <div class="title">OMG Modal 1!!!</div>
+            <p>80 days around the world, we'll find a pot of gold just sitting where the rainbow's ending. Time - we'll fight against the time, and we'll fly on the white wings of the wind. 80 days around the world, no we won't say a word before the ship is really back. Round, round, all around the world. Round, all around the world. Round, all around the world. Round, all around the world.</p>
+            <span class="button">Unbound Button</span>
+            <span class="button close modal-1">Cancel</span>
+          </div>
+        </div>
+        <span class="button open modal-2">Open modal 2</span>
+        <div class="modal-content modal-2-container">
+          <span class="button close modal-2">Close</span>
+          <div class="title">OMG Modal 2!!!</div>
+          <p>80 days around the world, we'll find a pot of gold just sitting where the rainbow's ending. Time - we'll fight against the time, and we'll fly on the white wings of the wind. 80 days around the world, no we won't say a word before the ship is really back. Round, round, all around the world. Round, all around the world. Round, all around the world. Round, all around the world.</p>
+        </div>
+        <span class="button open modal-3">Open modal 3</span>
+        <div class="modal-content modal-3-container">
+          <span class="button close modal-3">Close</span>
+          <div class="title">OMG Modal 3!!!</div>
+          <p>80 days around the world, we'll find a pot of gold just sitting where the rainbow's ending. Time - we'll fight against the time, and we'll fly on the white wings of the wind. 80 days around the world, no we won't say a word before the ship is really back. Round, round, all around the world. Round, all around the world. Round, all around the world. Round, all around the world.</p>
+        </div>
+      </li>
+    </ul>
+
+    <script src="../js/huge.js"></script>
+    <script src="../js/huge.module.js"></script>
+    <script src="../js/huge.uibridge.js"></script>
+    <script src="../js/huge.mediator.js"></script>
+    <script src="../js/huge.carousel.js"></script>
+    <script src="../js/huge.carousel.navigation.js"></script>
+    <script src="../js/huge.carousel.pagination.js"></script>
+    <script src="../js/huge.accordion.js"></script>
+    <script src="../js/huge.accordion.control.js"></script>
+    <script src="../js/huge.accordion-group.js"></script>
+    <script src="../js/huge.overlay.js"></script>
+    <script src="../js/huge.overlay.controls.js"></script>
+    <script src="../js/huge.overlay.keyboard.js"></script>
+    <script src="../js/huge.dialog.js"></script>
+    <script src="../js/huge.modal.js"></script>
+
+    <script src="../scripts-flat.js"></script>
+  </body>
+</html>
