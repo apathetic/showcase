@@ -48,7 +48,7 @@ $ \curl -sSL https://get.rvm.io | bash -s stable
 ***
 HERE BE DRAGONS
 ***
-Some people *cough*Tim*cough* have had isues with rvm, if for some reason this explodes give the non-gcc version of the install a go
+Some people *cough* Tim *cough* have had isues with rvm, if for some reason this explodes give the non-gcc version of the install a go
 
 ```sh
 rvm install 1.9.3 --with-gcc=clang
