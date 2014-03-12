@@ -45,6 +45,15 @@ Okay, unfortunately this project is going to require ruby which can get nasty. T
 $ \curl -sSL https://get.rvm.io | bash -s stable
 ```
 
+***
+HERE BE DRAGONS
+***
+Some people *cough*Tim*cough* have had isues with rvm, if for some reason this explodes give the non-gcc version of the install a go
+
+```sh
+rvm install 1.9.3 --with-gcc=clang
+```
+
 After all that is done, we're going to need the bundler gem
 
 ```sh
