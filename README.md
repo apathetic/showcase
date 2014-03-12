@@ -63,7 +63,7 @@ $ gem install bundler
 ### Okay, now we're ready
 
 ```sh
-$ ssh://git@stash.hugeinc.com:7999/bower/huge.showcase.git
+$ git clone ssh://git@stash.hugeinc.com:7999/bower/huge.showcase.git
 $ cd huge.showcase
 $ bundle install
 $ npm i -d
@@ -81,7 +81,7 @@ $ grunt serve
 We're going to need my subgenerator to generate post scaffolding
 
 ```sh
-$ npm install -g jdivock/generator-jekyllrb
+$ sudo npm install -g jdivock/generator-jekyllrb
 ```
 
 #### To generate a post
