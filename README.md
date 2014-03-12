@@ -51,7 +51,7 @@ HERE BE DRAGONS
 Some people *cough* Tim *cough* have had isues with rvm, if for some reason this explodes give the non-gcc version of the install a go
 
 ```sh
-rvm install 1.9.3 --with-gcc=clang
+$ rvm install 1.9.3 --with-gcc=clang
 ```
 
 After all that is done, we're going to need the bundler gem
