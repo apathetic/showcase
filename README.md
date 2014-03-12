@@ -42,7 +42,7 @@ Before we get started to make sure everything is on the up and up.
 Okay, unfortunately this project is going to require ruby which can get nasty. To be safe we're going to go ahead and use [rvm] to ensure we have a walled off version of ruby that's >=1.9.2 and won't be affected by OSX updates or other packages.
 
 ```sh
-$ \curl -sSL https://get.rvm.io | bash -s stable
+$ \curl -sSL https://get.rvm.io | bash -s stable --ruby
 ```
 
 ***
