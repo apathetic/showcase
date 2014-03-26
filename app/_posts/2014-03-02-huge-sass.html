@@ -17,6 +17,8 @@ tags:
                 <a href="#general">General</a>
                 <ul>
                     <li><a href="#circleWithArrow">Circle With Arrow</a>
+                    <li><a href="#cardFlip">Card Flip</a>
+                    <li><a href="#arrow">Arrow</a>
                     </li>
                 </ul>
             </li>
@@ -53,14 +55,14 @@ tags:
                     <dt>arguments</dt>
                     <dd>
                         <dl>
-                            <dt>size</dt>
+                            <dt>Size</dt>
                             <dd>Size of the circle you want</dd>
 
-                            <dt>circle color</dt>
+                            <dt>Circle color</dt>
                             <dd>Color of the cirle</dd>
 
-                            <dt>arrow color</dt>
-                            <dd>arrow color you want (durr)</dd>
+                            <dt>Arrow color</dt>
+                            <dd>Arrow color you want (durr)</dd>
                         </dl>
                     </dd>
                 </dl>
@@ -73,6 +75,86 @@ tags:
                 <h6>Result:</h6>
                 <div class="example"></div>
             </div>
+            <div id="cardFlip">
+            <h4>Card Flip</h4>
+            <dl>
+                <dt>name</dt>
+                <dd>card-flip</dd>
+
+                <dt>arguments</dt>
+                <dd>
+                    <dl>
+                        <dt>Direction</dt>
+                        <dd>Direction you want it to flip, left right up down (corner is in there but hasn't been tested in IE)</dd>
+
+                        <dt>Height</dt>
+                        <dd>Card height</dd>
+
+                        <dt>Width</dt>
+                        <dd>Card width</dd>
+
+                        <dt>Perspective</dt>
+                        <dd>Set the animation perspective</dd>
+
+                        <dt>Duration</dt>
+                        <dd>The durations of the animation</dd>
+                    </dl>
+                </dd>
+            </dl>
+
+            <h4>Example</h4>
+            <h6>Code:</h6>
+            {% highlight scss %}
+@include card-flip(left, 200px, 200px, 1000, 1s);
+            {% endhighlight %}
+            <h6>Result:</h6>
+            
+                <div class="card-container">
+                    <div class="card">
+                        <div class="front">
+                            1
+                        </div>
+                        <div class="back">
+                            2
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="arrow">
+            <h4>CSS arrow</h4>
+            <dl>
+                <dt>name</dt>
+                <dd>arrow</dd>
+
+                <dt>arguments</dt>
+                <dd>
+                    <dl>
+                        <dt>Direction</dt>
+                        <dd>Direction for the arrow to point</dd>
+
+                        <dt>Color</dt>
+                        <dd>Arrow color</dd>
+
+                        <dt>Width</dt>
+                        <dd>Card width</dd>
+
+                        <dt>Size</dt>
+                        <dd>Pixel size of the arrow</dd>
+                    </dl>
+                    <p>I can't take credit for writing this, it came from here https://gist.github.com/bpainter/1085320</p>
+                </dd>
+            </dl>
+
+            <h4>Example</h4>
+            <h6>Code:</h6>
+            {% highlight scss %}
+@include arrow(right, red, 10px);
+            {% endhighlight %}
+            <h6>Result:</h6>
+                <div class="example"></div>
+            </div>
+
+
         </section>
 
         <section id="functions">
@@ -80,20 +162,20 @@ tags:
             <div id="pixelsToEms">
                 <h4>Pixel To Ems</h6>
                     <dl>
-                        <dt>name</dt>
+                        <dt>Name</dt>
                         <dd>huge-em</dd>
 
-                        <dt>type</dt>
+                        <dt>Type</dt>
                         <dd>function</dd>
 
                         <dt>arguments</dt>
                         <dd>
                             <dl>
-                                <dt>pixels</dt>
-                                <dd>px value you want to convert to ems</dd>
+                                <dt>Pixels</dt>
+                                <dd>Px value you want to convert to ems</dd>
 
-                                <dt>base</dt>
-                                <dd>base px value to convert the ems off of</dd>
+                                <dt>Base</dt>
+                                <dd>Base px value to convert the ems off of</dd>
                             </dl>
                         </dd>
                     </dl>

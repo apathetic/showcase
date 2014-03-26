@@ -2,11 +2,14 @@
 @import "../huge_bower_components/huge.sass/functions/_pixels-to-ems";
 
 @import "../huge_bower_components/huge.sass/general/_circle_with_arrow";
+@import "../huge_bower_components/huge.sass/general/_card_flip";
+@import "../huge_bower_components/huge.sass/general/_css_arrow";
 @import "../huge_bower_components/huge.sass/general/_reset";
 
 @import "../huge_bower_components/huge.sass/layout/_list_unstyled";
 
 @include reset;
+@import "compass/css3";
 
 $magenta: #ec008c;
 
@@ -121,6 +124,31 @@ div#unstyledList {
     margin: 1em .5em;
     padding: 1em .5em;
     background-color: #B3B3B3;
+}
+
+div#cardFlip {
+    .card-container {
+        margin: 20px 0;
+        @include card-flip(left, 200px, 200px, 1000, 1s);
+        .card {
+            color: #fff;
+            .front, .back {
+                @include border-radius(5px);
+            }
+            .front {
+                background-color: #3498db;
+            }
+            .back {
+                background-color: #2980b9;
+            }
+        }
+    }
+}
+div#arrow {
+    .example{
+         margin: 20px 0;
+         @include arrow(right, $magenta, 10px);  
+    }
 }
 
 .browsehappy {

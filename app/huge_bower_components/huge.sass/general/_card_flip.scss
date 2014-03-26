@@ -1,0 +1,110 @@
+/*
+	This mixin creates a flipping motion for cards in IE10 and above
+
+	Markup:
+
+	<div class="card-container">
+		<div class="card">
+			<div class="front">
+			1
+			</div>
+			<div class="back">
+				2
+			</div>
+		</div>
+	</div>
+	It also defaults older IE browsers to just show the back of the card with no animation
+	if modernizr is being used or the .lt-ie10 is being added to the body in some way 
+*/
+
+@mixin card-flip($direction: left, $width: 200px, $height: 200px, $perspective:400, $duration: 0.5s) {
+	//add this mixin to the container
+	$transform: null;
+	$transformStart: null;
+	$transformReset: null;
+
+	@if $direction == 'left' {
+		$transform: rotateY(180deg);
+		$transformStart: rotateY(-180deg);
+		$transformReset: rotateY(0deg);
+	}@else if $direction == 'right' {
+		$transform: rotateY(-180deg);
+		$transformStart: rotateY(180deg);
+		$transformReset: rotateY(0deg);
+	}@else if $direction == 'up' {
+		$transform: rotateX(180deg);
+		$transformStart: rotateX(-180deg);
+		$transformReset: rotateX(0deg);
+	}@else if $direction == 'down' {
+		$transform: rotateX(-180deg);
+		$transformStart: rotateX(180deg);
+		$transformReset: rotateX(0deg);
+	}@else if $direction == 'corner' {
+		//wont work in IE
+		$transform: rotate3d(-45, -45, 0, -180deg);
+		$transformStart: rotate3d(-45, -45, 0, 180deg);
+		$transformReset: rotate3d(0,0,0,0);
+	}
+
+	width: $width;
+	height: $height;
+	display: block;
+	@include perspective($perspective);
+
+	&:hover {
+		.back {
+			@include transform($transformReset);
+		}
+
+		.front {
+			@include transform($transform);
+		}
+	}
+
+	.card {
+		width: $width;
+		height: $height;
+		position: relative;
+		@include transform-style(preserve-3d);
+	}
+
+	.front,
+	.back {
+		top: 0;
+		left: 0;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		@include backface-visibility(hidden);
+		@include transition-duration($duration);
+		@include transform-style(preserve-3d);
+	}
+
+	.front {
+		z-index: 2;
+	}
+
+	.back {
+		@include transform($transformStart);	
+	}
+
+	//IE styles triggered by modernizer
+	.lt-ie10 & {
+		.front,
+		.back {
+			@include backface-visibility(visible);
+			@include transform($transformReset);
+		}
+		
+		&:hover {
+			.front {
+				display: none;
+				@include transform($transformReset);
+			}
+			.back {
+				display: block;
+				@include transform($transformReset);
+			}
+		}
+	}
+}
