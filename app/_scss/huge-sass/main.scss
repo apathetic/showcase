@@ -7,9 +7,11 @@
 @import "../huge_bower_components/huge.sass/general/_reset";
 
 @import "../huge_bower_components/huge.sass/layout/_list_unstyled";
+@import "fonts";
 
 @include reset;
 @import "compass/css3";
+@import "compass/utilities/general/clearfix";
 
 $magenta: #ec008c;
 
@@ -20,6 +22,14 @@ body {
     margin: 0;
     position: relative;
 }
+h1,
+h2,
+h3,
+h4, 
+h5, 
+h6{
+    font-family: "HUGEAvantGardeBold", sans-serif; 
+}
 
 a {
     text-decoration: none;
@@ -27,12 +37,18 @@ a {
 }
 
 h3 {
-    padding: .2em .2em;
-    color: #FFF;
+    color: #000;
     display: block;
-    background-color: #666;
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: $magenta 2px solid;
+    padding: 0 0 15px 0;
+}
+
+h2 {
     font-size: 1.5em;
-    margin-bottom: .5em;
+    padding: 0 0 15px 0;
+    clear: both;
 }
 
 h4 {
@@ -40,13 +56,19 @@ h4 {
     font-size: 1.1em;
     margin-bottom: .3em;
 }
-
+h6 {
+    line-height: 1;
+    margin: 10px 0;
+}
+.highlight {
+    margin-bottom: 20px;
+}
 nav {
     position: fixed;
     display: inline-block;
     margin-right: 1em;
     left: 0;
-    top: 0;
+    top: 40px;
     z-index: 1;
     >ul {
         @include list-unstyled;
@@ -57,6 +79,31 @@ nav {
     }
     li {
         cursor: pointer;
+    }
+}
+dl{
+    max-width: 50%;
+    display: block;
+    clear: both;
+    margin-bottom: 20px;
+    @include clearfix();
+
+    dt {
+        font-weight: bold;
+    }
+    dt, dd {
+        display: block;
+        font-size: 0.9em;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-bottom: 7px;
+    }
+
+    lh{
+        display: block;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0 0 10px;
+        padding: 0 0 10px;
     }
 }
 

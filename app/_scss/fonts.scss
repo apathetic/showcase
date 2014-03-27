@@ -1,0 +1,21 @@
+@import "compass/css3";
+
+
+@include font-face("HUGEAvantGardeBold",
+	 font-files(
+	 "huge_agb_v5-webfont.eot",
+	 "huge_agb_v5-webfont.woff",
+	 "huge_agb_v5-webfont.svg")
+	 );
+@include font-face("Galaxie",
+	font-files(
+	"GalaxieCopernicus-Book.eot",
+	"GalaxieCopernicus-Book.woff", 
+	"GalaxieCopernicus-Book.svg")
+	);
+@include font-face("GalaxieItalic",
+	font-files(
+	"GalaxieCopernicus-BookItalic.eot", 
+	"GalaxieCopernicus-BookItalic.woff", 
+	"GalaxieCopernicus-BookItalic.svg")
+	);
