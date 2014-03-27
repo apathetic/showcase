@@ -82,7 +82,6 @@ nav {
     }
 }
 dl{
-    max-width: 50%;
     display: block;
     clear: both;
     margin-bottom: 20px;
@@ -97,7 +96,12 @@ dl{
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         margin-bottom: 7px;
     }
-
+    a {
+        color: $magenta;
+        &:hover {
+            color: $magenta;
+        }
+    }
     lh{
         display: block;
         font-size: 1.2em;
