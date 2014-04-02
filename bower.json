@@ -1,6 +1,37 @@
 {
   "name": "hugeyoshowcase",
   "version": "0.0.0",
+  "authors": [
+    "Jason Divock <jdivock@hugeinc.com>"
+  ],
+  "description": "Showcase for our stuff and whatnot",
+  "main": "index.html",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "huge",
+    "showcase",
+    "js",
+    "css3",
+    "sass"
+  ],
+  "license": "MIT",
+  "homepage": "huge.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/_bower_components",
+    "test",
+    "tests"
+  ],
   "dependencies": {
+    "jquery": "~2.1.0",
+    "font-awesome": "~4.0.3",
+    "jquery.transit": "~0.9.9",
+    "jquery-mousewheel": "~3.1.9",
+    "bootstrap-sass": "~3.0.2"
   }
 }
