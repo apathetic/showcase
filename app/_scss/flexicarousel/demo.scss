@@ -34,3 +34,12 @@ hr { margin: 5em 0; }
 	.carousel ul { height:480px; }
 }
 
+
+
+
+/* UNDO some other framework styles */
+.fade {
+	opacity: 1;
+	-webkit-transition: none;
+	transition: none;
+}
