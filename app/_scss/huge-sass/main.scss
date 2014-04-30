@@ -4,6 +4,7 @@
 @import "../huge_bower_components/huge.sass/general/_circle_with_arrow";
 @import "../huge_bower_components/huge.sass/general/_card_flip";
 @import "../huge_bower_components/huge.sass/general/_css_arrow";
+@import "../huge_bower_components/huge.sass/general/_page_curl";
 @import "../huge_bower_components/huge.sass/general/_reset";
 
 @import "../huge_bower_components/huge.sass/layout/_list_unstyled";
@@ -25,10 +26,11 @@ body {
 h1,
 h2,
 h3,
-h4, 
-h5, 
-h6{
-    font-family: "HUGEAvantGardeBold", sans-serif; 
+h4,
+h5,
+h6 {
+    font-family: "HUGEAvantGardeBold", sans-serif;
+    margin-bottom: 0.6em;
 }
 
 a {
@@ -36,30 +38,33 @@ a {
     color: inherit;
 }
 
-h3 {
+h1 {
     color: #000;
     display: block;
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 3em;
     border-bottom: $magenta 2px solid;
-    padding: 0 0 15px 0;
 }
 
 h2 {
-    font-size: 1.5em;
-    padding: 0 0 15px 0;
+    font-size: 2em;
+    margin-top: 2em;
     clear: both;
+}
+
+h3 {
+    font-size: 1.3em;
 }
 
 h4 {
     font-weight: bold;
     font-size: 1.1em;
-    margin-bottom: .3em;
 }
+
 h6 {
     line-height: 1;
     margin: 10px 0;
 }
+
 .highlight {
     margin-bottom: 20px;
 }
@@ -195,10 +200,18 @@ div#cardFlip {
         }
     }
 }
+
+div#pageCurl {
+	.page-curl {
+		// options forthcoming...
+		@include page-curl;
+	}
+}
+
 div#arrow {
     .example{
          margin: 20px 0;
-         @include arrow(right, $magenta, 10px);  
+         @include arrow(right, $magenta, 10px);
     }
 }
 
