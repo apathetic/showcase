@@ -45,7 +45,9 @@ tags:
 	</nav>
 
 	<article>
+
 		<section id="general">
+
 			<h1>General</h1>
 
 			<div id="circleWithArrow">
@@ -68,8 +70,10 @@ tags:
 				</dl>
 
 				<h3>Example</h3>
+
 				<h6>Code:</h6>
 				{% highlight scss %}@include circle-with-arrow(50px, $magenta, #000);{% endhighlight %}
+
 				<h6>Result:</h6>
 				<div class="well">
 					<div class="example"></div>
@@ -102,10 +106,10 @@ tags:
 				</dl>
 
 				<h3>Example</h3>
+
 				<h6>Code:</h6>
-				{% highlight scss %}
-@include card-flip(left, 200px, 200px, 1000, 1s);
-				{% endhighlight %}
+				{% highlight scss %}@include card-flip(left, 200px, 200px, 1000, 1s);{% endhighlight %}
+
 				<h6>Result:</h6>
 				<div class="well">
 					<div class="card-container">
@@ -129,10 +133,10 @@ tags:
 				</dl>
 
 				<h3>Example</h3>
+
 				<h6>Code:</h6>
-				{% highlight scss %}
-@include page-curl();
-				{% endhighlight %}
+				{% highlight scss %}@include page-curl{% endhighlight %}
+
 				<h6>Result:</h6>
 				<div class="well page-curl">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -140,8 +144,7 @@ tags:
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 						consequat.</p>
 				</div>
-			 </div>
-
+			</div>
 
 			<div id="arrow">
 				<h2>CSS arrow</h2>
@@ -169,21 +172,21 @@ tags:
 				</dl>
 
 				<h3>Example</h3>
+
 				<h6>Code:</h6>
-				{% highlight scss %}
-@include arrow(right, red, 10px);
-				{% endhighlight %}
+				{% highlight scss %}@include arrow(right, red, 10px);{% endhighlight %}
+
 				<h6>Result:</h6>
 				<div class="well">
 					<div class="example"></div>
 				</div>
 			</div>
-
-
 		</section>
 
 		<section id="functions">
-			<h3>Functions</h3>
+
+			<h1>Functions</h1>
+
 			<div id="pixelsToEms">
 				<h2>Pixel To Ems</h6>
 					<dl>
@@ -206,8 +209,8 @@ tags:
 
 					<p>Maybe some more stuff here to explain about the plugin if it's kind of involved, and now some lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum nunc a sapien tincidunt, ullamcorper vestibulum sem hendrerit. Morbi ac erat odio. Aliquam eget interdum libero, id bibendum felis. Nullam vulputate fringilla fringilla. Maecenas viverra sapien in justo feugiat, eget rutrum ipsum laoreet. Sed at lorem at orci condimentum condimentum eu tincidunt lectus. Praesent vehicula dignissim orci ut faucibus. Sed et molestie augue. Fusce et sagittis nisi. Vestibulum enim urna, pretium id ligula semper, aliquam blandit tortor. Praesent fringilla felis sed elit tincidunt, ut interdum lectus faucibus. Nunc cursus non lectus et sagittis.</p>
 
-
 					<h3>Example</h3>
+
 					<h6>Code:</h6>
 					{% highlight scss %}
 div#example {
@@ -220,6 +223,7 @@ div#example {
 	&.m-4 { width: 400px; }
 }
 					{% endhighlight %}
+
 					<h6>Result:</h6>
 					<div class="well">
 						<div class="example">
@@ -237,13 +241,14 @@ div#example {
 		</section>
 
 		<section id="typography">
-			<h3>Typography</h3>
+			<h1>Typography</h1>
 
 			<h2>Stuff to eventually go here</h2>
 		</section>
 
 		<section id="format">
-			<h3>Format</h3>
+
+			<h1>Format</h1>
 
 			<div id="unstyledList">
 				<h2>Unstyled List</h2>
@@ -260,10 +265,10 @@ div#example {
 				</dl>
 
 				<h3>Example</h3>
+
 				<h6>Code:</h6>
-			   {% highlight scss %}
-ul { @include list-unstyled; }
-				{% endhighlight %}
+			   {% highlight scss %}ul { @include list-unstyled; }{% endhighlight %}
+
 				<h6>Result:</h6>
 				<div class="well">
 					<div class="example">
@@ -275,7 +280,6 @@ ul { @include list-unstyled; }
 					</div>
 				</div>
 			</div>
-
 		</section>
 
 	</article>
