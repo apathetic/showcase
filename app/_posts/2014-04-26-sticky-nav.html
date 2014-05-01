@@ -1,5 +1,5 @@
 ---
-layout: full_screen
+layout: default
 title:  "Sticky Nav"
 name: "stickynav"
 date:   2014-04-26 16:48:21
@@ -15,24 +15,16 @@ tags:
 <link rel="stylesheet" href="/css/stickynav/styles.css" type="text/css">
 <style>
 	/* note: lots of hacky stuff here, soley for the purposes of demo'ing on the page */
-	body > .container { padding-left: 240px; }
-	header { margin-left:-240px; height:100px; background:#aaa; }
+	main .container { padding-left: 240px; }
 	nav { width:240px; }
 	#sticky { margin-left:-240px; position:relative; }
 	section img { float:left; padding-right:10px; width:25%; min-width:200px; }
-	footer { margin-left:-240px; height:300px; background:#666; margin-top:5em; }
-
 	.filler { color:#aaa; }
 </style>
-
 <script src="/js/flexicarousel/jquery-1.11.0.min.js"></script>
 <!-- <script src="/js/stickynav/stickynav.min.js"></script> -->
 <script src="/js/stickynav/stickynav.js"></script>
 
-
-<header>
-	<h1>Sticky nav</h1>
-</header>
 
 <div id="sticky">
 	<nav>
@@ -41,8 +33,8 @@ tags:
 </div>
 
 
-<h2 data-nav="About" id="about">About</h2>
-<p>
+<section data-nav="About" id="about">
+	<h2>About</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -61,14 +53,14 @@ tags:
 	<p>We are very great and super important lorem ispum. We are very great and
 	super important lorem ispum. We are very great and super important lorem ispum.
 	We are very great and super important lorem ispum.</p>
-</p>
+</section>
 
+<section data-nav="Download"id="download" >
+	<h2>Download</h2>
+	<p><a href="https://stash.hugeinc.com/projects/BOWER/repos/stickynav/browse">Stash repo</a></p>
+</section>
 
-<h2 id="download" data-nav="Download">Download</h2>
-<p><a href="https://stash.hugeinc.com/projects/BOWER/repos/stickynav/browse">Stash repo</a></p>
-
-
-<section id="funding" data-nav="Funding" class="filler">
+<section data-nav="Funding" id="funding" class="filler">
 	<h2>Funding</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -84,7 +76,7 @@ tags:
 	We are very great and super important lorem ispum.</p>
 </section>
 
-<section id="clients" data-nav="Clients" class="filler">
+<section ata-nav="Clients" id="clients" dclass="filler">
 	<h2>Clients</h2>
 	<p>Useless filler Global adoption of mobile services has increased significantly over the last
 	few years. Taking advantage of this ever-growing trend is now more important
@@ -107,7 +99,7 @@ tags:
 	We are very great and super important lorem ispum.</p>
 </section>
 
-<section id="partners" data-nav="Partners" class="filler">
+<section data-nav="Partners" id="partners" class="filler">
 	<h2>Partners</h2>
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -123,78 +115,74 @@ tags:
 	We are very great and super important lorem ispum.</p>
 </section>
 
+<section data-nav="Prereqs" id="prereqs">
+	<h2>Prereqs</h2>
+	<p>jQuery</p>
+</section>
 
-<h2 data-nav="Prereqs" id="prereqs">Prereqs</h2>
-<p>jQuery</p>
+<section data-nav="Compatibility" id="compatibility">
+	<h2>Compatibility</h2>
+	<ul>
+		<li>IE8+</li>
+		<li>Firefox, Chrome, Opera</li>
+	</ul>
+</section>
 
-
-<h2 data-nav="Compatibility" id="compatibility">Compatibility</h2>
-<ul>
-	<li>IE8+</li>
-	<li>Firefox, Chrome, Opera</li>
-</ul>
-
-
-<h2 data-nav="Code" id="code">Code</h2>
+<section data-nav="Code" id="code">
+	<h2>Code</h2>
 {% highlight javascript %}
-
 stickyNav.init({
 	nav: '#sticky'
 	// navItem: 'td',
 	// active: 'selected',
 	// scrollSpeed
 });
-
 {% endhighlight %}
+</section>
 
-
-<h2 data-nav="Options" id="options">Options</h2>
-<div class="table-responsive">
-	<table class="table table-bordered table-striped">
-		<thead>
-			<tr>
-				<th style="width: 100px;">Name</th>
-				<th style="width: 50px;">type</th>
-				<th style="width: 50px;">default</th>
-				<th>description</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr>
-				<td>nav</td>
-				<td>string</td>
-				<td></td>
-				<td>selector or jQuery object of the nav container <span class="color:red">(required)</span> </td>
-			</tr>
-			<!--
-			<tr>
-				<td>navItem</td>
-				<td>string</td>
-				<td>li</td>
-				<td>element to use when building the navigation</td>
-			</tr>
-			<tr>
-				<td>active</td>
-				<td>string</td>
-				<td>active</td>
-				<td>class to use on active nav item</td>
-			</tr>
-			<tr>
-				<td>scrollSpeed</td>
-				<td>integer</td>
-				<td>500</td>
-				<td>Speed of scrolling transitions between page sections</td>
-			</tr>
-			-->
-		</tbody>
-	</table>
-</div>
-
-
-<footer>
-	<p>Big, useless footer</p>
-</footer>
-
+<section data-nav="Options" id="options">
+	<h2>Options</h2>
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th style="width: 100px;">Name</th>
+					<th style="width: 50px;">type</th>
+					<th style="width: 50px;">default</th>
+					<th>description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>nav</td>
+					<td>string</td>
+					<td></td>
+					<td>selector or jQuery object of the nav container <span class="color:red">(required)</span> </td>
+				</tr>
+				<!--
+				<tr>
+					<td>navItem</td>
+					<td>string</td>
+					<td>li</td>
+					<td>element to use when building the navigation</td>
+				</tr>
+				<tr>
+					<td>active</td>
+					<td>string</td>
+					<td>active</td>
+					<td>class to use on active nav item</td>
+				</tr>
+				<tr>
+					<td>scrollSpeed</td>
+					<td>integer</td>
+					<td>500</td>
+					<td>Speed of scrolling transitions between page sections</td>
+				</tr>
+				-->
+			</tbody>
+		</table>
+	</div>
+</section>
 
 
 <script>

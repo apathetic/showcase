@@ -1,0 +1,97 @@
+---
+layout: full_screen
+title:  "Huge Inc. Slider"
+snippet: "Yet Another Full Screen Hijacker"
+date:   2014-04-26 16:48:21
+stash_url: https://stash.hugeinc.com/projects/BOWER/repos/huge.slider/browse
+categories: widget
+tags:
+- jquery
+- ie9
+- scrollJack
+- js
+- slider
+---
+
+<link rel="stylesheet" href="/css/huge-slider/main.css">
+
+    <article>
+        <section id="one">
+            <div class="container">
+            <h3>Huge.Slider</h3>
+
+            <p>Full page scroll jacking slider that's touch friendly</p>
+            </div>
+        </section>
+
+        <section id="two">
+            <h3>Prereqs</h3>
+
+            <ul class="list-unstyled">
+                <!-- <li><a href="http://jquery.com/">JQuery</a></li> -->
+            </ul>
+
+            <h3>Compatibility</h3>
+            <ul class="list-unstyled">
+                <li>IE9+</li>
+                <li>Chrome, Opera, lynx</li>
+            </ul>
+        </section>
+
+        <section id="three">
+            <h3>Usage</h3>
+
+<div>
+{% highlight js %}
+$(document).ready(function() {
+        new Slider();
+  });
+{% endhighlight %}
+
+{% highlight sass %}
+section {
+    position: relative;
+}
+html, body, article {
+    height: 100%;
+}
+
+html, body {
+    overflow: hidden;
+}
+{% endhighlight %}
+</div>
+        </section>
+
+        <section id="four">
+            <h3>Options</h3>
+
+            <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 10%;">Name</th>
+         <th style="width: 10%;">type</th>
+         <th style="width: 10%;">default</th>
+         <th style="width: 70%;">description</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>animation</td>
+         <td>boolean or the string <code>'static'</code></td>
+         <td>true</td>
+         <td>Includes a modal-backdrop element. Alternatively, specify <code>static</code> for a backdrop which doesn't close the modal on click.</td>
+       </tr>
+       </tbody>
+       </table>
+        </section>
+
+    </article>
+
+
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({app,.tmp}) scripts/main.js -->

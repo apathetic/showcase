@@ -1,96 +1,38 @@
 @import "../huge_bower_components/huge.sass/functions/_strip-unit";
 @import "../huge_bower_components/huge.sass/functions/_pixels-to-ems";
-
 @import "../huge_bower_components/huge.sass/general/_circle_with_arrow";
 @import "../huge_bower_components/huge.sass/general/_card_flip";
 @import "../huge_bower_components/huge.sass/general/_css_arrow";
 @import "../huge_bower_components/huge.sass/general/_page_curl";
-@import "../huge_bower_components/huge.sass/general/_reset";
-
 @import "../huge_bower_components/huge.sass/layout/_list_unstyled";
-@import "fonts";
 
-@include reset;
 @import "compass/css3";
-@import "compass/utilities/general/clearfix";
+
+// @import "../huge_bower_components/huge.sass/general/_reset";
+// @include reset;
+// @import "compass/utilities/general/clearfix";
 
 $magenta: #ec008c;
-
-body {
-    background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #333;
-    margin: 0;
-    position: relative;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: "HUGEAvantGardeBold", sans-serif;
-    margin-bottom: 0.6em;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-h1 {
-    color: #000;
-    display: block;
-    font-size: 3em;
-    border-bottom: $magenta 2px solid;
-}
-
-h2 {
-    font-size: 2em;
-    margin-top: 2em;
-    clear: both;
-}
-
-h3 {
-    font-size: 1.3em;
-}
-
-h4 {
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-h6 {
-    line-height: 1;
-    margin: 10px 0;
-}
 
 .highlight {
     margin-bottom: 20px;
 }
-nav {
-    position: fixed;
-    display: inline-block;
-    margin-right: 1em;
-    left: 0;
-    top: 40px;
-    z-index: 1;
-    >ul {
-        @include list-unstyled;
-        ul {
-            @include list-unstyled(false);
-            margin-left: 2em;
-        }
-    }
-    li {
-        cursor: pointer;
-    }
+
+.example {
+    margin: 1em;
 }
-dl{
+
+.code {
+    margin: 1em .5em;
+    padding: 1em .5em;
+    background-color: #B3B3B3;
+}
+
+dl {
     display: block;
     clear: both;
     margin-bottom: 20px;
-    @include clearfix();
+    // @include clearfix();
 
     dt {
         font-weight: bold;
@@ -118,18 +60,6 @@ dl{
 
 dd > dl {
     margin-top: 0;
-}
-
-article {
-    //position: absolute;
-    width: 100%;
-    //left: 0;
-    padding-left: 15em;
-    vertical-align: top;
-    //display: inline-block;
-    dt {
-        font-weight: bold;
-    }
 }
 
 div#circleWithArrow {
@@ -170,16 +100,6 @@ div#unstyledList {
             @include list-unstyled;
         }
     }
-}
-
-.example {
-    margin: 1em;
-}
-
-.code {
-    margin: 1em .5em;
-    padding: 1em .5em;
-    background-color: #B3B3B3;
 }
 
 div#cardFlip {
