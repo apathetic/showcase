@@ -69,6 +69,27 @@ a {
 }
 
 
+header nav {
+	float:right;
+	margin-top: 20px; 		// same as h1
+	a {
+		display: inline-block;
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+		background: #aaa;
+		// text-indent: -999em;
+		color: #fff;
+		line-height: 38px;
+		text-align: center;
+		font-size: 18px;
+	}
+}
+
+/* 	nav { width:240px; } */
+
+#sticky { margin-left:-240px; position:relative; }
+
 #sticky nav {
 	position: absolute;
 	top: 0;
@@ -79,6 +100,8 @@ a {
 	-webkit-backface-visibility: hidden;
 
 	li {
+		list-style:none;
+		padding: 4px 0;
 		float: left;
 		clear: left;
 	}
