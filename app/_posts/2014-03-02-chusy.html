@@ -29,23 +29,23 @@ tags:
 <section data-nav="About" id="about">
 	<h2>About</h2>
 	<p>CHUSY is a framework modeled after <a href="http://susy.oddbird.net/">SUSY</a>, its goal is to be like SUSY, but not opaque and confusing. It makes prototyping and maintenance of multi-breakpoint liquid grids fast, easy, and fun!</p>
-	<p>CHUSY has 2 options: "orginal" and "flexible gutter". Both are very much alike. They are easy to define breakpoint and fully fluid. The differences is how the column and gutter works. Following are the Pros and Cons of both options</p>
+	<p>There are two flavors: "Original" and "Flexible Gutter", which are very much alike. While both are fully fluid, there are differences is how the columns and gutters work. Here is a brief overview:
 
-	<h3>Chusy original</h3>
-	<p>How it works: `Orginal` takes `base width`, `column width`, `gutter-width` and `column inner padding` to calculate  precise percentage for each element.
+	<h3>Original</h3>
+	<p>How it works: <strong>Orginal</strong> takes <i>base width</i>, <i>column width</i>, <i>gutter-width</i> and <i>column inner padding</i> to calculate precise percentages for each element.</p>
 	<ul>
-		<li>Pro: User can define `Column padding` and `Gutter width` with specific number, which will be converted to percentage automatically. It gives user more options to control the look of the grid.</li>
-		<li>Cons: Column padding and gutter are fluid. It can't create fixed padding and gutter. It requires some level of calculation to set up the grid.</li>
+		<li><strong>Pro</strong>: User can define <i>Column padding</i> and <i>gutter width</i> with a specific number, which will be converted to a percentage automatically. It gives user more options to control the look of the grid.</li>
+		<li><strong>Cons</strong>: Column padding and gutter are fluid. It can't create fixed padding and gutter. It requires some level of calculation to set up the grid.</li>
 	</ul>
-	<p>If you have any question about `Chusy Original` please contact Choshun Snyder email:csnyder@hugeinc.com</p>
+	<p>If you have any question about the <strong>Original</strong>, please contact <a href="mailto:csnyder@hugeinc.com">Choshun Snyder</a></p>
 
-	<h3>Chusy flexible gutter</h3>
-	<p>How it works: `Flexible gutter` gets the column width by taking 100% dividee by the total # columns. It uses `column inner padding` to create a gutter.</p>
+	<h3>Flexible Gutter</h3>
+	<p>How it works: <strong>Flexible gutter</strong> gets the column width by taking 100% dividee by the total # columns. It uses <i>column inner padding</i> to create a gutter.</p>
 	<ul>
-		<li>Pro: User can define gutter with a fixed number or percentage to create fixed or fluid gutter look. No calculation for setting up the grid, simply enter the total column.</li>
-		<li>Cons: Since the column uses `column inner padding` to fake the gutter, you may need extra markup if more padding is needed between the content and its parent column</li>
+		<li><strong>Pro</strong>: User can define gutters with a fixed number or percentage to create fixed or fluid gutter look. No calculation for setting up the grid, simply enter the total column.</li>
+		<li><strong>Cons</strong>: Since the column uses <i>column inner padding</i> to fake the gutter, you may need extra markup if more padding is needed between the content and its parent column</li>
 	</ul>
-	<p>If you have any question about `Chusy flexible gutter` please contact Miranda Li email:mli@hugeinc.com</p>
+	<p>If you have any question about the <strong>Flexible Gutter</strong> variant, please contact <a href="mailto:mli@hugeinc.com">Miranda Li</a> </p>
 
 
 </section>
@@ -63,8 +63,8 @@ tags:
 	<p>Reference _base and _mixins in needed scss files with:</p>
 
 {% highlight css %}
-	@import "base";
-	@import "mixins";
+@import "base";
+@import "mixins";
 {% endhighlight %}
 
 	<p>Done!</p>
@@ -75,8 +75,8 @@ tags:
 	<p>Reference _base and _mixins-flexible-gutter in needed scss files with:</p>
 
 {% highlight css %}
-	@import "base";
-	@import "mixins-flexible-gutter";
+@import "base";
+@import "mixins-flexible-gutter";
 {% endhighlight %}
 
 	<p>Done!</p>
@@ -92,16 +92,16 @@ tags:
 
 	{% highlight sass %}$small-screen: small-screen 0 599px;{% endhighlight %}
 
-	<p>$small-screen is a breakpoint variable that defines the threshold width of 0 to 599px.</p>
+	<p><code>$small-screen</code> is a breakpoint variable that defines the threshold width of 0 to 599px.</p>
 	<p>This is the ONLY place you'll need to define breakpoints for the whole project.</p>
 	<p>You did it! good job</p>
 
 
 	<h3>Making grids</h3>
 
-	<p>At the top of _mixins is the mixin at-breakpoint($viewport).</p>
+	<p>At the top of _mixins is the mixin <code>at-breakpoint($viewport)</code>.</p>
 	<p>For each breakpoint there is an associated grid configuration. This creates the liquid grid that has unique column, gutter, and grid padding in percent.</p>
-	<p>In the case of using our previous breakpoint "$small-screen" we define the grid:</p>
+	<p>In the case of using our previous breakpoint <code>$small-screen</code> we define the grid:</p>
 
 {% highlight sass %}
 // if the first value of the variable $small-screen (it's value being: "small-screen 0 599px") is small screen...
@@ -126,7 +126,7 @@ tags:
 }
 {% endhighlight %}
 
-	<p>This creates a 6 column liquid grid for the breakpoint $small-screen.</p>
+	<p>This creates a 6 column liquid grid for the breakpoint <code>$small-screen</code>.</p>
 	<p>This is the ONLY place you define grids.</p>
 	<p>NOTE: It is important that you calculate the values as precise as possible (ie 43px WILL look way different than 43.33333333333333333333px). Don't trust the designs, plug in the cols/gutters/grid padding and make sure it equals the defined ideal width.</p>
 	<p>Huzzah!</p>
@@ -148,7 +148,7 @@ tags:
 }
 {% endhighlight %}
 
-	<p>At viewport $small-screen (0-599px defined in _base), the #header will span 3 columns, in this case 3 columns will be ~50%, cause the grid ends up being a 6 col grid (see step 3)</p>
+	<p>At viewport <code>$small-screen</code> (0-599px defined in _base), the #header will span 3 columns, in this case 3 columns will be ~50%, cause the grid ends up being a 6 col grid (see step 3)</p>
 	<h5>Example</h5>
 {% highlight sass %}
 #wrapper {
@@ -160,7 +160,7 @@ tags:
 }
 {% endhighlight %}
 
-	<p>At viewport $large-screen (1000px up as defined in _base) the same exact #header div will be at ~25%, 'cause that grid ends up being 12 columns as defined in _mixins.</p>
+	<p>At viewport <code>$large-screen</code> (1000px up as defined in _base) the same exact #header div will be at ~25%, 'cause that grid ends up being 12 columns as defined in _mixins.</p>
 	<p>That's it!</p>
 	<p>The rest of the mixins are just commented frosting on the delicious sponge cake that is CHUSY.</p>
 

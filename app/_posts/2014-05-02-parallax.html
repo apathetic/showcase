@@ -10,8 +10,11 @@ tags:
 ---
 
 <style>
+	main .container { padding-left: 240px; }
 </style>
+<script src="/js/flexicarousel/jquery-1.11.0.min.js"></script>
 <script src="/js/stickynav/stickynav.js"></script>
+<script src="/js/parallax/parallax.js"></script>
 
 
 <div id="sticky">
@@ -23,7 +26,7 @@ tags:
 
 <section data-nav="About" id="about">
 	<h2>About</h2>
-	<p>Parallax. Stuff moves on scroll.</p>
+	<p>Parallax. Moves stuff on scroll.</p>
 
 	<h3>A Note On Approaches</h3>
 	<p>There are several ways to apprach building a parallax effect on a site. Paul Lewis has
@@ -74,7 +77,6 @@ tags:
 	<div class="parallax" data-parallax="0.4">
 		<img class="parallax" src="http://malformed.ca/wesley.jpg" alt="" />
 	</div>
-
 </section>
 
 <section data-nav="Prereqs" id="prereqs">
@@ -94,11 +96,8 @@ tags:
 <section data-nav="Code" id="code">
 	<h2>Code</h2>
 {% highlight javascript %}
-stickyNav.init({
-	nav: '#sticky'
-	// navItem: 'td',
-	// active: 'selected',
-	// scrollSpeed
+parallax.init({
+	el: '.parallax'
 });
 {% endhighlight %}
 </section>
@@ -117,10 +116,10 @@ stickyNav.init({
 			</thead>
 			<tbody>
 				<tr>
-					<td>nav</td>
+					<td>el</td>
 					<td>string</td>
-					<td></td>
-					<td>selector or jQuery object of the nav container <span class="color:red">(required)</span> </td>
+					<td>.parallax</td>
+					<td>selector or jQuery object of elements to parallax-ify</td>
 				</tr>
 			</tbody>
 		</table>
@@ -131,8 +130,9 @@ stickyNav.init({
 <script>
 	stickyNav.init({
 		nav: '#sticky nav'
-		// navItem: 'td',
-		// active: 'selected',
-		// scrollSpeed
+	});
+
+	parallax.init({
+		el: '.parallax'
 	});
 </script>
