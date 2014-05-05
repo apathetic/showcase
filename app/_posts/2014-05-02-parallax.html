@@ -1,0 +1,138 @@
+---
+layout: default
+title:  "Parallax"
+date:   2014-05-02 16:48:21
+snippet: "Very simple parallax base"
+stash_url: xxxxx
+tags:
+- css
+- parallax
+---
+
+<style>
+</style>
+<script src="/js/stickynav/stickynav.js"></script>
+
+
+<div id="sticky">
+	<nav>
+		<ul></ul>
+	</nav>
+</div>
+
+
+<section data-nav="About" id="about">
+	<h2>About</h2>
+	<p>Parallax. Stuff moves on scroll.</p>
+
+	<h3>A Note On Approaches</h3>
+	<p>There are several ways to apprach building a parallax effect on a site. Paul Lewis has
+	<a href="http://www.html5rocks.com/en/tutorials/speed/parallax/">a great overview</a> on the
+	popular techiniques and their pros and cons. In brief:</p>
+	<ul>
+		<li><strong>absolute positioning</strong>: this includes positioning elements absolutely
+		as well as positioning a background image attachment. In general, this is the absolute worst
+		way to do parallax from a performance point of view. Everything must be recalculated and re-
+		painted on scroll, so avoid this if possible. The upside: you can support IE8 this way.</li>
+		<li><strong>3D transforms</strong>: how the code herein operates. We offload elements in their
+		own render layer to the GPU for X- or Y-transforms. <i>Almost</i> the most efficient (see
+		below), but still very flexible and easy to implement. Browsers need to support transforms.</li>
+		<li><strong>canvas</strong>: one fixed element background (a canvas), that animates on scroll.
+		Elements are placed into the canvas moved about on scroll -- this is the most efficient, but
+		difficult to implement (or impossible if you wish to use existing DOM elements).</li>
+	</ul>
+</section>
+
+<section data-nav="Download" id="download" >
+	<h2>Download</h2>
+	<p><a href="https://stash.hugeinc.com/projects/BOWER/repos/xxxxx/browse">Stash repo</a></p>
+</section>
+
+<section data-nav="Demo" id="demo">
+	<h2>Demo</h2>
+
+	<img class="parallax" src="http://malformed.ca/wesley.jpg" alt="" />
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<div class="parallax" data-parallax="0.4">
+		<img class="parallax" src="http://malformed.ca/wesley.jpg" alt="" />
+	</div>
+
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+	<div class="parallax" data-parallax="0.4">
+		<img class="parallax" src="http://malformed.ca/wesley.jpg" alt="" />
+	</div>
+
+</section>
+
+<section data-nav="Prereqs" id="prereqs">
+	<h2>Prereqs</h2>
+	<p>jQuery</p>
+</section>
+
+<section data-nav="Compatibility" id="compatibility">
+	<h2>Compatibility</h2>
+	<ul>
+		<li>IE9+</li>
+		<li>Firefox, Webkit, Opera</li>
+		<li>no mobile</li>
+	</ul>
+</section>
+
+<section data-nav="Code" id="code">
+	<h2>Code</h2>
+{% highlight javascript %}
+stickyNav.init({
+	nav: '#sticky'
+	// navItem: 'td',
+	// active: 'selected',
+	// scrollSpeed
+});
+{% endhighlight %}
+</section>
+
+<section data-nav="Options" id="options">
+	<h2>Options</h2>
+	<div class="table-responsive">
+		<table class="table table-bordered table-striped">
+			<thead>
+				<tr>
+					<th style="width: 100px;">Name</th>
+					<th style="width: 50px;">type</th>
+					<th style="width: 50px;">default</th>
+					<th>description</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>nav</td>
+					<td>string</td>
+					<td></td>
+					<td>selector or jQuery object of the nav container <span class="color:red">(required)</span> </td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+
+
+<script>
+	stickyNav.init({
+		nav: '#sticky nav'
+		// navItem: 'td',
+		// active: 'selected',
+		// scrollSpeed
+	});
+</script>
