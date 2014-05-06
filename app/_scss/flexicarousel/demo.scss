@@ -29,9 +29,12 @@ hr { margin: 5em 0; }
 /* -------------------------------------
 		SAMPLE BREAKPOINT
 ------------------------------------- */
-@media(min-width:1000px) {
-	/*.carousel { width:800px; }*/
-	.carousel ul { height:480px; }
+@media (min-width:1200px) {
+	.carousel ul { height:450px; }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+	.carousel ul { height:360px; }
 }
 
 

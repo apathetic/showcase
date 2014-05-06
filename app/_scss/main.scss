@@ -88,14 +88,14 @@ header nav {
 			text-align: center;
 			font-size: 18px;
 		}
-		&.prev {
+		&.next {
 			margin-right: 20px;
 			&:after {
 				content: "\00ab";
 				float:left;
 			}
 		}
-		&.next {
+		&.prev {
 			margin-left: 20px;
 			&:after {
 				content: "\00bb";
