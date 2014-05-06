@@ -56,7 +56,7 @@ tags:
 <section data-nav="General" id="general">
 	<h2>General</h2>
 
-	<div id="circleWithArrow">
+	<div id="circleWithArrow" class="item">
 		<h3>Circle with Arrow</h3>
 		<dl>
 			<dt>Name: </dt>
@@ -86,7 +86,7 @@ tags:
 		</div>
 	</div>
 
-	<div id="cardFlip">
+	<div id="cardFlip" class="item">
 		<h3>Card Flip</h3>
 		<dl>
 			<dt>name</dt>
@@ -131,7 +131,7 @@ tags:
 		 </div>
 	</div>
 
-	<div id="pageCurl">
+	<div id="pageCurl" class="item">
 		<h3>Page Curl</h3>
 		<dl>
 			<dt>name</dt>
@@ -140,10 +140,10 @@ tags:
 
 		<h4>Example</h4>
 
-		<h6>Code:</h6>
+		<h6>Code</h6>
 		{% highlight scss %}@include page-curl{% endhighlight %}
 
-		<h6>Result:</h6>
+		<h6>Result</h6>
 		<div class="well page-curl">
 				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -152,7 +152,7 @@ tags:
 		</div>
 	</div>
 
-	<div id="arrow">
+	<div id="arrow" class="item">
 		<h3>CSS arrow</h3>
 		<dl>
 			<dt>Name: </dt>
@@ -179,7 +179,7 @@ tags:
 
 		<h4>Example</h4>
 
-		<h6>Code:</h6>
+		<h6>Code</h6>
 		{% highlight scss %}@include arrow(right, red, 10px);{% endhighlight %}
 
 		<h6>Result:</h6>
@@ -187,13 +187,74 @@ tags:
 			<div class="example"></div>
 		</div>
 	</div>
+
+	<div id="button-arrow" class="item">
+
+		<h3>Arrow Button</h3>
+
+		<dl>
+			<dt>Name: </dt>
+			<dd>button-arrow</dd>
+		</dl>
+		<!--
+		<dl>
+			<lh>Arguments</lh>
+			<dl>
+				<dt>Direction: </dt>
+				<dd>Direction for the arrow to point</dd>
+			</dl>
+		</dl>
+		-->
+
+		<h4>Example</h4>
+
+		<h6>Code:</h6>
+		{% highlight scss %}@include button-arrow{% endhighlight %}
+
+		<h6>Result:</h6>
+		<div class="well">
+			<button class="button-example">Sample Button</button>
+		</div>
+	</div>
+
+	<div id="hugeBullets" class="item">
+		<h3>Huge Navigation Bullets</h2>
+		<dl>
+			<dt>name</dt>
+			<dd>huge-bullets</dd>
+		</dl>
+
+		<h6>Code</h6>
+		{% highlight scss %}@include huge-bullets{% endhighlight %}
+
+		<h6>Result</h6>
+
+		<div class="well">
+			<nav>
+				<span class=""></span>
+				<span class=""></span>
+				<span class=""></span>
+				<span class=""></span>
+				<span class="active"></span>
+			</nav>
+			<script>
+				$(function(){
+					var bullets = $('#hugeBullets nav span');
+					bullets.click(function(){
+						bullets.removeClass();
+						$(this).addClass('active');
+					});
+				});
+			</script>
+	   	</div>
+
 </section>
 
 <section data-nav="Functions" id="functions">
 
 	<h2>Functions</h2>
 
-	<div id="pixelsToEms">
+	<div id="pixelsToEms" class="item">
 		<h3>Pixel To Ems</h6>
 		<dl>
 			<dt>Name: </dt>
@@ -255,7 +316,7 @@ div#example {
 
 	<h2>Format</h2>
 
-	<div id="unstyledList">
+	<div id="unstyledList" class="item">
 		<h3>Unstyled List</h3>
 		<dl>
 			<dt>Name: </dt>

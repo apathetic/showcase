@@ -1,9 +1,11 @@
 @import "../huge_bower_components/huge.sass/functions/_strip-unit";
 @import "../huge_bower_components/huge.sass/functions/_pixels-to-ems";
 @import "../huge_bower_components/huge.sass/general/_circle_with_arrow";
+@import "../huge_bower_components/huge.sass/general/_button_arrow";
 @import "../huge_bower_components/huge.sass/general/_card_flip";
 @import "../huge_bower_components/huge.sass/general/_css_arrow";
 @import "../huge_bower_components/huge.sass/general/_page_curl";
+@import "../huge_bower_components/huge.sass/general/_huge_bullets";
 @import "../huge_bower_components/huge.sass/layout/_list_unstyled";
 
 @import "compass/css3";
@@ -26,6 +28,10 @@ $magenta: #ec008c;
     margin: 1em .5em;
     padding: 1em .5em;
     background-color: #B3B3B3;
+}
+
+.item {
+	margin-bottom: 6em;
 }
 
 dl {
@@ -67,6 +73,24 @@ div#circleWithArrow {
         @include circle-with-arrow(50px, $magenta, black);
     }
 }
+
+
+div#button-arrow {
+	.button-example {
+		// display: block;
+		// margin-top: 30px;
+
+		font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-size: 20px;
+		padding: 20px 40px;
+		color: #ffffff;
+		background-color: #16a085;
+
+		@include button-arrow;
+
+	}
+}
+
 
 div#pixelsToEms {
     .example {
@@ -125,6 +149,15 @@ div#pageCurl {
 	.page-curl {
 		// options forthcoming...
 		@include page-curl;
+	}
+}
+
+div#hugeBullets {
+	nav {
+		// options forthcoming...
+		span {
+			@include huge-bullets;
+		}
 	}
 }
 
