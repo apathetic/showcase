@@ -9,10 +9,11 @@ body {
     margin: 0;
 }
 
-.site, .container {
+.site, /*  section :not(header) */ .container {
     height: 100%;
     margin: 0;
     width: auto;
+    padding:0;
 }
 
 // body > h1 {
