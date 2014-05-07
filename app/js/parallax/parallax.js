@@ -43,7 +43,7 @@ var parallax = (function($, window, undefined ) {
 			position2 = pos(0, range, scroll, 170);									// 0 -> range, starting at offset
 
 
-			console.log("pos1: %s | pos2: %s", position1, position2);
+			// console.log("pos1: %s | pos2: %s", position1, position2);
 			var position = position1;
 
 
@@ -66,12 +66,18 @@ var parallax = (function($, window, undefined ) {
   }
 
 
+/*
+	parallax.each(function() {
+		this.parallax-speed = $(this).data('parallax-speed');	// store on HTMLElement
+	});
+
+ */
 
 
 
 	return {
 		init: function(opts) {
-			parallax = opts.el || $('.parallax');
+			parallax = $(opts.el) || $('.parallax');
 			// kick off
 			window.addEventListener('scroll', onScroll, false);
 			window.addEventListener('resize', onResize, false);

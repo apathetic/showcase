@@ -12,7 +12,10 @@ tags:
 <script src="/js/flexicarousel/jquery-1.11.0.min.js"></script>
 <script src="/js/stickynav/stickynav.js"></script>
 <script src="/js/parallax/parallax.js"></script>
-
+<style>
+	.parallax-wrap { overflow:hidden; display:inline-block; float:left; padding-right:20px; max-height:250px; }
+	p { clear:both; }
+</style>
 
 <div id="sticky">
 	<nav>
@@ -38,7 +41,7 @@ tags:
 		own render layer to the GPU for X- or Y-transforms. <i>Almost</i> the most efficient (see
 		below), but still very flexible and easy to implement. Browsers need to support transforms.</li>
 		<li><strong>canvas</strong>: one fixed element background (a canvas), that animates on scroll.
-		Elements are placed into the canvas moved about on scroll -- this is the most efficient, but
+		Elements are placed into the canvas and moved about on scroll -- this is the most efficient, but
 		difficult to implement (or impossible if you wish to use existing DOM elements).</li>
 	</ul>
 </section>
@@ -51,29 +54,32 @@ tags:
 <section data-nav="Demo" id="demo">
 	<h2>Demo</h2>
 
-	<img class="parallax" src="http://malformed.ca/wesley.jpg" alt="" />
+	<p>
+		<span class="parallax-wrap">
+			<img class="parallax" data-parallax-speed="0.4" src="http://malformed.ca/wesley.jpg" alt="" />
+		</span>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<p>
+		<span class="parallax-wrap">
+			<img class="parallax" data-parallax-speed="-0.8" data-parallax-direction="horizontal" src="http://malformed.ca/wesley.jpg" alt="" />
+		</span>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</p>
 
-	<div class="parallax" data-parallax="0.4">
-		<img class="parallax" src="http://malformed.ca/wesley.jpg" alt="" />
-	</div>
+	<br style="clear:both" />
 
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-	<div class="parallax" data-parallax="0.4">
-		<img class="parallax" src="http://malformed.ca/wesley.jpg" alt="" />
-	</div>
 </section>
 
 <section data-nav="Prereqs" id="prereqs">
