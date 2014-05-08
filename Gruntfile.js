@@ -120,7 +120,8 @@ module.exports = function (grunt) {
       },
       dist: {
         options: {
-          generatedImagesDir: '<%= yeoman.dist %>/img/generated'
+          generatedImagesDir: '<%= yeoman.dist %>/img/generated',
+          cssDir: '<%= yeoman.dist %>/css',
         }
       },
       server: {
@@ -174,6 +175,7 @@ module.exports = function (grunt) {
         }
       }
     },
+    /*
     useminPrepare: {
       options: {
         dest: '<%= yeoman.dist %>'
@@ -184,8 +186,8 @@ module.exports = function (grunt) {
       options: {
         assetsDirs: '<%= yeoman.dist %>',
       },
-      html: ['<%= yeoman.dist %>/**/*.html'],
-      css: ['<%= yeoman.dist %>/css/**/*.css']
+      html: ['<%= yeoman.dist %>/** /*.html'],
+      css: ['<%= yeoman.dist %>/css/** /*.css']
     },
     htmlmin: {
       dist: {
@@ -198,23 +200,18 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.html',
+          src: '** /*.html',
           dest: '<%= yeoman.dist %>'
         }]
       }
     },
+	*/
     // Usemin adds files to concat
     concat: {},
     // Usemin adds files to uglify
     uglify: {},
     // Usemin adds files to cssmin
-    cssmin: {
-      dist: {
-        options: {
-          check: 'gzip'
-        }
-      }
-    },
+    cssmin: {},
     imagemin: {
       dist: {
         options: {
@@ -228,16 +225,18 @@ module.exports = function (grunt) {
         }]
       }
     },
+    /*
     svgmin: {
       dist: {
         files: [{
           expand: true,
           cwd: '<%= yeoman.dist %>',
-          src: '**/*.svg',
+          src: '** /*.svg',
           dest: '<%= yeoman.dist %>'
         }]
       }
     },
+    */
     copy: {
       dist: {
         files: [{
@@ -249,6 +248,7 @@ module.exports = function (grunt) {
             // Usemin moves CSS and javascript inside of Usemin blocks.
             // Copy moves asset files and directories.
             'img/**/*',
+            'js/**/*',		// leave js alone and copy over directly
             'fonts/**/*',
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}'
@@ -271,6 +271,7 @@ module.exports = function (grunt) {
         }]
       }
     },
+    /*
     filerev: {
       options: {
         length: 4
@@ -278,14 +279,15 @@ module.exports = function (grunt) {
       dist: {
         files: [{
           src: [
-            '<%= yeoman.dist %>/js/**/*.js',
-            '<%= yeoman.dist %>/css/**/*.css',
-            '<%= yeoman.dist %>/img/**/*.{gif,jpg,jpeg,png,svg,webp}',
-            '<%= yeoman.dist %>/fonts/**/*.{eot*,otf,svg,ttf,woff}'
+            '<%= yeoman.dist %>/js/** /*.js',
+            '<%= yeoman.dist %>/css/** /*.css',
+            '<%= yeoman.dist %>/img/** /*.{gif,jpg,jpeg,png,svg,webp}',
+            '<%= yeoman.dist %>/fonts/** /*.{eot*,otf,svg,ttf,woff}'
           ]
         }]
       }
     },
+	*/
     buildcontrol: {
       dist: {
         options: {
@@ -371,16 +373,16 @@ module.exports = function (grunt) {
     // Jekyll cleans files from the target directory, so must run first
     'jekyll:dist',
     'concurrent:dist',
-    'useminPrepare',
-    'concat',
+    // 'useminPrepare',
+    // 'concat',
     'autoprefixer:dist',
-    'cssmin',
-    'uglify',
+    // 'cssmin',
+    // 'uglify',
     'imagemin',
-    'svgmin',
-    'filerev',
-    'usemin',
-    'htmlmin'
+    // 'svgmin',
+    // 'filerev',
+    // 'usemin',
+    // 'htmlmin'
     ]);
 
   grunt.registerTask('deploy', [
