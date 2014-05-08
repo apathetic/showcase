@@ -326,13 +326,13 @@ container2.querySelector('.next').addEventListener('click', function(e){
 					<td>beforeSlide</td>
 					<td>function</td>
 					<td>undefined</td>
-					<td>A function to execute before sliding.</td>
+					<td>A function to execute before sliding. It is passed <code>to</code> and <code>from</code> indices.</td>
 				</tr>
 				<tr>
 					<td>afterSlide</td>
 					<td>function</td>
 					<td>undefined</td>
-					<td>A function to execute after sliding.</td>
+					<td>A function to execute after sliding. It is passed the new <code>current</code> index.</td>
 				</tr>
 				<tr>
 					<td>noTouch</td>
@@ -349,20 +349,19 @@ container2.querySelector('.next').addEventListener('click', function(e){
 	<h3>Methods</h3>
 
 	<h5>Next Slide</h5>
-	{% highlight javascript %}
-	carousel.next()
-	{% endhighlight %}
+	{% highlight javascript %}carousel.next(){% endhighlight %}
 
 	<h5>Previous Slide</h5>
-	{% highlight javascript %}
-	carousel.prev()
-	{% endhighlight %}
+	{% highlight javascript %}carousel.prev(){% endhighlight %}
 
 	<h5>Go To Slide</h5>
-	{% highlight javascript %}
-	carousel.to(i)
-	{% endhighlight %}
+	{% highlight javascript %}carousel.to(i){% endhighlight %}
 
+	<h5>Go To Slide</h5>
+	{% highlight javascript %}carousel.destroy(){% endhighlight %}
+
+
+	<!--
 	<h3>Events</h3>
 
 	<div class="table-responsive">
@@ -385,6 +384,8 @@ container2.querySelector('.next').addEventListener('click', function(e){
 			</tbody>
 		</table>
 	</div>
+	-->
+
 </section>
 
 

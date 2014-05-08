@@ -13,8 +13,14 @@ tags:
 <script src="/js/stickynav/stickynav.js"></script>
 <script src="/js/parallax/parallax.js"></script>
 <style>
-	.parallax-wrap { overflow:hidden; display:inline-block; float:left; padding-right:20px; max-height:250px; }
 	p { clear:both; }
+	.parallax-wrap { overflow:hidden; display:inline-block; float:left; padding-right:20px; max-height:250px; }
+	.item { position:absolute; z-index:-1; opacity:0.5 }
+	.item:nth-child(1) { top:25%; left:78%}
+	.item:nth-child(2) { top:35%; left:38%}
+	.item:nth-child(3) { top:65%; left:88%}
+	.item:nth-child(4) { top:95%; left:58%}
+	.item:nth-child(5) { top:125%; left:18%}
 </style>
 
 <div id="sticky">
@@ -23,6 +29,13 @@ tags:
 	</nav>
 </div>
 
+<div>
+	<div class="parallax item" data-parallax-speed="0.3"><img src="/img/parallax/sonic.gif" style="width:150px" alt="" /></div>
+	<div class="parallax item" data-parallax-speed="0.7"><img src="/img/parallax/megaman.gif" style="width:120px" alt="" /></div>
+	<div class="parallax item" data-parallax-speed="1.4"><img src="/img/parallax/link.gif" alt="" /></div>
+	<div class="parallax item" data-parallax-speed="0.4"><img src="/img/parallax/megaman.gif" style="width:160px" alt="" /></div>
+	<div class="parallax item" data-parallax-speed="2.4"><img src="/img/parallax/sonic.gif" style="width:150px" alt="" /></div>
+</div>
 
 <section data-nav="About" id="about">
 	<h2>About</h2>
