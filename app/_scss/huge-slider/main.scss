@@ -1,13 +1,15 @@
 $magenta: #ec008c;
 
-@import "../../bower_components/bootstrap-sass/lib/bootstrap";
+// @import "../../bower_components/bootstrap-sass/lib/bootstrap";
 
-body {
+/*
+	body {
     background: #fafafa;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #333;
     margin: 0;
 }
+*/
 
 .site, section {
     height: 100%;
@@ -16,14 +18,6 @@ body {
     padding:0;
 }
 
-// body > h1 {
-//     position: fixed;
-//     top: 20%;
-//     width: 100%;
-//     text-align: center;
-//     z-index: 20;
-//     display: block;
-// }
 
 #three > div {
     text-align: left;
@@ -32,6 +26,9 @@ body {
 section {
     position: relative;
     text-align: center;
+
+    padding-top: 100px; // to account for fixed nav
+
     // > h3 {
     //     position: absolute;
     //     top: 80%;
@@ -62,20 +59,20 @@ section {
 }
 
 #one {
-    background-color: $magenta;
+    background-color: #fff;
 }
 
 #two {
     top: 100%;
-    background-color: #66FFA3;
+    background-color: #eee;
 }
 
 #three {
     top: 200%;
-    background-color: #008DEB;
+    background-color: #ddd;
 }
 
 #four {
     top: 300%;
-    background-color: #EB5E00;
+    background-color: #ccc;
 }
