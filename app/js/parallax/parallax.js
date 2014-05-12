@@ -1,6 +1,6 @@
 /*
  * parallax
- * https://github.com/....
+ * https://github.com/apathetic/parallax
  *
  * Copyright (c) 2013 Wes Hatch
  * Licensed under the MIT license.
@@ -8,15 +8,35 @@
  */
 
 
-var parallax = (function($, window, undefined ) {
+var parallax = (function(window, undefined ) {
+
+	'use strict';
 
 	var parallax,
-		ticking = false;
-		scroll = 0;
-		height = window.innerHeight;
+		ticking = false,
+		scroll = window.scrollY,	// 0
+		height = window.innerHeight,
 		transform = 'webkitTransform';		// [TODO]
 
-	function onScroll(e) {
+		/*
+		var transform = (function() {
+			return 'webkitTransform';
+			var p,
+				el = document.createElement('fake'),
+				prefixes = ['webkit', 'Moz', 'o', 'ms'];
+
+			for (p in prefixes) {
+				if (typeof el.style[prefixes[i] + propertie] !== 'undefined') {
+					cssPrefixString[propertie] = prefixes[i];
+					return prefixes[i] + propertie;
+				}
+			}
+			return false;
+		}());
+		*/
+
+
+	function onScroll() {
 		if (!ticking) {
 			ticking = true;
 			window.requestAnimationFrame(updateParallax);
@@ -24,7 +44,7 @@ var parallax = (function($, window, undefined ) {
 		}
 	}
 
-	function onResize () {
+	function onResize() {
 		scroll = window.scrollY;
 		height = window.innerHeight;
 		updateParallax();
@@ -33,54 +53,72 @@ var parallax = (function($, window, undefined ) {
 	function updateParallax() {
 
 		var position;
-		parallax.each(function() {
-			var range = 500;
+		// var offset = 444;	//
 
-			// option 1: works for anything in the initial viewport / window height only
-			var position1 = Math.min(1, scroll / window.innerHeight) * range;		// 0 -> range
+		Array.prototype.forEach.call(parallax, function(p, i){
 
-			// option 2: more computationalish, but will consider element's position on the page
-			position2 = pos(0, range, scroll, 170);									// 0 -> range, starting at offset
+			var speed = p.parallaxSpeed;
+			var top = p.getBoundingClientRect().top;
+			var offset = 0;	// p.parallaxOffset;
 
+			position = (speed * scroll) + offset;
 
-			// console.log("pos1: %s | pos2: %s", position1, position2);
-			var position = position1;
-
-
-
-			this.style[transform] = 'translate3d(0, '+ position +'px , 0)';
+			p.style[transform] = 'translate3d(0, '+ position +'px , 0)';
 		});
 
 		ticking = false;
 	}
 
 
-
-
-  function pos(base, range, dY, offset) {
-    return base + limit(0, 1, (dY - offset)/dY ) * range;
-  }
-
-  function limit(min, max, value) {
-    return Math.max(min, Math.min(max, value));
-  }
-
-
-/*
-	parallax.each(function() {
-		this.parallax-speed = $(this).data('parallax-speed');	// store on HTMLElement
-	});
-
- */
-
-
-
 	return {
 		init: function(opts) {
-			parallax = $(opts.el) || $('.parallax');
-			// kick off
-			window.addEventListener('scroll', onScroll, false);
-			window.addEventListener('resize', onResize, false);
+			// if(!core.Utils.isTouchDevice && sections.length > 0) {
+				if (!transform) { return false; } // progressive enhancement for newer browers only.
+
+				// [TODO] add some checks or sumthing
+				parallax = document.querySelectorAll(opts.el || '.parallax');
+				/*
+				parallax = $(opts.el) || $('.parallax');
+				parallax.each(function() {
+					this.parallaxSpeed = $(this).data('parallax-speed') || 1;	// store on HTMLElement
+				});
+				*/
+
+				if ( !parallax ) { return false; }
+
+
+				Array.prototype.forEach.call(parallax, function(p, i){
+
+					// speed:
+					// -1: translate up as fast as you scroll up ie. moving up 2x
+					//  0: normal ie. no translation
+					//  1: translate down as fast as you scroll up ie. "fixed" position
+					p.parallaxSpeed = +(p.getAttribute('data-parallax-speed') || 0);			// + is poor man's parseInt
+					// p.parallaxOffset = Math.max(0, p.getBoundingClientRect().top - height);		// how far below the bottom of the page
+
+					// no can do, as images load slowly, affecting the layout of the page:
+					setTimeout(function(){
+					p.parallaxOffset = Math.max(0, p.getBoundingClientRect().top - window.scrollY);		// how far below the bottom of the page
+					}, 1000);
+					// this.parallaxDirection = this.getAttribute('data-parallax-direction');
+
+
+
+
+
+
+
+
+
+				});
+
+
+				updateParallax();
+
+				// kick off
+				window.addEventListener('scroll', onScroll, false);
+				window.addEventListener('resize', onResize, false);
+			// }
 		},
 		destroy: function() {
 			window.removeEventListenter('scroll');
@@ -90,5 +128,5 @@ var parallax = (function($, window, undefined ) {
 	};
 
 
-}( jQuery, window ));
+}( window ));
 
