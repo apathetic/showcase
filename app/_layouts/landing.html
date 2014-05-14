@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="/css/main.css">
+	<link rel="stylesheet" href="/css/flexicarousel/flexicarousel.css">
+
+</head>
+
+<body class="home page">
+
+	<!-- {% include _header.html %} -->
+	<header class="">
+
+		<div class="slide carousel" id="featured">
+			<ul class="wrap">
+				<li class="active">
+					<div class="v-center"><div>
+								<span class="eyebrow">Perspective from Derek Fridman</span>
+								<h1><a href="/ideas/perspective/designing-for-the-unbuilt">Designing for the Unbuilt.</a></h1>
+								<p>Using Oculus Rift for Rapid Prototyping.</p>
+					</div></div>
+				</li>
+				<li class="">
+						<div class="v-center"><div>
+							<span class="eyebrow">Report by Tom O'Reilly</span>
+							<h1><a href="/ideas/report/sxsw-report">SXSW 2014 Report.</a></h1>
+							<p>The trends that mattered this year and what they mean. </p>
+						</div></div>
+				</li>
+				<li class="">
+						<div class="v-center"><div>
+							<span class="eyebrow">Perspective from Francesco Bertelli</span>
+							<h1><a href="/ideas/perspective/micro-ux">Micro UX.</a></h1>
+							<p>How bottom-up product design liberates designers and delights users. </p>
+						</div></div>
+				</li>
+			</ul>
+
+			<nav>
+				<div class="prev"><span class="arrow button">←</span></div>
+				<ul>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="next"><span class="arrow button">→</span></div>
+			</nav>
+		</div>
+
+	</header>
+
+
+
+	<main class="site">
+		<div id="tabs" class="">
+			<ul>
+				<li data-tab="all"    class="active">all.<span></span></li>
+				<li data-tab="report" class="">css<span></span></li>
+				<li data-tab="pers"   class="">js<span></span></li>
+				<li data-tab="book"   class="">carousel<span></span></li>
+				<li data-tab="video"  class="">sass<span></span></li>
+				<li data-tab="video"  class="">slider<span></span></li>
+			</ul>
+		</div>
+
+		{{ content }}
+
+	</main>
+
+	{% include _footer.html %}
+
+	<script src="/js/flexicarousel/jquery.flexicarousel.min.js"></script>
+	<script type="">
+
+		var featured = document.querySelector('#featured');
+		var carousel = new Carousel(featured);
+
+		featured.querySelector('.prev').addEventListener('click', function(e){
+			e.preventDefault();
+			carousel.prev();
+		});
+
+		featured.querySelector('.next').addEventListener('click', function(e){
+			e.preventDefault();
+			carousel.next();
+		});
+
+	</script>
+
+
+</body>
+
+</html>
