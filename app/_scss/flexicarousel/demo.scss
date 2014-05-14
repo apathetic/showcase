@@ -19,7 +19,13 @@ hr { margin: 5em 0; }
 .carousel nav span { display:inline-block; width:10px; height:10px; margin:7px; border-radius:5px; background:#999; cursor:pointer }
 .carousel nav span:hover { background:#ccc; }
 .carousel nav span.active { background:purple; }
-.carousel nav div { display: inline-block; cursor: pointer; padding:5px; }
+.carousel nav div {
+	display: inline-block;
+	cursor: pointer;
+	padding: 5px;
+	position: relative;
+	height: auto;
+ }
 .carousel nav div.active { color:#fff; background: purple }
 .carousel .next,
 .carousel .prev { position:absolute; top:40%; height:24px; width:48px; font-size:18px; z-index:10; }

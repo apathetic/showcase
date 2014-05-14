@@ -38,13 +38,12 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     font-family: "HUGEAvantGardeBold", sans-serif;
     letter-spacing: -0.06em;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+    margin: 0.8em 0;
 }
 
 h1 {
 	color: #fff;
-    font-size: 3.6em;
+    // font-size: 3.6em;
     font-size: 4em;
 }
 
@@ -75,38 +74,38 @@ a {
 
 
 // ------------------------- Navigation ------------------------
-.post {
-	header nav {
-		float:right;
-		margin-top: 3em; 		// same as h1
+header > nav {
+	// float:right;
+	// margin-top: 3em; 		// same as h1
+	position:absolute; top:0; left:0; width:100%; height:0;
 
-		a {
-			line-height: 40px;
+	a {
+		display: block;
+		line-height: 40px;
+		top: 60px;
+		&:after {
+			display: inline-block;
+			width: 40px;
+			height: 40px;
+			border-radius: 20px;
+			background: #fff;
+			margin:0 12px;
+			text-align: center;
+			font: 24px / 40px Heiti, 'Lucida Grande';
+			color: #000;
+		}
+		&.next {
+			margin-right: 20px;
 			&:after {
-				display: inline-block;
-				width: 40px;
-				height: 40px;
-				border-radius: 20px;
-				background: #aaa;
-				margin:0 5px;
-				color: #fff;
-				line-height: 38px;
-				text-align: center;
-				font-size: 18px;
+				content: "←";
+				float:left;
 			}
-			&.next {
-				margin-right: 20px;
-				&:after {
-					content: "\00ab";
-					float:left;
-				}
-			}
-			&.prev {
-				margin-left: 20px;
-				&:after {
-					content: "\00bb";
-					float:right;
-				}
+		}
+		&.prev {
+			margin-left: 20px;
+			&:after {
+				content: "→";
+				float:right;
 			}
 		}
 	}
@@ -158,20 +157,18 @@ a {
 
 		li {
 
-			// display:inline-block; width:10px; height:10px; margin:7px; border-radius:5px; background:#999; cursor:pointer
-cursor: pointer;
-display: inline-block;
-background-color: #bbb;
-// border-color: #bbb;
-border: 2px solid transparent;
-height: 12px;
-width: 12px;
-border-radius: 50%;
-margin: 0 3px;
--moz-background-clip: content;
--webkit-background-clip: content;
-background-clip: content-box;
-@include transition(all 0.5s);
+			cursor: pointer;
+			display: inline-block;
+			background-color: #bbb;
+			border: 2px solid transparent;
+			height: 12px;
+			width: 12px;
+			border-radius: 50%;
+			margin: 0 3px;
+			-moz-background-clip: content;
+			-webkit-background-clip: content;
+			background-clip: content-box;
+			@include transition(all 0.5s);
 
 
 		}
