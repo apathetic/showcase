@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
 	color: #fff;
     font-size: 3.6em;
-    // border-bottom: $magenta 2px solid;
+    font-size: 4em;
 }
 
 h2 {
@@ -75,37 +75,38 @@ a {
 
 
 // ------------------------- Navigation ------------------------
+.post {
+	header nav {
+		float:right;
+		margin-top: 3em; 		// same as h1
 
-header nav {
-	float:right;
-	margin-top: 3em; 		// same as h1
-
-	a {
-		line-height: 40px;
-		&:after {
-			display: inline-block;
-			width: 40px;
-			height: 40px;
-			border-radius: 20px;
-			background: #aaa;
-			margin:0 5px;
-			color: #fff;
-			line-height: 38px;
-			text-align: center;
-			font-size: 18px;
-		}
-		&.next {
-			margin-right: 20px;
+		a {
+			line-height: 40px;
 			&:after {
-				content: "\00ab";
-				float:left;
+				display: inline-block;
+				width: 40px;
+				height: 40px;
+				border-radius: 20px;
+				background: #aaa;
+				margin:0 5px;
+				color: #fff;
+				line-height: 38px;
+				text-align: center;
+				font-size: 18px;
 			}
-		}
-		&.prev {
-			margin-left: 20px;
-			&:after {
-				content: "\00bb";
-				float:right;
+			&.next {
+				margin-right: 20px;
+				&:after {
+					content: "\00ab";
+					float:left;
+				}
+			}
+			&.prev {
+				margin-left: 20px;
+				&:after {
+					content: "\00bb";
+					float:right;
+				}
 			}
 		}
 	}
@@ -150,20 +151,61 @@ header nav {
 
 // -------------------------- Carousel -------------------------
 
-.carousel nav { text-align:center; position:absolute; bottom:-24px; left:0; height:24px; margin:0; padding:0; width:100%; text-align:center; z-index:10; }
-.carousel nav span { display:inline-block; width:10px; height:10px; margin:7px; border-radius:5px; background:#999; cursor:pointer }
-.carousel nav span:hover { background:#ccc; }
-.carousel nav span.active { background:purple; }
-.carousel nav div { display: inline-block; cursor: pointer; padding:5px; }
-.carousel nav div.active { color:#fff; background: purple }
-.carousel .next,
-.carousel .prev { position:absolute; top:40%; height:24px; width:48px; font-size:18px; z-index:10; }
-.carousel .prev { left:-54px; }
-.carousel .next { right:-54px; }
+.carousel {
+	.wrap { margin:0 }
+	nav {
+		position:static; height:48px; width:100%; text-align:center; z-index:10;
+
+		li {
+
+			// display:inline-block; width:10px; height:10px; margin:7px; border-radius:5px; background:#999; cursor:pointer
+cursor: pointer;
+display: inline-block;
+background-color: #bbb;
+// border-color: #bbb;
+border: 2px solid transparent;
+height: 12px;
+width: 12px;
+border-radius: 50%;
+margin: 0 3px;
+-moz-background-clip: content;
+-webkit-background-clip: content;
+background-clip: content-box;
+@include transition(all 0.5s);
 
 
+		}
+		li.active { border-color: #fff; background-color:transparent; }
+		div { position:absolute; cursor:pointer; top: 0; width: 20%; height: 100%; z-index: 100; }
+		div:hover span { opacity: 0.75; }
+		div span {
+			position: absolute;
+			top: 50%;
+			width: 80px	;
+			height: 80px;
+			margin-top: -40px;
+			font: 24px / 80px Heiti, 'Lucida Grande';
+			vertical-align: middle;
+			display: inline-block;
+			background: #393C3C;
+			color: #000;
+			opacity: 0;
+	 		@include transition(all 0.3s);
+	 	}
+	 }
+	.prev, .prev span { left:0; }
+	.next, .next span { right:0; }
 
+}
 
+/* .v-center {
+	position: absolute;
+	display: block;
+	top: 50%;
+	width:100%;
+	@include transform(translateY(-50%));
+}
+ */
 
 
 /*****************************************************************************/
@@ -174,32 +216,12 @@ header nav {
 
 main {
 	padding: 48px 0 100px;
-	// font-size: 115%;
-	// text-align: justify;
-  // width: 42em;
-  // margin: 3em auto 2em;
-  // line-height: 1.5em;
 }
 
 header {
 	min-height: 150px;
-	border-bottom: 1px solid #666;
-	margin-bottom: 1em;
 	background: $color-grey-dark;
 }
-
-.footer {
-	// text-align: center;
-	// height:200px;
-	// font-size: 80%;
-	// color: #666;
-	// border-top: 4px solid #eee;
-	// margin-top: 4em;
-	// overflow: hidden;
-	// background: $color-magenta;
-	// color: #fff;
-}
-
 
 /* ripped from HUGEINC */
 footer {
@@ -331,8 +353,17 @@ footer {
 
 .home {
 	header {
-		.carousel {
+		text-align: center;
+		color: #999;
+		h1 a {
+			color: #fff;
+			text-decoration: none;
+		}
+		ul.wrap {
 			min-height: 500px;
+			li {
+				padding-top: 160px;
+			}
 		}
 	}
 	main {

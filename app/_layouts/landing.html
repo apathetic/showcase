@@ -15,57 +15,76 @@
 <body class="home page">
 
 	<!-- {% include _header.html %} -->
+
+	<!-- TODO TODO TODO: remove from the layout and integrate into the index file -->
 	<header class="">
 
 		<div class="slide carousel" id="featured">
 			<ul class="wrap">
 				<li class="active">
-					<div class="v-center"><div>
-								<span class="eyebrow">Perspective from Derek Fridman</span>
-								<h1><a href="/ideas/perspective/designing-for-the-unbuilt">Designing for the Unbuilt.</a></h1>
-								<p>Using Oculus Rift for Rapid Prototyping.</p>
-					</div></div>
+					<div class="v-center">
+								<span class="eyebrow">Module by Wes Hatch</span>
+								<h1><a href="#">Flexicarousel.</a></h1>
+								<p>A carousel that'll dynamically adapt its width: it will grow or shrink alongside a site that’s resizing via css media queries. Uses CSS3 transforms for its transitions.</p>
+					</div>
 				</li>
 				<li class="">
-						<div class="v-center"><div>
-							<span class="eyebrow">Report by Tom O'Reilly</span>
-							<h1><a href="/ideas/report/sxsw-report">SXSW 2014 Report.</a></h1>
-							<p>The trends that mattered this year and what they mean. </p>
-						</div></div>
+						<div class="v-center">
+							<span class="eyebrow">Module by Miranda Li</span>
+							<h1><a href="#">Autocompleter.</a></h1>
+							<p>A lightweight standalone module used for filtering data or autocompletion of user-input</p>
+						</div>
 				</li>
 				<li class="">
-						<div class="v-center"><div>
-							<span class="eyebrow">Perspective from Francesco Bertelli</span>
-							<h1><a href="/ideas/perspective/micro-ux">Micro UX.</a></h1>
-							<p>How bottom-up product design liberates designers and delights users. </p>
-						</div></div>
+						<div class="v-center">
+							<span class="eyebrow">Module by Jason Divock</span>
+							<h1><a href="#">Huge Slider.</a></h1>
+							<p>An annoying scroll-jacking slider</p>
+						</div>
+				</li>
+				<li class="">
+						<div class="v-center">
+							<span class="eyebrow">Module by Wes Hatch</span>
+							<h1><a href="#">Parallax.</a></h1>
+							<p>An elegant and efficient parallax base</p>
+						</div>
+				</li>
+				<li class="">
+						<div class="v-center">
+							<span class="eyebrow">SASS Framework by Chosun Snyder &amp; Miranda Li</span>
+							<h1><a href="#">Chusy.</a></h1>
+							<p>A responsive SASS framework for quick prototyping and generating multi-breakpoint liquid grids.</p>
+						</div>
 				</li>
 			</ul>
 
 			<nav>
-				<div class="prev"><span class="arrow button">←</span></div>
+				<div class="prev"><span>←</span></div>
 				<ul>
 					<li class="active"></li>
 					<li></li>
 					<li></li>
+					<li></li>
+					<li></li>
 				</ul>
-				<div class="next"><span class="arrow button">→</span></div>
+				<div class="next"><span>→</span></div>
 			</nav>
 		</div>
 
 	</header>
+	<!-- =========================================================================== -->
 
 
 
 	<main class="site">
 		<div id="tabs" class="">
 			<ul>
-				<li data-tab="all"    class="active">all.<span></span></li>
-				<li data-tab="report" class="">css<span></span></li>
-				<li data-tab="pers"   class="">js<span></span></li>
-				<li data-tab="book"   class="">carousel<span></span></li>
-				<li data-tab="video"  class="">sass<span></span></li>
-				<li data-tab="video"  class="">slider<span></span></li>
+				<li data-tab="all"      class="active">all.<span></span></li>
+				<li data-tab="css"      class="">css<span></span></li>
+				<li data-tab="js"       class="">js<span></span></li>
+				<li data-tab="carousel" class="">carousel<span></span></li>
+				<li data-tab="sass"     class="">sass<span></span></li>
+				<li data-tab="slider"   class="">slider<span></span></li>
 			</ul>
 		</div>
 
@@ -76,20 +95,35 @@
 	{% include _footer.html %}
 
 	<script src="/js/flexicarousel/jquery.flexicarousel.min.js"></script>
-	<script type="">
+	<script>
 
+		// ---- carousel ---- //
 		var featured = document.querySelector('#featured');
 		var carousel = new Carousel(featured);
-
 		featured.querySelector('.prev').addEventListener('click', function(e){
 			e.preventDefault();
 			carousel.prev();
 		});
-
 		featured.querySelector('.next').addEventListener('click', function(e){
 			e.preventDefault();
 			carousel.next();
 		});
+
+
+		// ---- filters ---- //
+		var tabs = document.querySelectorAll('#tabs li');
+		for (var i = tabs.length; i--;) {
+			var tab = tabs[i];
+			console.log(typeof tabs);
+			tab.addEventListener('click', function(e){
+				e.preventDefault();
+				for (var j = tabs.length; j--;) {
+					tabs[j].classList.remove('active');
+				}
+				this.classList.add('active');
+			});
+		}
+
 
 	</script>
 
