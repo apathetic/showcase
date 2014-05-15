@@ -3,6 +3,7 @@ layout: default
 title:  "Parallax"
 date:   2014-05-02 16:48:21
 snippet: "Very simple parallax base"
+bower: "parallax"
 stash_url: https://stash.hugeinc.com/projects/BOWER/repos/parallax/browse
 tags:
 - css
@@ -39,10 +40,11 @@ tags:
 	<a href="http://www.html5rocks.com/en/tutorials/speed/parallax/">a great overview</a> on the
 	popular techiniques and their pros and cons. In brief:</p>
 	<ul>
-		<li><strong>absolute positioning</strong>: this includes positioning elements absolutely
-		as well as positioning a background image attachment. In general, this is the absolute worst
-		way to do parallax from a performance point of view. Everything must be recalculated and re-
-		painted on scroll, so avoid this if possible. The upside: you can support IE8 this way.</li>
+		<li><strong>absolute positioning</strong>: parallax is achieved via positioning elements
+		absolutely (this technique also includes positioning a background image attachment). In general,
+		this is the absolute worst way to do parallax from a performance point of view. Everything must
+		be recalculated and re-painted on scroll, so avoid this if possible. The upside: you can support
+		IE8 this way.</li>
 		<li><strong>3D transforms</strong>: how the code herein operates. We offload elements in their
 		own render layer to the GPU for X- or Y-transforms. <i>Almost</i> the most efficient (see
 		below), but still very flexible and easy to implement. Browsers need to support transforms.</li>
@@ -54,7 +56,11 @@ tags:
 
 <section data-nav="Download" id="download" >
 	<h2>Download</h2>
-	<p><a href="https://stash.hugeinc.com/projects/BOWER/repos/xxxxx/browse">Stash repo</a></p>
+	<h3>Stash</h3>
+	<p><a href="https://stash.hugeinc.com/projects/BOWER/repos/parallax/browse">Get it from the Stash repo</a></p>
+	<h3>Bower</h3>
+	<code>bower install parallax</code>
+
 </section>
 
 <section data-nav="Demo" id="demo">

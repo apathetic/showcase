@@ -11,6 +11,7 @@ $fa-font-path:  "../bower_components/font-awesome/fonts";
 @import "../bower_components/font-awesome/scss/font-awesome";
 @import "../bower_components/bootstrap-sass/lib/bootstrap";
 @import "fonts";
+@import "variables";
 
 
 /* Global Reset */
@@ -24,7 +25,7 @@ html, body { height: 100%; }
 
 body {
     background: #fafafa;
-    font-family: "Galaxie", Georgia, serif;
+    font:16px / 24px "Galaxie", Georgia, serif;
     color: #333;
     margin: 0;
     position: relative;
@@ -36,13 +37,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
     color: #000;
     font-family: "HUGEAvantGardeBold", sans-serif;
-    margin-top: 1em;
-    margin-bottom: 0.5em;
+    letter-spacing: -0.06em;
+    margin: 0.8em 0;
 }
 
 h1 {
-    font-size: 3em;
-    // border-bottom: $magenta 2px solid;
+	color: #fff;
+    // font-size: 3.6em;
+    font-size: 4em;
 }
 
 h2 {
@@ -72,36 +74,37 @@ a {
 
 
 // ------------------------- Navigation ------------------------
-
-header nav {
-	float:right;
-	margin-top: 3em; 		// same as h1
+header > nav {
+	// float:right;
+	// margin-top: 3em; 		// same as h1
+	position:absolute; top:0; left:0; width:100%; height:0;
 
 	a {
+		display: block;
 		line-height: 40px;
+		top: 60px;
 		&:after {
 			display: inline-block;
 			width: 40px;
 			height: 40px;
 			border-radius: 20px;
-			background: #aaa;
-			margin:0 5px;
-			color: #fff;
-			line-height: 38px;
+			background: #fff;
+			margin:0 12px;
 			text-align: center;
-			font-size: 18px;
+			font: 24px / 40px Heiti, 'Lucida Grande';
+			color: #000;
 		}
 		&.next {
 			margin-right: 20px;
 			&:after {
-				content: "\00ab";
+				content: "←";
 				float:left;
 			}
 		}
 		&.prev {
 			margin-left: 20px;
 			&:after {
-				content: "\00bb";
+				content: "→";
 				float:right;
 			}
 		}
@@ -145,6 +148,62 @@ header nav {
 }
 
 
+// -------------------------- Carousel -------------------------
+
+.carousel {
+	.wrap { margin:0 }
+	nav {
+		position:static; height:48px; width:100%; text-align:center; z-index:10;
+
+		li {
+
+			cursor: pointer;
+			display: inline-block;
+			background-color: #bbb;
+			border: 2px solid transparent;
+			height: 12px;
+			width: 12px;
+			border-radius: 50%;
+			margin: 0 3px;
+			-moz-background-clip: content;
+			-webkit-background-clip: content;
+			background-clip: content-box;
+			@include transition(all 0.5s);
+
+
+		}
+		li.active { border-color: #fff; background-color:transparent; }
+		div { position:absolute; cursor:pointer; top: 0; width: 20%; height: 100%; z-index: 100; }
+		div:hover span { opacity: 0.75; }
+		div span {
+			position: absolute;
+			top: 50%;
+			width: 80px	;
+			height: 80px;
+			margin-top: -40px;
+			font: 24px / 80px Heiti, 'Lucida Grande';
+			vertical-align: middle;
+			display: inline-block;
+			background: #393C3C;
+			color: #000;
+			opacity: 0;
+	 		@include transition(all 0.3s);
+	 	}
+	 }
+	.prev, .prev span { left:0; }
+	.next, .next span { right:0; }
+
+}
+
+/* .v-center {
+	position: absolute;
+	display: block;
+	top: 50%;
+	width:100%;
+	@include transform(translateY(-50%));
+}
+ */
+
 
 /*****************************************************************************/
 /*
@@ -152,36 +211,133 @@ header nav {
 /*
 /*****************************************************************************/
 
-.site {
-	font-size: 115%;
-	text-align: justify;
-  // width: 42em;
-  // margin: 3em auto 2em;
-  // line-height: 1.5em;
+main {
+	padding: 48px 0 100px;
 }
 
-.header {
-	border-bottom: 1px solid #666;
-	margin-bottom: 1em;
-	background: #F6F6F6;
+header {
+	min-height: 150px;
+	background: $color-grey-dark;
 }
 
-section {
-	margin-bottom: 6em;
-    li {
-    	margin-left: 2em;
-    }
+/* ripped from HUGEINC */
+footer {
+	background: #000;
+
+	.container {
+		// font-family: $font-hugeAvantGarde;
+		// line-height:1;
+		font-size:11px;
+		padding: 80px 0 40px;
+		text-align: center;
+	}
+
+	#H-logo {
+		display: inline-block;
+		width:46px;
+		height:54px;
+		background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAYAAABBY8kOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF1JREFUeNpi+E8YbABiBgJ4AyFDmBjoBEYtGrVo1KJRizABCxFqRIDYgQg1eAEjqMCjh49GLRq1aIRbdBSIawioaQFia0pLhjdAfIAINaOl96hFoxaNWjRYLQIIMABdEogcjpWdDQAAAABJRU5ErkJggg==') 50% 50% no-repeat;
+
+		&:hover{
+			background-color: $color-magenta;
+		}
+	}
+
+	p {
+		// letter-spacing: -0.06em;
+		// font-size:1.4em;
+		font: 15px "HUGEAvantGardeBold", sans-serif;
+		color: #999;
+		margin-top: 16px;
+	}
+
+	sup {
+		font-size: 0.5em;
+		vertical-align: super;
+	}
+
+	#meta {
+		margin-top: 60px;
+		border-top: 1px solid #333;
+		padding-top:36px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size:11px;
+		height:64px;
+
+		span {
+			float:left;
+			color: $color-font-light;
+		}
+		a {
+			float:right;
+			color: $color-font-light;
+			text-align:right;
+			margin-left: 40px;
+
+			@include transition(all 0.2s ease);
+
+			&:hover {
+				color:#fff;
+				opacity:1 !important;
+			}
+
+			.social {
+				display:none;
+				background-color:transparent;
+				width:64px;
+				height:64px;
+				margin:0;
+				top:-24px;
+				// opacity:0.7;
+			}
+
+		}
+
+	}
+
+	/*
+	@include at-breakpoint($mobile-screen) {
+		.container {
+			font-size:12px;
+			padding:50px 40px 30px;
+		}
+		#meta {
+			padding:60px 0;
+			font-size:17px;
+			a { display:none; }
+			a.swap {
+				display:block;
+				width:64px;
+				margin-left: 20px;
+				text-indent: -999em;
+				text-align: left;
+				.social { display:inline-block; }
+			}
+
+
+		}
+	}
+
+	@include at-breakpoint($small-screen) {
+		font-size:10px;
+		#meta {
+			a { display:none; }
+			a.swap {
+				display:block;
+				width:64px;
+				margin-left: 20px;
+				text-indent: -999em;
+				text-align: left;
+				.social { display:inline-block; }
+			}
+		}
+	}
+	*/
 }
 
-.footer {
-	// text-align: center;
-	height:200px;
-	font-size: 80%;
-	color: #666;
-	border-top: 4px solid #eee;
-	margin-top: 4em;
-	overflow: hidden;
-}
+
+
+
 
 
 
@@ -192,32 +348,79 @@ section {
 /*
 /*****************************************************************************/
 
-.content {
-	width: 1170px;
-	margin-right: auto;
-	margin-left: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-}
-
-.posts {
-	text-align: center;
-	list-style-type: none;
-	margin-bottom: 2em;
-
-	li {
-		line-height: 1.75em;
+.home {
+	header {
+		text-align: center;
+		color: #999;
+		h1 a {
+			color: #fff;
+			text-decoration: none;
+		}
+		ul.wrap {
+			min-height: 500px;
+			li {
+				padding-top: 160px;
+			}
+		}
+	}
+	main {
+		text-align: center;
+		section {
+			p {
+				max-width: 1280px;
+				margin: 0 auto;
+			}
+			.install {
+				padding-top:10px;
+				font-size: 12px;
+			}
+			.bower {
+				font-family: Monaco, Courier, monospace;
+				font-weight: bold;
+				// color: #666;
+			}
+		}
 	}
 
-	span {
-		color: #aaa;
-		font-family: Monaco, "Courier New", monospace;
-		font-size: 80%;
-	}
-}
+	/* ripped from HUGEINC */
+	#tabs {
+		padding-bottom:36px;
+		text-align: center;
 
-#general {
-	margin-top: 40px;
+		li {
+			width: 90px;
+			height: 36px;
+			font: 11px / 32px $font-sans;
+			font-weight: bold;
+			cursor: pointer;
+			display: inline-block;
+			border: 2px solid $color-border;
+			margin: 6px;
+			@include transition(all 0.5s);
+
+			&:after {
+				content:'';
+				border:12px solid transparent;
+				border-top-color:#fff;
+				position:absolute;
+				// bottom:-12px;
+				right:32px;
+				@include transition(all 0.5s);
+			}
+		}
+
+		.active {
+			color:#fff;
+			background:$color-grey-dark;
+			border-color:$color-grey-dark;
+			&:after {
+				border-top-color:$color-grey-dark;
+				bottom:-26px;
+			}
+		}
+
+	}
+
 }
 
 /*****************************************************************************/
@@ -229,18 +432,54 @@ section {
 .page {
 	section {
 		text-align: center;
-		margin: 3em 0;
+		padding: 40px;
+		margin: 0;
 
-		h5 {
-			margin-bottom: 0.5em;
+
+		.eyebrow {
+	 		font: 13px Arial,sans-serif;
+			display: inline-block;
+			padding: 15px;
+			// b {
+				color: #ec008c;
+			// }
 		}
+
 		h2 {
 			margin-top: 0px;
-			.fa {
-				font-size: 0.5em;
-				color: #000;
+			a {
+				color:#000;
+			}
+
+		}
+
+		p {
+			color: #999;
+		}
+
+		a {
+			text-decoration: none;
+		}
+
+		&:after {
+			content: '';
+			width: 92px;
+			height: 2px;
+			display: inline-block;
+			background: #dadada;
+			position: absolute;
+			bottom: -1px;
+			left: 50%;
+			margin-left: -46px;
+		}
+
+		&:hover {
+			background: $color-magenta;
+			* {
+				color:#fff;
 			}
 		}
+
 	}
 }
 
@@ -274,30 +513,10 @@ section {
   color: #aaa;
 }
 
-.footer {
-	.contact {
-		float: left;
-		margin-right: 3em;
 
-		&+ .contact {
-			float: right;
-			margin-right: 0em;
-		}
 
-		a {
-			color: #8085C1;
-		}
-	}
 
-	.rss {
-		margin-top: 1.1em;
-		margin-right: -.2em;
-		float: right;
-		img {
-			border: 0;
-		}
-	}
-}
+
 
 
 /*****************************************************************************/
@@ -312,14 +531,24 @@ section {
 		.container {
 			padding-left: 240px;
 		}
+
 	}
+
+	section {
+		margin-bottom: 6em;
+	    li {
+	    	margin-left: 2em;
+	    }
+	}
+
+
 }
 
 /* standard */
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
-  padding: 0 .4em;
+  padding: 1.4em;
 }
 
 // .post ul, .post ol {
