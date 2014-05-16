@@ -6,7 +6,7 @@
  *           {
 				filter: DOM Object input field,
 				filterTarget: DOM Object where rendered JSON result appended to,
-				elementTag: String,
+				elementSelecctor: String,
 				typingConfig : {
 					minimal: Number,
 					typePause: Number,
@@ -21,7 +21,8 @@
 					renderJSON:  Function	It overrides the default render: ,
 					error: Function
 				},
-				customFilter: Function
+				customFilter: Function,
+				filterOnly: boolean
  *			}
  *
  *
@@ -33,42 +34,47 @@ var AutoCompleter = function (handle, options) {
 			//filterSource:'markup', //'ajax', function
 			filter: handle.querySelector('input.filter'),
 			filterTarget: handle.querySelector('.result'),
-			elementTag: 'li',
+			elementSelecctor: 'li',
 			typingConfig : {
 				minimal: 3,
 				typePause: 300
-			}
+			},
+			filterOnly: false
 		};
 		this.options = this._extend(defaults, options);
 		this.handle = handle;
-		this.filterElement = this.options.filterTarget.querySelectorAll(this.options.elementTag);
+		this.filterElement = this.options.filterTarget.querySelectorAll(this.options.elementSelecctor);
 		this.dataCache = [];
 		this.timer = null;
 		this.regex = null;
 		this.allowAjax = true;
-		this.noResult = {};
-		this.init();
+		this.noResult = null;
+		if(!this.options.filterOnly) {
+			this._init();
+		}
 };
 
 
 /**
- * init AutoCompleter
+ * _init AutoCompleter
  * @return {[type]} [description]
  */
-AutoCompleter.prototype.init = function () {
-	//setup no result 
+AutoCompleter.prototype._init = function () {
+	//setup no result
 	this.noResult = this.addNoResult('No result');
 
+	//filter ajax
 	if (this.options.ajax) {
-		this.options.filter.addEventListener('keyup', this.filterData.bind(this)); //ie >=9 && ios 6+
+		this.options.filter.addEventListener('keyup', this._filterData.bind(this)); //ie >=9 && ios 6+
 		return;
 	}
+	//set custom filter
 	if (typeof this.options.customFilter === 'function'){
 		this.options.filter.addEventListener('keyup', this.options.customFilter.bind(this)); //ie >=9 && ios 6+
 		return;
 	}
 	//filter markup
-	this.dataCache = (this.options.markup)? this._cacheCustomData():this._cacheMarkupData();
+	this.dataCache = (this.options.markup)? this.cacheCustomData():this.cacheMarkupData();
 	this.options.filter.addEventListener('keyup', this.filterMarkup.bind(this)); //ie >=9 && ios 6+
 };
 
@@ -79,43 +85,48 @@ AutoCompleter.prototype.addNoResult = function (text) {
 	span.innerHTML = text;
 	return this.handle.appendChild(span);
 };
+
 /**
  * For filter markup
  * @param  {Event} e
  * @return {Void}
  */
-AutoCompleter.prototype.filterMarkup = function (e) {
+AutoCompleter.prototype.filterMarkup = function (e, value) {
+	value = value || e.target.value;
+	this.regex = new RegExp(this._replaceStr(value), "i");
 
-	this.regex = new RegExp(this._replaceStr(e.target.value), "i");
-	if(e.target.value.length !== 0) {
+	if(value.length !== 0 && !this.options.filterOnly) {
 		this._checkTyping(e,this._hideAndShowMarkup);
 	} else {
 		this._hideAndShowMarkup(); //apply no filter show all the list
-		this.noResult.classList.add('hide');
 	}
+
 };
 /**
  * For filter that requires Ajax to get items
  * @param  {Event} e
  * @return {Void}
  */
-AutoCompleter.prototype.filterData = function (e) {
+AutoCompleter.prototype._filterData = function (e,value) {
 	this.regex = new RegExp(this._replaceStr(e.target.value), "i");
 
 	if(e.target.value.length !== 0) {
 		this._checkTyping(e,this._callAjax);
 	} else {
+		//reset filter to default state when value is empty
 		this.options.filterTarget.classList.remove('loading');
 		this.options.filterTarget.innerHTML = '';
 		this.noResult.classList.add('hide');
 		this.allowAjax = true;
 	}
+
 };
 /**
  * cache text in markup into array
  * @return {array} cached text
  */
-AutoCompleter.prototype._cacheMarkupData = function () {
+AutoCompleter.prototype.cacheMarkupData = function () {
+
 	if(!this.filterElement) {
 		return;
 	}
@@ -128,7 +139,12 @@ AutoCompleter.prototype._cacheMarkupData = function () {
 	return data;
 };
 
-AutoCompleter.prototype._cacheCustomData = function () {
+/**
+ * for cache data from markup attribute
+ * @return {Array} data in it's natual order
+ */
+AutoCompleter.prototype.cacheCustomData = function () {
+
 	if(!this.filterElement && typeof this.options.markup.cacheData !== 'function') {
 		return;
 	}
@@ -140,6 +156,7 @@ AutoCompleter.prototype._cacheCustomData = function () {
 
 	return data;
 };
+
 /**
  * check if typing against configuration
  * @param  {event}   e			mouseup event
@@ -147,6 +164,7 @@ AutoCompleter.prototype._cacheCustomData = function () {
  * @return {void}
  */
 AutoCompleter.prototype._checkTyping = function (e, callback) {
+	//cancel out the timer immediately to prevent callback firing
 	clearTimeout(this.timer);
 	// if entered text is less than minimal
 	if(e.target.value.length < this.options.typingConfig.minimal) {
@@ -163,10 +181,14 @@ AutoCompleter.prototype._checkTyping = function (e, callback) {
  * @return {void}
  */
 AutoCompleter.prototype._hideAndShowMarkup = function () {
+
+	//use custom hideAndShow method
 	if(this.options.typingConfig.customHideAndShow) {
 		this.options.typingConfig.customHideAndShow(this);
 		return;
 	}
+
+	//default hideAndShow
 	var show = 0;
 	for (var i = 0; i < this.dataCache.length; i++) {
 		if(this.dataCache[i].match(this.regex)) {
@@ -176,8 +198,11 @@ AutoCompleter.prototype._hideAndShowMarkup = function () {
 			this.filterElement[i].className = 'hide';
 		}
 	}
-	this.checkNoResult( show );
+	if(this.onResult) {
+		this.checkNoResult( show );
+	}
 };
+
 AutoCompleter.prototype.checkNoResult = function (show) {
 	if(show === 0) {
 		//show no result message
@@ -185,6 +210,21 @@ AutoCompleter.prototype.checkNoResult = function (show) {
 	} else {
 		//hide no result message
 		if(!this.noResult.classList.contains('hide')) { this.noResult.classList.add('hide'); }
+	}
+};
+
+AutoCompleter.prototype._callAjax = function (e) {
+	if(this.allowAjax && e.target.value !== "") {
+		this.dataCache = [];
+		this.options.ajax.action = this.options.ajax.action || 'GET';
+		this._ajax({
+			url: this.options.ajax.url,
+			value: e.target.getAttribute('name') + '=' + e.target.value,
+			action: this.options.ajax.action});
+		this.allowAjax = false;
+
+	} else {
+		this._hideAndShowMarkup();
 	}
 };
 /**
@@ -234,7 +274,7 @@ AutoCompleter.prototype._ajax = function (config) {
 					}
 				}
 				// update cached DOM element
-				self.filterElement = self.options.filterTarget.querySelectorAll(self.options.elementTag);
+				self.filterElement = self.options.filterTarget.querySelectorAll(self.options.elementSelecctor);
 				// filter the appended list with current input value
 				self._hideAndShowMarkup();
 				self.options.filterTarget.classList.remove('loading');
@@ -261,20 +301,8 @@ AutoCompleter.prototype._ajax = function (config) {
 	xhr.send(config.value);
 
 };
-AutoCompleter.prototype._callAjax = function (e) {
-	if(this.allowAjax && e.target.value !== "") {
-		this.dataCache = [];
-		this.options.ajax.action = this.options.ajax.action || 'GET';
-		this._ajax({
-			url: this.options.ajax.url,
-			value: e.target.getAttribute('name') + '=' + e.target.value,
-			action: this.options.ajax.action});
-		this.allowAjax = false;
 
-	} else {
-		this._hideAndShowMarkup();
-	}
-};
+
 /**
  * Check special characters
  * @param  {String} s

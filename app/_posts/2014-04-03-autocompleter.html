@@ -12,7 +12,7 @@ tags:
 - type ahead
 ---
 <link rel="stylesheet" href="/css/autocompleter/main.css">
-<script type="text/javascript" src="/js/autocompleter/autocompleter.min.js"></script>
+<script type="text/javascript" src="/js/autocompleter/autocompleter.js"></script>
 <section>
 	<h2>About</h2>
 	<p>AutoCompleter is a light wieght stand alone module can be used for filtering data or auto completion of user input. It work on desktop, phone and tablet.</p>
@@ -37,27 +37,43 @@ tags:
 <section>
 	<h2>Demo</h2>
 	<div id="demo" class="wrapper">
-		<div class="col" id="auto-complete-basic">
-			<h3>Filter Existing Markup Example</h3>
-			<input class="filter" type="text" name="search" value="" placeholder="Filter state ">
-			<ul class="result"><li >Alabama</li><li >Alaska</li><li >Arizona</li><li >Arkansas </li><li >California</li><li >Colorado</li><li >Connecticut</li><li >Delaware</li><li >Florida</li><li >Georgia</li><li >Hawaii</li><li >Idaho </li><li >Illinois Indiana</li><li >Iowa</li><li >Kansas</li><li >Kentucky</li><li >Louisiana</li><li >Maine</li><li >Maryland</li><li >Massachusetts</li><li >Michigan</li><li >Minnesota</li><li >Mississippi</li><li >Missouri</li><li >Montana Nebraska</li><li >Nevada</li><li >New Hampshire</li><li >New Jersey</li><li >New Mexico</li><li >New York</li><li >North Carolina</li><li >North Dakota</li><li >Ohio</li><li >Oklahoma</li><li >Oregon</li><li >Pennsylvania Rhode Island</li><li >South Carolina</li><li >South Dakota</li><li >Tennessee</li><li >Texas </li><li >Utah </li><li >Vermont</li><li >Virginia </li><li >Washington </li><li >West Virginia </li><li >Wisconsin </li><li >Wyoming</li></ul>
+		<div class="clearfix">
+			<div class="col" id="auto-complete-basic">
+				<h3>Filter Existing Markup Example</h3>
+				<input class="filter" type="text" name="search" value="" placeholder="Filter state ">
+				<ul class="result"><li >Alabama</li><li >Alaska</li><li >Arizona</li><li >Arkansas </li><li >California</li><li >Colorado</li><li >Connecticut</li><li >Delaware</li><li >Florida</li><li >Georgia</li><li >Hawaii</li><li >Idaho </li><li >Illinois Indiana</li><li >Iowa</li><li >Kansas</li><li >Kentucky</li><li >Louisiana</li><li >Maine</li><li >Maryland</li><li >Massachusetts</li><li >Michigan</li><li >Minnesota</li><li >Mississippi</li><li >Missouri</li><li >Montana Nebraska</li><li >Nevada</li><li >New Hampshire</li><li >New Jersey</li><li >New Mexico</li><li >New York</li><li >North Carolina</li><li >North Dakota</li><li >Ohio</li><li >Oklahoma</li><li >Oregon</li><li >Pennsylvania Rhode Island</li><li >South Carolina</li><li >South Dakota</li><li >Tennessee</li><li >Texas </li><li >Utah </li><li >Vermont</li><li >Virginia </li><li >Washington </li><li >West Virginia </li><li >Wisconsin </li><li >Wyoming</li></ul>
+			</div>
+			<div class="col" id="auto-complete">
+				<h3>Filter Existing Markup Example 2</h3>
+				<input class="filter" type="text" name="search" value="" placeholder="Type words like funny, dance, lips ">
+				<ul class="result">
+				<li data-cat=" Reactions boogie dance happy dance Jimmy Fallon moves party hard perfect loops"><img src="http://www.reactiongifs.com/r/jmmyf.gif"></li><li data-cat=" Reactions Andy Richter blink blinking disbelief mind blown WTF? WTH?"><img src="http://www.reactiongifs.com/r/whaaaa.gif"></li><li data-cat=" Reactions cover ears Dumb and Dumber Jim Carey lalalala not listening"><img src="http://www.reactiongifs.com/r/lalalala.gif"></li><li data-cat=" Reactions broke broken fix I can fix that"><img src="http://www.reactiongifs.com/r/icft.gif"></li><li data-cat=" Reactions excited frozen giddy here hopeful present"><img src="http://www.reactiongifs.com/r/excited-anna.gif"></li><li data-cat=" Reactions as if bitch please Bruce Willis disbelief doubtful eye roll eyeroll yeah right"><img src="http://www.reactiongifs.com/r/rfz0hP0.gif"></li><li data-cat=" Reactions brows eyebrows game of thrones happy perfect loops Peter Dinklage smile Tyrion yes"><img src="http://www.reactiongifs.com/r/ybrws.gif"></li><li data-cat=" Reactions bitch please bitch what? disturbed incredulous say what? WTF?"><img src="http://www.reactiongifs.com/r/TOzSZ3P.gif"></li><li data-cat=" Reactions homer late OMW run running The Simpsons"><img src="http://www.reactiongifs.com/r/omw.gif"></li></ul>
+			</div>
 		</div>
-		<div class="col" id="auto-complete">
-			<h3>Filter Existing Markup Example 2</h3>
-			<input class="filter" type="text" name="search" value="" placeholder="Type words like funny, dance, lips ">
-			<ul class="result">
-			<li data-cat=" Reactions funny lips motorboat Pbbth pbp raspberry"><img src="http://www.reactiongifs.com/r/zBjtj.gif"></li><li data-cat=" Reactions boogie dance happy dance Jimmy Fallon moves party hard perfect loops"><img src="http://www.reactiongifs.com/r/jmmyf.gif"></li><li data-cat=" Reactions Andy Richter blink blinking disbelief mind blown WTF? WTH?"><img src="http://www.reactiongifs.com/r/whaaaa.gif"></li><li data-cat=" Reactions cover ears Dumb and Dumber Jim Carey lalalala not listening"><img src="http://www.reactiongifs.com/r/lalalala.gif"></li><li data-cat=" Reactions broke broken fix I can fix that"><img src="http://www.reactiongifs.com/r/icft.gif"></li><li data-cat=" Reactions excited frozen giddy here hopeful present"><img src="http://www.reactiongifs.com/r/excited-anna.gif"></li><li data-cat=" Reactions as if bitch please Bruce Willis disbelief doubtful eye roll eyeroll yeah right"><img src="http://www.reactiongifs.com/r/rfz0hP0.gif"></li><li data-cat=" Reactions brows eyebrows game of thrones happy perfect loops Peter Dinklage smile Tyrion yes"><img src="http://www.reactiongifs.com/r/ybrws.gif"></li><li data-cat=" Reactions bitch please bitch what? disturbed incredulous say what? WTF?"><img src="http://www.reactiongifs.com/r/TOzSZ3P.gif"></li><li data-cat=" Reactions homer late OMW run running The Simpsons"><img src="http://www.reactiongifs.com/r/omw.gif"></li></ul>
+		<div class="clearfix">
+			<div class="col" id="ajax-auto-complete">
+				<h3>Filter AJAX Example</h3>
+				<input class="filter" type="text" name="search" value="" placeholder="Search for a fruit">
+				<ul class="result">
+				</ul>
+			</div>
+			<div class="col" id="ajax-custom-auto-complete">
+				<h3>Filter AJAX Example</h3>
+				<input class="filter" type="text" name="search" value="" placeholder="Search for a Designer brand ex. Burberry">
+				<div class="result">
+				</div>
+			</div>
 		</div>
-		<div class="col" id="ajax-auto-complete">
-			<h3>Filter AJAX Example</h3>
-			<input class="filter" type="text" name="search" value="" placeholder="Search for a fruit">
-			<ul class="result">
-			</ul>
-		</div>
-		<div class="col" id="ajax-custom-auto-complete">
-			<h3>Filter AJAX Example</h3>
-			<input class="filter" type="text" name="search" value="" placeholder="Search for a Designer brand ex. Burberry">
-			<div class="result">
+		<div class="clearfix">
+			<div class="col" id="auto-filter">
+				<h3>Filter with click</h3>
+				<div>
+					<span>Excited</span>
+					<span>Dance</span>
+					<span>Eyebrow</span>
+				</div>
+				<ul class="result">
+				<li data-cat=" Reactions boogie dance happy dance Jimmy Fallon moves party hard perfect loops"><img src="http://www.reactiongifs.com/r/jmmyf.gif"></li><li data-cat=" Reactions Andy Richter blink blinking disbelief mind blown WTF? WTH?"><img src="http://www.reactiongifs.com/r/whaaaa.gif"></li><li data-cat=" Reactions cover ears Dumb and Dumber Jim Carey lalalala not listening"><img src="http://www.reactiongifs.com/r/lalalala.gif"></li><li data-cat=" Reactions broke broken fix I can fix that"><img src="http://www.reactiongifs.com/r/icft.gif"></li><li data-cat=" Reactions excited frozen giddy here hopeful present"><img src="http://www.reactiongifs.com/r/excited-anna.gif"></li><li data-cat=" Reactions as if bitch please Bruce Willis disbelief doubtful eye roll eyeroll yeah right"><img src="http://www.reactiongifs.com/r/rfz0hP0.gif"></li><li data-cat=" Reactions brows eyebrows game of thrones happy perfect loops Peter Dinklage smile Tyrion yes"><img src="http://www.reactiongifs.com/r/ybrws.gif"></li><li data-cat=" Reactions bitch please bitch what? disturbed incredulous say what? WTF?"><img src="http://www.reactiongifs.com/r/TOzSZ3P.gif"></li><li data-cat=" Reactions homer late OMW run running The Simpsons"><img src="http://www.reactiongifs.com/r/omw.gif"></li></ul>
 			</div>
 		</div>
 	</div>
@@ -139,6 +155,23 @@ tags:
 				}
 			}
 		});
+
+		var tabFilter = new AutoCompleter(document.querySelector('#auto-filter'), {
+				filterOnly: true,
+				markup: {
+					cacheData: function (el) {
+						return el.getAttribute('data-cat');
+
+					}
+				}
+		});
+		tabFilter.dataCache = tabFilter.cacheCustomData();
+
+		document.querySelector('#auto-filter').addEventListener('click', function (e) {
+			if(e.target.nodeName === 'SPAN') {
+				tabFilter.filterMarkup(e, e.target.innerHTML);
+			}
+		})
 	</script>
 </section>
 

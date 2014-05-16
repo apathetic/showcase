@@ -21,6 +21,14 @@
 			float: none;
 		}
 	}
+	.clearfix {
+		&:after {
+			content: "";
+			display: table;
+			clear: both;
+			float: none;
+		}
+	}
 	.filter {
 		display: block;
 		width: 90%;
@@ -56,7 +64,6 @@
 		width: 50%;
 		padding: 30px;
 		float: left;
-		min-height: 800px;
 	}
 	.col:first-child {
 		border-right: 1px dotted #ccc;
@@ -78,10 +85,13 @@
 	}
 
 
-	#auto-complete img {
-		display: block;
-		width: 200px;
-		margin: 10px 0 0;
+	#auto-complete,
+	#auto-filter {
+		img {
+			display: block;
+			width: 100px;
+			margin: 10px 0 0;
+		}
 	}
 
 	#ajax-custom-auto-complete {
@@ -101,5 +111,19 @@
 			  	float: none;
 			  }
 		  }
+	}
+	#auto-filter {
+		text-align: left;
+		span {
+			cursor: pointer;
+			display: inline-block;
+			padding: 15px;
+			border: 1px solid #000;
+			margin-bottom: 15px;
+			&:hover {
+				background: #000;
+				color: #fff;
+			}
+		}
 	}
 }
