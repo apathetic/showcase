@@ -9,7 +9,8 @@
 $fa-font-path:  "../bower_components/font-awesome/fonts";
 
 @import "../bower_components/font-awesome/scss/font-awesome";
-@import "../bower_components/bootstrap-sass/lib/bootstrap";
+// @import "../bower_components/bootstrap-sass/lib/bootstrap";
+@import "../huge_bower_components/huge.sass/general/_css_arrow";
 @import "fonts";
 @import "variables";
 
@@ -38,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
     font-family: "HUGEAvantGardeBold", sans-serif;
     letter-spacing: -0.06em;
-    margin: 0.8em 0;
+    margin: 0.6em 0;
 }
 
 h1 {
@@ -82,7 +83,7 @@ header > nav {
 	a {
 		display: block;
 		line-height: 40px;
-		top: 60px;
+		top: 54px;
 		&:after {
 			display: inline-block;
 			width: 40px;
@@ -125,20 +126,37 @@ header > nav {
 		z-index: 100;
 		-webkit-backface-visibility: hidden;
 
+		ul {
+			margin-top: 24px;
+		}
+
 		li {
 			list-style:none;
-			padding: 4px 0;
+			// padding: 4px 0;
 			float: left;
 			clear: left;
+			width: 172px;
+			margin: 2px 0;
 		}
 
 		a {
-			color: #999;
+			color: #fff;
 			text-decoration: none;
+			background: #232326;
+			padding: 2px 12px;
+			float: right;
+			font-size: 14px;
 		}
 
 		.active a {
-			color: orange;
+			background: #ec008c;
+			&:after {
+				content: '';
+				@include arrow(right, #ec008c, 8px);
+				position: absolute;
+				top: 6px;
+				right: -8px;
+			}
 		}
 
 		&.sticky {
@@ -218,6 +236,11 @@ main {
 header {
 	min-height: 150px;
 	background: $color-grey-dark;
+	.fa-home {
+		font-size: 40px;
+		color: #fff;
+		margin-right: 20px;
+	}
 }
 
 /* ripped from HUGEINC */
@@ -352,9 +375,19 @@ footer {
 	header {
 		text-align: center;
 		color: #999;
-		h1 a {
-			color: #fff;
-			text-decoration: none;
+		.eyebrow {
+			font: 13px "GalaxieItalic";
+		}
+		h1 {
+			margin: 0.4em;
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+		p {
+			max-width: 960px;
+			margin: 0 auto;
 		}
 		ul.wrap {
 			min-height: 500px;
@@ -366,6 +399,11 @@ footer {
 	main {
 		text-align: center;
 		section {
+
+			overflow: hidden;
+			max-height: 250px;
+			@include transition(transform 0.8s ease-in-out, max-height 0.8s);
+
 			p {
 				max-width: 1280px;
 				margin: 0 auto;
@@ -378,6 +416,10 @@ footer {
 				font-family: Monaco, Courier, monospace;
 				font-weight: bold;
 				// color: #666;
+			}
+			&.hidden {
+				max-height:0;
+				@include transform(rotateX(90deg));
 			}
 		}
 	}
@@ -403,8 +445,8 @@ footer {
 				border:12px solid transparent;
 				border-top-color:#fff;
 				position:absolute;
-				// bottom:-12px;
 				right:32px;
+				// bottom:-12px;
 				@include transition(all 0.5s);
 			}
 		}
@@ -431,10 +473,15 @@ footer {
 
 .page {
 	section {
-		text-align: center;
-		padding: 40px;
-		margin: 0;
 
+
+		// margin: 0;
+		// text-align: center;
+
+
+		div {
+			padding: 40px;
+		}
 
 		.eyebrow {
 	 		font: 13px Arial,sans-serif;
@@ -490,27 +537,6 @@ footer {
 
 .title {
 	display: inline-block;
-
-	a {
-		color: #a00;
-
-		&:hover {
-			color: #000;
-		}
-
-		&.extra {
-			color: #aaa;
-			margin-left: 1em;
-
-			&:hover {
-				color: #000;
-			}
-		}
-	}
-}
-
-.meta {
-  color: #aaa;
 }
 
 
