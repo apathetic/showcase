@@ -16,7 +16,7 @@
 
 	<!-- {% include _header.html %} -->
 
-	<!-- TODO TODO TODO: remove from the layout and integrate into the index file -->
+	<!-- TODO TODO TODO: remove from the layout and integrate into the index file. Need a "featured" list / tag -->
 	<header class="">
 
 		<div class="slide carousel" id="featured">
@@ -79,12 +79,12 @@
 	<main class="site">
 		<div id="tabs" class="">
 			<ul>
-				<li data-tab="all"      class="active">all.<span></span></li>
-				<li data-tab="css"      class="">css<span></span></li>
-				<li data-tab="js"       class="">js<span></span></li>
-				<li data-tab="carousel" class="">carousel<span></span></li>
-				<li data-tab="sass"     class="">sass<span></span></li>
-				<li data-tab="slider"   class="">slider<span></span></li>
+				<li data-filter="all"      class="active">all.<span></span></li>
+				<li data-filter="css"      class="">css<span></span></li>
+				<li data-filter="js"       class="">js<span></span></li>
+				<li data-filter="carousel" class="">carousel<span></span></li>
+				<li data-filter="sass"     class="">sass<span></span></li>
+				<li data-filter="slider"   class="">slider<span></span></li>
 			</ul>
 		</div>
 
@@ -98,29 +98,66 @@
 	<script>
 
 		// ---- carousel ---- //
-		var featured = document.querySelector('#featured');
-		var carousel = new Carousel(featured);
-		featured.querySelector('.prev').addEventListener('click', function(e){
+		var featured = document.querySelector('#featured'),
+			bullets = document.querySelectorAll('header nav li'),
+			carousel = new Carousel(featured, { afterSlide: updateNav });
+			// current;
+
+		featured.querySelector('.prev').addEventListener('click', function(e) {
 			e.preventDefault();
 			carousel.prev();
 		});
-		featured.querySelector('.next').addEventListener('click', function(e){
+		featured.querySelector('.next').addEventListener('click', function(e) {
 			e.preventDefault();
 			carousel.next();
 		});
+		for (i = bullets.length; i--;) {
+			(function(to){
+				bullets[i].addEventListener('click', function(e) {
+					e.preventDefault();
+					carousel.go(to);
+				});
+			}(i));
+		}
+		function updateNav(current) {
+			for (i = bullets.length; i--;) {
+				bullets[i].classList.remove('active');
+				bullets[current].classList.add('active');
+			}
+		}
 
 
 		// ---- filters ---- //
-		var tabs = document.querySelectorAll('#tabs li');
-		for (var i = tabs.length; i--;) {
-			var tab = tabs[i];
-			console.log(typeof tabs);
+		var sections = document.querySelectorAll('main section'),
+			tabs = document.querySelectorAll('#tabs li'),
+			tab,
+			filter,
+			regex,
+			tags,
+			i, j;
+
+		for (i = tabs.length; i--;) {
+			tab = tabs[i];
 			tab.addEventListener('click', function(e){
 				e.preventDefault();
-				for (var j = tabs.length; j--;) {
+				for (j = tabs.length; j--;) {
 					tabs[j].classList.remove('active');
 				}
+
 				this.classList.add('active');
+				filter = this.getAttribute('data-filter');
+
+				for (j = sections.length; j--;) {
+					tags = sections[j].getAttribute('data-tags') || '';
+					tags = tags.toLowerCase();
+					regex = new RegExp(filter, "i");		// ghetto, doesn't care about surrounding whitespace
+
+					if (!tags.match(regex)) {
+						sections[j].classList.add('collapsed');
+					} else {
+						sections[j].classList.remove('collapsed');
+					}
+				}
 			});
 		}
 

@@ -92,7 +92,7 @@ tags:
 		});
 		var markupFilter = new AutoCompleter(document.querySelector('#ajax-auto-complete'), {
 			ajax: {
-				url: '/public/json/fruits.json',
+				url: '/js/autocompleter/json/fruits.json',
 				action: 'GET',
 			},
 			typingConfig : {
@@ -102,7 +102,7 @@ tags:
 
 		var customAjaxFilter = new AutoCompleter(document.querySelector('#ajax-custom-auto-complete'), {
 			ajax: {
-				url: '/public/json/designer.json',
+				url: '/js/autocompleter/json/designer.json',
 				action: 'GET',
 				renderJSON: function (response, result) {
 					var frag = document.createDocumentFragment();
