@@ -9,7 +9,7 @@
 $fa-font-path:  "../bower_components/font-awesome/fonts";
 
 @import "../bower_components/font-awesome/scss/font-awesome";
-// @import "../bower_components/bootstrap-sass/lib/bootstrap";
+@import "../bower_components/bootstrap-sass/lib/bootstrap";
 @import "../huge_bower_components/huge.sass/general/_css_arrow";
 @import "fonts";
 @import "variables";
@@ -20,6 +20,11 @@ $fa-font-path:  "../bower_components/font-awesome/fonts";
   margin: 0;
   padding: 0;
   position: relative;
+}
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html, body { height: 100%; }
@@ -40,6 +45,8 @@ h1, h2, h3, h4, h5, h6 {
     font-family: "HUGEAvantGardeBold", sans-serif;
     letter-spacing: -0.06em;
     margin: 0.6em 0;
+	font-weight: 500;
+	line-height: 1.1;
 }
 
 h1 {
@@ -78,7 +85,7 @@ a {
 header > nav {
 	// float:right;
 	// margin-top: 3em; 		// same as h1
-	position:absolute; top:0; left:0; width:100%; height:0;
+	position:absolute; top:0; left:0; width:100%; height:0; z-index: 1234;
 
 	a {
 		display: block;
@@ -232,7 +239,29 @@ header > nav {
 main {
 	padding: 48px 0 100px;
 }
-
+/*
+@media (min-width: 1200px) {
+	.container {
+		width: 1170px;
+	}
+}
+@media (min-width: 992px) {
+	.container {
+		width: 970px;
+	}
+}
+@media (min-width: 768px) {
+	.container {
+		width: 750px;
+	}
+}
+.container {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+ */
 header {
 	min-height: 150px;
 	background: $color-grey-dark;
