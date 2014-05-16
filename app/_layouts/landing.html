@@ -16,7 +16,7 @@
 
 	<!-- {% include _header.html %} -->
 
-	<!-- TODO TODO TODO: remove from the layout and integrate into the index file -->
+	<!-- TODO TODO TODO: remove from the layout and integrate into the index file. Need a "featured" list / tag -->
 	<header class="">
 
 		<div class="slide carousel" id="featured">
@@ -98,16 +98,33 @@
 	<script>
 
 		// ---- carousel ---- //
-		var featured = document.querySelector('#featured');
-		var carousel = new Carousel(featured);
-		featured.querySelector('.prev').addEventListener('click', function(e){
+		var featured = document.querySelector('#featured'),
+			bullets = document.querySelectorAll('header nav li'),
+			carousel = new Carousel(featured, { afterSlide: updateNav });
+			// current;
+
+		featured.querySelector('.prev').addEventListener('click', function(e) {
 			e.preventDefault();
 			carousel.prev();
 		});
-		featured.querySelector('.next').addEventListener('click', function(e){
+		featured.querySelector('.next').addEventListener('click', function(e) {
 			e.preventDefault();
 			carousel.next();
 		});
+		for (i = bullets.length; i--;) {
+			(function(to){
+				bullets[i].addEventListener('click', function(e) {
+					e.preventDefault();
+					carousel.go(to);
+				});
+			}(i));
+		}
+		function updateNav(current) {
+			for (i = bullets.length; i--;) {
+				bullets[i].classList.remove('active');
+				bullets[current].classList.add('active');
+			}
+		}
 
 
 		// ---- filters ---- //
@@ -136,9 +153,9 @@
 					regex = new RegExp(filter, "i");		// ghetto, doesn't care about surrounding whitespace
 
 					if (!tags.match(regex)) {
-						sections[j].classList.add('hidden');
+						sections[j].classList.add('collapsed');
 					} else {
-						sections[j].classList.remove('hidden');
+						sections[j].classList.remove('collapsed');
 					}
 				}
 			});

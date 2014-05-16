@@ -431,7 +431,10 @@ footer {
 
 			overflow: hidden;
 			max-height: 250px;
-			@include transition(transform 0.8s ease-in-out, max-height 0.8s);
+
+			@include perspective(100);
+			@include transform(rotateX(0deg));
+			@include transition(transform 1s, max-height 0.8s);
 
 			p {
 				max-width: 1280px;
@@ -446,7 +449,7 @@ footer {
 				font-weight: bold;
 				// color: #666;
 			}
-			&.hidden {
+			&.collapsed {
 				max-height:0;
 				@include transform(rotateX(90deg));
 			}
