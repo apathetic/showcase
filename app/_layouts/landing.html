@@ -76,7 +76,7 @@
 
 
 
-	<main class="site">
+	<main class="site result">
 		<div id="tabs" class="">
 			<ul>
 				<li data-filter="all"      class="active">all.<span></span></li>
@@ -95,6 +95,7 @@
 	{% include _footer.html %}
 
 	<script src="/js/flexicarousel/jquery.flexicarousel.min.js"></script>
+	<script src="/js/autocompleter/autocompleter.js"></script>
 	<script>
 
 		// ---- carousel ---- //
@@ -128,7 +129,27 @@
 
 
 		// ---- filters ---- //
-		var sections = document.querySelectorAll('main section'),
+		var tabFilter = new AutoCompleter(document.body, {
+				filterOnly: true,
+				elementSelector: 'section',
+				markup: {
+					cacheData: function (el) {
+						console.log(el);
+						return el.getAttribute('data-tags');
+
+					}
+				}
+		});
+		tabFilter.dataCache = tabFilter.cacheCustomData();
+		console.log(tabFilter.filterElement)
+		document.querySelector('#tabs').addEventListener('click', function (e) {
+			if(e.target.nodeName === 'LI') {
+				tabFilter.filterMarkup(e, e.target.getAttribute('data-filter'));
+				this.querySelector('.active').classList.remove('active');
+				e.target.classList.add('active');
+			}
+		});
+		/*var sections = document.querySelectorAll('main section'),
 			tabs = document.querySelectorAll('#tabs li'),
 			tab,
 			filter,
@@ -159,7 +180,7 @@
 					}
 				}
 			});
-		}
+		}*/
 
 
 	</script>

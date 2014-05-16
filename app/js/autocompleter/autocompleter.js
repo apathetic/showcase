@@ -6,7 +6,7 @@
  *           {
 				filter: DOM Object input field,
 				filterTarget: DOM Object where rendered JSON result appended to,
-				elementSelecctor: String,
+				elementSelector: String,
 				typingConfig : {
 					minimal: Number,
 					typePause: Number,
@@ -34,7 +34,7 @@ var AutoCompleter = function (handle, options) {
 			//filterSource:'markup', //'ajax', function
 			filter: handle.querySelector('input.filter'),
 			filterTarget: handle.querySelector('.result'),
-			elementSelecctor: 'li',
+			elementSelector: 'li',
 			typingConfig : {
 				minimal: 3,
 				typePause: 300
@@ -43,7 +43,7 @@ var AutoCompleter = function (handle, options) {
 		};
 		this.options = this._extend(defaults, options);
 		this.handle = handle;
-		this.filterElement = this.options.filterTarget.querySelectorAll(this.options.elementSelecctor);
+		this.filterElement = this.options.filterTarget.querySelectorAll(this.options.elementSelector);
 		this.dataCache = [];
 		this.timer = null;
 		this.regex = null;
@@ -274,7 +274,7 @@ AutoCompleter.prototype._ajax = function (config) {
 					}
 				}
 				// update cached DOM element
-				self.filterElement = self.options.filterTarget.querySelectorAll(self.options.elementSelecctor);
+				self.filterElement = self.options.filterTarget.querySelectorAll(self.options.elementSelector);
 				// filter the appended list with current input value
 				self._hideAndShowMarkup();
 				self.options.filterTarget.classList.remove('loading');
