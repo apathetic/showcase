@@ -1,0 +1,72 @@
+/*
+	body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    margin: 0;
+}
+*/
+/* line 14, ../../../_sass/huge-slider/main.scss */
+.site, section {
+  height: 100%;
+  margin: 0;
+  width: auto;
+  padding: 0;
+}
+
+/* line 22, ../../../_sass/huge-slider/main.scss */
+#three > div {
+  text-align: left;
+}
+
+/* line 26, ../../../_sass/huge-slider/main.scss */
+section {
+  position: relative;
+  text-align: center;
+  padding-top: 172px;
+}
+
+/* line 42, ../../../_sass/huge-slider/main.scss */
+html, body, article {
+  height: 100%;
+}
+
+/* line 46, ../../../_sass/huge-slider/main.scss */
+html, body {
+  overflow: hidden;
+}
+
+/* line 50, ../../../_sass/huge-slider/main.scss */
+section {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  -webkit-transform: translateZ(0);
+  -webkit-transition: translate3d(0, 0, 0);
+}
+
+/* line 61, ../../../_sass/huge-slider/main.scss */
+#one {
+  background-color: #fff;
+}
+
+/* line 65, ../../../_sass/huge-slider/main.scss */
+#two {
+  top: 100%;
+  background-color: #eee;
+}
+
+/* line 70, ../../../_sass/huge-slider/main.scss */
+#three {
+  top: 200%;
+  background-color: #ddd;
+}
+
+/* line 75, ../../../_sass/huge-slider/main.scss */
+#four {
+  top: 300%;
+  background-color: #ccc;
+}

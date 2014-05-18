@@ -1,30 +1,20 @@
-# Jekyll configuration precedence:
-# 1. Gruntfile task
-# 2. config.build.yml
-# 3. config.yml
+# Site settings
+title: Your awesome title
+email: your-email@domain.com
+description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+baseurl: ""
+url: "http://yourdomain.com"
 
-name: Huge Showcase
-description: Huge Showcase
-author:
-  name: HUGE | Jason Divock
-  email: jdivock@hugeinc.com
+# Build settings
+markdown: kramdown
+permalink: pretty
 
-# Grunt handles images and assets.
-exclude: ['img', 'css', 'js', 'fonts', 'node_modules',
-          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
+#exclude: [ 'components']
 
-include: ['.htaccess']
 
-# _config.build.yml sets future and show_drafts to false on `grunt build`
-future: true
-show_drafts: true
+sass:
+    sass_dir: .
 
-permalink: date
-paginate: 10
-paginate_path: 'page:num'
-
-# Markdown library
-markdown: redcarpet
-#   extensions: ['fenced_code_blocks', 'smart']
-
-pygments: true
+    
+gems:
+- jekyll-compass

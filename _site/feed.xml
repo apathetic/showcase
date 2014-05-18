@@ -1,0 +1,1933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Your awesome title</title>
+    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
+    <link>http://yourdomain.com/</link>
+    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Welcome to Jekyll!</title>
+        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory - edit this post and re-build (or run with the &lt;code&gt;-w&lt;/code&gt; switch) to see your changes!
+To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention: YYYY-MM-DD-name-of-post.ext.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 18 May 2014 05:34:19 -0400</pubDate>
+        <link>http://yourdomain.com/jekyll/update/2014/05/18/welcome-to-jekyll/</link>
+        <guid isPermaLink="true">http://yourdomain.com/jekyll/update/2014/05/18/welcome-to-jekyll/</guid>
+      </item>
+    
+      <item>
+        <title>Huge Inc. Full Screen Menu</title>
+        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/huge-nav/main.css&quot; type=&quot;text/css&quot;&gt;
+&lt;style&gt;
+	#huge-nav { width:50px; }
+	#huge-nav.open { width:100%; }
+	#huge-nav.closing { width:100%; }
+&lt;/style&gt;
+&lt;script src=&quot;/js/flexicarousel/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/stickynav/stickynav.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/huge-nav/huge-nav.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;div id=&quot;sticky&quot;&gt;
+	&lt;nav&gt;
+		&lt;ul&gt;&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/div&gt;
+
+
+&lt;section data-nav=&quot;About&quot; id=&quot;about&quot;&gt;
+	&lt;h2&gt;About&lt;/h2&gt;
+	&lt;p&gt;This is an abstraction of the menu used on the Huge Inc. site. It is a fullscreen menu, with a
+	subtle animation on the menu items when they fade in. In fact, there are several improvements over
+	the original implementation. Namely, no javascript is used to calculate the height / spacing of the
+	menu items when viewed on different screen-sizes, orientations. Welcome the new &lt;code&gt;vh&lt;/code&gt; and
+	&lt;code&gt;vw&lt;/code&gt; css selectors*&lt;/p&gt;
+
+	&lt;p class=&quot;small&quot;&gt;* not valid in IE8&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Demo&quot; id=&quot;demo&quot;&gt;
+	&lt;h2&gt;Demo&lt;/h2&gt;
+
+	&lt;nav id=&quot;huge-nav&quot;&gt;
+		&lt;div class=&quot;bar&quot;&gt;
+			&lt;a id=&quot;toggle&quot; href=&quot;#&quot;&gt;&lt;div class=&quot;patty&quot;&gt;&lt;/div&gt;&lt;/a&gt;
+		&lt;/div&gt;
+
+		&lt;div class=&quot;overlay&quot;&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href=&quot;&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;&quot;&gt;Projects&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;&quot;&gt;Work&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;&quot;&gt;Blog&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;&quot;&gt;Clients&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/nav&gt;
+
+	&lt;p&gt;Click the burger in the top left of your screen.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Prereqs&quot; id=&quot;prereqs&quot;&gt;
+	&lt;h2&gt;Prereqs&lt;/h2&gt;
+	&lt;p&gt;jQuery&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Compatibility&quot; id=&quot;compatibility&quot;&gt;
+	&lt;h2&gt;Compatibility&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;li&gt;IE8+&lt;/li&gt;
+		&lt;li&gt;webkit, Opera, FF&lt;/li&gt;
+		&lt;li&gt;mobile webkit, android&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Options&quot; id=&quot;options&quot;&gt;
+	&lt;h2&gt;Options&lt;/h2&gt;
+
+	&lt;div class=&quot;table-responsive&quot;&gt;
+		&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th style=&quot;width: 100px;&quot;&gt;Name&lt;/th&gt;
+					&lt;th style=&quot;width: 50px;&quot;&gt;type&lt;/th&gt;
+					&lt;th style=&quot;width: 50px;&quot;&gt;default&lt;/th&gt;
+					&lt;th&gt;description&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;nav container&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;#huge-nav&lt;/td&gt;
+					&lt;td&gt;The container of the navigation DOM tree&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Events&quot; id=&quot;events&quot;&gt;
+	&lt;h2&gt;Events&lt;/h2&gt;
+
+	&lt;div class=&quot;table-responsive&quot;&gt;
+		&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th style=&quot;width: 150px;&quot;&gt;Event Type&lt;/th&gt;
+					&lt;th&gt;Description&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;open&lt;/td&gt;
+					&lt;td&gt;This event fires immediately when nav is opened.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;close&lt;/td&gt;
+					&lt;td&gt;This event fires immediately when nav is closed.&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+
+
+&lt;script&gt;
+	stickyNav.init({
+		nav: '#sticky nav'
+	});
+
+	setupMainNav();
+&lt;/script&gt;</description>
+        <pubDate>Mon, 05 May 2014 12:48:21 -0400</pubDate>
+        <link>http://yourdomain.com/2014/05/05/huge-nav/</link>
+        <guid isPermaLink="true">http://yourdomain.com/2014/05/05/huge-nav/</guid>
+      </item>
+    
+      <item>
+        <title>Parallax</title>
+        <description>&lt;script src=&quot;/js/flexicarousel/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/stickynav/stickynav.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/parallax/parallax.js&quot;&gt;&lt;/script&gt;
+&lt;style&gt;
+	p { clear:both; }
+	.parallax-wrap { overflow:hidden; display:inline-block; float:left; padding-right:20px; max-height:250px; }
+	.item { position:absolute; z-index:-1; opacity:0.5; background:#ccc; width:40px; height:40px; border-radius:20px; }
+	.item:nth-child(1) { top:0%; left:10% }
+	.item:nth-child(2) { top:0%; left:30% }
+	.item:nth-child(3) { top:0%; left:50% }
+	.item:nth-child(4) { top:0%; left:70% }
+	.item:nth-child(5) { top:0%; left:90% }
+&lt;/style&gt;
+
+&lt;div id=&quot;sticky&quot;&gt;
+	&lt;nav&gt;
+		&lt;ul&gt;&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/div&gt;
+
+
+&lt;section data-nav=&quot;About&quot; id=&quot;about&quot;&gt;
+	&lt;h2&gt;About&lt;/h2&gt;
+	&lt;p&gt;Parallax. Moves stuff on scroll.&lt;/p&gt;
+
+	&lt;h3&gt;A Note On Approaches&lt;/h3&gt;
+	&lt;p&gt;There are several ways to apprach building a parallax effect on a site. Paul Lewis has
+	&lt;a href=&quot;http://www.html5rocks.com/en/tutorials/speed/parallax/&quot;&gt;a great overview&lt;/a&gt; on the
+	popular techiniques and their pros and cons. In brief:&lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;strong&gt;absolute positioning&lt;/strong&gt;: parallax is achieved via positioning elements
+		absolutely (this technique also includes positioning a background image attachment). In general,
+		this is the absolute worst way to do parallax from a performance point of view. Everything must
+		be recalculated and re-painted on scroll, so avoid this if possible. The upside: you can support
+		IE8 this way.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;3D transforms&lt;/strong&gt;: how the code herein operates. We offload elements in their
+		own render layer to the GPU for X- or Y-transforms. &lt;i&gt;Almost&lt;/i&gt; the most efficient (see
+		below), but still very flexible and easy to implement. Browsers need to support transforms.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;canvas&lt;/strong&gt;: one fixed element background (a canvas), that animates on scroll.
+		Elements are placed into the canvas and moved about on scroll -- this is the most efficient, but
+		difficult to implement (or impossible if you wish to use existing DOM elements).&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Download&quot; id=&quot;download&quot; &gt;
+	&lt;h2&gt;Download&lt;/h2&gt;
+	&lt;h3&gt;Stash&lt;/h3&gt;
+	&lt;p&gt;&lt;a href=&quot;https://stash.hugeinc.com/projects/BOWER/repos/parallax/browse&quot;&gt;Get it from the Stash repo&lt;/a&gt;&lt;/p&gt;
+	&lt;h3&gt;Bower&lt;/h3&gt;
+	&lt;code&gt;bower install parallax&lt;/code&gt;
+
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Demo&quot; id=&quot;demo&quot;&gt;
+	&lt;h2&gt;Demo&lt;/h2&gt;
+
+	&lt;!-- &lt;div style=&quot;position:absolute; width:100%; height:100%; overflow:hidden;&quot;&gt; --&gt;
+	&lt;div&gt;
+		&lt;div class=&quot;parallax item&quot; data-parallax-speed=&quot;1&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;parallax item&quot; data-parallax-speed=&quot;0.5&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;parallax item&quot; data-parallax-speed=&quot;0&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;parallax item&quot; data-parallax-speed=&quot;-0.5&quot;&gt;&lt;/div&gt;
+		&lt;div class=&quot;parallax item&quot; data-parallax-speed=&quot;-1.0&quot;&gt;&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;p class=&quot;parallax&quot; data-parallax-speed=&quot;1.4&quot;&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+
+	&lt;div class=&quot;parallax&quot; data-parallax-speed=&quot;0.4&quot; style=&quot;float:right&quot; &gt;
+		&lt;img src=&quot;http://malformed.ca/wesley.jpg&quot; alt=&quot;&quot; /&gt;
+	&lt;/div&gt;
+
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+
+	&lt;div class=&quot;parallax&quot; data-parallax-speed=&quot;-0.8&quot; style=&quot;float:left&quot;&gt;
+		&lt;img src=&quot;http://malformed.ca/wesley.jpg&quot; alt=&quot;&quot; /&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Prereqs&quot; id=&quot;prereqs&quot;&gt;
+	&lt;h2&gt;Prereqs&lt;/h2&gt;
+	&lt;p&gt;jQuery&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Compatibility&quot; id=&quot;compatibility&quot;&gt;
+	&lt;h2&gt;Compatibility&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;li&gt;IE9+&lt;/li&gt;
+		&lt;li&gt;Firefox, Webkit, Opera&lt;/li&gt;
+		&lt;li&gt;no mobile&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Code&quot; id=&quot;code&quot;&gt;
+	&lt;h2&gt;Code&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;parallax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.parallax&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Options&quot; id=&quot;options&quot;&gt;
+	&lt;h2&gt;Options&lt;/h2&gt;
+	&lt;div class=&quot;table-responsive&quot;&gt;
+		&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th style=&quot;width: 100px;&quot;&gt;Name&lt;/th&gt;
+					&lt;th style=&quot;width: 50px;&quot;&gt;type&lt;/th&gt;
+					&lt;th style=&quot;width: 50px;&quot;&gt;default&lt;/th&gt;
+					&lt;th&gt;description&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;el&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;.parallax&lt;/td&gt;
+					&lt;td&gt;selector or jQuery object of elements to parallax-ify&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+
+&lt;script&gt;
+	stickyNav.init({
+		nav: '#sticky nav'
+	});
+
+	parallax.init({
+		el: '.parallax'
+	});
+&lt;/script&gt;
+</description>
+        <pubDate>Fri, 02 May 2014 12:48:21 -0400</pubDate>
+        <link>http://yourdomain.com/2014/05/02/parallax/</link>
+        <guid isPermaLink="true">http://yourdomain.com/2014/05/02/parallax/</guid>
+      </item>
+    
+      <item>
+        <title>Sticky Nav</title>
+        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/stickynav/styles.css&quot; type=&quot;text/css&quot;&gt;
+&lt;style&gt;
+	section img { float:left; padding-right:10px; width:25%; min-width:200px; }
+	.filler, .filler h2 { color:#aaa; }
+	.filler img { -webkit-filter: greyscale(100%); opacity:0.5; }
+
+&lt;/style&gt;
+&lt;script src=&quot;/js/flexicarousel/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/stickynav/stickynav.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;div id=&quot;sticky&quot;&gt;
+	&lt;nav&gt;
+		&lt;ul&gt;&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/div&gt;
+
+
+&lt;section data-nav=&quot;About&quot; id=&quot;about&quot;&gt;
+	&lt;h2&gt;About&lt;/h2&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+	&lt;p&gt;We are very great and super important lorem ispum. We are very great and
+	super important lorem ispum. We are very great and super important lorem ispum.
+	We are very great and super important lorem ispum.&lt;/p&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+	&lt;p&gt;We are very great and super important lorem ispum. We are very great and
+	super important lorem ispum. We are very great and super important lorem ispum.
+	We are very great and super important lorem ispum.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Download&quot;id=&quot;download&quot; &gt;
+	&lt;h2&gt;Download&lt;/h2&gt;
+	&lt;p&gt;&lt;a href=&quot;https://stash.hugeinc.com/projects/BOWER/repos/stickynav/browse&quot;&gt;Stash repo&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Funding&quot; id=&quot;funding&quot; class=&quot;filler&quot;&gt;
+	&lt;h2&gt;Funding&lt;/h2&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+	&lt;p&gt;Global adoption of mobile services has increased significantly over the last
+	few years. Taking advantage of this ever-growing trend is now more important
+	than ever; however, for our clients, it is merely a stepping stone.&lt;/p&gt;
+	&lt;p&gt;We are very great and super important lorem ispum. We are very great and
+	super important lorem ispum. We are very great and super important lorem ispum.
+	We are very great and super important lorem ispum.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Clients&quot; id=&quot;clients&quot; class=&quot;filler&quot;&gt;
+	&lt;h2&gt;Clients&lt;/h2&gt;
+	&lt;p&gt;Useless filler Global adoption of mobile services has increased significantly over the last
+	few years. Taking advantage of this ever-growing trend is now more important
+	than ever; however, for our clients, it is merely a stepping stone.&lt;/p&gt;
+	&lt;p&gt;We are very great and super important lorem ispum. We are very great and
+	&lt;img src=&quot;http://malformed.ca/wesley.jpg&quot; alt=&quot;&quot; /&gt;
+	super important lorem ispum. We are very great and super important lorem ispum.
+	We are very great and super important lorem ispum.&lt;/p&gt;
+	&lt;p&gt;Global adoption of mobile services has increased significantly over the last
+	few years. Taking advantage of this ever-growing trend is now more important
+	than ever; however, for our clients, it is merely a stepping stone.&lt;/p&gt;
+	&lt;p&gt;We are very great and super important lorem ispum. We are very great and
+	super important lorem ispum. We are very great and super important lorem ispum.
+	We are very great and super important lorem ispum.&lt;/p&gt;
+	&lt;p&gt;We are very great and super important lorem ispum. We are very great and
+	super important lorem ispum. We are very great and super important lorem ispum.
+	We are very great and super important lorem ispum.&lt;/p&gt;
+	&lt;p&gt;We are very great and super important lorem ispum. We are very great and
+	super important lorem ispum. We are very great and super important lorem ispum.
+	We are very great and super important lorem ispum.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Partners&quot; id=&quot;partners&quot; class=&quot;filler&quot;&gt;
+	&lt;h2&gt;Partners&lt;/h2&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
+	&lt;p&gt;Global adoption of mobile services has increased significantly over the last
+	few years. Taking advantage of this ever-growing trend is now more important
+	than ever; however, for our clients, it is merely a stepping stone.&lt;/p&gt;
+	&lt;p&gt;We are very great and super important lorem ispum. We are very great and
+	super important lorem ispum. We are very great and super important lorem ispum.
+	We are very great and super important lorem ispum.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Prereqs&quot; id=&quot;prereqs&quot;&gt;
+	&lt;h2&gt;Prereqs&lt;/h2&gt;
+	&lt;p&gt;jQuery&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Compatibility&quot; id=&quot;compatibility&quot;&gt;
+	&lt;h2&gt;Compatibility&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;li&gt;IE8+&lt;/li&gt;
+		&lt;li&gt;Firefox, Chrome, Opera&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Code&quot; id=&quot;code&quot;&gt;
+	&lt;h2&gt;Code&lt;/h2&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;stickyNav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;#sticky&amp;#39;&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// navItem: &amp;#39;td&amp;#39;,&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// active: &amp;#39;selected&amp;#39;,&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// scrollSpeed&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Options&quot; id=&quot;options&quot;&gt;
+	&lt;h2&gt;Options&lt;/h2&gt;
+	&lt;div class=&quot;table-responsive&quot;&gt;
+		&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th style=&quot;width: 100px;&quot;&gt;Name&lt;/th&gt;
+					&lt;th style=&quot;width: 50px;&quot;&gt;type&lt;/th&gt;
+					&lt;th style=&quot;width: 50px;&quot;&gt;default&lt;/th&gt;
+					&lt;th&gt;description&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;nav&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;&lt;/td&gt;
+					&lt;td&gt;selector or jQuery object of the nav container &lt;span class=&quot;color:red&quot;&gt;(required)&lt;/span&gt; &lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;!--
+				&lt;tr&gt;
+					&lt;td&gt;navItem&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;li&lt;/td&gt;
+					&lt;td&gt;element to use when building the navigation&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;active&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;active&lt;/td&gt;
+					&lt;td&gt;class to use on active nav item&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;scrollSpeed&lt;/td&gt;
+					&lt;td&gt;integer&lt;/td&gt;
+					&lt;td&gt;500&lt;/td&gt;
+					&lt;td&gt;Speed of scrolling transitions between page sections&lt;/td&gt;
+				&lt;/tr&gt;
+				--&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+
+&lt;script&gt;
+	stickyNav.init({
+		nav: '#sticky nav'
+		// navItem: 'td',
+		// active: 'selected',
+		// scrollSpeed
+	});
+&lt;/script&gt;
+</description>
+        <pubDate>Sat, 26 Apr 2014 12:48:21 -0400</pubDate>
+        <link>http://yourdomain.com/2014/04/26/sticky-nav/</link>
+        <guid isPermaLink="true">http://yourdomain.com/2014/04/26/sticky-nav/</guid>
+      </item>
+    
+      <item>
+        <title>Huge Inc. Slider</title>
+        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/huge-slider/main.css&quot;&gt;
+
+    &lt;article&gt;
+        &lt;section id=&quot;one&quot;&gt;
+			&lt;!-- 	&lt;header class=&quot;header&quot;&gt;
+		&lt;nav&gt;
+			
+			&lt;a class=&quot;next&quot; href=&quot;/2014/04/26/sticky-nav/&quot; title=&quot;Next Post: Sticky Nav&quot;&gt;&lt;/a&gt;
+			
+
+			
+			&lt;a class=&quot;prev&quot; href=&quot;/widget/2014/04/03/autocompleter/&quot; title=&quot;Previous Post: AutoCompleter&quot;&gt;&lt;/a&gt;
+			
+		&lt;/nav&gt;
+
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;a href=&quot;/&quot;&gt;&lt;i class=&quot;fa fa-home&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+			&lt;h1 class=&quot;title&quot;&gt;Huge Inc. Slider&lt;/h1&gt;
+		&lt;/div&gt;
+	&lt;/header&gt;
+ --&gt;
+
+            &lt;div class=&quot;container&quot;&gt;
+	            &lt;h3&gt;Huge.Slider&lt;/h3&gt;
+	            &lt;p&gt;Full page scroll jacking slider that's touch friendly&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;two&quot;&gt;
+            &lt;h3&gt;Prereqs&lt;/h3&gt;
+
+            &lt;ul class=&quot;list-unstyled&quot;&gt;
+                &lt;!-- &lt;li&gt;&lt;a href=&quot;http://jquery.com/&quot;&gt;JQuery&lt;/a&gt;&lt;/li&gt; --&gt;
+            &lt;/ul&gt;
+
+            &lt;h3&gt;Compatibility&lt;/h3&gt;
+            &lt;ul class=&quot;list-unstyled&quot;&gt;
+                &lt;li&gt;IE9+&lt;/li&gt;
+                &lt;li&gt;Chrome, Opera, lynx&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;three&quot;&gt;
+            &lt;h3&gt;Usage&lt;/h3&gt;
+
+&lt;div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Slider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nt&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;hidden&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;section id=&quot;four&quot;&gt;
+            &lt;h3&gt;Options&lt;/h3&gt;
+
+            &lt;div class=&quot;table-responsive&quot;&gt;
+    &lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+      &lt;thead&gt;
+       &lt;tr&gt;
+         &lt;th style=&quot;width: 10%;&quot;&gt;Name&lt;/th&gt;
+         &lt;th style=&quot;width: 10%;&quot;&gt;type&lt;/th&gt;
+         &lt;th style=&quot;width: 10%;&quot;&gt;default&lt;/th&gt;
+         &lt;th style=&quot;width: 70%;&quot;&gt;description&lt;/th&gt;
+       &lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+       &lt;tr&gt;
+         &lt;td&gt;animation&lt;/td&gt;
+         &lt;td&gt;boolean or the string &lt;code&gt;'static'&lt;/code&gt;&lt;/td&gt;
+         &lt;td&gt;true&lt;/td&gt;
+         &lt;td&gt;Includes a modal-backdrop element. Alternatively, specify &lt;code&gt;static&lt;/code&gt; for a backdrop which doesn't close the modal on click.&lt;/td&gt;
+       &lt;/tr&gt;
+       &lt;/tbody&gt;
+       &lt;/table&gt;
+        &lt;/section&gt;
+
+    &lt;/article&gt;
+
+
+&lt;script src=&quot;/components/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;!-- endbower --&gt;
+&lt;!-- endbuild --&gt;
+
+&lt;!-- build:js({app,.tmp}) scripts/main.js --&gt;
+</description>
+        <pubDate>Sat, 26 Apr 2014 12:48:21 -0400</pubDate>
+        <link>http://yourdomain.com/widget/2014/04/26/huge-scrolljacker/</link>
+        <guid isPermaLink="true">http://yourdomain.com/widget/2014/04/26/huge-scrolljacker/</guid>
+      </item>
+    
+      <item>
+        <title>AutoCompleter</title>
+        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/autocompleter/main.css&quot;&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;/js/autocompleter/autocompleter.js&quot;&gt;&lt;/script&gt;
+&lt;section&gt;
+	&lt;h2&gt;About&lt;/h2&gt;
+	&lt;p&gt;AutoCompleter is a light wieght stand alone module can be used for filtering data or auto completion of user input. It work on desktop, phone and tablet.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+	&lt;h2&gt;Concept&lt;/h2&gt;
+	&lt;p&gt;AutoCompleter caches filterable data in an array, and each data key matches their markup order.
+		By filtering the cached array to locate what markup to hide or show and reludce the amount markup to append to DOM.
+	&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section&gt;
+	&lt;h2&gt;Compatibility&lt;/h2&gt;
+
+	&lt;ul&gt;
+		&lt;li&gt;IE9+&lt;/li&gt;
+		&lt;li&gt;Chrome, Opera, safari&lt;/li&gt;
+		&lt;li&gt;iOS 6+&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+&lt;section&gt;
+	&lt;h2&gt;Demo&lt;/h2&gt;
+	&lt;div id=&quot;demo&quot; class=&quot;wrapper&quot;&gt;
+		&lt;div class=&quot;clearfix&quot;&gt;
+			&lt;div class=&quot;col&quot; id=&quot;auto-complete-basic&quot;&gt;
+				&lt;h3&gt;Filter Existing Markup Example&lt;/h3&gt;
+				&lt;input class=&quot;filter&quot; type=&quot;text&quot; name=&quot;search&quot; value=&quot;&quot; placeholder=&quot;Filter state &quot;&gt;
+				&lt;ul class=&quot;result&quot;&gt;&lt;li &gt;Alabama&lt;/li&gt;&lt;li &gt;Alaska&lt;/li&gt;&lt;li &gt;Arizona&lt;/li&gt;&lt;li &gt;Arkansas &lt;/li&gt;&lt;li &gt;California&lt;/li&gt;&lt;li &gt;Colorado&lt;/li&gt;&lt;li &gt;Connecticut&lt;/li&gt;&lt;li &gt;Delaware&lt;/li&gt;&lt;li &gt;Florida&lt;/li&gt;&lt;li &gt;Georgia&lt;/li&gt;&lt;li &gt;Hawaii&lt;/li&gt;&lt;li &gt;Idaho &lt;/li&gt;&lt;li &gt;Illinois Indiana&lt;/li&gt;&lt;li &gt;Iowa&lt;/li&gt;&lt;li &gt;Kansas&lt;/li&gt;&lt;li &gt;Kentucky&lt;/li&gt;&lt;li &gt;Louisiana&lt;/li&gt;&lt;li &gt;Maine&lt;/li&gt;&lt;li &gt;Maryland&lt;/li&gt;&lt;li &gt;Massachusetts&lt;/li&gt;&lt;li &gt;Michigan&lt;/li&gt;&lt;li &gt;Minnesota&lt;/li&gt;&lt;li &gt;Mississippi&lt;/li&gt;&lt;li &gt;Missouri&lt;/li&gt;&lt;li &gt;Montana Nebraska&lt;/li&gt;&lt;li &gt;Nevada&lt;/li&gt;&lt;li &gt;New Hampshire&lt;/li&gt;&lt;li &gt;New Jersey&lt;/li&gt;&lt;li &gt;New Mexico&lt;/li&gt;&lt;li &gt;New York&lt;/li&gt;&lt;li &gt;North Carolina&lt;/li&gt;&lt;li &gt;North Dakota&lt;/li&gt;&lt;li &gt;Ohio&lt;/li&gt;&lt;li &gt;Oklahoma&lt;/li&gt;&lt;li &gt;Oregon&lt;/li&gt;&lt;li &gt;Pennsylvania Rhode Island&lt;/li&gt;&lt;li &gt;South Carolina&lt;/li&gt;&lt;li &gt;South Dakota&lt;/li&gt;&lt;li &gt;Tennessee&lt;/li&gt;&lt;li &gt;Texas &lt;/li&gt;&lt;li &gt;Utah &lt;/li&gt;&lt;li &gt;Vermont&lt;/li&gt;&lt;li &gt;Virginia &lt;/li&gt;&lt;li &gt;Washington &lt;/li&gt;&lt;li &gt;West Virginia &lt;/li&gt;&lt;li &gt;Wisconsin &lt;/li&gt;&lt;li &gt;Wyoming&lt;/li&gt;&lt;/ul&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;col&quot; id=&quot;auto-complete&quot;&gt;
+				&lt;h3&gt;Filter Existing Markup Example 2&lt;/h3&gt;
+				&lt;input class=&quot;filter&quot; type=&quot;text&quot; name=&quot;search&quot; value=&quot;&quot; placeholder=&quot;Type words like funny, dance, lips &quot;&gt;
+				&lt;ul class=&quot;result&quot;&gt;
+				&lt;li data-cat=&quot; Reactions boogie dance happy dance Jimmy Fallon moves party hard perfect loops&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/jmmyf.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions Andy Richter blink blinking disbelief mind blown WTF? WTH?&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/whaaaa.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions cover ears Dumb and Dumber Jim Carey lalalala not listening&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/lalalala.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions broke broken fix I can fix that&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/icft.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions excited frozen giddy here hopeful present&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/excited-anna.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions as if bitch please Bruce Willis disbelief doubtful eye roll eyeroll yeah right&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/rfz0hP0.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions brows eyebrows game of thrones happy perfect loops Peter Dinklage smile Tyrion yes&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/ybrws.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions bitch please bitch what? disturbed incredulous say what? WTF?&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/TOzSZ3P.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions homer late OMW run running The Simpsons&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/omw.gif&quot;&gt;&lt;/li&gt;&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;clearfix&quot;&gt;
+			&lt;div class=&quot;col&quot; id=&quot;ajax-auto-complete&quot;&gt;
+				&lt;h3&gt;Filter AJAX Example&lt;/h3&gt;
+				&lt;input class=&quot;filter&quot; type=&quot;text&quot; name=&quot;search&quot; value=&quot;&quot; placeholder=&quot;Search for a fruit&quot;&gt;
+				&lt;ul class=&quot;result&quot;&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+			&lt;div class=&quot;col&quot; id=&quot;ajax-custom-auto-complete&quot;&gt;
+				&lt;h3&gt;Filter AJAX Example&lt;/h3&gt;
+				&lt;input class=&quot;filter&quot; type=&quot;text&quot; name=&quot;search&quot; value=&quot;&quot; placeholder=&quot;Search for a Designer brand ex. Burberry&quot;&gt;
+				&lt;div class=&quot;result&quot;&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+		&lt;div class=&quot;clearfix&quot;&gt;
+			&lt;div class=&quot;col&quot; id=&quot;auto-filter&quot;&gt;
+				&lt;h3&gt;Filter with click&lt;/h3&gt;
+				&lt;div&gt;
+					&lt;span&gt;Excited&lt;/span&gt;
+					&lt;span&gt;Dance&lt;/span&gt;
+					&lt;span&gt;Eyebrow&lt;/span&gt;
+				&lt;/div&gt;
+				&lt;ul class=&quot;result&quot;&gt;
+				&lt;li data-cat=&quot; Reactions boogie dance happy dance Jimmy Fallon moves party hard perfect loops&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/jmmyf.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions Andy Richter blink blinking disbelief mind blown WTF? WTH?&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/whaaaa.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions cover ears Dumb and Dumber Jim Carey lalalala not listening&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/lalalala.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions broke broken fix I can fix that&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/icft.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions excited frozen giddy here hopeful present&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/excited-anna.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions as if bitch please Bruce Willis disbelief doubtful eye roll eyeroll yeah right&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/rfz0hP0.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions brows eyebrows game of thrones happy perfect loops Peter Dinklage smile Tyrion yes&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/ybrws.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions bitch please bitch what? disturbed incredulous say what? WTF?&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/TOzSZ3P.gif&quot;&gt;&lt;/li&gt;&lt;li data-cat=&quot; Reactions homer late OMW run running The Simpsons&quot;&gt;&lt;img src=&quot;http://www.reactiongifs.com/r/omw.gif&quot;&gt;&lt;/li&gt;&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;script type=&quot;text/javascript&quot;&gt;
+
+		var basicFilter = new AutoCompleter(document.querySelector('#auto-complete-basic'));
+
+		var markupFilter = new AutoCompleter(document.querySelector('#auto-complete'), {
+			markup: {
+				cacheData: function (el) {
+					return el.getAttribute('data-cat');
+
+				}
+			}
+		});
+		var markupFilter = new AutoCompleter(document.querySelector('#ajax-auto-complete'), {
+			ajax: {
+				url: '/js/autocompleter/json/fruits.json',
+				action: 'GET',
+			},
+			typingConfig : {
+				minimal: 2
+			}
+		});
+
+		var customAjaxFilter = new AutoCompleter(document.querySelector('#ajax-custom-auto-complete'), {
+			ajax: {
+				url: '/js/autocompleter/json/designer.json',
+				action: 'GET',
+				renderJSON: function (response, result) {
+					var frag = document.createDocumentFragment();
+					var items = [];
+					for ( var key in response) {
+						var title = document.createElement('span');
+						title.innerHTML = key;
+						title.setAttribute('data-letter', key);
+						var ul = document.createElement('ul');
+						ul.setAttribute('data-group', key);
+						for (var i = 0; i &lt; response[key].length; i++) {
+							ul.innerHTML += '&lt;li&gt;' + response[key][i] + '&lt;/li&gt;';
+							items.push(response[key][i]);
+						};
+						frag.appendChild(title);
+						frag.appendChild(ul);
+					}
+					result.innerHTML = &quot;&quot;;
+					result.appendChild(frag);
+					return items;
+				}
+			},
+			typingConfig : {
+				minimal: 2,
+				typePause: 300,
+				customHideAndShow: function (obj) {
+					var show = 0;
+					for (var i = 0; i &lt; obj.dataCache.length; i++) {
+						if(obj.dataCache[i].match(obj.regex)) {
+							obj.filterElement[i].className = 'show';
+							show++;
+						} else {
+							obj.filterElement[i].className = 'hide';
+						}
+					}
+					var letterSections = obj.options.filterTarget.querySelectorAll('ul');
+					for (var i = 0; i &lt; letterSections.length; i++) {
+						if (letterSections[i].querySelectorAll('.show').length &lt; 1){
+							if(letterSections[i].previousElementSibling.classList.contains('show')) {
+								letterSections[i].previousElementSibling.classList.remove('show')
+							}
+						} else {
+							if(!letterSections[i].previousElementSibling.classList.contains('show')) {
+								letterSections[i].previousElementSibling.classList.add('show')
+							}
+						}
+					}
+
+					obj.checkNoResult(show);
+				}
+			}
+		});
+
+		var tabFilter = new AutoCompleter(document.querySelector('#auto-filter'), {
+				filterOnly: true,
+				markup: {
+					cacheData: function (el) {
+						return el.getAttribute('data-cat');
+
+					}
+				}
+		});
+		tabFilter.dataCache = tabFilter.cacheCustomData();
+
+		document.querySelector('#auto-filter').addEventListener('click', function (e) {
+			if(e.target.nodeName === 'SPAN') {
+				tabFilter.filterMarkup(e, e.target.innerHTML);
+			}
+		})
+	&lt;/script&gt;
+&lt;/section&gt;
+
+
+&lt;section&gt;
+	&lt;h2&gt;Code&lt;/h2&gt;
+
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//to filter markup&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;markupFilter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AutoCompleter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#auto-complete&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
+
+
+	&lt;span class=&quot;c1&quot;&gt;//to override markup filter function&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+
+&lt;section&gt;
+	&lt;h2&gt;Api&lt;/h2&gt;
+
+	&lt;h3&gt;Options&lt;/h3&gt;
+
+	&lt;div class=&quot;table-responsive&quot;&gt;
+	   &lt;!--  &lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+	      &lt;thead&gt;
+	       &lt;tr&gt;
+	         &lt;th style=&quot;width: 100px;&quot;&gt;Name&lt;/th&gt;
+	         &lt;th style=&quot;width: 50px;&quot;&gt;type&lt;/th&gt;
+	         &lt;th style=&quot;width: 50px;&quot;&gt;default&lt;/th&gt;
+	         &lt;th&gt;description&lt;/th&gt;
+	       &lt;/tr&gt;
+	      &lt;/thead&gt;
+	      &lt;tbody&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;backdrop&lt;/td&gt;
+	         &lt;td&gt;boolean or the string &lt;code&gt;'static'&lt;/code&gt;&lt;/td&gt;
+	         &lt;td&gt;true&lt;/td&gt;
+	         &lt;td&gt;Includes a modal-backdrop element. Alternatively, specify &lt;code&gt;static&lt;/code&gt; for a backdrop which doesn't close the modal on click.&lt;/td&gt;
+	       &lt;/tr&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;keyboard&lt;/td&gt;
+	         &lt;td&gt;boolean&lt;/td&gt;
+	         &lt;td&gt;true&lt;/td&gt;
+	         &lt;td&gt;Closes the modal when escape key is pressed&lt;/td&gt;
+	       &lt;/tr&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;show&lt;/td&gt;
+	         &lt;td&gt;boolean&lt;/td&gt;
+	         &lt;td&gt;true&lt;/td&gt;
+	         &lt;td&gt;Shows the modal when initialized.&lt;/td&gt;
+	       &lt;/tr&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;remote&lt;/td&gt;
+	         &lt;td&gt;path&lt;/td&gt;
+	         &lt;td&gt;false&lt;/td&gt;
+	         &lt;td&gt;&lt;p&gt;If a remote URL is provided, &lt;strong&gt;content will be loaded one time&lt;/strong&gt; via jQuery's &lt;code&gt;load&lt;/code&gt; method and injected into the &lt;code&gt;.modal-content&lt;/code&gt; div. If you're using the data-api, you may alternatively use the &lt;code&gt;href&lt;/code&gt; attribute to specify the remote source. An example of this is shown below:&lt;/p&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-toggle=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;modal&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;remote.html&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;data-target=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#modal&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Click me&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;
+	&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	         &lt;/td&gt;
+	       &lt;/tr&gt;
+	      &lt;/tbody&gt;
+	    &lt;/table&gt; --&gt;
+	  &lt;/div&gt;
+
+
+	&lt;h3&gt;Methods&lt;/h3&gt;
+
+	&lt;h5&gt;coming soon&lt;/h5&gt;
+
+	
+
+	&lt;h3&gt;Events&lt;/h3&gt;
+
+	&lt;!-- &lt;div class=&quot;table-responsive&quot;&gt;
+	    &lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+	      &lt;thead&gt;
+	       &lt;tr&gt;
+	         &lt;th style=&quot;width: 150px;&quot;&gt;Event Type&lt;/th&gt;
+	         &lt;th&gt;Description&lt;/th&gt;
+	       &lt;/tr&gt;
+	      &lt;/thead&gt;
+	      &lt;tbody&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;show.bs.modal&lt;/td&gt;
+	         &lt;td&gt;This event fires immediately when the &lt;code&gt;show&lt;/code&gt; instance method is called. If caused by a click, the clicked element is available as the &lt;code&gt;relatedTarget&lt;/code&gt; property of the event.&lt;/td&gt;
+	       &lt;/tr&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;shown.bs.modal&lt;/td&gt;
+	         &lt;td&gt;This event is fired when the modal has been made visible to the user (will wait for CSS transitions to complete). If caused by a click, the clicked element is available as the &lt;code&gt;relatedTarget&lt;/code&gt; property of the event.&lt;/td&gt;
+	       &lt;/tr&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;hide.bs.modal&lt;/td&gt;
+	         &lt;td&gt;This event is fired immediately when the &lt;code&gt;hide&lt;/code&gt; instance method has been called.&lt;/td&gt;
+	       &lt;/tr&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;hidden.bs.modal&lt;/td&gt;
+	         &lt;td&gt;This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions to complete).&lt;/td&gt;
+	       &lt;/tr&gt;
+	       &lt;tr&gt;
+	         &lt;td&gt;loaded.bs.modal&lt;/td&gt;
+	         &lt;td&gt;This event is fired when the modal has loaded content using the remote option.&lt;/td&gt;
+	       &lt;/tr&gt;
+	      &lt;/tbody&gt;
+	    &lt;/table&gt;
+	  &lt;/div&gt; --&gt;
+&lt;/section&gt;</description>
+        <pubDate>Thu, 03 Apr 2014 12:48:21 -0400</pubDate>
+        <link>http://yourdomain.com/widget/2014/04/03/autocompleter/</link>
+        <guid isPermaLink="true">http://yourdomain.com/widget/2014/04/03/autocompleter/</guid>
+      </item>
+    
+      <item>
+        <title>Huge Slider</title>
+        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/huge-slider/main.css&quot;&gt;
+
+&lt;article&gt;
+
+	&lt;section id=&quot;one&quot;&gt;
+
+	    &lt;div class=&quot;container&quot;&gt;
+	    &lt;h3&gt;Huge.Slider&lt;/h3&gt;
+
+	    &lt;p&gt;Full page scroll jacking slider that's touch friendly&lt;/p&gt;
+	    &lt;/div&gt;
+	&lt;/section&gt;
+
+	&lt;section id=&quot;two&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;h3&gt;Prereqs&lt;/h3&gt;
+			&lt;ul class=&quot;list-unstyled&quot;&gt;
+				&lt;li&gt;&lt;a href=&quot;http://jquery.com/&quot;&gt;JQuery&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href=&quot;http://ricostacruz.com/jquery.transit/&quot;&gt;Transit&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+
+			&lt;h3&gt;Compatibility&lt;/h3&gt;
+			&lt;ul class=&quot;list-unstyled&quot;&gt;
+				&lt;li&gt;IE9+&lt;/li&gt;
+				&lt;li&gt;Chrome, Opera, lynx&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+
+	&lt;section id=&quot;three&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;h3&gt;Usage&lt;/h3&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Slider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nt&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;hidden&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+
+	&lt;section id=&quot;four&quot;&gt;
+		&lt;div class=&quot;container&quot;&gt;
+			&lt;h3&gt;Options&lt;/h3&gt;
+
+			&lt;div class=&quot;table-responsive&quot;&gt;
+				&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+					&lt;thead&gt;
+						&lt;tr&gt;
+							&lt;th style=&quot;width: 10%;&quot;&gt;Name&lt;/th&gt;
+							&lt;th style=&quot;width: 10%;&quot;&gt;type&lt;/th&gt;
+							&lt;th style=&quot;width: 10%;&quot;&gt;default&lt;/th&gt;
+							&lt;th style=&quot;width: 70%;&quot;&gt;description&lt;/th&gt;
+						&lt;/tr&gt;
+					&lt;/thead&gt;
+				&lt;tbody&gt;
+					&lt;tr&gt;
+						&lt;td&gt;animation&lt;/td&gt;
+						&lt;td&gt;boolean or the string &lt;code&gt;'static'&lt;/code&gt;&lt;/td&gt;
+						&lt;td&gt;true&lt;/td&gt;
+						&lt;td&gt;Includes a modal-backdrop element. Alternatively, specify &lt;code&gt;static&lt;/code&gt; for a backdrop which doesn't close the modal on click.&lt;/td&gt;
+					&lt;/tr&gt;
+				&lt;/tbody&gt;
+			&lt;/table&gt;
+		&lt;/div&gt;
+	&lt;/section&gt;
+
+&lt;/article&gt;
+
+
+&lt;script src=&quot;/components/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/components/jquery-mousewheel/jquery.mousewheel.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/components/jquery.transit/jquery.transit.js&quot;&gt;&lt;/script&gt;
+&lt;!-- endbower --&gt;
+&lt;!-- endbuild --&gt;
+
+&lt;!-- build:js({app,.tmp}) scripts/main.js --&gt;
+&lt;script src=&quot;/huge_bower_components/huge.slider/huge-slider.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/huge-slider/main.js&quot;&gt;&lt;/script&gt;
+</description>
+        <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
+        <link>http://yourdomain.com/widget/2014/03/05/huge-slider/</link>
+        <guid isPermaLink="true">http://yourdomain.com/widget/2014/03/05/huge-slider/</guid>
+      </item>
+    
+      <item>
+        <title>Huge SASS Library</title>
+        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/huge-sass/main.css&quot;&gt;
+&lt;style&gt;
+	main .container { padding-left: 240px; }
+&lt;/style&gt;
+
+&lt;script src=&quot;/js/flexicarousel/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/stickynav/stickynav.js&quot;&gt;&lt;/script&gt;
+
+&lt;div id=&quot;sticky&quot;&gt;
+	&lt;nav&gt;
+		&lt;ul&gt;
+		&lt;!-- let's try to auto-generate this:
+			&lt;li&gt;
+				&lt;a href=&quot;#general&quot;&gt;General&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href=&quot;#circleWithArrow&quot;&gt;Circle With Arrow&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href=&quot;#cardFlip&quot;&gt;Card Flip&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href=&quot;#pageCurl&quot;&gt;Page Curl&lt;/a&gt;&lt;/li&gt;
+					&lt;li&gt;&lt;a href=&quot;#arrow&quot;&gt;Arrow&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#functions&quot;&gt;Functions&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href=&quot;#pixelsToEms&quot;&gt;Pixels to Ems&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#typography&quot;&gt;Typography&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href=&quot;#&quot;&gt;Something&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+				&lt;a href=&quot;#typography&quot;&gt;Format&lt;/a&gt;
+				&lt;ul&gt;
+					&lt;li&gt;&lt;a href=&quot;#unstyledList&quot;&gt;Unstyled List&lt;/a&gt;&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/li&gt;
+		--&gt;
+		&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/div&gt;
+
+&lt;section data-nav=&quot;General&quot; id=&quot;general&quot;&gt;
+	&lt;h2&gt;General&lt;/h2&gt;
+
+	&lt;div id=&quot;circleWithArrow&quot; class=&quot;item&quot;&gt;
+		&lt;h3&gt;Circle with Arrow&lt;/h3&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;Name: &lt;/dt&gt;
+			&lt;dd&gt;circle-with-arrow&lt;/dd&gt;
+		&lt;/dl&gt;
+		&lt;dl&gt;
+			&lt;lh&gt;Arguments&lt;/lh&gt;
+
+			&lt;dt&gt;Size: &lt;/dt&gt;
+			&lt;dd&gt;Size of the circle you want&lt;/dd&gt;
+
+			&lt;dt&gt;Circle color: &lt;/dt&gt;
+			&lt;dd&gt;Color of the circle&lt;/dd&gt;
+
+			&lt;dt&gt;Arrow color: &lt;/dt&gt;
+			&lt;dd&gt;Arrow color you want (durr)&lt;/dd&gt;
+		&lt;/dl&gt;
+
+		&lt;h4&gt;Example&lt;/h4&gt;
+
+		&lt;h6&gt;Code:&lt;/h6&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; circle-with-arrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$magenta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;h6&gt;Result:&lt;/h6&gt;
+		&lt;div class=&quot;well&quot;&gt;
+			&lt;div class=&quot;example&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div id=&quot;cardFlip&quot; class=&quot;item&quot;&gt;
+		&lt;h3&gt;Card Flip&lt;/h3&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;name&lt;/dt&gt;
+			&lt;dd&gt;card-flip&lt;/dd&gt;
+		&lt;/dl&gt;
+		&lt;dl&gt;
+			&lt;lh&gt;Arguments&lt;/lh&gt;
+
+			&lt;dt&gt;Direction: &lt;/dt&gt;
+			&lt;dd&gt;Direction you want it to flip, left right up down (corner is in there but hasn't been tested in IE, but who cares AMIRIGHT?)&lt;/dd&gt;
+
+			&lt;dt&gt;Height: &lt;/dt&gt;
+			&lt;dd&gt;Card height&lt;/dd&gt;
+
+			&lt;dt&gt;Width: &lt;/dt&gt;
+			&lt;dd&gt;Card width&lt;/dd&gt;
+
+			&lt;dt&gt;Perspective: &lt;/dt&gt;
+			&lt;dd&gt;Set the animation perspective&lt;/dd&gt;
+
+			&lt;dt&gt;Duration: &lt;/dt&gt;
+			&lt;dd&gt;The durations of the animation&lt;/dd&gt;
+		&lt;/dl&gt;
+
+		&lt;h4&gt;Example&lt;/h4&gt;
+
+		&lt;h6&gt;Code:&lt;/h6&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; card-flip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;h6&gt;Result:&lt;/h6&gt;
+		&lt;div class=&quot;well&quot;&gt;
+			&lt;div class=&quot;card-container&quot;&gt;
+				&lt;div class=&quot;card&quot;&gt;
+					&lt;div class=&quot;front&quot;&gt;
+						1
+					&lt;/div&gt;
+					&lt;div class=&quot;back&quot;&gt;
+							2
+					&lt;/div&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+		 &lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div id=&quot;pageCurl&quot; class=&quot;item&quot;&gt;
+		&lt;h3&gt;Page Curl&lt;/h3&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;name&lt;/dt&gt;
+			&lt;dd&gt;page-curl&lt;/dd&gt;
+		&lt;/dl&gt;
+
+		&lt;h4&gt;Example&lt;/h4&gt;
+
+		&lt;h6&gt;Code&lt;/h6&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; page-curl&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;h6&gt;Result&lt;/h6&gt;
+		&lt;div class=&quot;well page-curl&quot;&gt;
+				&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat.&lt;/p&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div id=&quot;arrow&quot; class=&quot;item&quot;&gt;
+		&lt;h3&gt;CSS arrow&lt;/h3&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;Name: &lt;/dt&gt;
+			&lt;dd&gt;arrow&lt;/dd&gt;
+		&lt;/dl&gt;
+		&lt;dl&gt;
+			&lt;lh&gt;Arguments&lt;/lh&gt;
+			&lt;dl&gt;
+				&lt;dt&gt;Direction: &lt;/dt&gt;
+				&lt;dd&gt;Direction for the arrow to point&lt;/dd&gt;
+
+				&lt;dt&gt;Color: &lt;/dt&gt;
+				&lt;dd&gt;Arrow color&lt;/dd&gt;
+
+				&lt;dt&gt;Width: &lt;/dt&gt;
+				&lt;dd&gt;Card width&lt;/dd&gt;
+
+				&lt;dt&gt;Size: &lt;/dt&gt;
+				&lt;dd&gt;Pixel size of the arrow&lt;/dd&gt;
+				&lt;dt&gt;&lt;/dt&gt;
+				&lt;dd&gt;I can't take credit for writing this, it came from &lt;a href=&quot;https://gist.github.com/bpainter/1085320&quot;&gt;here&lt;/a&gt;&lt;/dd&gt;
+			&lt;/dl&gt;
+		&lt;/dl&gt;
+
+		&lt;h4&gt;Example&lt;/h4&gt;
+
+		&lt;h6&gt;Code&lt;/h6&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; arrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;h6&gt;Result:&lt;/h6&gt;
+		&lt;div class=&quot;well&quot;&gt;
+			&lt;div class=&quot;example&quot;&gt;&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div id=&quot;button-arrow&quot; class=&quot;item&quot;&gt;
+
+		&lt;h3&gt;Arrow Button&lt;/h3&gt;
+
+		&lt;dl&gt;
+			&lt;dt&gt;Name: &lt;/dt&gt;
+			&lt;dd&gt;button-arrow&lt;/dd&gt;
+		&lt;/dl&gt;
+		&lt;!--
+		&lt;dl&gt;
+			&lt;lh&gt;Arguments&lt;/lh&gt;
+			&lt;dl&gt;
+				&lt;dt&gt;Direction: &lt;/dt&gt;
+				&lt;dd&gt;Direction for the arrow to point&lt;/dd&gt;
+			&lt;/dl&gt;
+		&lt;/dl&gt;
+		--&gt;
+
+		&lt;h4&gt;Example&lt;/h4&gt;
+
+		&lt;h6&gt;Code:&lt;/h6&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; button-arrow&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;h6&gt;Result:&lt;/h6&gt;
+		&lt;div class=&quot;well&quot;&gt;
+			&lt;button class=&quot;button-example&quot;&gt;Sample Button&lt;/button&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+	&lt;div id=&quot;hugeBullets&quot; class=&quot;item&quot;&gt;
+		&lt;h3&gt;Huge Navigation Bullets&lt;/h2&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;name&lt;/dt&gt;
+			&lt;dd&gt;huge-bullets&lt;/dd&gt;
+		&lt;/dl&gt;
+
+		&lt;h6&gt;Code&lt;/h6&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; huge-bullets&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;h6&gt;Result&lt;/h6&gt;
+
+		&lt;div class=&quot;well&quot;&gt;
+			&lt;nav&gt;
+				&lt;span class=&quot;&quot;&gt;&lt;/span&gt;
+				&lt;span class=&quot;&quot;&gt;&lt;/span&gt;
+				&lt;span class=&quot;&quot;&gt;&lt;/span&gt;
+				&lt;span class=&quot;&quot;&gt;&lt;/span&gt;
+				&lt;span class=&quot;active&quot;&gt;&lt;/span&gt;
+			&lt;/nav&gt;
+			&lt;script&gt;
+				$(function(){
+					var bullets = $('#hugeBullets nav span');
+					bullets.click(function(){
+						bullets.removeClass();
+						$(this).addClass('active');
+					});
+				});
+			&lt;/script&gt;
+	   	&lt;/div&gt;
+
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Functions&quot; id=&quot;functions&quot;&gt;
+
+	&lt;h2&gt;Functions&lt;/h2&gt;
+
+	&lt;div id=&quot;pixelsToEms&quot; class=&quot;item&quot;&gt;
+		&lt;h3&gt;Pixel To Ems&lt;/h6&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;Name: &lt;/dt&gt;
+			&lt;dd&gt;huge-em&lt;/dd&gt;
+		&lt;/dl&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;Type: &lt;/dt&gt;
+			&lt;dd&gt;function&lt;/dd&gt;
+
+			&lt;lh&gt;Arguments&lt;/lh&gt;
+
+			&lt;dt&gt;Pixels: &lt;/dt&gt;
+			&lt;dd&gt;Px value you want to convert to ems&lt;/dd&gt;
+
+			&lt;dt&gt;Base: &lt;/dt&gt;
+			&lt;dd&gt;Base px value to convert the ems off of&lt;/dd&gt;
+		&lt;/dl&gt;
+
+		&lt;p&gt;Maybe some more stuff here to explain about the plugin if it's kind of involved, and now some lorem ipsum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec bibendum nunc a sapien tincidunt, ullamcorper vestibulum sem hendrerit. Morbi ac erat odio. Aliquam eget interdum libero, id bibendum felis. Nullam vulputate fringilla fringilla. Maecenas viverra sapien in justo feugiat, eget rutrum ipsum laoreet. Sed at lorem at orci condimentum condimentum eu tincidunt lectus. Praesent vehicula dignissim orci ut faucibus. Sed et molestie augue. Fusce et sagittis nisi. Vestibulum enim urna, pretium id ligula semper, aliquam blandit tortor. Praesent fringilla felis sed elit tincidunt, ut interdum lectus faucibus. Nunc cursus non lectus et sagittis.&lt;/p&gt;
+
+		&lt;h4&gt;Example&lt;/h4&gt;
+
+		&lt;h6&gt;Code:&lt;/h6&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;#example&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// first pair&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;huge-em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// second pair&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;amp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;huge-em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;h6&gt;Result:&lt;/h6&gt;
+		&lt;div class=&quot;well&quot;&gt;
+			&lt;div class=&quot;example&quot;&gt;
+				&lt;div class=&quot;m-1&quot;&gt;Example 1&lt;/div&gt;
+
+				&lt;div class=&quot;m-2&quot;&gt;Example 2&lt;/div&gt;
+
+				&lt;div class=&quot;m-3&quot;&gt;Example 3&lt;/div&gt;
+
+				&lt;div class=&quot;m-4&quot;&gt;Example 4&lt;/div&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Typography&quot; id=&quot;typography&quot;&gt;
+	&lt;h2&gt;Typography&lt;/h2&gt;
+
+	&lt;h3&gt;Stuff to eventually go here&lt;/h3&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Format&quot; id=&quot;format&quot;&gt;
+
+	&lt;h2&gt;Format&lt;/h2&gt;
+
+	&lt;div id=&quot;unstyledList&quot; class=&quot;item&quot;&gt;
+		&lt;h3&gt;Unstyled List&lt;/h3&gt;
+		&lt;dl&gt;
+			&lt;dt&gt;Name: &lt;/dt&gt;
+			&lt;dd&gt;huge-list-unstyled&lt;/dd&gt;
+		&lt;/dl&gt;
+		&lt;dl&gt;
+			&lt;lh&gt;Arguments&lt;/lh&gt;
+
+			&lt;dt&gt;no-margin&lt;/dt&gt;
+			&lt;dd&gt;whether or not you want a margin&lt;/dd&gt;
+
+		&lt;/dl&gt;
+
+		&lt;h4&gt;Example&lt;/h4&gt;
+
+		&lt;h6&gt;Code:&lt;/h6&gt;
+	   &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; list-unstyled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+		&lt;h6&gt;Result:&lt;/h6&gt;
+		&lt;div class=&quot;well&quot;&gt;
+			&lt;div class=&quot;example&quot;&gt;
+				&lt;ul&gt;
+					&lt;li&gt;Unstyled Item 1&lt;/li&gt;
+					&lt;li&gt;Unstyled Item 2&lt;/li&gt;
+					&lt;li&gt;Unstyled Item 3&lt;/li&gt;
+				&lt;/ul&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/section&gt;
+
+
+
+&lt;script&gt;
+	stickyNav.init({
+		nav: '#sticky nav'
+		// navItem: 'td',
+		// active: 'selected',
+		// scrollSpeed
+	});
+&lt;/script&gt;</description>
+        <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
+        <link>http://yourdomain.com/2014/03/05/huge-sass/</link>
+        <guid isPermaLink="true">http://yourdomain.com/2014/03/05/huge-sass/</guid>
+      </item>
+    
+      <item>
+        <title>Flexicarousel</title>
+        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/flexicarousel/demo.css&quot;&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/flexicarousel/flexicarousel.css&quot;&gt;
+&lt;script src=&quot;/js/flexicarousel/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/flexicarousel/jquery.flexicarousel.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/stickynav/stickynav.js&quot;&gt;&lt;/script&gt;
+
+&lt;div id=&quot;sticky&quot;&gt;
+	&lt;nav&gt;
+		&lt;ul&gt;&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/div&gt;
+
+
+&lt;section data-nav=&quot;About&quot; id=&quot;about&quot;&gt;
+	&lt;h2&gt;About&lt;/h2&gt;
+	&lt;p&gt;A flexible carousel that works on both desktop and mobile devices, and is compleletely responsive. Additionally, there is a strict separation
+	of state and style. That is to say, javascript maintains the state of the carousel, while the CSS is responsible for the presentation and display
+	of this state&lt;/p&gt;
+
+	&lt;h3&gt;Problem&lt;/h3&gt;
+	&lt;p&gt;A carousel may work fine on desktop, where styles are added or removed by the Javascript causing the position of the carousel's slides to update
+	accordingly. Different styles can allow for a variety of interesting transitions and effects using CSS3 transforms and transitions. However,
+	this paradigm suffers on mobile, where touch interactions and continuous control over a slide's position (ie. via dragging) are desired.
+	Touch-enabled carousels usually achieve this by positioning a slide manually via &lt;code&gt;translate()&lt;/code&gt;; the result of this approach is that the &quot;desktop&quot;
+	CSS-based system of control is not compatible with this inlined manual positioning. Workarounds usually revolve around managing all effects,
+	transitions, etc. within the Javascript -- which always results in larger files sizes, more instantiation arguments and custom animation functions.&lt;/p&gt;
+
+	&lt;p&gt;One architecture may work well for mobile, but is less than optimal on desktop; contrariwise, using CSS to position a slide works well on desktop
+	but is undermined by a native touch-UI paradigm.&lt;/p&gt;
+
+	&lt;h3&gt;Solution&lt;/h3&gt;
+	&lt;p&gt;Flexicarousel enables a touch-based interface (ie. sliding slides via dragging) while also respecting the separation of state and behaviour.
+	You can swipe to drag a slide yet still use CSS to control how the slide transitions will behave. You can also choose to change slides by
+	using the exposed API. The carousel works on both desktop and mobile, using only CSS to control the look and feel. The result is smaller
+	codebase while achieving the best of both approaches.&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Download&quot; id=&quot;download&quot;&gt;
+	&lt;h2&gt;Download&lt;/h2&gt;
+	&lt;h3&gt;Stash&lt;/h3&gt;
+	&lt;p&gt;&lt;a href=&quot;https://stash.hugeinc.com/projects/BOWER/repos/flexicarousel/browse&quot;&gt;Get it from the Stash repo&lt;/a&gt;&lt;/p&gt;
+	&lt;h3&gt;Bower&lt;/h3&gt;
+	&lt;code&gt;bower install flexicarousel&lt;/code&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Example&quot; id=&quot;example&quot;&gt;
+	&lt;h2&gt;Example&lt;/h2&gt;
+
+	&lt;h3&gt;Sliding transition&lt;/h3&gt;
+	&lt;div id=&quot;one&quot; class=&quot;carousel slide&quot;&gt;
+		&lt;ul class=&quot;wrap&quot;&gt;
+			&lt;li class=&quot;active&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/1&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;2&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/2&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;3&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/3&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;4&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/4&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+
+		&lt;a href=&quot;#prev&quot; class=&quot;prev&quot; aria-hidden=&quot;true&quot;&gt;Prev&lt;/a&gt;
+		&lt;a href=&quot;#next&quot; class=&quot;next&quot; aria-hidden=&quot;true&quot;&gt;Next&lt;/a&gt;
+
+		&lt;nav class=&quot;indicators&quot;&gt;
+			&lt;span class=&quot;active&quot;&gt;&lt;/span&gt;
+			&lt;span&gt;&lt;/span&gt;
+			&lt;span&gt;&lt;/span&gt;
+			&lt;span&gt;&lt;/span&gt;
+		&lt;/nav&gt;
+	&lt;/div&gt;
+
+	&lt;hr /&gt;
+
+	&lt;h3&gt;Fade transition&lt;/h3&gt;
+	&lt;div id=&quot;two&quot; class=&quot;carousel fade&quot;&gt;
+		&lt;ul class=&quot;wrap&quot;&gt;
+			&lt;li class=&quot;active&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/1&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;2&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/2&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;3&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/3&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;4&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/4&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+
+		&lt;a href=&quot;#prev&quot; class=&quot;prev&quot; aria-hidden=&quot;true&quot;&gt;Prev&lt;/a&gt;
+		&lt;a href=&quot;#next&quot; class=&quot;next&quot; aria-hidden=&quot;true&quot;&gt;Next&lt;/a&gt;
+	&lt;/div&gt;
+
+	&lt;hr /&gt;
+
+	&lt;h3&gt;Multiple transitions (not infinite)&lt;/h3&gt;
+	&lt;div id=&quot;three&quot; class=&quot;carousel fade slide&quot;&gt;
+		&lt;ul class=&quot;wrap&quot;&gt;
+			&lt;li class=&quot;active&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/1&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;2&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/2&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;3&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/3&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;4&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/4&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+
+		&lt;a href=&quot;#prev&quot; class=&quot;prev&quot; aria-hidden=&quot;true&quot;&gt;Prev&lt;/a&gt;
+		&lt;a href=&quot;#next&quot; class=&quot;next&quot; aria-hidden=&quot;true&quot;&gt;Next&lt;/a&gt;
+	&lt;/div&gt;
+
+	&lt;hr /&gt;
+
+	&lt;h3&gt;Tabs&lt;/h3&gt;
+	&lt;div id=&quot;four&quot; class=&quot;carousel tabs&quot;&gt;
+		&lt;ul class=&quot;wrap&quot;&gt;
+			&lt;li class=&quot;active&quot;&gt;&lt;span&gt;1&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/1&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;2&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/2&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;3&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/3&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;span&gt;4&lt;/span&gt;&lt;img src=&quot;http://lorempixel.com/800/480/nature/4&quot; alt=&quot;&quot; /&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+
+		&lt;nav&gt;
+			&lt;div class=&quot;active&quot;&gt;one&lt;/div&gt;
+			&lt;div&gt;two&lt;/div&gt;
+			&lt;div&gt;three&lt;/div&gt;
+			&lt;div&gt;four&lt;/div&gt;
+		&lt;/nav&gt;
+	&lt;/div&gt;
+
+
+	&lt;script&gt;
+
+		// using jQuery
+		$(function(){
+
+			var bullets = $('#one .indicators span');
+			var car1 = $('#one').carousel({
+				beforeSlide: function() { bullets.removeClass() },
+				afterSlide: function(i) { bullets.eq(i).addClass('active') }
+			});
+
+			$('#one .prev').click(function(e){
+				e.preventDefault();
+				car1.carousel('prev');
+			});
+			$('#one .next').click(function(e){
+				e.preventDefault();
+				car1.carousel('next');
+			});
+
+			$('nav span').each(function(i){
+				$(this).click(function() {
+					car1.carousel('go', i);
+				});
+			});
+
+		});
+
+		// ------------------------------------------------------------------
+		// vanilla js
+
+		var container2 = document.querySelector('#two');
+		var car2 = new Carousel(container2);
+
+		container2.querySelector('.prev').addEventListener('click', function(e){
+			e.preventDefault();
+			car2.prev();
+		});
+
+		container2.querySelector('.next').addEventListener('click', function(e){
+			e.preventDefault();
+			car2.next();
+		});
+
+
+		// ------------------------------------------------------------------
+		// multiple transitions
+
+		var container3 = document.querySelector('#three');
+		var car3 = new Carousel(container3, {
+			'infinite': false
+		});
+
+		container3.querySelector('.prev').addEventListener('click', function(e){
+			e.preventDefault();
+			car3.prev();
+		});
+
+		container3.querySelector('.next').addEventListener('click', function(e){
+			e.preventDefault();
+			car3.next();
+		});
+
+
+		// ------------------------------------------------------------------
+		// tabs
+
+		var tabs = $('#four nav div');
+		var container4 = document.querySelector('#four');
+		var car4 = new Carousel(container4);
+
+		tabs.each(function(i){
+			$(this).click(function() {
+				car4.go(i);
+				tabs.removeClass();
+				tabs.eq(i).addClass('active');
+			});
+		});
+
+	&lt;/script&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Prereqs&quot; id=&quot;prereqs&quot;&gt;
+	&lt;h2&gt;Prereqs&lt;/h2&gt;
+	&lt;p&gt;none&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Compatibility&quot; id=&quot;compatibility&quot;&gt;
+	&lt;h2&gt;Compatibility&lt;/h2&gt;
+	&lt;ul&gt;
+		&lt;li&gt;IE8+&lt;/li&gt;
+		&lt;li&gt;Firefox, Chrome, Opera&lt;/li&gt;
+		&lt;li&gt;iOS, Android&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;code&quot; id=&quot;code&quot;&gt;
+	&lt;h2&gt;Code&lt;/h2&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// using jQuery&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bullets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#one .indicators span&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#one&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;beforeSlide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bullets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;removeClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;afterSlide&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bullets&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;eq&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;active&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#one .prev&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;prev&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#one .next&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;next&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;nav span&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;each&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;click&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nx&quot;&gt;car1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;go&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;// vanilla js&lt;/span&gt;
+
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;container2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#two&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;container2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;container2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.prev&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;container2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.next&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+	&lt;span class=&quot;nx&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;API&quot; id=&quot;api&quot;&gt;
+	&lt;h2&gt;Nitty Gritty Api Stuff&lt;/h2&gt;
+
+	&lt;h3&gt;Options&lt;/h3&gt;
+
+	&lt;div class=&quot;table-responsive&quot;&gt;
+		&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th style=&quot;width:100px;&quot;&gt;Name&lt;/th&gt;
+					&lt;th style=&quot;width:50px;&quot;&gt;type&lt;/th&gt;
+					&lt;th style=&quot;width:50px;&quot;&gt;default&lt;/th&gt;
+					&lt;th&gt;description&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;activeClass&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;active&lt;/td&gt;
+					&lt;td&gt;Class to use on the active slide.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;beforeClass&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;before&lt;/td&gt;
+					&lt;td&gt;Class to use on the previous slide.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;afterClass&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;after&lt;/td&gt;
+					&lt;td&gt;Class to use on the next slide.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;slideWrap&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;.wrap&lt;/td&gt;
+					&lt;td&gt;The selector to use when searching for the slides' container. This is used only to bind touch events to, on mobile.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;slides&lt;/td&gt;
+					&lt;td&gt;string&lt;/td&gt;
+					&lt;td&gt;li&lt;/td&gt;
+					&lt;td&gt;The selector to use when searching for slides within the &lt;code&gt;slideWrap&lt;/code&gt; container.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;infinite&lt;/td&gt;
+					&lt;td&gt;boolean&lt;/td&gt;
+					&lt;td&gt;true&lt;/td&gt;
+					&lt;td&gt;Enable infinite scrolling or not&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;beforeSlide&lt;/td&gt;
+					&lt;td&gt;function&lt;/td&gt;
+					&lt;td&gt;undefined&lt;/td&gt;
+					&lt;td&gt;A function to execute before sliding. It is passed &lt;code&gt;to&lt;/code&gt; and &lt;code&gt;from&lt;/code&gt; indices.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;afterSlide&lt;/td&gt;
+					&lt;td&gt;function&lt;/td&gt;
+					&lt;td&gt;undefined&lt;/td&gt;
+					&lt;td&gt;A function to execute after sliding. It is passed the new &lt;code&gt;current&lt;/code&gt; index.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;noTouch&lt;/td&gt;
+					&lt;td&gt;boolean&lt;/td&gt;
+					&lt;td&gt;false&lt;/td&gt;
+					&lt;td&gt;if you'd like to disable the touch UI for whatever reason&lt;/td&gt;
+				&lt;/tr&gt;
+
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+
+	&lt;h3&gt;Methods&lt;/h3&gt;
+
+	&lt;h5&gt;Next Slide&lt;/h5&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h5&gt;Previous Slide&lt;/h5&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h5&gt;Go To Slide&lt;/h5&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;h5&gt;Go To Slide&lt;/h5&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+
+	&lt;!--
+	&lt;h3&gt;Events&lt;/h3&gt;
+
+	&lt;div class=&quot;table-responsive&quot;&gt;
+		&lt;table class=&quot;table table-bordered table-striped&quot;&gt;
+			&lt;thead&gt;
+				&lt;tr&gt;
+					&lt;th style=&quot;width: 150px;&quot;&gt;Event Type&lt;/th&gt;
+					&lt;th&gt;Description&lt;/th&gt;
+				&lt;/tr&gt;
+			&lt;/thead&gt;
+			&lt;tbody&gt;
+				&lt;tr&gt;
+					&lt;td&gt;beforeSlide&lt;/td&gt;
+					&lt;td&gt;This event fires immediately before transitioning to a different slide. It is passed &lt;code&gt;to&lt;/code&gt; and &lt;code&gt;from&lt;/code&gt; indices.&lt;/td&gt;
+				&lt;/tr&gt;
+				&lt;tr&gt;
+					&lt;td&gt;afterSlide&lt;/td&gt;
+					&lt;td&gt;This event fires immediately after transitioning from a slide. It is passed the new &lt;code&gt;current&lt;/code&gt; index.&lt;/td&gt;
+				&lt;/tr&gt;
+			&lt;/tbody&gt;
+		&lt;/table&gt;
+	&lt;/div&gt;
+	--&gt;
+
+&lt;/section&gt;
+
+
+&lt;script&gt;
+	// TODO move into template...?
+	stickyNav.init({
+		nav: '#sticky nav'
+	});
+&lt;/script&gt;
+</description>
+        <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
+        <link>http://yourdomain.com/2014/03/05/flexicarousel/</link>
+        <guid isPermaLink="true">http://yourdomain.com/2014/03/05/flexicarousel/</guid>
+      </item>
+    
+      <item>
+        <title>Chusy Responsive Sass Framework</title>
+        <description>&lt;style&gt;
+	main .container {
+		padding-left: 240px;
+	}
+&lt;/style&gt;
+&lt;script src=&quot;/js/flexicarousel/jquery-1.11.0.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/js/stickynav/stickynav.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;div id=&quot;sticky&quot;&gt;
+	&lt;nav&gt;
+		&lt;ul&gt;&lt;/ul&gt;
+	&lt;/nav&gt;
+&lt;/div&gt;
+
+
+&lt;section data-nav=&quot;About&quot; id=&quot;about&quot;&gt;
+	&lt;h2&gt;About&lt;/h2&gt;
+	&lt;p&gt;CHUSY is a framework modeled after &lt;a href=&quot;http://susy.oddbird.net/&quot;&gt;SUSY&lt;/a&gt;, its goal is to be like SUSY, but not opaque and confusing. It makes prototyping and maintenance of multi-breakpoint liquid grids fast, easy, and fun!&lt;/p&gt;
+	&lt;p&gt;There are two flavors: &quot;Original&quot; and &quot;Flexible Gutter&quot;, which are very much alike. While both are fully fluid, there are differences is how the columns and gutters work. Here is a brief overview:
+
+	&lt;h3&gt;Original&lt;/h3&gt;
+	&lt;p&gt;How it works: &lt;strong&gt;Orginal&lt;/strong&gt; takes &lt;i&gt;base width&lt;/i&gt;, &lt;i&gt;column width&lt;/i&gt;, &lt;i&gt;gutter-width&lt;/i&gt; and &lt;i&gt;column inner padding&lt;/i&gt; to calculate precise percentages for each element.&lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;strong&gt;Pro&lt;/strong&gt;: User can define &lt;i&gt;Column padding&lt;/i&gt; and &lt;i&gt;gutter width&lt;/i&gt; with a specific number, which will be converted to a percentage automatically. It gives user more options to control the look of the grid.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;: Column padding and gutter are fluid. It can't create fixed padding and gutter. It requires some level of calculation to set up the grid.&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;p&gt;If you have any question about the &lt;strong&gt;Original&lt;/strong&gt;, please contact &lt;a href=&quot;mailto:csnyder@hugeinc.com&quot;&gt;Choshun Snyder&lt;/a&gt;&lt;/p&gt;
+
+	&lt;h3&gt;Flexible Gutter&lt;/h3&gt;
+	&lt;p&gt;How it works: &lt;strong&gt;Flexible gutter&lt;/strong&gt; gets the column width by taking 100% divided by the total # columns. It uses &lt;i&gt;column inner padding&lt;/i&gt; to create a gutter.&lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li&gt;&lt;strong&gt;Pro&lt;/strong&gt;: User can define gutters with a fixed number or percentage to create fixed or fluid gutter look. No calculation for setting up the grid, simply enter the total column.&lt;/li&gt;
+		&lt;li&gt;&lt;strong&gt;Cons&lt;/strong&gt;: Since the column uses &lt;i&gt;column inner padding&lt;/i&gt; to fake the gutter, you may need extra markup if more padding is needed between the content and its parent column&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;p&gt;If you have any question about the &lt;strong&gt;Flexible Gutter&lt;/strong&gt; variant, please contact &lt;a href=&quot;mailto:mli@hugeinc.com&quot;&gt;Miranda Li&lt;/a&gt; &lt;/p&gt;
+
+
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Download&quot; id=&quot;download&quot; &gt;
+	&lt;h2&gt;Download&lt;/h2&gt;
+	&lt;p&gt;&lt;a href=&quot;https://stash.hugeinc.com/projects/BOWER/repos/chusy-responsive-sass-framework/browse&quot;&gt;Stash repo&lt;/a&gt;&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Installation&quot; id=&quot;install&quot;&gt;
+	&lt;h2&gt;Installation&lt;/h2&gt;
+
+	&lt;h3&gt;Original&lt;/h3&gt;
+	&lt;p&gt;Copy and paste _base.scss and _mixins.scss into a working compass project (http://compass-style.org/install/)&lt;/p&gt;
+	&lt;p&gt;Reference _base and _mixins in needed scss files with:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;base&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mixins&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Done!&lt;/p&gt;
+
+
+	&lt;h3&gt;Flexible gutter&lt;/h3&gt;
+	&lt;p&gt;Copy and paste _base.scss and _mixins-flexible-gutter.scss into a working compass project (http://compass-style.org/install/)&lt;/p&gt;
+	&lt;p&gt;Reference _base and _mixins-flexible-gutter in needed scss files with:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;base&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mixins-flexible-gutter&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Done!&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Options&quot; id=&quot;options&quot;&gt;
+	&lt;h2&gt;Options&lt;/h2&gt;
+
+	&lt;h3&gt;Making breakpoints&lt;/h3&gt;
+
+	&lt;p&gt;In _base.scss there are breakpoint variables that are defined by browser viewport widths.&lt;/p&gt;
+	&lt;p&gt;For example:&lt;/p&gt;
+
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;na&quot;&gt;$small-screen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;small-screen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;599&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;&lt;code&gt;$small-screen&lt;/code&gt; is a breakpoint variable that defines the threshold width of 0 to 599px.&lt;/p&gt;
+	&lt;p&gt;This is the ONLY place you'll need to define breakpoints for the whole project.&lt;/p&gt;
+	&lt;p&gt;You did it! good job&lt;/p&gt;
+
+
+	&lt;h3&gt;Making grids&lt;/h3&gt;
+
+	&lt;p&gt;At the top of _mixins is the mixin &lt;code&gt;at-breakpoint($viewport)&lt;/code&gt;.&lt;/p&gt;
+	&lt;p&gt;For each breakpoint there is an associated grid configuration. This creates the liquid grid that has unique column, gutter, and grid padding in percent.&lt;/p&gt;
+	&lt;p&gt;In the case of using our previous breakpoint &lt;code&gt;$small-screen&lt;/code&gt; we define the grid:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// if the first value of the variable $small-screen (it&amp;#39;s value being: &amp;quot;small-screen 0 599px&amp;quot;) is small screen...&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$viewport&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;small-screen&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// at base ideal width of 400...&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;$base-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// the columns will be this ideal px width (which in turn produce the number of liquid columns)&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;$column-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;43&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;.3333333333333&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+ 	&lt;span class=&quot;c1&quot;&gt;// with the gutters of the columns being 20px&lt;/span&gt;
+ 	&lt;span class=&quot;na&quot;&gt;$gutter-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// the grid padding of the whole grid on the left and right will be 20px&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;$grid-padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// don&amp;#39;t worry about me&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;$active-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$base-width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$grid-padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// another thing that is derived from previous values&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;$inner-padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$active-width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$grid-padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;This creates a 6 column liquid grid for the breakpoint &lt;code&gt;$small-screen&lt;/code&gt;.&lt;/p&gt;
+	&lt;p&gt;This is the ONLY place you define grids.&lt;/p&gt;
+	&lt;p&gt;NOTE: It is important that you calculate the values as precise as possible (ie 43px WILL look way different than 43.33333333333333333333px). Don't trust the designs, plug in the cols/gutters/grid padding and make sure it equals the defined ideal width.&lt;/p&gt;
+	&lt;p&gt;Huzzah!&lt;/p&gt;
+
+	&lt;h3&gt;Using the Responsive Grid&lt;/h3&gt;
+
+	&lt;h4&gt;Original&lt;/h4&gt;
+	&lt;p&gt;We have breakpoints from _base, and unique liquid grids for each breakpoint defined in at-breakpoint() in _mixins, how do we use these in our scss files?&lt;/p&gt;
+	&lt;p&gt;With the mixin span-columns() inside the at-breakpoint() mixin of course!&lt;/p&gt;
+	&lt;h5&gt;Example 1&lt;/h5&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nn&quot;&gt;#wrapper&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; at-breakpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$small-screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nn&quot;&gt;#header&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; span-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;At viewport &lt;code&gt;$small-screen&lt;/code&gt; (0-599px defined in _base), the #header will span 3 columns, in this case 3 columns will be ~50%, cause the grid ends up being a 6 col grid (see step 3)&lt;/p&gt;
+	&lt;h5&gt;Example&lt;/h5&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nn&quot;&gt;#wrapper&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; at-breakpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$large-screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nn&quot;&gt;#header&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+			&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; span-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;At viewport &lt;code&gt;$large-screen&lt;/code&gt; (1000px up as defined in _base) the same exact #header div will be at ~25%, 'cause that grid ends up being 12 columns as defined in _mixins.&lt;/p&gt;
+	&lt;p&gt;That's it!&lt;/p&gt;
+	&lt;p&gt;The rest of the mixins are just commented frosting on the delicious sponge cake that is CHUSY.&lt;/p&gt;
+
+	&lt;h4&gt;Flexible Gutter&lt;/h4&gt;
+	&lt;p&gt;In the flexible gutter version of chusy, `column width` is 100% divided by the total columns. The gutter is created by the padding on the columns. You can specify gutter width in _base.scss `$gutter-width`.  You can define total number of columns in the break point mixin:
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//in _base.scss&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;$gutter-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// it creates 15px padding left and right on a column&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;// in _mixins-flexible-gutter.scss&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// if the first value of the variable $small-screen (it&amp;#39;s value being: &amp;quot;small-screen 0 599px&amp;quot;) is small screen...&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$viewport&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;small-screen&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+
+ 	&lt;span class=&quot;c1&quot;&gt;// defines total columns&lt;/span&gt;
+ 	&lt;span class=&quot;na&quot;&gt;$total-columns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+ 	&lt;span class=&quot;c1&quot;&gt;// calculate each column&amp;#39;s width&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;$column-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$total-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// defines the margin between content and the browser border.&lt;/span&gt;
+	&lt;span class=&quot;na&quot;&gt;$page-margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+	&lt;p&gt;Define the column width with span-columns();
+	&lt;h5&gt;Example&lt;/h5&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.side-content&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+	&lt;span class=&quot;c1&quot;&gt;// .side-content will take up 3 columns as its width: 3 * 100% / 12 = 25%&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; span-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+
+	&lt;span class=&quot;c1&quot;&gt;// .side-content will take up 6 columns as its width: 6 * 100% / 6 = 100%&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; at-breakpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$small-screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; span-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;/section&gt;
+
+&lt;section data-nav=&quot;Demo&quot; id=&quot;demo&quot;&gt;
+	&lt;h2&gt;Demo&lt;/h2&gt;
+
+	&lt;p&gt;There is example markup and scss in the repo. Please have a look in the /demo folder&lt;/p&gt;
+
+	&lt;h5&gt;Projects using `Chusy Original`&lt;/h5&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Exxon&lt;/li&gt;
+	&lt;/ul&gt;
+
+	&lt;h5&gt;Projects using `Chusy flexible gutter`&lt;/h5&gt;
+	&lt;ul&gt;
+		&lt;li&gt;Diageo stay in out&lt;/li&gt;
+		&lt;li&gt;TD Olympics&lt;/li&gt;
+		&lt;li&gt;NYULangone&lt;/li&gt;
+	&lt;/ul&gt;
+
+&lt;/section&gt;
+
+
+Fork if u cry evry time.
+
+
+
+
+
+
+&lt;script&gt;
+	stickyNav.init({
+		nav: '#sticky nav'
+	});
+&lt;/script&gt;
+</description>
+        <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
+        <link>http://yourdomain.com/2014/03/05/chusy/</link>
+        <guid isPermaLink="true">http://yourdomain.com/2014/03/05/chusy/</guid>
+      </item>
+    
+  </channel>
+</rss>
