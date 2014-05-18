@@ -1,20 +1,16 @@
 # Site settings
-title: Your awesome title
+title: Huge Showcase
 email: your-email@domain.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+description: "Showcase of huge widgets and js / css ideas and POC's" 
 baseurl: ""
-url: "http://yourdomain.com"
+url: "http://hugeinc.com"
 
 # Build settings
 markdown: kramdown
 permalink: pretty
 
-#exclude: [ 'components']
-
-
-sass:
-    sass_dir: .
-
+paginate: 5
+paginate_path: "page:num"
     
 gems:
 - jekyll-compass
