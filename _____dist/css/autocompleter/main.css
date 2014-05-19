@@ -1,0 +1,116 @@
+/* line 3, ../../../app/_scss/autocompleter/main.scss */
+#demo li {
+  list-style: none;
+}
+/* line 6, ../../../app/_scss/autocompleter/main.scss */
+#demo h3 {
+  display: block;
+  min-height: 65px;
+  width: 90%;
+  margin: auto;
+  font-weight: 100;
+  text-align: left;
+  color: #ccc;
+}
+/* line 15, ../../../app/_scss/autocompleter/main.scss */
+#demo.wrapper {
+  text-align: center;
+}
+/* line 17, ../../../app/_scss/autocompleter/main.scss */
+#demo.wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+  float: none;
+}
+/* line 24, ../../../app/_scss/autocompleter/main.scss */
+#demo .filter {
+  display: block;
+  width: 90%;
+  padding-top: 20px;
+  margin: auto;
+  margin-bottom: 15px;
+  border: none;
+  border-bottom: 1px solid #aaa;
+  outline: none;
+  background-color: transparent;
+}
+/* line 35, ../../../app/_scss/autocompleter/main.scss */
+#demo .result {
+  width: 90%;
+  padding: 0;
+  text-align: left;
+  margin: auto;
+  min-height: 50px;
+}
+/* line 41, ../../../app/_scss/autocompleter/main.scss */
+#demo .result li {
+  margin-left: 0;
+  font-size: 14px;
+}
+/* line 45, ../../../app/_scss/autocompleter/main.scss */
+#demo .result span {
+  display: none;
+}
+/* line 48, ../../../app/_scss/autocompleter/main.scss */
+#demo .result span.show {
+  display: block;
+}
+/* line 52, ../../../app/_scss/autocompleter/main.scss */
+#demo .col {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  padding: 30px;
+  float: left;
+  min-height: 800px;
+}
+/* line 61, ../../../app/_scss/autocompleter/main.scss */
+#demo .col:first-child {
+  border-right: 1px dotted #ccc;
+}
+/* line 64, ../../../app/_scss/autocompleter/main.scss */
+#demo .col:hover {
+  color: #3b3b3b;
+}
+/* line 67, ../../../app/_scss/autocompleter/main.scss */
+#demo .col:hover h3 {
+  color: #3b3b3b;
+}
+/* line 70, ../../../app/_scss/autocompleter/main.scss */
+#demo .hide {
+  display: none;
+}
+/* line 73, ../../../app/_scss/autocompleter/main.scss */
+#demo .show {
+  display: block;
+}
+/* line 76, ../../../app/_scss/autocompleter/main.scss */
+#demo .loading {
+  background: url("/img/autocompleter/ajax-loader.gif") center center no-repeat;
+}
+/* line 81, ../../../app/_scss/autocompleter/main.scss */
+#demo #auto-complete img {
+  display: block;
+  width: 200px;
+  margin: 10px 0 0;
+}
+/* line 88, ../../../app/_scss/autocompleter/main.scss */
+#demo #ajax-custom-auto-complete img {
+  width: 100px;
+  margin-right: 10px;
+  float: left;
+  vertical-align: middle;
+}
+/* line 94, ../../../app/_scss/autocompleter/main.scss */
+#demo #ajax-custom-auto-complete li {
+  padding: 10px 0;
+  border-bottom: 1px dotted #ccc;
+}
+/* line 97, ../../../app/_scss/autocompleter/main.scss */
+#demo #ajax-custom-auto-complete li:after {
+  content: "";
+  display: table;
+  clear: both;
+  float: none;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Huge Slider</title>
+	<meta name="viewport" content="width=device-width">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="/css/main.css">
+
+	<!-- syntax highlighting CSS -->
+	<link rel="stylesheet" href="/css/syntax.css">
+
+</head>
+
+<body class="fullscreen">
+
+		<header class="header">
+		<nav>
+			
+			<a class="next" href="/widget/2014/04/03/autocompleter.html" title="Next Post: AutoCompleter"></a>
+			
+
+			
+			<a class="prev" href="/2014/03/05/huge-sass.html" title="Previous Post: Huge SASS Library"></a>
+			
+		</nav>
+
+		<div class="container">
+			<a href="/"><i class="fa fa-home"></i></a>
+			<h1 class="title">Huge Slider</h1>
+		</div>
+	</header>
+
+
+	<main class="site">
+		<link rel="stylesheet" href="/css/huge-slider/main.css">
+
+<article>
+
+	<section id="one">
+
+	    <div class="container">
+	    <h3>Huge.Slider</h3>
+
+	    <p>Full page scroll jacking slider that's touch friendly</p>
+	    </div>
+	</section>
+
+	<section id="two">
+		<div class="container">
+			<h3>Prereqs</h3>
+			<ul class="list-unstyled">
+				<li><a href="http://jquery.com/">JQuery</a></li>
+				<li><a href="http://ricostacruz.com/jquery.transit/">Transit</a></li>
+			</ul>
+
+			<h3>Compatibility</h3>
+			<ul class="list-unstyled">
+				<li>IE9+</li>
+				<li>Chrome, Opera, lynx</li>
+			</ul>
+		</div>
+	</section>
+
+	<section id="three">
+		<div class="container">
+			<h3>Usage</h3>
+
+<div class="highlight"><pre><code class="js"><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">new</span> <span class="nx">Slider</span><span class="p">();</span>
+  <span class="p">});</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="sass"><span class="nt">section</span> <span class="err">{</span>
+    <span class="na">position</span><span class="o">:</span> <span class="no">relative</span><span class="err">;</span>
+<span class="err">}</span>
+<span class="nt">html</span><span class="o">,</span> <span class="nt">body</span><span class="o">,</span> <span class="nt">article</span> <span class="err">{</span>
+    <span class="na">height</span><span class="o">:</span> <span class="mi">100</span><span class="kt">%</span><span class="err">;</span>
+<span class="err">}</span>
+
+<span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="err">{</span>
+    <span class="na">overflow</span><span class="o">:</span> <span class="no">hidden</span><span class="err">;</span>
+<span class="err">}</span>
+</code></pre></div>
+		</div>
+	</section>
+
+	<section id="four">
+		<div class="container">
+			<h3>Options</h3>
+
+			<div class="table-responsive">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th style="width: 10%;">Name</th>
+							<th style="width: 10%;">type</th>
+							<th style="width: 10%;">default</th>
+							<th style="width: 70%;">description</th>
+						</tr>
+					</thead>
+				<tbody>
+					<tr>
+						<td>animation</td>
+						<td>boolean or the string <code>'static'</code></td>
+						<td>true</td>
+						<td>Includes a modal-backdrop element. Alternatively, specify <code>static</code> for a backdrop which doesn't close the modal on click.</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+</article>
+
+
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/jquery-mousewheel/jquery.mousewheel.js"></script>
+<script src="/bower_components/jquery.transit/jquery.transit.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({app,.tmp}) scripts/main.js -->
+<script src="/huge_bower_components/huge.slider/huge-slider.js"></script>
+<script src="/js/huge-slider/main.js"></script>
+
+	</main>
+
+</body>
+
+</html>

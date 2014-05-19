@@ -4,11 +4,11 @@
 /*
 /*****************************************************************************/
 
-$fa-font-path:  "../components/font-awesome/fonts";
+$fa-font-path:  "../bower_components/font-awesome/fonts";
 
-@import "../components/font-awesome/scss/font-awesome";
-@import "../components/bootstrap-sass/lib/bootstrap";
-@import "../huge_bower_components/huge.sass/general/_css_arrow";
+@import "../bower_components/font-awesome/scss/font-awesome";
+@import "../bower_components/bootstrap-sass/lib/bootstrap";
+@import "../components/huge-sass/sass/general/_css_arrow";
 @import "fonts";
 @import "variables";
 

@@ -1,0 +1,137 @@
+---
+layout: widget
+title:  <%= widgetName %>
+categories: widget
+snippet: "Doin what a test widget does, showing you the ropes and whatnot"
+tags:
+- test
+- widget
+---
+
+<link rel="stylesheet" href="/css/<%= widgetName %>/main.scss">
+
+
+<h2>Example</h2>
+
+<div class="well">
+	<button class="btn btn-primary">In this case I'm a button widget</button>
+</div>
+
+<h2>Prereqs</h2>
+
+<ul>
+	<li><a href="http://jquery.com/">JQuery</a></li>
+	<li><a href="http://ricostacruz.com/jquery.transit/">Transit</a></li>
+</ul>
+
+<h2>Compatibility</h2>
+
+<ul>
+	<li>IE9+</li>
+	<li>Chrome, Opera, lynx</li>
+</ul>
+
+<h2>Code</h2>
+
+{% highlight ruby %}
+def print_hi(name)
+  puts "Hi, #{name}"
+end
+print_hi('I\'m a test widget SON!')
+#=> prints 'I\'m a test widget SON!' to STDOUT.
+{% endhighlight %}
+
+<h2>Nitty Gritty Api Stuff</h2>
+
+<h3>Options</h3>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 100px;">Name</th>
+         <th style="width: 50px;">type</th>
+         <th style="width: 50px;">default</th>
+         <th>description</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>backdrop</td>
+         <td>boolean or the string <code>'static'</code></td>
+         <td>true</td>
+         <td>Includes a modal-backdrop element. Alternatively, specify <code>static</code> for a backdrop which doesn't close the modal on click.</td>
+       </tr>
+       <tr>
+         <td>keyboard</td>
+         <td>boolean</td>
+         <td>true</td>
+         <td>Closes the modal when escape key is pressed</td>
+       </tr>
+       <tr>
+         <td>show</td>
+         <td>boolean</td>
+         <td>true</td>
+         <td>Shows the modal when initialized.</td>
+       </tr>
+       <tr>
+         <td>remote</td>
+         <td>path</td>
+         <td>false</td>
+         <td><p>If a remote URL is provided, <strong>content will be loaded one time</strong> via jQuery's <code>load</code> method and injected into the <code>.modal-content</code> div. If you're using the data-api, you may alternatively use the <code>href</code> attribute to specify the remote source. An example of this is shown below:</p>
+<div class="highlight"><pre><code class="html"><span class="nt">&lt;a</span> <span class="na">data-toggle=</span><span class="s">"modal"</span> <span class="na">href=</span><span class="s">"remote.html"</span> <span class="na">data-target=</span><span class="s">"#modal"</span><span class="nt">&gt;</span>Click me<span class="nt">&lt;/a&gt;</span>
+</code></pre></div>
+         </td>
+       </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+<h3>Methods</h3>
+
+<h5>.button('toggle')</h5>
+
+{% highlight javascript %}
+$('#myButton').button('toggle')
+{% endhighlight %}
+
+<h3>Events</h3>
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <thead>
+       <tr>
+         <th style="width: 150px;">Event Type</th>
+         <th>Description</th>
+       </tr>
+      </thead>
+      <tbody>
+       <tr>
+         <td>show.bs.modal</td>
+         <td>This event fires immediately when the <code>show</code> instance method is called. If caused by a click, the clicked element is available as the <code>relatedTarget</code> property of the event.</td>
+       </tr>
+       <tr>
+         <td>shown.bs.modal</td>
+         <td>This event is fired when the modal has been made visible to the user (will wait for CSS transitions to complete). If caused by a click, the clicked element is available as the <code>relatedTarget</code> property of the event.</td>
+       </tr>
+       <tr>
+         <td>hide.bs.modal</td>
+         <td>This event is fired immediately when the <code>hide</code> instance method has been called.</td>
+       </tr>
+       <tr>
+         <td>hidden.bs.modal</td>
+         <td>This event is fired when the modal has finished being hidden from the user (will wait for CSS transitions to complete).</td>
+       </tr>
+       <tr>
+         <td>loaded.bs.modal</td>
+         <td>This event is fired when the modal has loaded content using the remote option.</td>
+       </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+<script src="/js/<%= widgetName %>/main.js"></script>
