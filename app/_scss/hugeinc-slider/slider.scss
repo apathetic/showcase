@@ -1,0 +1,215 @@
+/* simple reset */
+* {
+	margin:0;
+	padding:0;
+	position: relative;
+}
+html, body {
+	height: 100%;
+}
+
+
+/* GALLERY: js will add this if browser is capable */
+.gallery {
+	overflow: hidden;
+	height:100%; 	/* for IE. */
+
+	/*
+	// fix for non-responsive scroll after project gallery
+	&.Android {
+		overflow: visible !important;
+		.slide {
+			-webkit-transform:none !important;
+		}
+	}
+	*/
+}
+
+.gallery #projects {
+
+	height:100%;
+}
+
+.gallery #projects nav {
+	opacity:1;
+	display:block;
+}
+
+.gallery #projects .slide {
+	position:absolute;
+	background-attachment: fixed;
+	width: 100%;
+	height: 0;	/* non-active slides are hidden */
+
+	-webkit-transition: height 0.9s cubic-bezier(0.63, 0.64, 0.3, 1);
+	   -moz-transition: height 0.9s cubic-bezier(0.63, 0.64, 0.3, 1);
+	     -o-transition: height 0.9s cubic-bezier(0.63, 0.64, 0.3, 1);
+	        transition: height 0.9s cubic-bezier(0.63, 0.64, 0.3, 1);
+
+	/* "fixed" bg will be fixed to _slide_ (not window) if it moves (ie gallery is hidden). Also,
+		use this to hide fixed position .copy on other slides. ALSO, give much smoother animations (less flickering)
+		.... currently causing problems in safari if top:-100% is used */
+	-webkit-transform: translateZ(0);
+	   -moz-transform: translateZ(0);
+	    -ms-transform: translateZ(0);
+	     -o-transform: translateZ(0);
+}
+
+.gallery #projects .slide.no-animation {
+	/* for mobile, dragging */
+	-webkit-transition: none !important;
+	   -moz-transition: none !important;
+	     -o-transition: none !important;
+	        transition: none !important;
+}
+
+.gallery #projects .slide.active {
+
+	height:100%;
+}
+
+
+/* SHIFTED: shifts the gallery up when moving to view the main content area. (desktop)  */
+.shifted {
+	/*
+	// overflow: auto !important;		// cannot use due to FF bug: https://bugzilla.mozilla.org/show_bug.cgi?id=625289
+	*/
+}
+
+.shifted #projects nav {
+
+	opacity:0;
+}
+
+.shifted main {
+
+	top: -100%;		/* vs  @include transform(translateY(-100%));	....leaves a space at the bottom of #content in chrome and IE10. */
+}
+
+
+
+main {
+	top:0;		/* vs. @include transform(translateY(0)); */
+
+	width: 100%;
+	height: 100%;
+
+   -webkit-transition: top 0.9s cubic-bezier(0.7, 0.01, 0.3, 1);
+      -moz-transition: top 0.9s cubic-bezier(0.7, 0.01, 0.3, 1);
+        -o-transition: top 0.9s cubic-bezier(0.7, 0.01, 0.3, 1);
+           transition: top 0.9s cubic-bezier(0.7, 0.01, 0.3, 1);
+}
+
+#projects {
+
+	width: 100%;
+}
+
+#projects .slide {
+	overflow: hidden;
+	height: 100%;			/* default if no js */
+	width: 100%;
+
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: auto 90%;
+}
+
+
+/* so slides can transition in bottom-up */
+#projects .slide:nth-child(1) { z-index:10 }
+#projects .slide:nth-child(2) { z-index:9 }
+#projects .slide:nth-child(3) { z-index:8 }
+#projects .slide:nth-child(4) { z-index:7 }
+#projects .slide:nth-child(5) { z-index:6 }
+/* etc.... */
+
+#projects nav {
+	position: absolute;
+	right:24px;
+	top:40%;
+	width:18px;
+	z-index:100;
+	display:none;	/* this is the default (ie. not a gallery) */
+
+	/*
+	@include transition(opacity 0.5s);
+
+	span {
+		margin-bottom:20px;
+
+		&.active  {
+			background-color:transparent;
+			border-color:#888;
+		}
+
+		&.mosaic-link  {
+			background-color:#ee5eb6; /* magenta at 50% opacity *  /
+		}
+
+	}
+	*/
+}
+
+#projects button {
+	display:none;
+	cursor:pointer;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height:50px;
+	background: transparent;
+	text-align:center;
+	border:0;
+	outline:0;
+	z-index:100;
+	color:#bbb;
+
+	/*
+	span {
+		@include transition (top 0.7s $ease-in-out);
+
+		display: inline-block;
+		font: 36px Heiti, 'Lucida Grande' !important;		// for the arrow to display correctly. Heiti for iOS
+		font-weight: bold;
+		top: -18px;
+
+		// font-family:inherit; // this seems to fix a FF bug
+	}
+
+	&:hover {
+		// height:64px;
+
+		background: #ec008c;
+
+		span {
+			top:0;
+			color:#fff;
+		}
+	}
+
+	@include transition(all 0.2s $ease-in-out);
+	*/
+}
+
+
+/*	2. Main Content
+---------------------------------------------------------------------------- */
+
+#content {
+	background: #f4f4f4;
+	min-height: 1500px;
+}
+
+#content p {
+	margin-bottom: 2em;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 50px;
+}
+
+
+
