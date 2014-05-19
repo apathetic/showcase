@@ -1,31 +1,41 @@
 ---
-layout: widget
+layout: default
 title:  "AutoCompleter"
-name: "AutoCompleter"
 date:   2014-04-03 16:48:21
-categories: widget
-snippet: "AutoCompleter"
+snippet: "AutoCompleter does autocompletion"
+stash_url: https://stash.hugeinc.com/projects/BOWER/repos/xxxx/browse
 tags:
-- test
 - widget
-- auto complete
-- type ahead
+- auto-complete
+- type-ahead
 ---
 <link rel="stylesheet" href="/css/autocompleter/main.css">
 <script type="text/javascript" src="/js/autocompleter/autocompleter.js"></script>
-<section>
+<script src="/js/flexicarousel/jquery-1.11.0.min.js"></script>
+<script src="/js/stickynav/stickynav.js"></script>
+
+<div id="sticky">
+	<nav>
+		<ul></ul>
+	</nav>
+</div>
+
+
+<section data-nav="About" id="about">
 	<h2>About</h2>
 	<p>AutoCompleter is a light wieght stand alone module can be used for filtering data or auto completion of user input. It work on desktop, phone and tablet.</p>
 </section>
 
-<section>
+
+<section data-nav="Concept" id="concept">
 	<h2>Concept</h2>
 	<p>AutoCompleter caches filterable data in an array, and each data key matches their markup order.
 		By filtering the cached array to locate what markup to hide or show and reludce the amount markup to append to DOM.
 	</p>
 </section>
 
-<section>
+
+<section data-nav="Compatibility" id="compatibility">
 	<h2>Compatibility</h2>
 
 	<ul>
@@ -34,7 +44,9 @@ tags:
 		<li>iOS 6+</li>
 	</ul>
 </section>
-<section>
+
+
+<section data-nav="Demo" id="demo">
 	<h2>Demo</h2>
 	<div id="demo" class="wrapper">
 		<div class="clearfix">
@@ -176,7 +188,7 @@ tags:
 </section>
 
 
-<section>
+<section data-nav="Code" id="code">
 	<h2>Code</h2>
 
 	{% highlight javascript %}
@@ -191,7 +203,7 @@ tags:
 </section>
 
 
-<section>
+<section data-nav="API" id="api">
 	<h2>Api</h2>
 
 	<h3>Options</h3>
@@ -282,3 +294,11 @@ tags:
 	    </table>
 	  </div> -->
 </section>
+
+
+<script>
+	// TODO move into template...?
+	stickyNav.init({
+		nav: '#sticky nav'
+	});
+</script>

@@ -1,98 +1,151 @@
 ---
 layout: full_screen
 title:  "Huge Inc. Slider"
-snippet: "Yet Another Full Screen Hijacker"
 date:   2014-04-26 16:48:21
+snippet: "A Full Screen Scroller / Scroll-Hijacker"
 stash_url: https://stash.hugeinc.com/projects/BOWER/repos/huge.slider/browse
 categories: widget
 tags:
 - jquery
-- ie9
-- scrollJack
+- scrolljack
 - js
 - slider
 ---
 
-<link rel="stylesheet" href="/css/huge-slider/main.css">
+<link rel="stylesheet" href="/css/hugeinc-slider/slider.css">
+<script src="/js/flexicarousel/jquery-1.11.0.min.js"></script>
+<script src="/js/hugeinc-slider/slider.min.js"></script>
 
-    <article>
-        <section id="one">
-			<!-- {% include _header.html %} -->
+	<!-- <main id="wrap"> -->
 
-            <div class="container">
-	            <h3>Huge.Slider</h3>
-	            <p>Full page scroll jacking slider that's touch friendly</p>
-            </div>
-        </section>
+		<section id="projects">
 
-        <section id="two">
-            <h3>Prereqs</h3>
+			<div class="slide active" style="background-image: url(http://d249o6o0sttdia.cloudfront.net/~/media/images/modules/large/twitter_lg.jpg?as=1&amp;t=635250522086184222); background-color: #f4f4f4;">
 
-            <ul class="list-unstyled">
-                <!-- <li><a href="http://jquery.com/">JQuery</a></li> -->
-            </ul>
+				<div data-nav="About" id="about">
+					<div class="container">
+						<h2>About</h2>
+						<p>Here's an <a href="http://www.hugeinc.com/ideas/perspective/scroll-jacking-on-hugeinc/">a good overview</a> on how and why</p>
+					</div>
+				</div>
+				<div data-nav="Download"id="download" >
+					<div class="container">
+						<h2>Download</h2>
+						<p><a href="https://stash.hugeinc.com/projects/BOWER/repos/xxxxx/browse">Stash repo</a></p>
+					</div>
+				</div>
+			</div>
+			<div class="slide active" style="background-image: url(http://d249o6o0sttdia.cloudfront.net/~/media/images/modules/large/gucci_lg.jpg?as=1&amp;t=635250522075576106); background-color: #000000;">
 
-            <h3>Compatibility</h3>
-            <ul class="list-unstyled">
-                <li>IE9+</li>
-                <li>Chrome, Opera, lynx</li>
-            </ul>
-        </section>
+				<div data-nav="Prereqs" id="prereqs">
+					<div class="container">
+						<h2>Prereqs</h2>
+						<p>jQuery</p>
+					</div>
+				</div>
+				<div data-nav="Compatibility" id="compatibility">
+					<div class="container">
+						<h2>Compatibility</h2>
+						<ul>
+							<li>IE9+</li>
+							<li>Firefox, Webkit, Opera</li>
+							<li>no mobile</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="slide active" style="background-image: url(http://d249o6o0sttdia.cloudfront.net/~/media/images/modules/large/nyc_lg.jpg?as=1&amp;t=635250522081660186); background-color: rgb(244, 244, 244); -webkit-transform: scale(1);">
+				<div data-nav="Code" id="code">
+					<div class="container">
+						<h2>Code</h2>
+							{% highlight javascript %}
+							slider.init({
+								el: '.something...?'
+							});
+							{% endhighlight %}
+					</div>
+				</div>
+				<div data-nav="Options" id="options">
+					<div class="container">
+						<h2>Options</h2>
+						<div class="table-responsive">
+							<table class="table table-bordered table-striped">
+								<thead>
+									<tr>
+										<th style="width: 100px;">Name</th>
+										<th style="width: 50px;">type</th>
+										<th style="width: 50px;">default</th>
+										<th>description</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>el</td>
+										<td>string</td>
+										<td>parallax</td>
+										<td>selector of HTMLDomElement to use</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
 
-        <section id="three">
-            <h3>Usage</h3>
+			<nav>
+				<span class="active"></span>
+				<span class=""></span>
+				<span class=""></span>
+				<span class="mosaic-link"></span>
+			</nav>
 
-<div>
-{% highlight js %}
-$(document).ready(function() {
-        new Slider();
-  });
-{% endhighlight %}
+			<button>
+				<span>↓</span>
+			</button>
 
-{% highlight sass %}
-section {
-    position: relative;
-}
-html, body, article {
-    height: 100%;
-}
-
-html, body {
-    overflow: hidden;
-}
-{% endhighlight %}
-</div>
-        </section>
-
-        <section id="four">
-            <h3>Options</h3>
-
-            <div class="table-responsive">
-    <table class="table table-bordered table-striped">
-      <thead>
-       <tr>
-         <th style="width: 10%;">Name</th>
-         <th style="width: 10%;">type</th>
-         <th style="width: 10%;">default</th>
-         <th style="width: 70%;">description</th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-         <td>animation</td>
-         <td>boolean or the string <code>'static'</code></td>
-         <td>true</td>
-         <td>Includes a modal-backdrop element. Alternatively, specify <code>static</code> for a backdrop which doesn't close the modal on click.</td>
-       </tr>
-       </tbody>
-       </table>
-        </section>
-
-    </article>
+		</section>
 
 
-<script src="/bower_components/jquery/dist/jquery.js"></script>
-<!-- endbower -->
-<!-- endbuild -->
+		<section id="content">
+			<div class="container">
+				<h2>MAIN STUFF</h2>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+		</section>
 
-<!-- build:js({app,.tmp}) scripts/main.js -->
+	<!-- </main> -->
+
+<script>
+	slider.init();
+</script>
