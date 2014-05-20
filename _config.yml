@@ -1,7 +1,7 @@
 # Site settings
 title: Huge Showcase
 email: your-email@domain.com
-description: "Showcase of huge widgets and js / css ideas and POC's" 
+description: "Showcase of huge widgets and js / css ideas and POC's"
 baseurl: ""
 url: "http://hugeinc.com"
 
@@ -11,6 +11,6 @@ permalink: pretty
 
 paginate: 5
 paginate_path: "page:num"
-    
+
 gems:
 - jekyll-compass
