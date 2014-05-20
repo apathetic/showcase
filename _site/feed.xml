@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Your awesome title</title>
-    <description>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</description>
-    <link>http://yourdomain.com/</link>
-    <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml" />
+    <title>Huge Showcase</title>
+    <description>Showcase of huge widgets and js / css ideas and POC's</description>
+    <link>http://hugeinc.com/</link>
+    <atom:link href="http://hugeinc.com/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Huge Inc. Full Screen Menu</title>
@@ -134,8 +134,8 @@
 	setupMainNav();
 &lt;/script&gt;</description>
         <pubDate>Mon, 05 May 2014 12:48:21 -0400</pubDate>
-        <link>http://yourdomain.com/2014/05/05/huge-nav/</link>
-        <guid isPermaLink="true">http://yourdomain.com/2014/05/05/huge-nav/</guid>
+        <link>http://hugeinc.com/2014/05/05/huge-nav/</link>
+        <guid isPermaLink="true">http://hugeinc.com/2014/05/05/huge-nav/</guid>
       </item>
     
       <item>
@@ -285,8 +285,8 @@
 &lt;/script&gt;
 </description>
         <pubDate>Fri, 02 May 2014 12:48:21 -0400</pubDate>
-        <link>http://yourdomain.com/2014/05/02/parallax/</link>
-        <guid isPermaLink="true">http://yourdomain.com/2014/05/02/parallax/</guid>
+        <link>http://hugeinc.com/2014/05/02/parallax/</link>
+        <guid isPermaLink="true">http://hugeinc.com/2014/05/02/parallax/</guid>
       </item>
     
       <item>
@@ -469,8 +469,8 @@
 &lt;/script&gt;
 </description>
         <pubDate>Sat, 26 Apr 2014 12:48:21 -0400</pubDate>
-        <link>http://yourdomain.com/2014/04/26/sticky-nav/</link>
-        <guid isPermaLink="true">http://yourdomain.com/2014/04/26/sticky-nav/</guid>
+        <link>http://hugeinc.com/2014/04/26/sticky-nav/</link>
+        <guid isPermaLink="true">http://hugeinc.com/2014/04/26/sticky-nav/</guid>
       </item>
     
       <item>
@@ -572,8 +572,8 @@
 &lt;!-- build:js({app,.tmp}) scripts/main.js --&gt;
 </description>
         <pubDate>Sat, 26 Apr 2014 12:48:21 -0400</pubDate>
-        <link>http://yourdomain.com/widget/2014/04/26/huge-scrolljacker/</link>
-        <guid isPermaLink="true">http://yourdomain.com/widget/2014/04/26/huge-scrolljacker/</guid>
+        <link>http://hugeinc.com/widget/2014/04/26/huge-scrolljacker/</link>
+        <guid isPermaLink="true">http://hugeinc.com/widget/2014/04/26/huge-scrolljacker/</guid>
       </item>
     
       <item>
@@ -844,13 +844,13 @@
 	  &lt;/div&gt; --&gt;
 &lt;/section&gt;</description>
         <pubDate>Thu, 03 Apr 2014 12:48:21 -0400</pubDate>
-        <link>http://yourdomain.com/widget/2014/04/03/autocompleter/</link>
-        <guid isPermaLink="true">http://yourdomain.com/widget/2014/04/03/autocompleter/</guid>
+        <link>http://hugeinc.com/widget/2014/04/03/autocompleter/</link>
+        <guid isPermaLink="true">http://hugeinc.com/widget/2014/04/03/autocompleter/</guid>
       </item>
     
       <item>
         <title>Huge Slider</title>
-        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/css/huge-slider/main.css&quot;&gt;
+        <description>&lt;link rel=&quot;stylesheet&quot; href=&quot;/components/huge-slider/css/main.css&quot;&gt;
 
 &lt;article&gt;
 
@@ -929,19 +929,15 @@
 &lt;/article&gt;
 
 
-&lt;script src=&quot;/components/jquery/dist/jquery.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/components/jquery-mousewheel/jquery.mousewheel.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/components/jquery.transit/jquery.transit.js&quot;&gt;&lt;/script&gt;
-&lt;!-- endbower --&gt;
-&lt;!-- endbuild --&gt;
-
-&lt;!-- build:js({app,.tmp}) scripts/main.js --&gt;
-&lt;script src=&quot;/huge_bower_components/huge.slider/huge-slider.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;/js/huge-slider/main.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/components/huge-slider/js/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/components/huge-slider/js/jquery-mousewheel.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/components/huge-slider/js/jquery.transit.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/components/huge-slider/huge-slider.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/components/huge-slider/main.js&quot;&gt;&lt;/script&gt;
 </description>
         <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
-        <link>http://yourdomain.com/widget/2014/03/05/huge-slider/</link>
-        <guid isPermaLink="true">http://yourdomain.com/widget/2014/03/05/huge-slider/</guid>
+        <link>http://hugeinc.com/widget/2014/03/05/huge-slider/</link>
+        <guid isPermaLink="true">http://hugeinc.com/widget/2014/03/05/huge-slider/</guid>
       </item>
     
       <item>
@@ -1294,8 +1290,8 @@
 	});
 &lt;/script&gt;</description>
         <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
-        <link>http://yourdomain.com/2014/03/05/huge-sass/</link>
-        <guid isPermaLink="true">http://yourdomain.com/2014/03/05/huge-sass/</guid>
+        <link>http://hugeinc.com/2014/03/05/huge-sass/</link>
+        <guid isPermaLink="true">http://hugeinc.com/2014/03/05/huge-sass/</guid>
       </item>
     
       <item>
@@ -1684,8 +1680,8 @@
 &lt;/script&gt;
 </description>
         <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
-        <link>http://yourdomain.com/2014/03/05/flexicarousel/</link>
-        <guid isPermaLink="true">http://yourdomain.com/2014/03/05/flexicarousel/</guid>
+        <link>http://hugeinc.com/2014/03/05/flexicarousel/</link>
+        <guid isPermaLink="true">http://hugeinc.com/2014/03/05/flexicarousel/</guid>
       </item>
     
       <item>
@@ -1904,8 +1900,8 @@ Fork if u cry evry time.
 &lt;/script&gt;
 </description>
         <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
-        <link>http://yourdomain.com/2014/03/05/chusy/</link>
-        <guid isPermaLink="true">http://yourdomain.com/2014/03/05/chusy/</guid>
+        <link>http://hugeinc.com/2014/03/05/chusy/</link>
+        <guid isPermaLink="true">http://hugeinc.com/2014/03/05/chusy/</guid>
       </item>
     
   </channel>
