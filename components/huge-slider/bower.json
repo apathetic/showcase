@@ -1,0 +1,24 @@
+{
+  "name": "huge-slider",
+  "version": "0.0.0",
+  "authors": [
+    "Jason Divock <jdivock@hugeinc.com>"
+  ],
+  "description": "Yep, slider",
+  "main": "main.js",
+  "keywords": [
+    "slider"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery.transit": "~0.9.9"
+  }
+}

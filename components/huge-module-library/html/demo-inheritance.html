@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Basic Module Demo</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="../styles.css">
+  </head>
+  <body>
+    <h1>Basic Module Demo</h1>
+
+    <h2>Carousel with Simple Controls</h2>
+    <div class="carousel-wrapper">
+      <!-- Carousel Markup -->
+      <ul class="carousel carousel-2">
+        <li class="slide"><img src="http://placehold.it/300x250/f00/000"></li>
+        <li class="slide"><img src="http://placehold.it/300x250/0f0/000"></li>
+        <li class="slide"><img src="http://placehold.it/300x250/00f/fff"></li>
+        <li class="slide"><img src="http://placehold.it/300x250/a00/fff"></li>
+        <li class="slide"><img src="http://placehold.it/300x250/00a/fff"></li>
+      </ul>
+      <!-- Carousel UI Controls Markup -->
+      <div class="navigation">
+        <span class="button cnav-prev">Previous</span>
+        <span class="button cnav-next">Next</span>
+      </div>
+      <div class="pagination">
+        <span class="button goto" data-slide-id="0">1</span>
+        <span class="button goto" data-slide-id="1">2</span>
+        <span class="button goto" data-slide-id="2">3</span>
+        <span class="button goto" data-slide-id="3">4</span>
+        <span class="button goto" data-slide-id="4">5</span>
+      </div>
+      <span class="button jump-to-center">jump to center slide</span>
+    </div>
+
+    <!-- JS Dependencies -->
+    <script src="../js/huge.js"></script>
+    <script src="../js/huge.mediator.js"></script>
+    <script src="../js/huge.module.js"></script>
+    <script src="../js/huge.uibridge.js"></script>
+    <script src="../js/huge.carousel.js"></script>
+    <script src="../js/huge.carousel.navigation.js"></script>
+    <script src="../js/huge.carousel.pagination.js"></script>
+
+    <!-- Module instantiation -->
+    <script>
+
+    // Extend the Huge Carousel
+    var MyProjectCarousel = function(rootElem) {
+      Huge.parent(this, rootElem, 'li.slide');
+
+      this.myCarouselProperty = 'awesome';
+    }
+    Huge.inherit(MyProjectCarousel, Carousel);
+
+    MyProjectCarousel.prototype.next = function() {
+      console.log('i added new functionality to the next method!');
+      Huge.parent(this, 'next');
+    };
+
+    MyProjectCarousel.prototype.jumpToCenterSlide = function() {
+      // do something
+      this.goTo(Math.floor((carousel.slides.length - 1)/2));
+    }
+
+    // instantiate the carousel
+    var carousel = new MyProjectCarousel(document.querySelector('.carousel-wrapper'));
+    var carouselNavigation = new Navigation(carousel, carousel.rootElem, 'cnav-prev', 'cnav-next');
+    var carouselPagination = new Pagination(carousel, carousel.rootElem, 'goto', 'data-slide-id');
+
+    var centerTrigger = carousel.rootElem.querySelector('.jump-to-center')
+    centerTrigger.addEventListener('click', function(e) {
+      carousel.jumpToCenterSlide();
+    });
+    </script>
+  </body>
+</html>

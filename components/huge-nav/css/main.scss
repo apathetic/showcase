@@ -1,0 +1,158 @@
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "variables";
+
+#huge-nav {
+
+	font: 60px "Galaxie", Georgia, serif;
+/* */
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height: 105px;
+	color: #fff;
+	padding-top:0px;
+	background:none;
+	// z-index: 1000;
+	overflow: hidden;
+	backface-visibility: hidden;
+/* */
+	@include transition(all 0.6s cubic-bezier(.7,.01,.3,1));
+
+	.overlay {
+		// z-index:1500;
+		z-index: -1;
+		position: absolute;
+		top:0px;
+		width: 100%;
+		height: 100%;
+		background:none;
+		display: table;
+
+		@include transition(background-color 0.6s ease-in-out);
+	}
+
+	#toggle {
+		width: 24px;
+		height: 24px;
+		padding: 10px 0;
+		z-index: 1000;
+		cursor:pointer;
+		position: absolute;
+		top: 48px;
+		left: 12px;
+
+		@include transition(all 0.6s cubic-bezier(0.7, 0.01, 0.3, 1));
+
+		.patty {
+			width: 24px;
+			height: 4px;
+			position: relative;
+			background: $color-magenta;
+
+			@include transition(all 0.3s);
+
+			&:after, &:before {
+				content: '';
+				display: block;
+				width: 24px;
+				height: 4px;
+				background: $color-magenta;
+				position: absolute;
+				z-index: -1;
+
+				@include transition(all 0.3s);
+			}
+
+			&:before { top: -8px; }
+			&:after { top: 8px; }
+		}
+
+		&:hover {
+			@include transition(top 0.4s);
+
+			.patty:before { top: -10px; }
+			.patty:after { top: 10px; }
+		}
+	}
+
+	ul {
+		visibility: hidden;
+		position: relative;
+		top: -10%;
+		width: 100%;
+		padding: 0;
+		opacity: 0;
+		display: table-cell;
+		vertical-align: middle;
+
+		@include rotateX( 10deg, 600px );
+		@include transition(all 0.5s $ease-in);
+	}
+
+	li {
+		list-style: none;
+		text-align:center;
+		margin: 0;
+
+		a {
+			color: #fff;
+			text-decoration: none;
+			padding: 8px 0 0;
+			width:100%;
+			display:block;
+			letter-spacing: -0.06em;
+			font-size: 6vh; 	/* BOOM. magic. */
+
+			&:hover {
+				background:#fff;
+				color: $color-magenta;
+			}
+			&:focus { outline:0; }
+		}
+	}
+
+	&.open {
+		height: 100%;
+		z-index: 1000;
+		@include transition(none);
+
+		.patty {
+			background: none !important;
+			&:after {  top:0 !important; background:#fff !important; @include transform(rotate(45deg)); }
+			&:before { top:0 !important; background:#fff !important; @include transform(rotate(-45deg)); }
+		}
+
+		.overlay {
+			background-color:$color-magenta !important;		// IE
+			background-color:rgba(217, 40, 130, 0.9) !important;
+		}
+
+		ul {
+			top:0;
+			visibility: visible;
+			opacity: 1;
+			margin-top:0;
+
+			@include rotateX( 0deg, 600px );
+		}
+	}
+
+	&.closing {
+		height: 100%;
+
+		ul {
+			top: 10%;
+			visibility: visible;
+			opacity: 0;
+
+			@include rotateX( -10deg, 600px );
+			@include transition(all 0.5s $ease-out);
+		}
+	}
+
+
+}
+
+

@@ -1,0 +1,78 @@
+$magenta: #ec008c;
+
+// @import "../../bower_components/bootstrap-sass/lib/bootstrap";
+
+/*
+	body {
+    background: #fafafa;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #333;
+    margin: 0;
+}
+*/
+
+.site, section {
+    height: 100%;
+    margin: 0;
+    width: auto;
+    padding:0;
+}
+
+
+#three > div {
+    text-align: left;
+}
+
+section {
+    position: relative;
+    text-align: center;
+
+    padding-top: 172px; // to account for fixed nav
+
+    // > h3 {
+    //     position: absolute;
+    //     top: 80%;
+    //     width: 100%;
+    //     text-align: center;
+    //     z-index: 20;
+    //     display: block;
+    // }
+}
+
+html, body, article {
+    height: 100%;
+}
+
+html, body {
+    overflow: hidden;
+}
+
+section {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    -webkit-transform: translateZ(0);
+    -webkit-transition: translate3d(0, 0, 0);
+}
+
+#one {
+    background-color: #fff;
+}
+
+#two {
+    top: 100%;
+    background-color: #eee;
+}
+
+#three {
+    top: 200%;
+    background-color: #ddd;
+}
+
+#four {
+    top: 300%;
+    background-color: #ccc;
+}
