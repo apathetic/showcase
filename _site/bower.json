@@ -1,8 +1,9 @@
 {
-  "name": "hugeyoshowcase",
-  "version": "0.0.0",
+  "name": "hugeshowcase",
+  "version": "0.2.0",
   "authors": [
-    "Jason Divock <jdivock@hugeinc.com>"
+    "Jason Divock <jdivock@hugeinc.com>",
+    "w hatch <whatch@hugeinc.com>"
   ],
   "description": "Showcase for our stuff and whatnot",
   "main": "index.html",
@@ -21,17 +22,12 @@
   "private": true,
   "ignore": [
     "**/.*",
-    "node_modules",
     "bower_components",
-    "app/_bower_components",
     "test",
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.0",
     "font-awesome": "~4.0.3",
-    "jquery.transit": "~0.9.9",
-    "jquery-mousewheel": "~3.1.9",
     "bootstrap-sass": "~3.0.2"
   }
 }
