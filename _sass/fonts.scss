@@ -3,19 +3,19 @@
 
 @include font-face("HUGEAvantGardeBold",
 	 font-files(
-	 "/fonts/huge_agb_v5-webfont.eot",
-	 "/fonts/huge_agb_v5-webfont.woff",
-	 "/fonts/huge_agb_v5-webfont.svg")
+	 "/_sass/fonts/huge_agb_v5-webfont.eot",
+	 "/_sass/fonts/huge_agb_v5-webfont.woff",
+	 "/_sass/fonts/huge_agb_v5-webfont.svg")
 	 );
 @include font-face("Galaxie",
 	font-files(
-	"/fonts/GalaxieCopernicus-Book.eot",
-	"/fonts/GalaxieCopernicus-Book.woff", 
-	"/fonts/GalaxieCopernicus-Book.svg")
+	"/_sass/fonts/GalaxieCopernicus-Book.eot",
+	"/_sass/fonts/GalaxieCopernicus-Book.woff",
+	"/_sass/fonts/GalaxieCopernicus-Book.svg")
 	);
 @include font-face("GalaxieItalic",
 	font-files(
-	"/fonts/GalaxieCopernicus-BookItalic.eot", 
-	"/fonts/GalaxieCopernicus-BookItalic.woff", 
-	"/fonts/GalaxieCopernicus-BookItalic.svg")
+	"/_sass/fonts/GalaxieCopernicus-BookItalic.eot",
+	"/_sass/fonts/GalaxieCopernicus-BookItalic.woff",
+	"/_sass/fonts/GalaxieCopernicus-BookItalic.svg")
 	);
