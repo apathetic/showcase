@@ -40,8 +40,8 @@
 		padding-left: 240px;
 	}
 </style>
-<script src="/js/flexicarousel/jquery-1.11.0.min.js"></script>
-<script src="/js/stickynav/stickynav.js"></script>
+<script src="/components/flexicarousel/js/jquery-1.11.0.min.js"></script>
+<script src="/components/stickynav/js/stickynav.js"></script>
 
 
 <div id="sticky">
@@ -88,8 +88,7 @@
 	<p>Reference _base and _mixins in needed scss files with:</p>
 
 <div class="highlight"><pre><code class="css"><span class="k">@import</span> <span class="s2">&quot;base&quot;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&quot;mixins&quot;</span><span class="p">;</span>
-</code></pre></div>
+<span class="k">@import</span> <span class="s2">&quot;mixins&quot;</span><span class="p">;</span></code></pre></div>
 
 	<p>Done!</p>
 
@@ -99,8 +98,7 @@
 	<p>Reference _base and _mixins-flexible-gutter in needed scss files with:</p>
 
 <div class="highlight"><pre><code class="css"><span class="k">@import</span> <span class="s2">&quot;base&quot;</span><span class="p">;</span>
-<span class="k">@import</span> <span class="s2">&quot;mixins-flexible-gutter&quot;</span><span class="p">;</span>
-</code></pre></div>
+<span class="k">@import</span> <span class="s2">&quot;mixins-flexible-gutter&quot;</span><span class="p">;</span></code></pre></div>
 
 	<p>Done!</p>
 </section>
@@ -113,8 +111,7 @@
 	<p>In _base.scss there are breakpoint variables that are defined by browser viewport widths.</p>
 	<p>For example:</p>
 
-	<div class="highlight"><pre><code class="sass"><span class="na">$small-screen</span><span class="o">:</span> <span class="n">small-screen</span> <span class="mi">0</span> <span class="mi">599</span><span class="kt">px</span><span class="err">;</span>
-</code></pre></div>
+	<div class="highlight"><pre><code class="sass"><span class="na">$small-screen</span><span class="o">:</span> <span class="n">small-screen</span> <span class="mi">0</span> <span class="mi">599</span><span class="kt">px</span><span class="err">;</span></code></pre></div>
 
 	<p><code>$small-screen</code> is a breakpoint variable that defines the threshold width of 0 to 599px.</p>
 	<p>This is the ONLY place you'll need to define breakpoints for the whole project.</p>
@@ -146,8 +143,7 @@
 
 	<span class="c1">// another thing that is derived from previous values</span>
 	<span class="na">$inner-padding</span><span class="o">:</span> <span class="mi">100</span> <span class="o">/</span> <span class="p">(</span><span class="nv">$active-width</span> <span class="o">/</span> <span class="nv">$grid-padding</span><span class="p">)</span> <span class="o">*</span> <span class="mi">1</span><span class="kt">%</span><span class="err">;</span>
-<span class="err">}</span>
-</code></pre></div>
+<span class="err">}</span></code></pre></div>
 
 	<p>This creates a 6 column liquid grid for the breakpoint <code>$small-screen</code>.</p>
 	<p>This is the ONLY place you define grids.</p>
@@ -167,8 +163,7 @@
 			<span class="k">@include</span><span class="nd"> span-columns</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="err">;</span>
 		<span class="err">}</span>
 	<span class="err">}</span>
-<span class="err">}</span>
-</code></pre></div>
+<span class="err">}</span></code></pre></div>
 
 	<p>At viewport <code>$small-screen</code> (0-599px defined in _base), the #header will span 3 columns, in this case 3 columns will be ~50%, cause the grid ends up being a 6 col grid (see step 3)</p>
 	<h5>Example</h5>
@@ -178,8 +173,7 @@
 			<span class="k">@include</span><span class="nd"> span-columns</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="err">;</span>
 		<span class="err">}</span>
 	<span class="err">}</span>
-<span class="err">}</span>
-</code></pre></div>
+<span class="err">}</span></code></pre></div>
 
 	<p>At viewport <code>$large-screen</code> (1000px up as defined in _base) the same exact #header div will be at ~25%, 'cause that grid ends up being 12 columns as defined in _mixins.</p>
 	<p>That's it!</p>
@@ -204,8 +198,7 @@
 	<span class="c1">// defines the margin between content and the browser border.</span>
 	<span class="na">$page-margin</span><span class="o">:</span> <span class="mi">3</span><span class="kt">%</span><span class="err">;</span>
 
-<span class="err">}</span>
-</code></pre></div>
+<span class="err">}</span></code></pre></div>
 
 	<p>Define the column width with span-columns();
 	<h5>Example</h5>
@@ -218,8 +211,7 @@
 	<span class="k">@include</span><span class="nd"> at-breakpoint</span><span class="p">(</span><span class="nv">$small-screen</span><span class="p">)</span> <span class="err">{</span>
 		<span class="k">@include</span><span class="nd"> span-columns</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="err">;</span>
 	<span class="err">}</span>
-<span class="err">}</span>
-</code></pre></div>
+<span class="err">}</span></code></pre></div>
 
 </section>
 

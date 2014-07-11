@@ -25,6 +25,15 @@ section {
   text-align: center;
   padding-top: 172px;
 }
+/* line 32, ../../../_sass/huge-slider/main.scss */
+section > h3 {
+  position: absolute;
+  top: 80%;
+  width: 100%;
+  text-align: center;
+  z-index: 20;
+  display: block;
+}
 
 /* line 42, ../../../_sass/huge-slider/main.scss */
 html, body, article {

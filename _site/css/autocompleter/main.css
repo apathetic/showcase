@@ -94,7 +94,7 @@
 }
 /* line 83, ../../../_sass/autocompleter/main.scss */
 #demo .loading {
-  background: url("/img/autocompleter/ajax-loader.gif") center center no-repeat;
+  background: url("/components/autocompleter/img/ajax-loader.gif") center center no-repeat;
 }
 /* line 90, ../../../_sass/autocompleter/main.scss */
 #demo #auto-complete img,

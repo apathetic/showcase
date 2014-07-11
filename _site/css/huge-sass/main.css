@@ -153,7 +153,7 @@ div#circleWithArrow .example {
   height: 50px;
   width: 50px;
 }
-/* line 22, ../../../huge_bower_components/huge.sass/general/_circle_with_arrow.scss */
+/* line 22, ../../../_sass/huge-sass/sass/general/_circle_with_arrow.scss */
 div#circleWithArrow .example:after {
   margin-left: 17.5px;
   margin-top: 16.66667px;
@@ -189,7 +189,7 @@ div#button-arrow .button-example {
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 17, ../../../huge_bower_components/huge.sass/general/_button_arrow.scss */
+/* line 17, ../../../_sass/huge-sass/sass/general/_button_arrow.scss */
 div#button-arrow .button-example:after {
   content: '';
   height: 30px;
@@ -210,7 +210,7 @@ div#button-arrow .button-example:after {
   -o-transition: all, 0.5s;
   transition: all, 0.5s;
 }
-/* line 32, ../../../huge_bower_components/huge.sass/general/_button_arrow.scss */
+/* line 32, ../../../_sass/huge-sass/sass/general/_button_arrow.scss */
 div#button-arrow .button-example:before {
   content: ' ';
   display: block;
@@ -235,17 +235,17 @@ div#button-arrow .button-example:before {
   -o-transition: all, 0.5s;
   transition: all, 0.5s;
 }
-/* line 45, ../../../huge_bower_components/huge.sass/general/_button_arrow.scss */
+/* line 45, ../../../_sass/huge-sass/sass/general/_button_arrow.scss */
 div#button-arrow .button-example:hover {
   background-color: #1abc9c;
   padding-left: 20px;
   padding-right: 60px;
 }
-/* line 49, ../../../huge_bower_components/huge.sass/general/_button_arrow.scss */
+/* line 49, ../../../_sass/huge-sass/sass/general/_button_arrow.scss */
 div#button-arrow .button-example:hover:after {
   right: 20px;
 }
-/* line 52, ../../../huge_bower_components/huge.sass/general/_button_arrow.scss */
+/* line 52, ../../../_sass/huge-sass/sass/general/_button_arrow.scss */
 div#button-arrow .button-example:hover:before {
   right: 30px;
   -webkit-transform: rotate(0deg);
@@ -301,7 +301,7 @@ div#cardFlip .card-container {
   -o-perspective: 1000;
   perspective: 1000;
 }
-/* line 55, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 55, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 div#cardFlip .card-container:hover .back {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
@@ -309,7 +309,7 @@ div#cardFlip .card-container:hover .back {
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
-/* line 59, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 59, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 div#cardFlip .card-container:hover .front {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
@@ -317,7 +317,7 @@ div#cardFlip .card-container:hover .front {
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
 }
-/* line 64, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 64, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 div#cardFlip .card-container .card {
   width: 200px;
   height: 200px;
@@ -328,7 +328,7 @@ div#cardFlip .card-container .card {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 72, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 72, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 div#cardFlip .card-container .front,
 div#cardFlip .card-container .back {
   top: 0;
@@ -351,11 +351,11 @@ div#cardFlip .card-container .back {
   -o-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 83, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 83, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 div#cardFlip .card-container .front {
   z-index: 2;
 }
-/* line 87, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 87, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 div#cardFlip .card-container .back {
   -webkit-transform: rotateY(-180deg);
   -moz-transform: rotateY(-180deg);
@@ -363,7 +363,7 @@ div#cardFlip .card-container .back {
   -o-transform: rotateY(-180deg);
   transform: rotateY(-180deg);
 }
-/* line 94, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 94, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 .lt-ie10 div#cardFlip .card-container .front,
 .lt-ie10 div#cardFlip .card-container .back {
   -webkit-backface-visibility: visible;
@@ -377,7 +377,7 @@ div#cardFlip .card-container .back {
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
-/* line 100, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 100, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 .lt-ie10 div#cardFlip .card-container:hover .front {
   display: none;
   -webkit-transform: rotateY(0deg);
@@ -386,7 +386,7 @@ div#cardFlip .card-container .back {
   -o-transform: rotateY(0deg);
   transform: rotateY(0deg);
 }
-/* line 104, ../../../huge_bower_components/huge.sass/general/_card_flip.scss */
+/* line 104, ../../../_sass/huge-sass/sass/general/_card_flip.scss */
 .lt-ie10 div#cardFlip .card-container:hover .back {
   display: block;
   -webkit-transform: rotateY(0deg);
@@ -420,7 +420,7 @@ div#cardFlip .card-container .card .back {
 div#pageCurl .page-curl {
   position: relative;
 }
-/* line 10, ../../../huge_bower_components/huge.sass/general/_page_curl.scss */
+/* line 10, ../../../_sass/huge-sass/sass/general/_page_curl.scss */
 div#pageCurl .page-curl:before, div#pageCurl .page-curl:after {
   content: '';
   height: 10px;
@@ -433,7 +433,7 @@ div#pageCurl .page-curl:before, div#pageCurl .page-curl:after {
   -moz-box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
   box-shadow: 0 10px 12px rgba(0, 0, 0, 0.5);
 }
-/* line 20, ../../../huge_bower_components/huge.sass/general/_page_curl.scss */
+/* line 20, ../../../_sass/huge-sass/sass/general/_page_curl.scss */
 div#pageCurl .page-curl:before {
   -webkit-transform: skew(-4deg) rotate(-4deg);
   -moz-transform: skew(-4deg) rotate(-4deg);
@@ -442,7 +442,7 @@ div#pageCurl .page-curl:before {
   transform: skew(-4deg) rotate(-4deg);
   left: 12px;
 }
-/* line 24, ../../../huge_bower_components/huge.sass/general/_page_curl.scss */
+/* line 24, ../../../_sass/huge-sass/sass/general/_page_curl.scss */
 div#pageCurl .page-curl:after {
   -webkit-transform: skew(4deg) rotate(4deg);
   -moz-transform: skew(4deg) rotate(4deg);
@@ -471,7 +471,7 @@ div#hugeBullets nav span {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 23, ../../../huge_bower_components/huge.sass/general/_huge_bullets.scss */
+/* line 23, ../../../_sass/huge-sass/sass/general/_huge_bullets.scss */
 div#hugeBullets nav span.active {
   border-color: #333;
   background-color: transparent;

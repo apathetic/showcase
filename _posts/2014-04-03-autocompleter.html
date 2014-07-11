@@ -12,7 +12,7 @@ tags:
 - type ahead
 ---
 <link rel="stylesheet" href="/css/autocompleter/main.css">
-<script type="text/javascript" src="/js/autocompleter/autocompleter.js"></script>
+<script type="text/javascript" src="/components/autocompleter/js/autocompleter.js"></script>
 <section>
 	<h2>About</h2>
 	<p>AutoCompleter is a light wieght stand alone module can be used for filtering data or auto completion of user input. It work on desktop, phone and tablet.</p>
@@ -92,7 +92,7 @@ tags:
 		});
 		var markupFilter = new AutoCompleter(document.querySelector('#ajax-auto-complete'), {
 			ajax: {
-				url: '/js/autocompleter/json/fruits.json',
+				url: '/components/autocompleter/json/fruits.json',
 				action: 'GET',
 			},
 			typingConfig : {
@@ -102,7 +102,7 @@ tags:
 
 		var customAjaxFilter = new AutoCompleter(document.querySelector('#ajax-custom-auto-complete'), {
 			ajax: {
-				url: '/js/autocompleter/json/designer.json',
+				url: '/components/autocompleter/json/designer.json',
 				action: 'GET',
 				renderJSON: function (response, result) {
 					var frag = document.createDocumentFragment();

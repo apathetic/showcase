@@ -9783,17 +9783,17 @@ td.visible-print {
 }
 @font-face {
   font-family: "HUGEAvantGardeBold";
-  src: url(/_sass/fonts/huge_agb_v5-webfont.eot) format('embedded-opentype'), url(/_sass/fonts/huge_agb_v5-webfont.woff) format('woff'), url(/_sass/fonts/huge_agb_v5-webfont.svg) format('svg');
+  src: url(/fonts/huge_agb_v5-webfont.eot) format('embedded-opentype'), url(/fonts/huge_agb_v5-webfont.woff) format('woff'), url(/fonts/huge_agb_v5-webfont.svg) format('svg');
 }
 
 @font-face {
   font-family: "Galaxie";
-  src: url(/_sass/fonts/GalaxieCopernicus-Book.eot) format('embedded-opentype'), url(/_sass/fonts/GalaxieCopernicus-Book.woff) format('woff'), url(/_sass/fonts/GalaxieCopernicus-Book.svg) format('svg');
+  src: url(/fonts/GalaxieCopernicus-Book.eot) format('embedded-opentype'), url(/fonts/GalaxieCopernicus-Book.woff) format('woff'), url(/fonts/GalaxieCopernicus-Book.svg) format('svg');
 }
 
 @font-face {
   font-family: "GalaxieItalic";
-  src: url(/_sass/fonts/GalaxieCopernicus-BookItalic.eot) format('embedded-opentype'), url(/_sass/fonts/GalaxieCopernicus-BookItalic.woff) format('woff'), url(/_sass/fonts/GalaxieCopernicus-BookItalic.svg) format('svg');
+  src: url(/fonts/GalaxieCopernicus-BookItalic.eot) format('embedded-opentype'), url(/fonts/GalaxieCopernicus-BookItalic.woff) format('woff'), url(/fonts/GalaxieCopernicus-BookItalic.svg) format('svg');
 }
 
 /* Easing Curves
