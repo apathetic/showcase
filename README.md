@@ -24,6 +24,16 @@ Huge showcase makes use of a number of technologies:
 Installation
 --------------
 
+### Quick Version
+
+```sh
+bundle install
+bower install
+jekyll serve
+```
+
+If that worked, great, you're in business, otherwise you've gotta do some more stuff.
+
 ### Before we get started
 
 #### Homebrew
@@ -78,13 +88,16 @@ $ jekyll serve -w
 
 
 #### To generate a post
-From the project root
 
-```sh
-$ yo jekyllrb:post
-```
+Right now, just clone an existing post and work off that (sorry).
 
-Then just follow the prompts
+### TODO
+
+- Get off compass so you can run vanilla Jekyll with no plugins
+- Junk this and move to wintergreen?
+- Make a general post generator
+- Get off bootstrap
+- Clean out bootstrap files or set them to ignore, watch in jekyll is extremely slow
 
 License
 ----
@@ -100,7 +113,3 @@ MIT
 [homebrew]:http://brew.sh
     
 
-### TODO
-
-- Get off compass so you can run vanilla Jekyll with no plugins
-- Junk this and move to wintergreen?
