@@ -12,7 +12,15 @@ permalink: pretty
 paginate: 5
 paginate_path: "page:num"
 
-exclude: ["bower_components/font-awesome/src", "bower_components/bootstrap-sass/components"]
+exclude: [
+	"bower_components/font-awesome/src", 
+	"bower_components/font-awesome/less", 
+	"bower_components/font-awesome/css", 
+	"bower_components/bootstrap-sass/dist",
+	"bower_components/bootstrap-sass/examples",
+	"bower_components/bootstrap-sass/_includes",
+	"bower_components/bootstrap-sass/_layouts"
+]
 
 gems:
 - jekyll-compass
