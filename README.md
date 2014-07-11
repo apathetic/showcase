@@ -12,11 +12,11 @@ TODO
 ----
 
 - Get off compass so you can run vanilla Jekyll with no plugins
-- Junk this and move to wintergreen?
 - Make a general post generator
 - Get off bootstrap
-- Clean out bootstrap files or set them to ignore, watch in jekyll is extremely slow
+- watch flag in jekyll is extremely slow
 - Set up workflow to actually pull components from internal huge bower repo
+- Junk this and move to wintergreen.io?
 
 Version
 ----
