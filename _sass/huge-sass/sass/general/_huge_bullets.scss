@@ -1,0 +1,27 @@
+@import "compass/css3/transition";
+
+@mixin huge-bullets() {
+	cursor:pointer;
+	display:inline-block;
+
+	background-color:#bbb;
+	border-color:#bbb;
+	border:2px solid transparent;
+
+	height:12px;
+	width:12px;
+
+	border-radius:50%;
+	margin:0 3px;
+
+	-moz-background-clip: content;
+	-webkit-background-clip: content;
+	background-clip: content-box;
+
+	@include transition(all 0.5s);
+
+	&.active {
+		border-color: #333;
+		background-color:transparent;
+	}
+}
