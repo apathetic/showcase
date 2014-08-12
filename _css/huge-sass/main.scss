@@ -1,0 +1,176 @@
+@import "huge-sass/sass/functions/_strip-unit";
+@import "huge-sass/sass/functions/_pixels-to-ems";
+@import "huge-sass/sass/general/_circle_with_arrow";
+@import "huge-sass/sass/general/_button_arrow";
+@import "huge-sass/sass/general/_card_flip";
+@import "huge-sass/sass/general/_css_arrow";
+@import "huge-sass/sass/general/_page_curl";
+@import "huge-sass/sass/general/_huge_bullets";
+@import "huge-sass/sass/layout/_list_unstyled";
+
+@import "compass/css3";
+
+// @import "../huge_bower_components/huge.sass/general/_reset";
+// @include reset;
+// @import "compass/utilities/general/clearfix";
+
+$magenta: #ec008c;
+
+.highlight {
+    margin-bottom: 20px;
+}
+
+.example {
+    margin: 1em;
+}
+
+.code {
+    margin: 1em .5em;
+    padding: 1em .5em;
+    background-color: #B3B3B3;
+}
+
+.item {
+	margin-bottom: 6em;
+}
+
+dl {
+    display: block;
+    clear: both;
+    margin-bottom: 20px;
+    // @include clearfix();
+
+    dt {
+        font-weight: bold;
+    }
+    dt, dd {
+        display: block;
+        font-size: 0.9em;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        margin-bottom: 7px;
+    }
+    a {
+        color: $magenta;
+        &:hover {
+            color: $magenta;
+        }
+    }
+    lh{
+        display: block;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin: 0 0 10px;
+        padding: 0 0 10px;
+    }
+}
+
+dd > dl {
+    margin-top: 0;
+}
+
+div#circleWithArrow {
+    .example {
+        @include circle-with-arrow(50px, $magenta, black);
+    }
+}
+
+
+div#button-arrow {
+	.button-example {
+		// display: block;
+		// margin-top: 30px;
+
+		// font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+		font-size: 20px;
+		padding: 20px 40px;
+		color: #ffffff;
+		background-color: #16a085;
+
+		@include button-arrow;
+
+	}
+}
+
+
+div#pixelsToEms {
+    .example {
+        // first pair
+        >div {
+            border: 1px solid #666;
+            margin: .5em 0;
+        }
+        .m-1 {
+            width: huge-em(300);
+        }
+        .m-2 {
+            width: 300px;
+        }
+        // second pair
+        .m-3, .m-4 {
+            font-size: 20px;
+        }
+        .m-3 {
+            width: huge-em(400, 20);
+        }
+        .m-4 {
+            width: 400px;
+        }
+    }
+}
+
+#unstyledList {
+    .example {
+        ul {
+            @include list-unstyled;
+        }
+    }
+}
+
+#cardFlip {
+    .card-container {
+        margin: 20px 0;
+        @include card-flip(left, 200px, 200px, 1000, 1s);
+        .card {
+            color: #fff;
+            .front, .back {
+                @include border-radius(5px);
+            }
+            .front {
+                background-color: #3498db;
+            }
+            .back {
+                background-color: #2980b9;
+            }
+        }
+    }
+}
+
+#pageCurl {
+	.page-curl {
+		// options forthcoming...
+		@include page-curl;
+	}
+}
+
+#hugeBullets {
+	nav {
+		// options forthcoming...
+		span {
+			@include huge-bullets;
+		}
+	}
+}
+
+#arrow {
+    .example{
+         margin: 20px 0;
+         @include arrow(right, $magenta, 10px);
+    }
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
