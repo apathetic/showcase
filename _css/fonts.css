@@ -14,3 +14,8 @@
   src: url(/fonts/GalaxieCopernicus-BookItalic.eot) format('embedded-opentype'), url(/fonts/GalaxieCopernicus-BookItalic.woff) format('woff'), url(/fonts/GalaxieCopernicus-BookItalic.svg) format('svg');
 }
 
+@font-face {
+  font-family: "FontAwesome";
+  src: url(/fonts/fontawesome-webfont.eot) format('embedded-opentype'), url(/fonts/fontawesome-webfont.woff) format('woff'), url(/fonts/fontawesome-webfont.svg) format('svg');
+}
+
