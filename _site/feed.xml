@@ -3,8 +3,8 @@
   <channel>
     <title>Huge Showcase</title>
     <description>Showcase of huge widgets and js / css ideas and POC&#39;s</description>
-    <link>http://hugeinc.com/</link>
-    <atom:link href="http://hugeinc.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml" />
     
       <item>
         <title>Huge Inc. Full Screen Menu</title>
@@ -134,8 +134,8 @@
 	setupMainNav();
 &lt;/script&gt;</description>
         <pubDate>Mon, 05 May 2014 16:48:21 +0000</pubDate>
-        <link>http://hugeinc.com/2014/05/05/huge-nav/</link>
-        <guid isPermaLink="true">http://hugeinc.com/2014/05/05/huge-nav/</guid>
+        <link>/2014/05/05/huge-nav/</link>
+        <guid isPermaLink="true">/2014/05/05/huge-nav/</guid>
       </item>
     
       <item>
@@ -286,8 +286,8 @@
 &lt;/script&gt;
 </description>
         <pubDate>Fri, 02 May 2014 16:48:21 +0000</pubDate>
-        <link>http://hugeinc.com/2014/05/02/parallax/</link>
-        <guid isPermaLink="true">http://hugeinc.com/2014/05/02/parallax/</guid>
+        <link>/2014/05/02/parallax/</link>
+        <guid isPermaLink="true">/2014/05/02/parallax/</guid>
       </item>
     
       <item>
@@ -471,8 +471,8 @@
 &lt;/script&gt;
 </description>
         <pubDate>Sat, 26 Apr 2014 16:48:21 +0000</pubDate>
-        <link>http://hugeinc.com/2014/04/26/sticky-nav/</link>
-        <guid isPermaLink="true">http://hugeinc.com/2014/04/26/sticky-nav/</guid>
+        <link>/2014/04/26/sticky-nav/</link>
+        <guid isPermaLink="true">/2014/04/26/sticky-nav/</guid>
       </item>
     
       <item>
@@ -747,8 +747,8 @@
 	  &lt;/div&gt; --&gt;
 &lt;/section&gt;</description>
         <pubDate>Thu, 03 Apr 2014 16:48:21 +0000</pubDate>
-        <link>http://hugeinc.com/widget/2014/04/03/autocompleter/</link>
-        <guid isPermaLink="true">http://hugeinc.com/widget/2014/04/03/autocompleter/</guid>
+        <link>/widget/2014/04/03/autocompleter/</link>
+        <guid isPermaLink="true">/widget/2014/04/03/autocompleter/</guid>
       </item>
     
       <item>
@@ -841,8 +841,8 @@
 &lt;script src=&quot;/components/huge-slider/js/main.js&quot;&gt;&lt;/script&gt;
 </description>
         <pubDate>Wed, 05 Mar 2014 16:48:21 +0000</pubDate>
-        <link>http://hugeinc.com/widget/2014/03/05/huge-slider/</link>
-        <guid isPermaLink="true">http://hugeinc.com/widget/2014/03/05/huge-slider/</guid>
+        <link>/widget/2014/03/05/huge-slider/</link>
+        <guid isPermaLink="true">/widget/2014/03/05/huge-slider/</guid>
       </item>
     
       <item>
@@ -1204,8 +1204,8 @@
 	});
 &lt;/script&gt;</description>
         <pubDate>Wed, 05 Mar 2014 16:48:21 +0000</pubDate>
-        <link>http://hugeinc.com/2014/03/05/huge-sass/</link>
-        <guid isPermaLink="true">http://hugeinc.com/2014/03/05/huge-sass/</guid>
+        <link>/2014/03/05/huge-sass/</link>
+        <guid isPermaLink="true">/2014/03/05/huge-sass/</guid>
       </item>
     
       <item>
@@ -1599,8 +1599,8 @@
 &lt;/script&gt;
 </description>
         <pubDate>Wed, 05 Mar 2014 16:48:21 +0000</pubDate>
-        <link>http://hugeinc.com/2014/03/05/flexicarousel/</link>
-        <guid isPermaLink="true">http://hugeinc.com/2014/03/05/flexicarousel/</guid>
+        <link>/2014/03/05/flexicarousel/</link>
+        <guid isPermaLink="true">/2014/03/05/flexicarousel/</guid>
       </item>
     
       <item>
@@ -1827,8 +1827,8 @@ Fork if u cry evry time.
 &lt;/script&gt;
 </description>
         <pubDate>Wed, 05 Mar 2014 16:48:21 +0000</pubDate>
-        <link>http://hugeinc.com/2014/03/05/chusy/</link>
-        <guid isPermaLink="true">http://hugeinc.com/2014/03/05/chusy/</guid>
+        <link>/2014/03/05/chusy/</link>
+        <guid isPermaLink="true">/2014/03/05/chusy/</guid>
       </item>
     
   </channel>
