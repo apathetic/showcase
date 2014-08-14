@@ -35,7 +35,7 @@ Description:	Main styles for the Huge Showcase
 /* ---------------------------------------
 	1.	Reset
 -----------------------------------------*/
-/* line 50, ../../_css/main.scss */
+/* line 50, ../../_scss/main.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -57,51 +57,51 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 58, ../../_css/main.scss */
+/* line 58, ../../_scss/main.scss */
 html {
   line-height: 1;
 }
 
-/* line 59, ../../_css/main.scss */
+/* line 59, ../../_scss/main.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 60, ../../_css/main.scss */
+/* line 60, ../../_scss/main.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 61, ../../_css/main.scss */
+/* line 61, ../../_scss/main.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 62, ../../_css/main.scss */
+/* line 62, ../../_scss/main.scss */
 q, blockquote {
   quotes: none;
 }
 
-/* line 63, ../../_css/main.scss */
+/* line 63, ../../_scss/main.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 64, ../../_css/main.scss */
+/* line 64, ../../_scss/main.scss */
 a img {
   border: none;
 }
 
-/* line 65, ../../_css/main.scss */
+/* line 65, ../../_scss/main.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
-/* line 67, ../../_css/main.scss */
+/* line 67, ../../_scss/main.scss */
 * {
   background-repeat: no-repeat;
   position: relative;
@@ -110,7 +110,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   box-sizing: border-box;
 }
 
-/* line 77, ../../_css/main.scss */
+/* line 77, ../../_scss/main.scss */
 body {
   background: #fafafa;
   font: 16px / 24px "Galaxie", Georgia, serif;
@@ -122,7 +122,7 @@ body {
 /* ---------------------------------------
 	2.	Default Styles
 -----------------------------------------*/
-/* line 92, ../../_css/main.scss */
+/* line 92, ../../_scss/main.scss */
 h1, h2, h3, h4, h5, h6 {
   color: #000;
   font-family: "HUGEAvantGardeBold", sans-serif;
@@ -132,39 +132,39 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
-/* line 101, ../../_css/main.scss */
+/* line 101, ../../_scss/main.scss */
 h1 {
   color: #fff;
   font-size: 4em;
 }
 
-/* line 106, ../../_css/main.scss */
+/* line 106, ../../_scss/main.scss */
 h2 {
   font-size: 2.4em;
 }
 
-/* line 110, ../../_css/main.scss */
+/* line 110, ../../_scss/main.scss */
 h3 {
   font-size: 1.8em;
 }
 
-/* line 114, ../../_css/main.scss */
+/* line 114, ../../_scss/main.scss */
 h4 {
   font-size: 1.5em;
 }
 
-/* line 118, ../../_css/main.scss */
+/* line 118, ../../_scss/main.scss */
 h6 {
   line-height: 1;
   margin: 10px 0;
 }
 
-/* line 125, ../../_css/main.scss */
+/* line 125, ../../_scss/main.scss */
 a {
   text-decoration: none;
 }
 
-/* line 133, ../../_css/main.scss */
+/* line 133, ../../_scss/main.scss */
 header > nav {
   position: absolute;
   top: 0;
@@ -173,13 +173,13 @@ header > nav {
   height: 0;
   z-index: 1234;
 }
-/* line 141, ../../_css/main.scss */
+/* line 141, ../../_scss/main.scss */
 header > nav a {
   display: block;
   line-height: 40px;
   top: 54px;
 }
-/* line 145, ../../_css/main.scss */
+/* line 145, ../../_scss/main.scss */
 header > nav a:after {
   display: inline-block;
   width: 40px;
@@ -191,31 +191,31 @@ header > nav a:after {
   font: 24px / 40px Heiti, 'Lucida Grande';
   color: #000;
 }
-/* line 156, ../../_css/main.scss */
+/* line 156, ../../_scss/main.scss */
 header > nav a.next {
   margin-right: 20px;
 }
-/* line 158, ../../_css/main.scss */
+/* line 158, ../../_scss/main.scss */
 header > nav a.next:after {
   content: "←";
   float: left;
 }
-/* line 163, ../../_css/main.scss */
+/* line 163, ../../_scss/main.scss */
 header > nav a.prev {
   margin-left: 20px;
 }
-/* line 165, ../../_css/main.scss */
+/* line 165, ../../_scss/main.scss */
 header > nav a.prev:after {
   content: "→";
   float: right;
 }
 
-/* line 173, ../../_css/main.scss */
+/* line 173, ../../_scss/main.scss */
 #sticky {
   margin-left: -240px;
   position: relative;
 }
-/* line 177, ../../_css/main.scss */
+/* line 177, ../../_scss/main.scss */
 #sticky nav {
   position: absolute;
   top: 0;
@@ -226,11 +226,11 @@ header > nav a.prev:after {
   z-index: 100;
   -webkit-backface-visibility: hidden;
 }
-/* line 187, ../../_css/main.scss */
+/* line 187, ../../_scss/main.scss */
 #sticky nav ul {
   margin-top: 24px;
 }
-/* line 191, ../../_css/main.scss */
+/* line 191, ../../_scss/main.scss */
 #sticky nav li {
   list-style: none;
   float: left;
@@ -238,7 +238,7 @@ header > nav a.prev:after {
   width: 172px;
   margin: 2px 0;
 }
-/* line 200, ../../_css/main.scss */
+/* line 200, ../../_scss/main.scss */
 #sticky nav a {
   color: #fff;
   text-decoration: none;
@@ -247,11 +247,11 @@ header > nav a.prev:after {
   float: right;
   font-size: 14px;
 }
-/* line 209, ../../_css/main.scss */
+/* line 209, ../../_scss/main.scss */
 #sticky nav .active a {
   background: #ec008c;
 }
-/* line 211, ../../_css/main.scss */
+/* line 211, ../../_scss/main.scss */
 #sticky nav .active a:after {
   content: '';
   display: block;
@@ -264,16 +264,16 @@ header > nav a.prev:after {
   top: 6px;
   right: -8px;
 }
-/* line 220, ../../_css/main.scss */
+/* line 220, ../../_scss/main.scss */
 #sticky nav.sticky {
   position: fixed;
 }
 
-/* line 230, ../../_css/main.scss */
+/* line 230, ../../_scss/main.scss */
 .carousel .wrap {
   margin: 0;
 }
-/* line 231, ../../_css/main.scss */
+/* line 231, ../../_scss/main.scss */
 .carousel nav {
   position: static;
   height: 48px;
@@ -281,7 +281,7 @@ header > nav a.prev:after {
   text-align: center;
   z-index: 10;
 }
-/* line 234, ../../_css/main.scss */
+/* line 234, ../../_scss/main.scss */
 .carousel nav li {
   cursor: pointer;
   display: inline-block;
@@ -299,12 +299,12 @@ header > nav a.prev:after {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 251, ../../_css/main.scss */
+/* line 251, ../../_scss/main.scss */
 .carousel nav li.active {
   border-color: #fff;
   background-color: transparent;
 }
-/* line 252, ../../_css/main.scss */
+/* line 252, ../../_scss/main.scss */
 .carousel nav div {
   position: absolute;
   cursor: pointer;
@@ -313,11 +313,11 @@ header > nav a.prev:after {
   height: 100%;
   z-index: 100;
 }
-/* line 253, ../../_css/main.scss */
+/* line 253, ../../_scss/main.scss */
 .carousel nav div:hover span {
   opacity: 0.75;
 }
-/* line 254, ../../_css/main.scss */
+/* line 254, ../../_scss/main.scss */
 .carousel nav div span {
   position: absolute;
   top: 50%;
@@ -335,11 +335,11 @@ header > nav a.prev:after {
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-/* line 269, ../../_css/main.scss */
+/* line 269, ../../_scss/main.scss */
 .carousel .prev, .carousel .prev span {
   left: 0;
 }
-/* line 270, ../../_css/main.scss */
+/* line 270, ../../_scss/main.scss */
 .carousel .next, .carousel .next span {
   right: 0;
 }
@@ -347,17 +347,23 @@ header > nav a.prev:after {
 /* ---------------------------------------
 	3.	Layout
 -----------------------------------------*/
-/* line 280, ../../_css/main.scss */
+/* line 280, ../../_scss/main.scss */
+.container {
+  max-width: 1280px;
+  margin: 0 10%;
+}
+
+/* line 285, ../../_scss/main.scss */
 main {
   padding: 48px 0 100px;
 }
 
-/* line 284, ../../_css/main.scss */
+/* line 289, ../../_scss/main.scss */
 header {
   min-height: 150px;
   background: #232525;
 }
-/* line 287, ../../_css/main.scss */
+/* line 292, ../../_scss/main.scss */
 header .fa-home {
   font-size: 40px;
   color: #fff;
@@ -365,7 +371,7 @@ header .fa-home {
 }
 
 /* ripped from HUGEINC */
-/* line 295, ../../_css/main.scss */
+/* line 300, ../../_scss/main.scss */
 footer {
   background: #000;
   	/*
@@ -407,35 +413,35 @@ footer {
   	}
   	*/
 }
-/* line 298, ../../_css/main.scss */
+/* line 303, ../../_scss/main.scss */
 footer .container {
   font-size: 11px;
   padding: 80px 0 40px;
   text-align: center;
 }
-/* line 306, ../../_css/main.scss */
+/* line 311, ../../_scss/main.scss */
 footer #H-logo {
   display: inline-block;
   width: 46px;
   height: 54px;
   background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAYAAABBY8kOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF1JREFUeNpi+E8YbABiBgJ4AyFDmBjoBEYtGrVo1KJRizABCxFqRIDYgQg1eAEjqMCjh49GLRq1aIRbdBSIawioaQFia0pLhjdAfIAINaOl96hFoxaNWjRYLQIIMABdEogcjpWdDQAAAABJRU5ErkJggg==") 50% 50% no-repeat;
 }
-/* line 312, ../../_css/main.scss */
+/* line 317, ../../_scss/main.scss */
 footer #H-logo:hover {
   background-color: #ec008c;
 }
-/* line 317, ../../_css/main.scss */
+/* line 322, ../../_scss/main.scss */
 footer p {
   font: 15px "HUGEAvantGardeBold", sans-serif;
   color: #999;
   margin-top: 16px;
 }
-/* line 325, ../../_css/main.scss */
+/* line 330, ../../_scss/main.scss */
 footer sup {
   font-size: 0.5em;
   vertical-align: super;
 }
-/* line 330, ../../_css/main.scss */
+/* line 335, ../../_scss/main.scss */
 footer #meta {
   margin-top: 60px;
   border-top: 1px solid #333;
@@ -444,12 +450,12 @@ footer #meta {
   font-size: 11px;
   height: 64px;
 }
-/* line 338, ../../_css/main.scss */
+/* line 343, ../../_scss/main.scss */
 footer #meta span {
   float: left;
   color: #999999;
 }
-/* line 342, ../../_css/main.scss */
+/* line 347, ../../_scss/main.scss */
 footer #meta a {
   float: right;
   color: #999999;
@@ -460,12 +466,12 @@ footer #meta a {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-/* line 350, ../../_css/main.scss */
+/* line 355, ../../_scss/main.scss */
 footer #meta a:hover {
   color: #fff;
   opacity: 1 !important;
 }
-/* line 355, ../../_css/main.scss */
+/* line 360, ../../_scss/main.scss */
 footer #meta a .social {
   display: none;
   background-color: transparent;
@@ -478,46 +484,46 @@ footer #meta a .social {
 /* ---------------------------------------
 	4.	Page Styles
 -----------------------------------------*/
-/* line 415, ../../_css/main.scss */
+/* line 420, ../../_scss/main.scss */
 .home {
   /* ripped from HUGEINC */
 }
-/* line 416, ../../_css/main.scss */
+/* line 421, ../../_scss/main.scss */
 .home header {
   text-align: center;
   color: #999;
 }
-/* line 419, ../../_css/main.scss */
+/* line 424, ../../_scss/main.scss */
 .home header .eyebrow {
   font: 13px "GalaxieItalic";
 }
-/* line 422, ../../_css/main.scss */
+/* line 427, ../../_scss/main.scss */
 .home header h1 {
   margin: 0.4em;
 }
-/* line 424, ../../_css/main.scss */
+/* line 429, ../../_scss/main.scss */
 .home header h1 a {
   color: #fff;
   text-decoration: none;
 }
-/* line 429, ../../_css/main.scss */
+/* line 434, ../../_scss/main.scss */
 .home header p {
   max-width: 960px;
   margin: 0 auto;
 }
-/* line 433, ../../_css/main.scss */
+/* line 438, ../../_scss/main.scss */
 .home header ul.wrap {
   min-height: 500px;
 }
-/* line 435, ../../_css/main.scss */
+/* line 440, ../../_scss/main.scss */
 .home header ul.wrap li {
   padding-top: 160px;
 }
-/* line 440, ../../_css/main.scss */
+/* line 445, ../../_scss/main.scss */
 .home main {
   text-align: center;
 }
-/* line 442, ../../_css/main.scss */
+/* line 447, ../../_scss/main.scss */
 .home main section {
   overflow: hidden;
   max-height: 250px;
@@ -536,22 +542,22 @@ footer #meta a .social {
   -o-transition: -o-transform 1s, max-height 0.8s;
   transition: transform 1s, max-height 0.8s;
 }
-/* line 451, ../../_css/main.scss */
+/* line 456, ../../_scss/main.scss */
 .home main section p {
   max-width: 1280px;
   margin: 0 auto;
 }
-/* line 455, ../../_css/main.scss */
+/* line 460, ../../_scss/main.scss */
 .home main section .install {
   padding-top: 10px;
   font-size: 12px;
 }
-/* line 459, ../../_css/main.scss */
+/* line 464, ../../_scss/main.scss */
 .home main section .bower {
   font-family: Monaco, Courier, monospace;
   font-weight: bold;
 }
-/* line 464, ../../_css/main.scss */
+/* line 469, ../../_scss/main.scss */
 .home main section.collapsed {
   max-height: 0;
   -webkit-transform: rotateX(90deg);
@@ -560,12 +566,12 @@ footer #meta a .social {
   -o-transform: rotateX(90deg);
   transform: rotateX(90deg);
 }
-/* line 472, ../../_css/main.scss */
+/* line 477, ../../_scss/main.scss */
 .home #tabs {
   padding-bottom: 36px;
   text-align: center;
 }
-/* line 476, ../../_css/main.scss */
+/* line 481, ../../_scss/main.scss */
 .home #tabs li {
   width: 90px;
   height: 36px;
@@ -580,7 +586,7 @@ footer #meta a .social {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 487, ../../_css/main.scss */
+/* line 492, ../../_scss/main.scss */
 .home #tabs li:after {
   content: '';
   border: 12px solid transparent;
@@ -592,46 +598,46 @@ footer #meta a .social {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-/* line 498, ../../_css/main.scss */
+/* line 503, ../../_scss/main.scss */
 .home #tabs .active {
   color: #fff;
   background: #232525;
   border-color: #232525;
 }
-/* line 502, ../../_css/main.scss */
+/* line 507, ../../_scss/main.scss */
 .home #tabs .active:after {
   border-top-color: #232525;
   bottom: -26px;
 }
 
-/* line 517, ../../_css/main.scss */
+/* line 522, ../../_scss/main.scss */
 .page section div {
   padding: 40px;
 }
-/* line 521, ../../_css/main.scss */
+/* line 526, ../../_scss/main.scss */
 .page section .eyebrow {
   font: 13px Arial,sans-serif;
   display: inline-block;
   padding: 15px;
   color: #ec008c;
 }
-/* line 528, ../../_css/main.scss */
+/* line 533, ../../_scss/main.scss */
 .page section h2 {
   margin-top: 0px;
 }
-/* line 530, ../../_css/main.scss */
+/* line 535, ../../_scss/main.scss */
 .page section h2 a {
   color: #000;
 }
-/* line 535, ../../_css/main.scss */
+/* line 540, ../../_scss/main.scss */
 .page section p {
   color: #999;
 }
-/* line 539, ../../_css/main.scss */
+/* line 544, ../../_scss/main.scss */
 .page section a {
   text-decoration: none;
 }
-/* line 543, ../../_css/main.scss */
+/* line 548, ../../_scss/main.scss */
 .page section:after {
   content: '';
   width: 92px;
@@ -643,64 +649,64 @@ footer #meta a .social {
   left: 50%;
   margin-left: -46px;
 }
-/* line 555, ../../_css/main.scss */
+/* line 560, ../../_scss/main.scss */
 .page section:hover {
   background: #ec008c;
 }
-/* line 557, ../../_css/main.scss */
+/* line 562, ../../_scss/main.scss */
 .page section:hover * {
   color: #fff;
 }
-/* line 564, ../../_css/main.scss */
+/* line 569, ../../_scss/main.scss */
 .page .header a {
   font-weight: bold;
   text-decoration: none;
 }
-/* line 569, ../../_css/main.scss */
+/* line 574, ../../_scss/main.scss */
 .page .title {
   display: inline-block;
 }
 
-/* line 578, ../../_css/main.scss */
+/* line 583, ../../_scss/main.scss */
 .post main .container {
   padding-left: 240px;
 }
-/* line 583, ../../_css/main.scss */
+/* line 588, ../../_scss/main.scss */
 .post section {
   margin-bottom: 6em;
 }
-/* line 585, ../../_css/main.scss */
+/* line 590, ../../_scss/main.scss */
 .post section li {
   margin-left: 2em;
 }
-/* line 590, ../../_css/main.scss */
+/* line 595, ../../_scss/main.scss */
 .post pre {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 1.4em;
 }
-/* line 595, ../../_css/main.scss */
+/* line 600, ../../_scss/main.scss */
 .post pre code {
   border: none;
 }
-/* line 599, ../../_css/main.scss */
+/* line 604, ../../_scss/main.scss */
 .post pre.terminal {
   border: 1px solid #000;
   background-color: #333;
   color: #FFF;
 }
-/* line 605, ../../_css/main.scss */
+/* line 610, ../../_scss/main.scss */
 .post pre.terminal code {
   background-color: #333;
 }
-/* line 610, ../../_css/main.scss */
+/* line 615, ../../_scss/main.scss */
 .post code {
   border: 1px solid #ddd;
   background-color: #eef;
   padding: 0 .2em;
 }
 
-/* line 621, ../../_css/main.scss */
+/* line 626, ../../_scss/main.scss */
 .fullscreen header {
   position: fixed;
   top: 0;
