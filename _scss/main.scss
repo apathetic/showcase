@@ -26,9 +26,9 @@ Description:	Main styles for the Huge Showcase
 
 */
 
-// @import "huge-sass/sass/general/_css_arrow";
-// @import "fonts";
-// @import "variables";
+@import "compass/css3";
+@import "huge-sass/sass/general/_css_arrow";
+@import "variables";
 
 
 /* ---------------------------------------
