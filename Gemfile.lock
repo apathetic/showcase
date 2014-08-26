@@ -69,4 +69,3 @@ PLATFORMS
 
 DEPENDENCIES
   jekyll (~> 2.0.0)
-  jekyll-compass (~> 1.0.0)

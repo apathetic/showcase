@@ -133,7 +133,7 @@
 
 	setupMainNav();
 &lt;/script&gt;</description>
-        <pubDate>Mon, 05 May 2014 16:48:21 +0000</pubDate>
+        <pubDate>Mon, 05 May 2014 12:48:21 -0400</pubDate>
         <link>/2014/05/05/huge-nav/</link>
         <guid isPermaLink="true">/2014/05/05/huge-nav/</guid>
       </item>
@@ -244,10 +244,9 @@
 
 &lt;section data-nav=&quot;Code&quot; id=&quot;code&quot;&gt;
 	&lt;h2&gt;Code&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;parallax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;parallax&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
 	&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;.parallax&amp;#39;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/section&gt;
 
 &lt;section data-nav=&quot;Options&quot; id=&quot;options&quot;&gt;
@@ -285,7 +284,7 @@
 	});
 &lt;/script&gt;
 </description>
-        <pubDate>Fri, 02 May 2014 16:48:21 +0000</pubDate>
+        <pubDate>Fri, 02 May 2014 12:48:21 -0400</pubDate>
         <link>/2014/05/02/parallax/</link>
         <guid isPermaLink="true">/2014/05/02/parallax/</guid>
       </item>
@@ -407,13 +406,12 @@
 
 &lt;section data-nav=&quot;Code&quot; id=&quot;code&quot;&gt;
 	&lt;h2&gt;Code&lt;/h2&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;stickyNav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;stickyNav&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;init&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
 	&lt;span class=&quot;nx&quot;&gt;nav&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;#sticky&amp;#39;&lt;/span&gt;
 	&lt;span class=&quot;c1&quot;&gt;// navItem: &amp;#39;td&amp;#39;,&lt;/span&gt;
 	&lt;span class=&quot;c1&quot;&gt;// active: &amp;#39;selected&amp;#39;,&lt;/span&gt;
 	&lt;span class=&quot;c1&quot;&gt;// scrollSpeed&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/section&gt;
 
 &lt;section data-nav=&quot;Options&quot; id=&quot;options&quot;&gt;
@@ -470,7 +468,7 @@
 	});
 &lt;/script&gt;
 </description>
-        <pubDate>Sat, 26 Apr 2014 16:48:21 +0000</pubDate>
+        <pubDate>Sat, 26 Apr 2014 12:48:21 -0400</pubDate>
         <link>/2014/04/26/sticky-nav/</link>
         <guid isPermaLink="true">/2014/04/26/sticky-nav/</guid>
       </item>
@@ -645,14 +643,11 @@
 &lt;section&gt;
 	&lt;h2&gt;Code&lt;/h2&gt;
 
-	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;	&lt;span class=&quot;c1&quot;&gt;//to filter markup&lt;/span&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//to filter markup&lt;/span&gt;
 	&lt;span class=&quot;nx&quot;&gt;markupFilter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;AutoCompleter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#auto-complete&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;));&lt;/span&gt;
 
 
-	&lt;span class=&quot;c1&quot;&gt;//to override markup filter function&lt;/span&gt;
-
-	
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;span class=&quot;c1&quot;&gt;//to override markup filter function&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/section&gt;
 
 
@@ -708,8 +703,7 @@
 
 	&lt;h5&gt;coming soon&lt;/h5&gt;
 
-	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;	
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	
 
 	&lt;h3&gt;Events&lt;/h3&gt;
 
@@ -746,7 +740,7 @@
 	    &lt;/table&gt;
 	  &lt;/div&gt; --&gt;
 &lt;/section&gt;</description>
-        <pubDate>Thu, 03 Apr 2014 16:48:21 +0000</pubDate>
+        <pubDate>Thu, 03 Apr 2014 12:48:21 -0400</pubDate>
         <link>/widget/2014/04/03/autocompleter/</link>
         <guid isPermaLink="true">/widget/2014/04/03/autocompleter/</guid>
       </item>
@@ -786,12 +780,11 @@
 		&lt;div class=&quot;container&quot;&gt;
 			&lt;h3&gt;Usage&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ready&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
         &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Slider&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nt&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;nt&quot;&gt;section&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;position&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;relative&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;article&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
@@ -800,8 +793,7 @@
 
 &lt;span class=&quot;nt&quot;&gt;html&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;body&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;na&quot;&gt;overflow&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;hidden&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/section&gt;
 
@@ -840,7 +832,7 @@
 &lt;script src=&quot;/components/huge-slider/js/huge-slider.js&quot;&gt;&lt;/script&gt;
 &lt;script src=&quot;/components/huge-slider/js/main.js&quot;&gt;&lt;/script&gt;
 </description>
-        <pubDate>Wed, 05 Mar 2014 16:48:21 +0000</pubDate>
+        <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
         <link>/widget/2014/03/05/huge-slider/</link>
         <guid isPermaLink="true">/widget/2014/03/05/huge-slider/</guid>
       </item>
@@ -916,8 +908,7 @@
 		&lt;h4&gt;Example&lt;/h4&gt;
 
 		&lt;h6&gt;Code:&lt;/h6&gt;
-		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; circle-with-arrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$magenta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; circle-with-arrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;50&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$magenta&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 		&lt;h6&gt;Result:&lt;/h6&gt;
 		&lt;div class=&quot;well&quot;&gt;
@@ -953,8 +944,7 @@
 		&lt;h4&gt;Example&lt;/h4&gt;
 
 		&lt;h6&gt;Code:&lt;/h6&gt;
-		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; card-flip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; card-flip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;200&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 		&lt;h6&gt;Result:&lt;/h6&gt;
 		&lt;div class=&quot;well&quot;&gt;
@@ -981,8 +971,7 @@
 		&lt;h4&gt;Example&lt;/h4&gt;
 
 		&lt;h6&gt;Code&lt;/h6&gt;
-		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; page-curl&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; page-curl&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 		&lt;h6&gt;Result&lt;/h6&gt;
 		&lt;div class=&quot;well page-curl&quot;&gt;
@@ -1021,8 +1010,7 @@
 		&lt;h4&gt;Example&lt;/h4&gt;
 
 		&lt;h6&gt;Code&lt;/h6&gt;
-		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; arrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; arrow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;right&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;red&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 		&lt;h6&gt;Result:&lt;/h6&gt;
 		&lt;div class=&quot;well&quot;&gt;
@@ -1051,8 +1039,7 @@
 		&lt;h4&gt;Example&lt;/h4&gt;
 
 		&lt;h6&gt;Code:&lt;/h6&gt;
-		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; button-arrow&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; button-arrow&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 		&lt;h6&gt;Result:&lt;/h6&gt;
 		&lt;div class=&quot;well&quot;&gt;
@@ -1068,8 +1055,7 @@
 		&lt;/dl&gt;
 
 		&lt;h6&gt;Code&lt;/h6&gt;
-		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; huge-bullets&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; huge-bullets&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 		&lt;h6&gt;Result&lt;/h6&gt;
 
@@ -1122,7 +1108,7 @@
 		&lt;h4&gt;Example&lt;/h4&gt;
 
 		&lt;h6&gt;Code:&lt;/h6&gt;
-		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;#example&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;div&lt;/span&gt;&lt;span class=&quot;nn&quot;&gt;#example&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;// first pair&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-1&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;huge-em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-2&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
@@ -1130,9 +1116,7 @@
 &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-3&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;amp&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;font-size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-3&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;huge-em&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;&amp;amp;&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;.m-4&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-		
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 		&lt;h6&gt;Result:&lt;/h6&gt;
 		&lt;div class=&quot;well&quot;&gt;
@@ -1177,8 +1161,7 @@
 		&lt;h4&gt;Example&lt;/h4&gt;
 
 		&lt;h6&gt;Code:&lt;/h6&gt;
-	   &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; list-unstyled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	   &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;nt&quot;&gt;ul&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; list-unstyled&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 		&lt;h6&gt;Result:&lt;/h6&gt;
 		&lt;div class=&quot;well&quot;&gt;
@@ -1203,7 +1186,7 @@
 		// scrollSpeed
 	});
 &lt;/script&gt;</description>
-        <pubDate>Wed, 05 Mar 2014 16:48:21 +0000</pubDate>
+        <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
         <link>/2014/03/05/huge-sass/</link>
         <guid isPermaLink="true">/2014/03/05/huge-sass/</guid>
       </item>
@@ -1427,7 +1410,7 @@
 &lt;section data-nav=&quot;code&quot; id=&quot;code&quot;&gt;
 	&lt;h2&gt;Code&lt;/h2&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// using jQuery&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// using jQuery&lt;/span&gt;
 
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;bullets&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#one .indicators span&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;car1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;#one&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
@@ -1464,8 +1447,7 @@
 &lt;span class=&quot;nx&quot;&gt;container2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;querySelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;.next&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
 	&lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 	&lt;span class=&quot;nx&quot;&gt;car2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;/section&gt;
 
 &lt;section data-nav=&quot;API&quot; id=&quot;api&quot;&gt;
@@ -1547,20 +1529,16 @@
 	&lt;h3&gt;Methods&lt;/h3&gt;
 
 	&lt;h5&gt;Next Slide&lt;/h5&gt;
-	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;h5&gt;Previous Slide&lt;/h5&gt;
-	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;prev&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;h5&gt;Go To Slide&lt;/h5&gt;
-	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;to&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;h5&gt;Go To Slide&lt;/h5&gt;
-	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;carousel&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;destroy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 
 	&lt;!--
@@ -1598,7 +1576,7 @@
 	});
 &lt;/script&gt;
 </description>
-        <pubDate>Wed, 05 Mar 2014 16:48:21 +0000</pubDate>
+        <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
         <link>/2014/03/05/flexicarousel/</link>
         <guid isPermaLink="true">/2014/03/05/flexicarousel/</guid>
       </item>
@@ -1657,9 +1635,8 @@
 	&lt;p&gt;Copy and paste _base.scss and _mixins.scss into a working compass project (http://compass-style.org/install/)&lt;/p&gt;
 	&lt;p&gt;Reference _base and _mixins in needed scss files with:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;base&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mixins&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;base&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mixins&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;p&gt;Done!&lt;/p&gt;
 
@@ -1668,9 +1645,8 @@
 	&lt;p&gt;Copy and paste _base.scss and _mixins-flexible-gutter.scss into a working compass project (http://compass-style.org/install/)&lt;/p&gt;
 	&lt;p&gt;Reference _base and _mixins-flexible-gutter in needed scss files with:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;base&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mixins-flexible-gutter&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;base&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;@import&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;mixins-flexible-gutter&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;p&gt;Done!&lt;/p&gt;
 &lt;/section&gt;
@@ -1683,8 +1659,7 @@
 	&lt;p&gt;In _base.scss there are breakpoint variables that are defined by browser viewport widths.&lt;/p&gt;
 	&lt;p&gt;For example:&lt;/p&gt;
 
-	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;na&quot;&gt;$small-screen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;small-screen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;599&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+	&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;na&quot;&gt;$small-screen&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;small-screen&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;599&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;p&gt;&lt;code&gt;$small-screen&lt;/code&gt; is a breakpoint variable that defines the threshold width of 0 to 599px.&lt;/p&gt;
 	&lt;p&gt;This is the ONLY place you&#39;ll need to define breakpoints for the whole project.&lt;/p&gt;
@@ -1697,7 +1672,7 @@
 	&lt;p&gt;For each breakpoint there is an associated grid configuration. This creates the liquid grid that has unique column, gutter, and grid padding in percent.&lt;/p&gt;
 	&lt;p&gt;In the case of using our previous breakpoint &lt;code&gt;$small-screen&lt;/code&gt; we define the grid:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// if the first value of the variable $small-screen (it&amp;#39;s value being: &amp;quot;small-screen 0 599px&amp;quot;) is small screen...&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// if the first value of the variable $small-screen (it&amp;#39;s value being: &amp;quot;small-screen 0 599px&amp;quot;) is small screen...&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;@if&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;nth&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$viewport&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;small-screen&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;c1&quot;&gt;// at base ideal width of 400...&lt;/span&gt;
 	&lt;span class=&quot;na&quot;&gt;$base-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;400&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
@@ -1716,8 +1691,7 @@
 
 	&lt;span class=&quot;c1&quot;&gt;// another thing that is derived from previous values&lt;/span&gt;
 	&lt;span class=&quot;na&quot;&gt;$inner-padding&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;100&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$active-width&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;/&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$grid-padding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;p&gt;This creates a 6 column liquid grid for the breakpoint &lt;code&gt;$small-screen&lt;/code&gt;.&lt;/p&gt;
 	&lt;p&gt;This is the ONLY place you define grids.&lt;/p&gt;
@@ -1731,25 +1705,23 @@
 	&lt;p&gt;With the mixin span-columns() inside the at-breakpoint() mixin of course!&lt;/p&gt;
 	&lt;h5&gt;Example 1&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nn&quot;&gt;#wrapper&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;nn&quot;&gt;#wrapper&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; at-breakpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$small-screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 		&lt;span class=&quot;nn&quot;&gt;#header&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 			&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; span-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
 		&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
 	&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;p&gt;At viewport &lt;code&gt;$small-screen&lt;/code&gt; (0-599px defined in _base), the #header will span 3 columns, in this case 3 columns will be ~50%, cause the grid ends up being a 6 col grid (see step 3)&lt;/p&gt;
 	&lt;h5&gt;Example&lt;/h5&gt;
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nn&quot;&gt;#wrapper&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;nn&quot;&gt;#wrapper&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; at-breakpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$large-screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 		&lt;span class=&quot;nn&quot;&gt;#header&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 			&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; span-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
 		&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
 	&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;p&gt;At viewport &lt;code&gt;$large-screen&lt;/code&gt; (1000px up as defined in _base) the same exact #header div will be at ~25%, &#39;cause that grid ends up being 12 columns as defined in _mixins.&lt;/p&gt;
 	&lt;p&gt;That&#39;s it!&lt;/p&gt;
@@ -1758,7 +1730,7 @@
 	&lt;h4&gt;Flexible Gutter&lt;/h4&gt;
 	&lt;p&gt;In the flexible gutter version of chusy, `column width` is 100% divided by the total columns. The gutter is created by the padding on the columns. You can specify gutter width in _base.scss `$gutter-width`.  You can define total number of columns in the break point mixin:
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//in _base.scss&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;c1&quot;&gt;//in _base.scss&lt;/span&gt;
 &lt;span class=&quot;na&quot;&gt;$gutter-width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;30&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;px&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// it creates 15px padding left and right on a column&lt;/span&gt;
 
 &lt;span class=&quot;c1&quot;&gt;// in _mixins-flexible-gutter.scss&lt;/span&gt;
@@ -1774,13 +1746,12 @@
 	&lt;span class=&quot;c1&quot;&gt;// defines the margin between content and the browser border.&lt;/span&gt;
 	&lt;span class=&quot;na&quot;&gt;$page-margin&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;%&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 	&lt;p&gt;Define the column width with span-columns();
 	&lt;h5&gt;Example&lt;/h5&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;sass&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.side-content&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sass&quot; data-lang=&quot;sass&quot;&gt;&lt;span class=&quot;nc&quot;&gt;.side-content&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 	&lt;span class=&quot;c1&quot;&gt;// .side-content will take up 3 columns as its width: 3 * 100% / 12 = 25%&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; span-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
 
@@ -1788,8 +1759,7 @@
 	&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; at-breakpoint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;$small-screen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;{&lt;/span&gt;
 		&lt;span class=&quot;k&quot;&gt;@include&lt;/span&gt;&lt;span class=&quot;nd&quot;&gt; span-columns&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;;&lt;/span&gt;
 	&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;span class=&quot;err&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;/section&gt;
 
@@ -1826,7 +1796,7 @@ Fork if u cry evry time.
 	});
 &lt;/script&gt;
 </description>
-        <pubDate>Wed, 05 Mar 2014 16:48:21 +0000</pubDate>
+        <pubDate>Wed, 05 Mar 2014 11:48:21 -0500</pubDate>
         <link>/2014/03/05/chusy/</link>
         <guid isPermaLink="true">/2014/03/05/chusy/</guid>
       </item>
