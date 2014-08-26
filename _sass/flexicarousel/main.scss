@@ -1,0 +1,58 @@
+
+body, html { height:100%; }
+ul, li { margin:0; padding:0; list-style:none; }
+hr { margin: 5em 0; }
+
+/* -------------------------------------
+		CAROUSEL STYLES
+------------------------------------- */
+.carousel { width:85%; /* min-width:540px; */ max-width:1280px;; margin:0 auto; position:relative; }
+.carousel ul { width:100%; height:300px; }
+.carousel li { background: #ddd; }
+.carousel li span { position:absolute; top:20px; left:20px; color:#fff; font-size:16px; }
+.carousel img { width:100%; height:auto; }
+
+/* -------------------------------------
+		NAVIGATION
+------------------------------------- */
+.carousel nav { text-align:center; position:absolute; bottom:-24px; left:0; height:24px; margin:0; padding:0; width:100%; text-align:center; z-index:10; }
+.carousel nav span { display:inline-block; width:10px; height:10px; margin:7px; border-radius:5px; background:#999; cursor:pointer }
+.carousel nav span:hover { background:#ccc; }
+.carousel nav span.active { background:purple; }
+.carousel nav div {
+	display: inline-block;
+	cursor: pointer;
+	padding: 5px;
+	position: relative;
+	height: auto;
+ }
+.carousel nav div.active { color:#fff; background: purple }
+.carousel .next,
+.carousel .prev { position:absolute; top:40%; height:24px; width:48px; font-size:18px; z-index:10; }
+.carousel .prev { left:-54px; }
+.carousel .next { right:-54px; }
+
+/* -------------------------------------
+		SAMPLE BREAKPOINT
+------------------------------------- */
+@media (min-width:1200px) {
+	.carousel ul { height:450px; }
+}
+
+@media (min-width:992px) and (max-width:1199px) {
+	.carousel ul { height:360px; }
+}
+
+@media (max-width:760px) {
+	.next { top: 100%; right:0; }
+	.prev { top: 100%; left:0 }
+}
+
+
+
+/* UNDO some other framework styles */
+.fade {
+	opacity: 1;
+	-webkit-transition: none;
+	transition: none;
+}
