@@ -1,6 +1,6 @@
 /* global Huge, UiBridge, Accordion */
 /**
- * @fileOverview The Huge Carousel navigation interface.
+ * @fileOverview The Huge Accordion control interface.
  * @author Tim McDuffie <tmcduffie@hugeinc.com>
  */
 
@@ -30,7 +30,7 @@ var AccordionControl = function(accordion, controlElem, opt_methodName) {
 Huge.inherit(AccordionControl, UiBridge);
 
 
-AccordionControl.requiredAPI = ['toggle', 'expand', 'contract'];
+AccordionControl.requiredAPI = ['toggle', 'expand', 'contract']; // Maybe we should standardize 'collapse' vs 'contract'
 
 AccordionControl.methodName = 'toggle';
 

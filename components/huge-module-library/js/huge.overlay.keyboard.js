@@ -1,6 +1,6 @@
 /* global Huge, UiBridge */
 /**
- * @fileOverview The Huge Carousel navigation interface.
+ * @fileOverview The Huge Overlay keyboard control interface.
  * @author Tim McDuffie <tmcduffie@hugeinc.com>
  */
 

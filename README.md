@@ -11,12 +11,11 @@ A repo to house documentation and examples for all our internal components
 TODO
 ----
 
-- Get off compass so you can run vanilla Jekyll with no plugins
 - Make a general post generator
 - Get off bootstrap
 - watch flag in jekyll is extremely slow
 - Set up workflow to actually pull components from internal huge bower repo
-- Junk this and move to wintergreen.io?
+- Junk this and move to wintersmith.io?
 
 Version
 ----

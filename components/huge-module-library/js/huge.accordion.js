@@ -8,7 +8,9 @@
 /**
  * Accordion UI component base module.
  * @param {Element} rootElem Root element for the module.
- * @param {string} opt_slidesSelector Selector string for slides. This is searched for within the rootElem.
+ * @param {string} opt_isStartingExpanded
+ * @param {string} opt_expandedHeight
+ * @param {string} opt_contractedHeight
  */
 var Accordion = function(rootElem, opt_isStartingExpanded, opt_expandedHeight, opt_contractedHeight) {
   if (!rootElem) {

@@ -410,7 +410,7 @@ TBD.
 ### Option 5 - [jQuery plugin](demo-jquery.html)
 
 1. Include the repo in your project (@TODO: 2)
-2. Create a jQWuery plugin wrapper
+2. Create a jQuery plugin wrapper
 3. Inside the each iterator instantiate the plugin and interfaces with appropriate options
 4. Apply the plugin to a jQuery element collection.
 

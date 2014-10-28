@@ -1,14 +1,12 @@
-/* global Huge, Module, Accodrion */
+/* global Huge, Module, Accordion */
 /**
- * @fileOverview The Huge Accordion base module
+ * @fileOverview The Huge Accordion Group module
  * @author Tim McDuffie <tmcduffie@hugeinc.com>
  */
 
 
 /**
- * Accordion UI component base module.
- * @param {Element} rootElem Root element for the module.
- * @param {string} opt_slidesSelector Selector string for slides. This is searched for within the rootElem.
+ * Accordion Group UI component module.
  */
 var AccordionGroup = function() {
   Huge.parent(this);

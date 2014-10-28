@@ -8,7 +8,7 @@
 /**
  * Overlay UI component base module.
  * @param {Element} rootElem Root element for the module.
- * @param {string} opt_slidesSelector Selector string for slides. This is searched for within the rootElem.
+ * @param {Element} opt_contentContainer
  */
 var Overlay = function(rootElem, opt_contentContainer) {
   if (!rootElem) {

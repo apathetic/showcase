@@ -8,7 +8,6 @@
 /**
  * Dialog UI component base module.
  * @param {Element} rootElem Root element for the module.
- * @param {string} opt_slidesSelector Selector string for slides. This is searched for within the rootElem.
  */
 var Dialog = function(rootElem) {
   if (!rootElem) {
