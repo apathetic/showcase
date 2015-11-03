@@ -4,11 +4,14 @@
 			"parallax": {
 				"title": "Parallax.",
 				"date": "2014-05-02",
-				"path": "parallax (UNUSED)",
 				"blurb": "very simple parallax base",
 				"tags": ["js", "parallax"],
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse",
-				"github": "https://github.com/apathetic/parallax"
+				"github": "https://github.com/apathetic/parallax",
+				"demofiles": {
+					"index": "index.html",
+					"assets": ""
+				}
 			},
 			"simplecarousel": {
 				"title": "Hello World.",

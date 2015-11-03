@@ -1,0 +1,24 @@
+{
+  "name": "Components",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://stash.hugeinc.com/projects/CMPTS/repos/showcase/browse"
+  },
+  "dependencies": {
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "harp": "^0.19.0",
+    "noodlejs": "^0.3.2"
+  },
+  "description": "A showcase of HUGE components",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node app.js",
+    "builder": "./builder.js.clean() && ./builder.build()",
+    "compiler": "harp compile && exit 1"
+  },
+  "author": "wes hatch",
+  "license": "ISC"
+}

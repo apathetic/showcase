@@ -1,0 +1,46 @@
+<!--
+vars:
+
+title
+next_page
+prev_page
+content
+-->
+
+
+	<%- partial("_partials/header", { title: title }) -%>
+
+
+	<header class="header">
+		<nav>
+			<% if next_page %>
+			<a class="next" href="<%- next_page -%>" title="Next Post: {{page.next.title}}"></a>
+			<% endif %>
+
+			<% if page.previous.url %>
+			<a class="prev" href="<%- prev_page -%>" title="Previous Post: {{page.previous.title}}"></a>
+			<% endif %>
+		</nav>
+
+		<div class="container">
+			<a href="/"><i class="fa fa-home"></i></a>
+			<h1 class="title"><%- title -%></h1>
+		</div>
+	</header>
+
+
+
+	<main>
+		<%- content -%>
+	</main>
+
+
+	<%- partial("_partials/footer")%>
+
+
+	<script src="https://cdn.rawgit.com/apathetic/stickynav/blob/master/dist/stickynav.min.js"></script>
+	<script>
+		stickyNav.init({
+			nav: '#sticky nav'
+		});
+	</script>

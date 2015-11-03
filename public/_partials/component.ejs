@@ -1,0 +1,37 @@
+<!--
+vars:
+
+title
+next_page
+prev_page
+content
+-->
+
+
+	<%- include("public/_partials/header", { title: title }) %>
+
+
+	<header>
+		<nav>
+		</nav>
+
+		<div class="container">
+			<a href="/"><i class="fa fa-home"></i></a>
+		</div>
+	</header>
+
+
+
+	<main>
+	</main>
+
+
+	<%- include("_partials/footer") %>
+
+
+	<script src="https://cdn.rawgit.com/apathetic/stickynav/blob/master/dist/stickynav.min.js"></script>
+	<script>
+		stickyNav.init({
+			nav: '#sticky nav'
+		});
+	</script>
