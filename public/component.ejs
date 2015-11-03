@@ -1,0 +1,36 @@
+
+<%= current.path %>
+<%
+if (current.path.length === 5) {
+	var path = current.path.slice(0);
+	var component = path.pop();
+	var testPath = path.join("/");
+}
+%>
+
+	<%- partial("_partials/header", { title: components['parallax'].title })%>
+
+
+	<header class="header">
+		<nav>
+			{% if page.next.url %}
+			<a class="next" href="{{page.next.url}}" title="Next Post: {{page.next.title}}"></a>
+			{% endif %}
+
+			{% if page.previous.url %}
+			<a class="prev" href="{{page.previous.url}}" title="Previous Post: {{page.previous.title}}"></a>
+			{% endif %}
+		</nav>
+
+		<div class="container">
+			<a href="/"><i class="fa fa-home"></i></a>
+			<h1 class="title">{{ page.title }}</h1>
+		</div>
+	</header>
+
+
+
+
+</body>
+
+</html>

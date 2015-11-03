@@ -1,0 +1,215 @@
+<%
+if (current.path.length === 5) {
+	var path = current.path.slice(0);
+	var component = path.pop();
+	var testPath = path.join("/");
+}
+%>
+
+	<%- partial("_partials/header", { title: "Component Library" })%>
+
+	<header class="">
+
+		<div class="slide carousel" id="featured">
+			<ul class="wrap">
+				<li class="active">
+					<div class="v-center">
+								<span class="eyebrow">Module by Wes Hatch</span>
+								<h1><a href="#">Flexicarousel.</a></h1>
+								<p>A carousel that'll dynamically adapt its width: it will grow or shrink alongside a site that’s resizing via css media queries. Uses CSS3 transforms for its transitions.</p>
+					</div>
+				</li>
+				<li class="">
+						<div class="v-center">
+							<span class="eyebrow">Module by Miranda Li</span>
+							<h1><a href="#">Autocompleter.</a></h1>
+							<p>A lightweight standalone module used for filtering data or autocompletion of user-input</p>
+						</div>
+				</li>
+				<li class="">
+						<div class="v-center">
+							<span class="eyebrow">Module by Jason Divock</span>
+							<h1><a href="#">Huge Slider.</a></h1>
+							<p>An annoying scroll-jacking slider</p>
+						</div>
+				</li>
+				<li class="">
+						<div class="v-center">
+							<span class="eyebrow">Module by Wes Hatch</span>
+							<h1><a href="#">Parallax.</a></h1>
+							<p>An elegant and efficient parallax base</p>
+						</div>
+				</li>
+				<li class="">
+						<div class="v-center">
+							<span class="eyebrow">SASS Framework by Chosun Snyder &amp; Miranda Li</span>
+							<h1><a href="#">Chusy.</a></h1>
+							<p>A responsive SASS framework for quick prototyping and generating multi-breakpoint liquid grids.</p>
+						</div>
+				</li>
+			</ul>
+
+			<nav>
+				<div class="prev"><span>←</span></div>
+				<ul>
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<div class="next"><span>→</span></div>
+			</nav>
+		</div>
+
+	</header>
+
+	<!-- =========================================================================== -->
+
+	<main class="site result">
+		<div id="tabs" class="">
+			<ul>
+				<li data-filter="all"      class="active">all.<span></span></li>
+				<li data-filter="css"      class="">css<span></span></li>
+				<li data-filter="js"       class="">js<span></span></li>
+				<li data-filter="carousel" class="">carousel<span></span></li>
+				<li data-filter="sass"     class="">sass<span></span></li>
+				<li data-filter="slider"   class="">slider<span></span></li>
+			</ul>
+		</div>
+
+
+
+
+
+
+
+<% for (var component in global.components) { %>
+	<%= component %>
+<% } %>
+
+
+
+<!--
+	{% for post in paginator.posts %}
+	<section data-tags="all {% for tag in post.tags %}{{ tag }} {% endfor %}">
+		<div>
+		<!-- <h5>{{ post.date | date_to_string }}</h5> -->
+		<span class="eyebrow">
+		{% for tag in post.tags %}<b>{{ tag }}</b> /{% endfor %}
+		</span>
+
+		<h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+
+		<p>{{post.snippet}}</p>
+
+		<p class="install">
+			{% if post.bower %}<span class="bower">bower install {{ post.bower }}</span> &nbsp; | &nbsp; {% endif %}
+			<a href="{{post.stash_url}}"><i class="fa fa-github"></i> github</a>
+		</p>
+		</div>
+	</section>
+	{% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</main>
+
+
+	<script src="https://cdn.rawgit.com/apathetic/flexicarousel-3/flex/dist/simplecarousel.min.js"></script>
+	<script>
+
+		// ---- carousel ---- //
+		var featured = document.querySelector('#featured'),
+			bullets = document.querySelectorAll('header nav li'),
+			carousel = new Carousel(featured, { afterSlide: updateNav });
+
+		featured.querySelector('.prev').addEventListener('click', carousel.prev);
+		featured.querySelector('.next').addEventListener('click', carousel.next);
+
+		Array.prototype.forEach.call(bullets, function(bullet, to) {
+			bullet.addEventListener('click', function(e) { carousel.go(to); });
+		}
+
+		// for (i = bullets.length; i--;) {
+		// 	(function(to){
+		// 		bullets[i].addEventListener('click', function(e) {
+		// 			e.preventDefault();
+		// 			carousel.go(to);
+		// 		});
+		// 	}(i));
+		// }
+
+		function updateNav(current) {
+			for (i = bullets.length; i--;) {
+				bullets[i].classList.remove('active');
+				bullets[current].classList.add('active');
+			}
+		}
+
+
+		// ---- filters ---- //
+
+		var sections = document.querySelectorAll('main section'),
+			tabs = document.querySelectorAll('#tabs li'),
+			tab,
+			tags,
+			i, j;
+
+		for (i = tabs.length; i--;) {
+			tab = tabs[i];
+			tab.addEventListener('click', function(e){
+				var filter,
+					regex;
+
+				e.preventDefault();
+				for (j = tabs.length; j--;) {
+					tabs[j].classList.remove('active');
+				}
+
+				this.classList.add('active');
+				filter = this.getAttribute('data-filter');
+
+				for (j = sections.length; j--;) {
+					tags = sections[j].getAttribute('data-tags') || '';
+					tags = tags.toLowerCase();
+					regex = new RegExp(filter, "i");		// ghetto, doesn't care about surrounding whitespace
+
+					if (!tags.match(regex)) {
+						sections[j].classList.add('collapsed');
+					} else {
+						sections[j].classList.remove('collapsed');
+					}
+				}
+			});
+		}
+
+
+	</script>
+

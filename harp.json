@@ -1,0 +1,60 @@
+{
+	"globals": {
+		"components": {
+			"parallax": {
+				"title": "Parallax.",
+				"date": "2014-05-02",
+				"path": "parallax (UNUSED)",
+				"blurb": "very simple parallax base",
+				"tags": ["js", "parallax"],
+				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse",
+				"github": "https://github.com/apathetic/parallax"
+			},
+			"simplecarousel": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+			"flexicarousel": {
+				"title": "carousel... or Navigator?",
+				"date": "Feb 28, 2013"
+			},
+			"huge_slider": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+			"scrolljacker": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+			"sticky_nav": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+			"huge_nav": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+			"validator": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+			"modal": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+
+			"autocompleter": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+			"asciify": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			},
+			"chusy": {
+				"title": "Hello World.",
+				"date": "Feb 28, 2013"
+			}
+		}
+	}
+}
