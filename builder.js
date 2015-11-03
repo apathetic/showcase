@@ -1,6 +1,6 @@
 var ejs = require('ejs');
 var fs = require('fs');
-var osmosis = require('osmosis');
+var noodle = require('noodlejs');
 
 var config = JSON.parse(fs.readFileSync('harp.json', 'utf8'));
 var components = config.globals.components;
@@ -8,10 +8,11 @@ var path = 'public/component';
 
 function clean() {
 	// First remove everything in components/
-	try { var files = fs.readdirSync(path); }
-	catch(e) { console.log('Component pages: nothing to clean'); return; }
-
 	console.log('Cleaning old component files...');
+	var files;
+	try { files = fs.readdirSync(path); }
+	catch(e) { console.log('Error: nothing to clean'); return; }
+
 	files.forEach(function(file) {
 		var filePath = path + '/' + file;
 		if (fs.statSync(filePath).isFile()) {
