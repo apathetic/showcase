@@ -1,15 +1,16 @@
 var ejs = require('ejs');
 var fs = require('fs');
 var noodle = require('noodlejs');
-
 var config = JSON.parse(fs.readFileSync('harp.json', 'utf8'));
 var components = config.globals.components;
 var path = 'public/component';
 
+
+// First remove everything in components/
 function clean() {
-	// First remove everything in components/
 	console.log('Cleaning old component files...');
 	var files;
+
 	try { files = fs.readdirSync(path); }
 	catch(e) { console.log('Error: nothing to clean'); return; }
 
@@ -21,16 +22,18 @@ function clean() {
 	});
 }
 
-function build() {
 
-	// Then, generate anew:
+
+// Then, generate anew:
+function build() {
 	console.log('Building new component files...');
+	var template = fs.readFileSync('public/_partials/component.ejs', 'UTF-8');
+
 	for (var component in components) {
 
 		var data = components[component];
-		var template = fs.readFileSync('public/_partials/component.ejs', 'UTF-8');
 
-		noodle.html.select(data, {
+		noodle.html.select(data.demofiles.index, {
 			selector: 'main',
 			extract: 'text'
 		})
@@ -56,4 +59,4 @@ function build() {
 module.exports = {
 	clean: clean,
 	build: build
-}
+};

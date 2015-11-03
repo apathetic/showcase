@@ -17,7 +17,8 @@
   "scripts": {
     "start": "node app.js",
     "builder": "./builder.js.clean() && ./builder.build()",
-    "compiler": "harp compile && exit 1"
+    "compiler": "harp compile && exit 1",
+    "update": "npm run builder && npm run compiler && push www/"
   },
   "author": "wes hatch",
   "license": "ISC"
