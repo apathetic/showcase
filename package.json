@@ -21,5 +21,5 @@
     "update": "npm run builder && npm run compiler && push www/"
   },
   "author": "wes hatch",
-  "license": "ISC"
+  "license": "MIT"
 }

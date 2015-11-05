@@ -6,7 +6,10 @@ var components = config.globals.components;
 var path = 'public/component';
 
 
-// First remove everything in components/
+/**
+ * Deletes all files in the components/ directory
+ * @return {void}
+ */
 function clean() {
 	console.log('Cleaning old component files...');
 	var files;
@@ -23,34 +26,45 @@ function clean() {
 }
 
 
-
-// Then, generate anew:
+/**
+ * Generates Component pages from JSON data (harp.json)
+ * @return {[type]} [description]
+ */
 function build() {
 	console.log('Building new component files...');
-	var template = fs.readFileSync('public/_partials/component.ejs', 'UTF-8');
+	var filename = __dirname + '/public/_partials/component.ejs';
+	var template = fs.readFileSync(filename, 'UTF-8');
 
 	for (var component in components) {
 
 		var data = components[component];
 
-		noodle.html.select(data.demofiles.index, {
-			selector: 'main',
-			extract: 'text'
-		})
-		.then(function (content) {
+		if (data.demo){
+			(function(component){
+				var content = fs.readFileSync(__dirname + '/components/' + component + '/' + data.demo, 'UTF-8');
 
-			var page = ejs.render(template, {
-				prev_page: false,
-				next_page: 'a',
-				title: 'asdf',
-				content: content
-			});
+				noodle.html.select(content, {
+					selector: 'main',
+					extract: 'text'
+				})
+				.then(function(scraped) {
+					console.log(scraped);
 
-			title = 'wes';
-			content = 'test';
-
-			fs.writeFile(path + '/' + component, page);
-		});
+					try {
+						var page = ejs.render(template, {
+							prev_page: false,
+							next_page: 'a',
+							title: data.title,
+							content: content,
+							filename: filename		// provides context for includes
+						});
+						fs.writeFile(path + '/' + component, page);
+					} catch(e) {
+						console.log('Error: missing or incorrect Component data in JSON file', e);
+					}
+				});
+			})(component);
+		}
 	}
 
 }

@@ -8,10 +8,7 @@
 				"tags": ["js", "parallax"],
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse",
 				"github": "https://github.com/apathetic/parallax",
-				"demofiles": {
-					"index": "index.html",
-					"assets": ""
-				}
+				"demo": "demo/index.html"
 			},
 			"simplecarousel": {
 				"title": "Hello World.",

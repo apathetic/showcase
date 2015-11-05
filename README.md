@@ -44,7 +44,7 @@ Adding your own Component
 It is easy, but there is some opinionation on how things need to be structured.
 
 - First, put your fancy component into its own repo and commit it.
-- Add a demo page showcasing all the whirlygigs and fizzbangers of your component.
+- Add a demo page showcasing all the whirlygigs and fizzbangers of your component (see note)
 - Add your component repo here, as a submodule. To wit:
 
 ```sh
@@ -55,6 +55,7 @@ $ git submodule add <your_repo_url>
 **IMPORTANT** Okay there is one opinioned bit that makes all this work. In your demo page, wrap the salient bits of the demo in ```<main>```. The ```<main>``` gets ripped out and glued into each component page herein,  so make sure your documentation, demo, includes, etc. are all with this element.
 
 Have a look at some of the other submodules if there is any confusion, or ping me directly: whatch@hugeinc.com.
+
 
 Generating Component pages
 --------------
