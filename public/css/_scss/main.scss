@@ -185,12 +185,60 @@ header {
 // --- Carousel ---
 
 .carousel {
-	.wrap { margin:0 }
-	nav {
-		position:static; height:48px; width:100%; text-align:center; z-index:10;
+	&.slide {
+
+		.animate {
+			transition: all 0.4s ease-in-out;
+		}
+
+		.wrap li,
+		.wrap .before {
+			z-index: 1;
+			transform: translateX(-100%);
+		}
+
+		.wrap .after {
+			z-index: 1;
+			transform: translateX(100%);
+		}
+
+		.active {
+			position: relative;
+			z-index: 5;
+			transform: translateX(0);
+		}
+	}
+
+
+
+
+	.wrap {
+
+		margin:0;
+		position: relative;
+		overflow: hidden;
+		list-style: none;
+		min-height: 500px;
 
 		li {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			margin: 0;
+			backface-visibility: hidden;
+		}
 
+	}
+
+	nav {
+		// position:static;
+		height:48px;
+		width:100%;
+		text-align:center;
+		// z-index:10;
+
+		li {
 			cursor: pointer;
 			display: inline-block;
 			background-color: #bbb;
@@ -202,9 +250,11 @@ header {
 			background-clip: content-box;
 			transition: all 0.5s;
 
-
+			&.active {
+				border-color: #fff;
+				background-color:transparent;
+			}
 		}
-		li.active { border-color: #fff; background-color:transparent; }
 		div { position:absolute; cursor:pointer; top: 0; width: 20%; height: 100%; z-index: 100; }
 		div:hover span { opacity: 0.75; }
 		div span {
@@ -226,6 +276,12 @@ header {
 	.next, .next span { right:0; }
 
 }
+
+
+
+
+
+
 
 
 
@@ -592,5 +648,3 @@ footer {
 		}
 	}
 }
-
-
