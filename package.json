@@ -13,7 +13,9 @@
   },
   "description": "A showcase of HUGE components",
   "main": "app.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  },
   "scripts": {
     "start": "node app.js",
     "builder": "./builder.js.clean() && ./builder.build()",

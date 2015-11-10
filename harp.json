@@ -9,13 +9,8 @@
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse",
 				"github": "https://github.com/apathetic/parallax",
 				"demo": {
-					"index": "demo/index.html",
-					"assets": [
-						"dist/parallax.min.js",
-						"demo/styles.css",
-						"demo/images/pastoral.jpg",
-						"demo/images/pasture.jpg",
-					]
+					"index": "demo/index.html"
+				}
 			},
 			"simplecarousel": {
 				"title": "Hello World.",

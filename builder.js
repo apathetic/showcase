@@ -24,7 +24,7 @@ function clean() {
 		}
 	});
 }
-
+ 
 
 /**
  * Generates Component pages from JSON data (harp.json)
