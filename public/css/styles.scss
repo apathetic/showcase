@@ -1,3 +1,5 @@
+/**	These styles are shared by the component pages **/
+
 // util
 @import "_scss/variables";
 @import "_scss/reset";
@@ -6,9 +8,9 @@
 @import "_scss/mixins";
 
 // common
-@import "_scss/common";
 @import "_scss/header";
+@import "_scss/common";
 
 // pages
-@import "_scss/index";
 @import "_scss/page";
+@import "_scss/index";
