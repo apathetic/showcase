@@ -78,31 +78,30 @@ header {
 
 // --- Carousel ---
 
-.carousel {
+.fullscreen.carousel {
 
-	&.slide {
-
-		.animate {
-			transition: all 0.4s ease-in-out;
-		}
-
-		.wrap li,
-		.wrap .before {
-			z-index: 1;
-			transform: translateX(-100%);
-		}
-
-		.wrap .after {
-			z-index: 1;
-			transform: translateX(100%);
-		}
-
-		.active {
-			position: relative;
-			z-index: 5;
-			transform: translateX(0);
-		}
+	// &.slide {
+	.animate {
+		transition: all 0.4s ease-in-out;
 	}
+
+	.wrap li,
+	.wrap .before {
+		z-index: 1;
+		transform: translateX(-100%);
+	}
+
+	.wrap .after {
+		z-index: 1;
+		transform: translateX(100%);
+	}
+
+	.active {
+		position: relative;
+		z-index: 5;
+		transform: translateX(0);
+	}
+	// }
 
 	.wrap {
 		margin:0;

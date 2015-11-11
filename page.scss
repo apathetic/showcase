@@ -23,7 +23,45 @@ Description:	Main styles for the Huge Showcase
 
 #sticky {
 
-	// @media (min-width: 768px) {
+	nav {
+		ul {
+			margin-top: 24px;
+		}
+
+		li {
+			list-style:none;
+			float: left;
+			clear: left;
+			width: 172px;
+			margin: 2px 0;
+		}
+
+		a {
+			color: #fff;
+			text-decoration: none;
+			background: #232326;
+			padding: 2px 12px;
+			float: right;
+			font-size: 14px;
+		}
+
+		.active a {
+			background: #ec008c;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 6px;
+				right: -8px;
+			}
+		}
+
+		// &.sticky {
+		// 	position: fixed;
+		// }
+	}
+
+	@include at-breakpoint('large') {
+
 		height: 0;				// to prevent menu from affecting layout
 		width: 100%;
 		position:relative;
@@ -37,44 +75,9 @@ Description:	Main styles for the Huge Showcase
 			height: 0;
 			z-index: 100;
 			-webkit-backface-visibility: hidden;
-
-			ul {
-				margin-top: 24px;
-			}
-
-			li {
-				list-style:none;
-				float: left;
-				clear: left;
-				width: 172px;
-				margin: 2px 0;
-			}
-
-			a {
-				color: #fff;
-				text-decoration: none;
-				background: #232326;
-				padding: 2px 12px;
-				float: right;
-				font-size: 14px;
-			}
-
-			.active a {
-				background: #ec008c;
-				&:after {
-					content: '';
-					position: absolute;
-					top: 6px;
-					right: -8px;
-				}
-			}
-
-			&.sticky {
-				position: fixed;
-			}
 		}
 
-	// }
+	}
 
 }
 
@@ -86,14 +89,18 @@ Description:	Main styles for the Huge Showcase
 
 // --- Post ---
 main {
-	&.left-rail {
-		.container {
-			padding-left: 240px;
+
+	@include at-breakpoint('large') {
+		&.left-rail {
+			.container {
+				padding-left: 240px;
+			}
 		}
 	}
 
 	section {
 		padding: 2em 0;
+		overflow: hidden;
 
 		li {
 			margin-left: 2em;
