@@ -1,0 +1,118 @@
+/**
+
+File:			index.css
+Description:	Styles for Landing Page
+
+
+		◡◠ ✥ ◠◡
+
+	Table of Contents:
+
+	2. Default styles
+		- typograpy
+		- links
+	3. Layout
+
+*/
+
+
+/* ---------------------------------------
+	2.	Default Styles
+-----------------------------------------*/
+
+#home {
+	header {
+		text-align: center;
+		color: #999;
+		.eyebrow {
+			font: 13px "GalaxieItalic";
+		}
+		h1 {
+			margin: 0.4em;
+			a {
+				color: #fff;
+				text-decoration: none;
+			}
+		}
+		p {
+			max-width: 960px;
+			margin: 0 auto;
+		}
+		ul.wrap {
+			min-height: 500px;
+			li {
+				padding-top: 160px;
+			}
+		}
+	}
+	main {
+		text-align: center;
+		section {
+
+			overflow: hidden;
+			max-height: 250px;
+
+			// @include perspective(100);
+			// @include transform(rotateX(0deg));
+			transition: transform 1s, max-height 0.8s;
+
+			p {
+				max-width: 1280px;
+				margin: 0 auto;
+			}
+			.install {
+				padding-top:10px;
+				font-size: 12px;
+			}
+			.bower {
+				font-family: Monaco, Courier, monospace;
+				font-weight: bold;
+				// color: #666;
+			}
+			// &.collapsed {
+			// 	max-height:0;
+			// 	@include transform(rotateX(90deg));
+			// }
+		}
+	}
+
+	/* ripped from HUGEINC */
+	#tabs {
+		padding-bottom:36px;
+		text-align: center;
+
+		li {
+			width: 90px;
+			height: 36px;
+			font: 11px / 32px $font-sans;
+			font-weight: bold;
+			cursor: pointer;
+			display: inline-block;
+			border: 2px solid $color-border;
+			margin: 6px;
+			transition: all 0.5s;
+
+			&:after {
+				content:'';
+				border:12px solid transparent;
+				border-top-color:#fff;
+				position:absolute;
+				right:32px;
+				// bottom:-12px;
+				transition: all 0.5s;
+			}
+		}
+
+		.active {
+			color:#fff;
+			background:$color-grey-dark;
+			border-color:$color-grey-dark;
+			&:after {
+				border-top-color:$color-grey-dark;
+				bottom:-26px;
+			}
+		}
+
+	}
+
+}

@@ -1,0 +1,28 @@
+/* Easing Curves
+---------------------------------------------------*/
+$ease-in-out: cubic-bezier(0.7, 0.01, 0.3, 1);
+$ease-in: cubic-bezier(0.7, 0, 0.36, 0.63);
+$ease-out: cubic-bezier(0.63, 0.64, 0.3, 1);
+
+
+/* Colors
+---------------------------------------------------------------------------- */
+
+$color-magenta: #ec008c;	// HUGE branded
+
+$color-font-dark: #333;
+$color-font-medium: #666;
+$color-font-light: #999;
+
+$color-border: #dadada;
+$color-grey-dark: #232525;
+
+$color-off-white: #fafafa;
+
+/* Fonts
+---------------------------------------------------------------------------- */
+
+$font-hugeAvantGarde: 'HUGEAvantGardeBold', sans-serif;
+$font-galaxie: 'Galaxie';
+$font-galaxieItalic: 'GalaxieItalic';
+$font-sans: Arial, sans-serif;
