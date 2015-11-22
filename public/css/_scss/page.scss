@@ -55,12 +55,9 @@ Description:	Main styles for the Huge Showcase
 			}
 		}
 
-		// &.sticky {
-		// 	position: fixed;
-		// }
 	}
 
-	@include at-breakpoint('large') {
+	@include at-breakpoint('desktop') {
 
 		height: 0;				// to prevent menu from affecting layout
 		width: 100%;
@@ -81,6 +78,22 @@ Description:	Main styles for the Huge Showcase
 
 }
 
+.sticky {
+	@include at-breakpoint('mobile') {
+		&::after {
+			content: '';
+			display: table;
+			clear: both;
+		}
+	}
+
+	@include at-breakpoint('desktop') {
+		position: fixed !important;
+		top: 0;
+		left: 0;
+	}
+}
+
 
 
 /* ---------------------------------------
@@ -90,7 +103,7 @@ Description:	Main styles for the Huge Showcase
 // --- Post ---
 main {
 
-	@include at-breakpoint('large') {
+	@include at-breakpoint('desktop') {
 		&.left-rail {
 			.container {
 				padding-left: 240px;
@@ -104,33 +117,7 @@ main {
 
 		li {
 			margin-left: 2em;
+			list-style-type: disc;
 		}
 	}
-
-	pre {
-		border: 1px solid #ddd;
-		background-color: #eef;
-		padding: 1.4em;
-
-		code {
-			border: none;
-		}
-
-		&.terminal {
-			border: 1px solid #000;
-			background-color: #333;
-			color: #FFF;
-		}
-
-		&.terminal code {
-			background-color: #333;
-		}
-	}
-
-	code {
-		border: 1px solid #ddd;
-		background-color: #eef;
-		padding: 0 .2em;
-	}
-
 }
