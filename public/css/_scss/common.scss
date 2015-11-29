@@ -81,6 +81,11 @@ pre {
 	margin-bottom: 2em !important;
 }
 
+hr {
+	margin: 4em 0;
+	border: 1px solid $color-border;
+}
+
 // --- Links ---
 
 a {
@@ -163,17 +168,17 @@ table {
 td, th {
 	padding: 0;
 	text-align: left;
-	// font-weight: normal;
-	// vertical-align: middle;
+}
+
+th {
+	background-color: #777;
+	color: #fff;
 }
 
 
 /* ---------------------------------------
 	3.	Layout
 -----------------------------------------*/
-
-
-
 
 
 .container {

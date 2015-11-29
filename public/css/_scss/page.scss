@@ -100,8 +100,7 @@ Description:	Main styles for the Huge Showcase
 	2.	Other
 -----------------------------------------*/
 
-// --- Post ---
-main {
+main.component {
 
 	@include at-breakpoint('desktop') {
 		&.left-rail {
