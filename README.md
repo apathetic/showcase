@@ -59,7 +59,7 @@ Have a look at some of the other submodules if there is any confusion, or ping m
 
 Generating Component pages
 --------------
-This runs automatically everytime you spin up the server. There is no watch command at the moment. But, you should be working in your own component repo to have things super-amazing first anyway, before it's even added here.
+This runs automatically every time you spin up the server. There is no watch command at the moment. But, you should be working in your own component repo to have things super-amazing first anyway, before it's even added here.
 
 However, if you absolutely want there is a command to programatically wipe and regenerate all component pages:
 
@@ -96,6 +96,3 @@ License
 ----
 
 MIT
-
-
-

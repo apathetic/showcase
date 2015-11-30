@@ -21,14 +21,13 @@ Description:	Main styles for the Huge Showcase
 -----------------------------------------*/
 @mixin at-breakpoint($viewport) {
 
-	// should never need, can just be default:
-	@if nth($viewport, 1) == small {
+	@if nth($viewport, 1) == mobile {
 		@media (max-width: 767px) {
 			@content;
 		}
 	}
 
-	@else if nth($viewport, 1) == large {
+	@else if nth($viewport, 1) == desktop {
 		@media (min-width: 768px) {
 			@content;
 		}

@@ -8,16 +8,10 @@ Description:	Main styles for the Huge Showcase
 
 	Table of Contents:
 
-	2. Default styles
+	1. Element styles
 		- typograpy
 		- links
 	3. Layout
-	4. Page styles
-		- Home page
-		- template: page
-		- template: post
-		- template: fullscreen
-	5. Responsive
 
 
 	** note: in Sublime text: <command + K + 1> to visually format this document **
@@ -36,7 +30,7 @@ body {
 
 
 /* ---------------------------------------
-	2.	Default Styles
+	1.	Element Styles
 -----------------------------------------*/
 
 // --- Typography ---
@@ -47,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: -0.06em;
 	margin: 0 0 0.6em;
 	font-weight: 500;
-	line-height: 1.1;
+	line-height: 1.2;
 }
 
 h1 {
@@ -74,25 +68,126 @@ p {
 	margin-bottom: 1em;
 }
 
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+pre {
+	border: 1px solid #ddd;
+	margin-bottom: 2em !important;
+}
+
+hr {
+	margin: 4em 0;
+	border: 1px solid $color-border;
+}
 
 // --- Links ---
 
 a {
 	text-decoration: none;
+	color: #ec008c;
+
+	&:visited {
+		color: #ec008c;
+	}
+
+	&:hover {
+		color: lighten($color-magenta, 20%);
+	}
 }
 
 
 
+/* ---------------------------------------
+	2.	Buttons
+-----------------------------------------*/
+
+%brick {
+	border-radius: 3px;
+	display: inline-block;
+	width: 100%;
+	// font-family: $font-HP;
+	font-size: 1rem;
+	padding: 1em;	// 1.2em;
+}
+
+.button {
+	@extend %brick;
+	color: #fff;
+	background-color: $color-blue;
+	text-align: center;
+	cursor: pointer;
+	border: 1px solid transparent;
+	margin: 0.5em 0;
+	max-width: 18em;
+	vertical-align: top;
+	transition: background 0.2s ease-in-out;
+
+	&:hover {
+		background-color: lighten($color-blue, 20%);
+	}
+}
 
 
+
+/* ---------------------------------------
+	3.	Lists
+-----------------------------------------*/
+// ...
+
+
+/* ---------------------------------------
+	4.	Tables
+-----------------------------------------*/
+
+table {
+	width: 100%;
+	max-width: 100%;
+	margin-bottom: 2em;
+	background-color: transparent;
+	border-spacing: 0;
+	border-collapse: collapse;
+	border: 1px solid $color-border;
+}
+
+.table>thead:first-child>tr:first-child>th {
+	border-top: 0;
+}
+
+.table-striped > tbody > tr:nth-child(odd) > td,
+.table-striped > tbody > tr:nth-child(odd) > th {
+	background-color: #efefef;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td {
+	padding: 12px;
+	// line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid $color-border;
+}
+
+td, th {
+	padding: 0;
+	text-align: left;
+}
+
+th {
+	background-color: #777;
+	color: #fff;
+}
 
 
 /* ---------------------------------------
 	3.	Layout
 -----------------------------------------*/
-
-
-
 
 
 .container {
@@ -102,15 +197,4 @@ a {
 
 main {
 	padding: 48px 0 100px;
-}
-
-.sticky {
-	position: fixed !important;
-	top: 0;
-	left: 0;
-}
-
-
-@media (min-width: 1600px and screen) {
-
 }

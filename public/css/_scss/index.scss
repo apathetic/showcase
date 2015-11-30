@@ -24,9 +24,17 @@ Description:	Styles for Landing Page
 	header {
 		text-align: center;
 		color: #999;
+		min-height: 150px;
+		background: $color-grey-dark;
+
+		.v-center {
+			padding: 6em 20%;
+		}
+
 		.eyebrow {
 			font: 13px "GalaxieItalic";
 		}
+
 		h1 {
 			margin: 0.4em;
 			a {
@@ -34,47 +42,234 @@ Description:	Styles for Landing Page
 				text-decoration: none;
 			}
 		}
+
 		p {
 			max-width: 960px;
 			margin: 0 auto;
 		}
-		ul.wrap {
-			min-height: 500px;
-			li {
-				padding-top: 160px;
-			}
+
+		// ul.wrap {
+		// 	min-height: 500px;
+		// 	li {
+		// 		padding-top: 160px;
+		// 	}
+		// }
+
+
+		// .fa-home {
+		// 	font-size: 40px;
+		// 	color: #fff;
+		// 	margin-right: 20px;
+		// }
+
+		nav {
+			position: static;
+			// 	position:absolute;
+			// 	bottom: 0;
+			// 	left:0;
+			// 	width:100%;
+			// 	height:0;
+			// 	z-index: 1234;
+			//
+			// 	a {
+			// 		display: block;
+			// 		line-height: 40px;
+			// 		top: 54px;
+			// 		&:after {
+			// 			display: inline-block;
+			// 			width: 40px;
+			// 			height: 40px;
+			// 			border-radius: 20px;
+			// 			background: #fff;
+			// 			margin:0 12px;
+			// 			text-align: center;
+			// 			font: 24px / 40px Heiti, 'Lucida Grande';
+			// 			color: #000;
+			// 		}
+			// 		&.next {
+			// 			margin-right: 20px;
+			// 			&:after {
+			// 				content: "←";
+			// 				float:left;
+			// 			}
+			// 		}
+			// 		&.prev {
+			// 			margin-left: 20px;
+			// 			&:after {
+			// 				content: "→";
+			// 				float:right;
+			// 			}
+			// 		}
+			// 	}
 		}
 	}
+
 	main {
 		text-align: center;
-		section {
+	}
 
-			overflow: hidden;
-			max-height: 250px;
+	.tile {
+		color: $color-font-light;
+		overflow: hidden;
+		max-height: 250px;
+		transition: transform 0.8s,max-height 1s, opacity 0.5s;
+		opacity: 1;
+	    transform-origin: top;
 
-			// @include perspective(100);
-			// @include transform(rotateX(0deg));
-			transition: transform 1s, max-height 0.8s;
+		// p {
+		// 	max-width: 1280px;
+		// 	margin: 0 auto;
+		// }
 
-			p {
-				max-width: 1280px;
-				margin: 0 auto;
+		&:hover {
+			background: #fff;
+		}
+
+		&.collapsed {
+			max-height: 0;
+			opacity: 0;
+			transform: rotateX(90deg);
+		}
+
+		> div {
+			padding: 2em 20%;
+		}
+
+		h2 {
+			margin-bottom: 0.2em;
+
+			a {
+				color: #000;
 			}
-			.install {
-				padding-top:10px;
-				font-size: 12px;
-			}
-			.bower {
-				font-family: Monaco, Courier, monospace;
-				font-weight: bold;
-				// color: #666;
-			}
-			// &.collapsed {
-			// 	max-height:0;
-			// 	@include transform(rotateX(90deg));
-			// }
+		}
+
+		.eyebrow {
+			font: 12px Arial,sans-serif;
+			display: inline-block;
+			padding: 1em;
+			// color: #ec008c;
+			color: $color-font-dark;
+		}
+
+		.install {
+			padding-top:10px;
+			font-size: 12px;
+			font-weight: bold;
 		}
 	}
+
+	.carousel {
+
+		overflow: hidden;
+		cursor: move;
+		text-align: center;
+
+		// &.slide {
+		.animate {
+			transition: all 0.4s ease-in-out;
+		}
+
+		// .wrap li,
+		// .wrap .before {
+		// 	z-index: 1;
+		// 	transform: translateX(-100%);
+		// }
+		//
+		// .wrap .after {
+		// 	z-index: 1;
+		// 	transform: translateX(100%);
+		// }
+		//
+		// .active {
+		// 	position: relative;
+		// 	z-index: 5;
+		// 	transform: translateX(0);
+		// }
+		// }
+
+		// .wrap {
+			// margin:0;
+			// position: relative;
+			// overflow: hidden;
+			// list-style: none;
+			// min-height: 500px;
+
+			// li {
+			// 	position: absolute;
+			// 	top: 0;
+			// 	bottom: 0;
+			// 	left: 0;
+			// 	width: 100%;
+			// 	margin: 0;
+			// 	backface-visibility: hidden;
+			// }
+		// }
+
+		.wrap {
+			display: flex;
+			li {
+				flex: 1 0 100%;
+			}
+		}
+
+
+		nav {
+			// position:static;
+			height: 3em;
+			width:100%;
+			text-align:center;
+			// z-index:10;
+
+			li {
+				cursor: pointer;
+				display: inline-block;
+				background-color: #bbb;
+				border: 2px solid transparent;
+				height: 12px;
+				width: 12px;
+				border-radius: 50%;
+				margin: 0 3px;
+				background-clip: content-box;
+				transition: all 0.5s;
+
+				&.active {
+					border-color: #fff;
+					background-color:transparent;
+				}
+			}
+
+			div {
+				position:absolute;
+				cursor:pointer;
+				top: 0;
+				width: 20%;
+				height: 100%;
+				z-index: 1000;
+
+				&:hover span { opacity: 0.75; }
+
+				span {
+					position: absolute;
+					top: 50%;
+					width: 3em;
+					height: 3em;
+					margin-top: -1.5em;
+					font: 1.8em / 3em 'Lucida Grande';
+					vertical-align: middle;
+					display: inline-block;
+					background: #393C3C;
+					color: #000;
+					opacity: 0;
+			 		transition: all 0.3s;
+			 	}
+			}
+		 }
+
+		.prev, .prev span { left:0; }
+		.next, .next span { right:0; }
+
+	}
+
 
 	/* ripped from HUGEINC */
 	#tabs {
@@ -86,20 +281,22 @@ Description:	Styles for Landing Page
 			height: 36px;
 			font: 11px / 32px $font-sans;
 			font-weight: bold;
+			background: #fff;
 			cursor: pointer;
 			display: inline-block;
-			border: 2px solid $color-border;
+			// border: 2px solid $color-border;
 			margin: 6px;
 			transition: all 0.5s;
 
 			&:after {
 				content:'';
-				border:12px solid transparent;
+				border: 8px solid transparent;
 				border-top-color:#fff;
 				position:absolute;
-				right:32px;
-				// bottom:-12px;
+				right: 36px;
+				bottom: 0px;
 				transition: all 0.5s;
+				z-index: -1;
 			}
 		}
 
@@ -109,10 +306,37 @@ Description:	Styles for Landing Page
 			border-color:$color-grey-dark;
 			&:after {
 				border-top-color:$color-grey-dark;
-				bottom:-26px;
+				bottom: -16px;
 			}
 		}
 
 	}
 
+}
+
+footer {
+	background: #000;
+	color: #999;
+
+	a {
+		display: inline-block;
+	    width: 46px;
+	    height: 54px;
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAYAAABBY8kOAAAAGXRF…IawioaQFia0pLhjdAfIAINaOl96hFoxaNWjRYLQIIMABdEogcjpWdDQAAAABJRU5ErkJggg==") 50% 50% no-repeat;
+	}
+
+	.container {
+		font-size: 11px;
+		padding: 80px 0 40px;
+		text-align: center;
+	}
+
+	#meta {
+		margin-top: 60px;
+		border-top: 1px solid #333;
+		padding-top: 36px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		height: 64px;
+	}
 }

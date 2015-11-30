@@ -3,7 +3,9 @@
 		"components": {
 			"parallax": {
 				"title": "Parallax.",
+				"author": "Wes Hatch",
 				"date": "2014-05-02",
+				"featured": true,
 				"blurb": "very simple parallax base",
 				"tags": ["js", "parallax"],
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse",
@@ -12,39 +14,55 @@
 					"index": "demo/index.html"
 				}
 			},
-			"simplecarousel": {
-				"title": "Hello World.",
-				"date": "Feb 28, 2013"
+			"navigator": {
+				"title": "Navigator.",
+				"author": "Wes Hatch",
+				"date": "2014-03-05",
+				"blurb": "A basic way to navigate through a series of panels",
+				"tags": ["carousel", "ie9", "js", "widget"],
+				"github": "https://github.com/apathetic/navigator"
 			},
 			"flexicarousel": {
-				"title": "carousel... or Navigator?",
-				"date": "Feb 28, 2013"
-			},
-			"huge_slider": {
-				"title": "Hello World.",
-				"date": "Feb 28, 2013"
-			},
-			"scrolljacker": {
-				"title": "Hello World.",
-				"date": "Feb 28, 2013"
+				"title": "Flexicarousel",
+				"date": "2014-03-05",
+				"featured": true,
+				"blurb": "A touch-friendly, lightwieght carousel. Uses CSS3 transforms for its transitions",
+				"tags": ["carousel", "ie9", "mobile", "js", "widget"],
+				"stash": "https://stash.hugeinc.com/projects/BOWER/repos/flexicarousel/browse",
+				"github": ""
 			},
 			"sticky_nav": {
-				"title": "Hello World.",
-				"date": "Feb 28, 2013"
-			},
-			"huge_nav": {
-				"title": "Hello World.",
-				"date": "Feb 28, 2013"
+				"title": "Sticky Nav.",
+				"date": "2014-04-26",
+				"blurb": "A simple navigation bar that efficiently attaches / detaches to the top of the viewport upon scrolling",
+				"tags": ["navigation", "javascript", "widget"],
+				"stash": "",
+				"github": ""
 			},
 			"validator": {
-				"title": "Hello World.",
-				"date": "Feb 28, 2013"
+				"title": "Validator.",
+				"date": "Feb 28, 2013",
+				"featured": true
 			},
 			"modal": {
-				"title": "Hello World.",
+				"title": "Modal.",
 				"date": "Feb 28, 2013"
 			},
 
+			"huge_nav": {
+				"title": "Hello World.",
+				"blurb": "The full-screen nav that is featured on Huge Inc.",
+				"tags": ["js", "css"],
+				"date": "2014-05-05"
+			},
+			"scrolljacker": {
+				"title": "Huge Inc. Slider.",
+				"date": "2014-04-26",
+				"blurb": "Yet Another Full Screen Hijacker",
+				"tags": ["jquery", "ie9", "scrolljack", "js", "slider"],
+				"stash": "",
+				"github": ""
+			},
 			"autocompleter": {
 				"title": "Hello World.",
 				"date": "Feb 28, 2013"
@@ -53,9 +71,16 @@
 				"title": "Hello World.",
 				"date": "Feb 28, 2013"
 			},
-			"chusy": {
+			"huge_slider": {
 				"title": "Hello World.",
 				"date": "Feb 28, 2013"
+			},
+			"chusy": {
+				"title": "Chusy.",
+				"author": "Chosun Snyder",
+				"date": "2014-03-05",
+				"featured": true,
+				"blurb": "A responsive SASS framework for quick prototyping and generating multi-breakpoint liquid grids."
 			}
 		}
 	}
