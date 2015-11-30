@@ -109,33 +109,52 @@ Description:	Styles for Landing Page
 	}
 
 	.tile {
+		color: $color-font-light;
 		overflow: hidden;
 		max-height: 250px;
-		transition: transform 1s, max-height 0.8s;
+		transition: transform 0.8s,max-height 1s, opacity 0.5s;
+		opacity: 1;
+	    transform-origin: top;
 
 		// p {
 		// 	max-width: 1280px;
 		// 	margin: 0 auto;
 		// }
 
+		&:hover {
+			background: #fff;
+		}
+
+		&.collapsed {
+			max-height: 0;
+			opacity: 0;
+			transform: rotateX(90deg);
+		}
+
 		> div {
 			padding: 2em 20%;
 		}
 
-		h2 a {
-			color: #000;
+		h2 {
+			margin-bottom: 0.2em;
+
+			a {
+				color: #000;
+			}
 		}
 
 		.eyebrow {
-			font: 13px Arial,sans-serif;
+			font: 12px Arial,sans-serif;
 			display: inline-block;
-			padding: 15px;
-			color: #ec008c;
+			padding: 1em;
+			// color: #ec008c;
+			color: $color-font-dark;
 		}
 
 		.install {
 			padding-top:10px;
 			font-size: 12px;
+			font-weight: bold;
 		}
 	}
 
@@ -251,10 +270,6 @@ Description:	Styles for Landing Page
 
 	}
 
-	.collapsed {
-		max-height: 0;
-		transform: rotateX(90deg);
-	}
 
 	/* ripped from HUGEINC */
 	#tabs {
@@ -297,4 +312,31 @@ Description:	Styles for Landing Page
 
 	}
 
+}
+
+footer {
+	background: #000;
+	color: #999;
+
+	a {
+		display: inline-block;
+	    width: 46px;
+	    height: 54px;
+		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAYAAABBY8kOAAAAGXRF…IawioaQFia0pLhjdAfIAINaOl96hFoxaNWjRYLQIIMABdEogcjpWdDQAAAABJRU5ErkJggg==") 50% 50% no-repeat;
+	}
+
+	.container {
+		font-size: 11px;
+		padding: 80px 0 40px;
+		text-align: center;
+	}
+
+	#meta {
+		margin-top: 60px;
+		border-top: 1px solid #333;
+		padding-top: 36px;
+		font-family: Arial, Helvetica, sans-serif;
+		font-size: 11px;
+		height: 64px;
+	}
 }

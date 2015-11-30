@@ -3,7 +3,9 @@
 		"components": {
 			"parallax": {
 				"title": "Parallax.",
+				"author": "Wes Hatch",
 				"date": "2014-05-02",
+				"featured": true,
 				"blurb": "very simple parallax base",
 				"tags": ["js", "parallax"],
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse",
@@ -14,11 +16,16 @@
 			},
 			"navigator": {
 				"title": "Navigator.",
-				"date": "Feb 28, 2013"
+				"author": "Wes Hatch",
+				"date": "2014-03-05",
+				"blurb": "A basic way to navigate through a series of panels",
+				"tags": ["carousel", "ie9", "js", "widget"],
+				"github": "https://github.com/apathetic/navigator"
 			},
 			"flexicarousel": {
 				"title": "Flexicarousel",
 				"date": "2014-03-05",
+				"featured": true,
 				"blurb": "A touch-friendly, lightwieght carousel. Uses CSS3 transforms for its transitions",
 				"tags": ["carousel", "ie9", "mobile", "js", "widget"],
 				"stash": "https://stash.hugeinc.com/projects/BOWER/repos/flexicarousel/browse",
@@ -34,7 +41,8 @@
 			},
 			"validator": {
 				"title": "Validator.",
-				"date": "Feb 28, 2013"
+				"date": "Feb 28, 2013",
+				"featured": true
 			},
 			"modal": {
 				"title": "Modal.",
@@ -68,8 +76,11 @@
 				"date": "Feb 28, 2013"
 			},
 			"chusy": {
-				"title": "Hello World.",
-				"date": "Feb 28, 2013"
+				"title": "Chusy.",
+				"author": "Chosun Snyder",
+				"date": "2014-03-05",
+				"featured": true,
+				"blurb": "A responsive SASS framework for quick prototyping and generating multi-breakpoint liquid grids."
 			}
 		}
 	}

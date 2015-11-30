@@ -5,13 +5,21 @@
 
 		<div class="sliding carousel" id="featured">
 			<ul class="wrap">
-				<li class="active slide">
-					<div class="v-center">
-						<span class="eyebrow">Module by Wes Hatch</span>
-						<h1><a href="#">Flexicarousel.</a></h1>
-						<p>A carousel that'll dynamically adapt its width: it will grow or shrink alongside a site that’s resizing via css media queries. Uses CSS3 transforms for its transitions.</p>
-					</div>
-				</li>
+
+			<% var count = 0; for (var name in components) { %>
+				<% var component = components[name] %>
+				<% if (component.featured) { %>
+					<li class="slide">
+						<div class="v-center">
+							<span class="eyebrow">Module by <%= component.author %></span>
+							<h1><a href="/components/<%= name %>"><%= component.title %></a></h1>
+							<p><%= component.blurb %></p>
+						</div>
+					</li>
+				<% count++; } %>
+			<% } %>
+				<!--
+
 				<li class="slide">
 					<div class="v-center">
 						<span class="eyebrow">Module by Miranda Li</span>
@@ -26,30 +34,16 @@
 						<p>An annoying scroll-jacking slider</p>
 					</div>
 				</li>
-				<li class="slide">
-					<div class="v-center">
-						<span class="eyebrow">Module by Wes Hatch</span>
-						<h1><a href="#">Parallax.</a></h1>
-						<p>An elegant and efficient parallax base</p>
-					</div>
-				</li>
-				<li class="slide">
-					<div class="v-center">
-						<span class="eyebrow">SASS Framework by Chosun Snyder &amp; Miranda Li</span>
-						<h1><a href="#">Chusy.</a></h1>
-						<p>A responsive SASS framework for quick prototyping and generating multi-breakpoint liquid grids.</p>
-					</div>
-				</li>
+
+				-->
 			</ul>
 
 			<nav>
 				<div class="prev"><span>←</span></div>
 				<ul>
-					<li class="active"></li>
+					<% for (var i = 0; i < count; i++) { %>
 					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
+					<% } %>
 				</ul>
 				<div class="next"><span>→</span></div>
 			</nav>
@@ -81,7 +75,7 @@
 				<% for (var i in component.tags) { %><strong><%= component.tags[i] %></strong> <% if(i != component.tags.length-1) { %> / <% } %>  <% } %>
 				</span>
 
-				<h2><a href="{{ post.url }}"><%= component.title %></a></h2>
+				<h2><a href="/components/<%= name %>"><%= component.title %></a></h2>
 
 				<p><%= component.blurb %></p>
 
@@ -95,40 +89,9 @@
 	<% } %>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	</main>
 
-
-
 	<%- partial("_partials/footer")%>
-
-
-
-
-
 
 	<script src="https://cdn.rawgit.com/apathetic/flexicarousel/master/src/flexicarousel.js"></script>
 	<script>

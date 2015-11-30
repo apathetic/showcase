@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 	letter-spacing: -0.06em;
 	margin: 0 0 0.6em;
 	font-weight: 500;
-	line-height: 1.1;
+	line-height: 1.2;
 }
 
 h1 {
@@ -90,6 +90,15 @@ hr {
 
 a {
 	text-decoration: none;
+	color: #ec008c;
+
+	&:visited {
+		color: #ec008c;
+	}
+
+	&:hover {
+		color: lighten($color-magenta, 20%);
+	}
 }
 
 
