@@ -18,24 +18,7 @@
 					</li>
 				<% count++; } %>
 			<% } %>
-				<!--
 
-				<li class="slide">
-					<div class="v-center">
-						<span class="eyebrow">Module by Miranda Li</span>
-						<h1><a href="#">Autocompleter.</a></h1>
-						<p>A lightweight standalone module used for filtering data or autocompletion of user-input</p>
-					</div>
-				</li>
-				<li class="slide">
-					<div class="v-center">
-						<span class="eyebrow">Module by Jason Divock</span>
-						<h1><a href="#">Huge Slider.</a></h1>
-						<p>An annoying scroll-jacking slider</p>
-					</div>
-				</li>
-
-				-->
 			</ul>
 
 			<nav>
@@ -54,21 +37,20 @@
 	<!-- =========================================================================== -->
 
 	<main>
+
 		<div id="tabs">
 			<ul>
 				<li data-filter="all" class="active">all.</li>
 				<li data-filter="css">css</li>
 				<li data-filter="js">js</li>
 				<li data-filter="carousel">carousel</li>
-				<%# <li data-filter="sass">sass</li>%>
 				<li data-filter="slider">slider</li>
 			</ul>
 		</div>
 
-
 	<% for (var name in components) { %>
 		<% var component = components[name] %>
-
+		<% if (component.display === false) continue; %>
 		<section class="tile" data-tags="all <% for (var i in component.tags) { %><%= component.tags[i] %> <% } %>">
 			<div>
 				<span class="eyebrow">
@@ -80,8 +62,8 @@
 				<p><%= component.blurb %></p>
 
 				<p class="install">
-					<% if (component.stash)  { %><a href="<%= component.stash  %>">stash</a> <% } %>
-					<% if (component.github) { %><a href="<%= component.github %>"><i class="fa fa-github"></i> github</a> <% } %>
+					<% if (component.stash)  { %><a class="icon-stash" href="<%= component.stash  %>">stash</a> <% } %>
+					<% if (component.github) { %><a class="icon-github" href="<%= component.github %>">github</a> <% } %>
 				</p>
 			</div>
 		</section>

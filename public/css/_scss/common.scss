@@ -76,6 +76,11 @@ em {
 	font-style: italic;
 }
 
+sup {
+	font-size: 0.5em;
+	vertical-align: super;
+}
+
 pre {
 	border: 1px solid #ddd;
 	margin-bottom: 2em !important;
@@ -136,10 +141,25 @@ a {
 
 
 /* ---------------------------------------
-	3.	Lists
+	3.	Icons
 -----------------------------------------*/
-// ...
 
+[class*="icon-"] {
+	font-family: 'icons' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-twitter:before { content: "\f099"; }
+.icon-facebook:before { content: "\f09a"; }
+.icon-github:before { content: "\f09b"; }
+.icon-stash:before { content: "\e900"; }
 
 /* ---------------------------------------
 	4.	Tables

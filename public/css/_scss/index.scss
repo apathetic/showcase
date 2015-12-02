@@ -37,6 +37,7 @@ Description:	Styles for Landing Page
 
 		h1 {
 			margin: 0.4em;
+
 			a {
 				color: #fff;
 				text-decoration: none;
@@ -114,12 +115,7 @@ Description:	Styles for Landing Page
 		max-height: 250px;
 		transition: transform 0.8s,max-height 1s, opacity 0.5s;
 		opacity: 1;
-	    transform-origin: top;
-
-		// p {
-		// 	max-width: 1280px;
-		// 	margin: 0 auto;
-		// }
+		transform-origin: top;
 
 		&:hover {
 			background: #fff;
@@ -142,19 +138,26 @@ Description:	Styles for Landing Page
 				color: #000;
 			}
 		}
+	}
 
-		.eyebrow {
-			font: 12px Arial,sans-serif;
-			display: inline-block;
-			padding: 1em;
-			// color: #ec008c;
-			color: $color-font-dark;
-		}
+	.eyebrow {
+		font: 12px Arial,sans-serif;
+		display: inline-block;
+		padding: 1em;
+		color: $color-font-dark;
+	}
 
-		.install {
-			padding-top:10px;
-			font-size: 12px;
-			font-weight: bold;
+	.install {
+		padding-top:10px;
+		font-size: 12px;
+		font-weight: bold;
+
+		a {
+			margin: 0.5em;
+
+			&:before {
+				margin-right: 0.2em;
+			}
 		}
 	}
 
@@ -270,46 +273,45 @@ Description:	Styles for Landing Page
 
 	}
 
+}
 
-	/* ripped from HUGEINC */
-	#tabs {
-		padding-bottom:36px;
-		text-align: center;
+/* ripped from HUGEINC */
+#tabs {
+	padding-bottom:36px;
+	text-align: center;
 
-		li {
-			width: 90px;
-			height: 36px;
-			font: 11px / 32px $font-sans;
-			font-weight: bold;
-			background: #fff;
-			cursor: pointer;
-			display: inline-block;
-			// border: 2px solid $color-border;
-			margin: 6px;
+	li {
+		width: 90px;
+		height: 36px;
+		font: 11px / 32px $font-sans;
+		font-weight: bold;
+		background: #fff;
+		cursor: pointer;
+		display: inline-block;
+		// border: 2px solid $color-border;
+		margin: 6px;
+		transition: all 0.5s;
+
+		&:after {
+			content:'';
+			border: 8px solid transparent;
+			border-top-color:#fff;
+			position:absolute;
+			right: 36px;
+			bottom: 0px;
 			transition: all 0.5s;
-
-			&:after {
-				content:'';
-				border: 8px solid transparent;
-				border-top-color:#fff;
-				position:absolute;
-				right: 36px;
-				bottom: 0px;
-				transition: all 0.5s;
-				z-index: -1;
-			}
+			z-index: -1;
 		}
+	}
 
-		.active {
-			color:#fff;
-			background:$color-grey-dark;
-			border-color:$color-grey-dark;
-			&:after {
-				border-top-color:$color-grey-dark;
-				bottom: -16px;
-			}
+	.active {
+		color:#fff;
+		background:$color-grey-dark;
+		border-color:$color-grey-dark;
+		&:after {
+			border-top-color:$color-grey-dark;
+			bottom: -16px;
 		}
-
 	}
 
 }
@@ -317,26 +319,35 @@ Description:	Styles for Landing Page
 footer {
 	background: #000;
 	color: #999;
+	font-size: 11px;
+	padding: 80px 0 40px;
+	text-align: center;
+}
+
+#logo {
+	display: inline-block;
+	width: 46px;
+	height: 54px;
+	background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAYAAABBY8kOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF1JREFUeNpi+E8YbABiBgJ4AyFDmBjoBEYtGrVo1KJRizABCxFqRIDYgQg1eAEjqMCjh49GLRq1aIRbdBSIawioaQFia0pLhjdAfIAINaOl96hFoxaNWjRYLQIIMABdEogcjpWdDQAAAABJRU5ErkJggg==") 50% 50% no-repeat
+}
+
+#meta {
+	margin-top: 5em;
+	border-top: 1px solid #333;
+	padding-top: 2em;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	height: 64px;
 
 	a {
-		display: inline-block;
-	    width: 46px;
-	    height: 54px;
-		background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAYAAABBY8kOAAAAGXRF…IawioaQFia0pLhjdAfIAINaOl96hFoxaNWjRYLQIIMABdEogcjpWdDQAAAABJRU5ErkJggg==") 50% 50% no-repeat;
+		float: right;
+		color: #fff;
+		font-size: 2em;
+		margin: 0.5em;
 	}
 
-	.container {
-		font-size: 11px;
-		padding: 80px 0 40px;
-		text-align: center;
-	}
-
-	#meta {
-		margin-top: 60px;
-		border-top: 1px solid #333;
-		padding-top: 36px;
-		font-family: Arial, Helvetica, sans-serif;
-		font-size: 11px;
-		height: 64px;
+	span {
+		float: left;
+		margin: 1em;
 	}
 }
