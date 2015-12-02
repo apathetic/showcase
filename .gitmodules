@@ -1,3 +1,0 @@
-[submodule "components/parallax"]
-	path = components/parallax
-	url = ssh://git@stash.hugeinc.com:7999/cmpts/parallax.git
