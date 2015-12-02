@@ -6,7 +6,7 @@
 				"author": "Wes Hatch",
 				"date": "2014-05-02",
 				"featured": true,
-				"blurb": "very simple parallax base",
+				"blurb": "A simple, robust, and powerful parallax-ing framework.",
 				"tags": ["js", "parallax"],
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse",
 				"github": "https://github.com/apathetic/parallax",
@@ -18,69 +18,85 @@
 				"title": "Navigator.",
 				"author": "Wes Hatch",
 				"date": "2014-03-05",
-				"blurb": "A basic way to navigate through a series of panels",
+				"blurb": "A basic Javascript prototype to navigate through a series of panels.",
 				"tags": ["carousel", "ie9", "js", "widget"],
 				"github": "https://github.com/apathetic/navigator"
 			},
 			"flexicarousel": {
 				"title": "Flexicarousel",
+				"author": "Wes Hatch",
 				"date": "2014-03-05",
 				"featured": true,
-				"blurb": "A touch-friendly, lightwieght carousel. Uses CSS3 transforms for its transitions",
+				"blurb": "A touch-friendly, lightwieght carousel. Uses CSS3 transforms for its transitions.",
 				"tags": ["carousel", "ie9", "mobile", "js", "widget"],
-				"stash": "https://stash.hugeinc.com/projects/BOWER/repos/flexicarousel/browse",
-				"github": ""
+				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/flexicarousel/browse",
+				"github": "https://github.com/apathetic/flexicarousel"
 			},
 			"sticky_nav": {
 				"title": "Sticky Nav.",
+				"author": "Wes Hatch",
 				"date": "2014-04-26",
-				"blurb": "A simple navigation bar that efficiently attaches / detaches to the top of the viewport upon scrolling",
+				"blurb": "A navigation bar (or menu) that efficiently attaches / detaches to the top of the viewport upon scrolling.",
 				"tags": ["navigation", "javascript", "widget"],
 				"stash": "",
-				"github": ""
+				"github": "https://github.com/apathetic/stickynav"
 			},
 			"validator": {
 				"title": "Validator.",
+				"author": "Wes Hatch",
 				"date": "Feb 28, 2013",
-				"featured": true
+				"blurb": "An simple, powerful, and extensible client-side validation object.",
+				"featured": true,
+				"tags": ["js", "validation"],
+				"github": "https://github.com/apathetic/validator"
 			},
 			"modal": {
 				"title": "Modal.",
-				"date": "Feb 28, 2013"
+				"author": "Wes Hatch",
+				"date": "Feb 28, 2013",
+				"blurb": "A basic yet powerful modal system with a straightforward API",
+				"tags": ["js", "validation"],
+				"github": "https://github.com/apathetic/modals"
 			},
 
 			"huge_nav": {
+				"display": false,
 				"title": "Hello World.",
+				"author": "Wes Hatch",
 				"blurb": "The full-screen nav that is featured on Huge Inc.",
 				"tags": ["js", "css"],
 				"date": "2014-05-05"
 			},
 			"scrolljacker": {
+				"display": false,
 				"title": "Huge Inc. Slider.",
+				"author": "Wes Hatch",
 				"date": "2014-04-26",
-				"blurb": "Yet Another Full Screen Hijacker",
-				"tags": ["jquery", "ie9", "scrolljack", "js", "slider"],
+				"blurb": "The full-screen scrolljacker as seen on Huge Inc.",
+				"tags": ["jquery", "scrolljack", "js", "slider"],
 				"stash": "",
 				"github": ""
 			},
 			"autocompleter": {
-				"title": "Hello World.",
+				"display": false,
+				"title": "Autocompleter.",
 				"date": "Feb 28, 2013"
 			},
 			"asciify": {
-				"title": "Hello World.",
+				"display": false,
+				"title": "Asciify.",
+				"author": "Wes Hatch",
 				"date": "Feb 28, 2013"
 			},
-			"huge_slider": {
-				"title": "Hello World.",
-				"date": "Feb 28, 2013"
-			},
+
 			"chusy": {
 				"title": "Chusy.",
 				"author": "Chosun Snyder",
 				"date": "2014-03-05",
 				"featured": true,
-				"blurb": "A responsive SASS framework for quick prototyping and generating multi-breakpoint liquid grids."
+				"blurb": "A responsive SASS framework for quick prototyping and generating multi-breakpoint liquid grids.",
+				"tags": ["css", "framework", "grids"],
+				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/chusy-responsive-sass-framework/browse"
 			}
 		}
 	}
