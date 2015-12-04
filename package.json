@@ -18,9 +18,11 @@
   },
   "scripts": {
     "start": "node app.js",
-    "builder": "./builder.js.clean() && ./builder.build()",
-    "compiler": "harp compile && exit 1",
-    "update": "npm run builder && npm run compiler && push www/"
+    "compile": "harp compile && exit 1",
+	"showcase": "",
+	"git-commit": "git checkout gh-pages && git add -A www/ && git commit -a -m 'gh-pages update'",
+    "git-push": "git push github gh-pages --force && git checkout harp",
+    "deploy": "npm run compile && npm run git-commit && npm run git-push && npm run showcase"
   },
   "author": "wes hatch",
   "license": "MIT"

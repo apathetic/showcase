@@ -16,12 +16,25 @@ Description:	Main styles for the Huge Showcase
 
 */
 
+header {
+	min-height: 150px;
+	background: $color-grey-dark;
+	color: #fff;
+	text-align: center;
+
+	h1 {
+		color: #fff;
+		margin: 0;
+		padding: 0.6em;
+	}
+}
 
 /* ---------------------------------------
 	1.	Sticky
 -----------------------------------------*/
 
 #sticky {
+	display: none;
 
 	nav {
 		ul {
@@ -58,7 +71,7 @@ Description:	Main styles for the Huge Showcase
 	}
 
 	@include at-breakpoint('desktop') {
-
+		display: block;
 		height: 0;				// to prevent menu from affecting layout
 		width: 100%;
 		position:relative;

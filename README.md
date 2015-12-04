@@ -71,11 +71,13 @@ $ npm run builder
 Updating the Showcase Website
 --------------
 
+Simply:
+
 ```sh
-$ npm run update
+$ npm run deploy
 ```
 
-The builds and pushes to showcase.hugeops.com, as well as hugeinc.github.io/showcase
+The builds and pushes to showcase.hugeops.com as well as hugeinc.github.io/showcase
 
 
 Miscellany

@@ -20,6 +20,12 @@ Description:	Styles for Landing Page
 	2.	Default Styles
 -----------------------------------------*/
 
+@keyframes blip {
+	0% { background: #f8fafa; }
+	100% { background: #f4f4f4; }
+}
+
+
 #home {
 	header {
 		text-align: center;
@@ -118,7 +124,7 @@ Description:	Styles for Landing Page
 		transform-origin: top;
 
 		&:hover {
-			background: #fff;
+			animation: blip 2s;
 		}
 
 		&.collapsed {
