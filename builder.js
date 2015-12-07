@@ -3,7 +3,7 @@ var fs = require('fs');
 var noodle = require('noodlejs');
 var config = JSON.parse(fs.readFileSync('harp.json', 'utf8'));
 var components = config.globals.components;
-var path = 'public/component';
+var path = 'public/components';
 
 
 /**
@@ -24,7 +24,7 @@ function clean() {
 		}
 	});
 }
- 
+
 
 /**
  * Generates Component pages from JSON data (harp.json)

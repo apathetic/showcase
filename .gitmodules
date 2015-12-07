@@ -1,0 +1,18 @@
+[submodule "components/flexicarousel"]
+	path = components/flexicarousel
+	url = https://github.com/apathetic/flexicarousel
+[submodule "components/navigator"]
+	path = components/navigator
+	url = https://github.com/apathetic/navigator
+[submodule "components/validator"]
+	path = components/validator
+	url = https://github.com/apathetic/validator
+[submodule "components/modals"]
+	path = components/modals
+	url = https://github.com/apathetic/modals
+[submodule "components/stickynav"]
+	path = components/stickynav
+	url = https://github.com/apathetic/stickynav
+[submodule "components/parallax"]
+	path = components/parallax
+	url = https://github.com/apathetic/parallax

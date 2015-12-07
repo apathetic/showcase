@@ -25,22 +25,27 @@
 
 <body>
 
-
 	<header>
 		<h1>Parallax.</h1>
+
+		<!--
+		<%- partial("_partials/nav", { prev: "Component Library", next: "home" }) %>
+		-->
+		<a href="/"> <- back </a>
+
 	</header>
 
-	<nav>
-		<div id="sticky">
-			<div class="container">
-				<nav data-autogenerate="true">
-					<ul></ul>
-				</nav>
-			</div>
-		</div>
-	</nav>
-
 	<main class="component left-rail">
+
+		<nav>
+			<div id="sticky">
+				<div class="container">
+					<nav data-autogenerate="true">
+						<ul></ul>
+					</nav>
+				</div>
+			</div>
+		</nav>
 
 		<section data-nav="About" id="about">
 			<div class="container">
