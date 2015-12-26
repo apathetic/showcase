@@ -35,31 +35,31 @@
 
 	</header>
 
-	<main class="component left-rail">
-
-		<nav>
-			<div id="sticky">
-				<div class="container">
-					<nav data-autogenerate="true">
-						<ul></ul>
-					</nav>
-				</div>
+	<nav>
+		<div id="sticky">
+			<div class="container">
+				<nav data-autogenerate="true">
+					<ul></ul>
+				</nav>
 			</div>
-		</nav>
+		</div>
+	</nav>
+
+	<main class="component left-rail">
 
 		<section data-nav="About" id="about">
 			<div class="container">
 				<h2>About</h2>
-				<p>Parallax. Moves stuff on scroll.</p>
+				<p>A robust parallaxing base. Moves stuff on user-scroll.</p>
 
 				<h3>A Note On Approaches</h3>
-				<p>There are several ways to apprach building a parallax effect on a site. Paul Lewis has
+				<p>There are several ways to approach building a parallax effect on a site. Paul Lewis has
 				<a href="http://www.html5rocks.com/en/tutorials/speed/parallax/">a great overview</a> on the
 				popular techiniques and their pros and cons. In brief:</p>
 				<ul>
 					<li><strong>absolute positioning</strong>: parallax is achieved via positioning elements
 					absolutely (this technique also includes positioning a background image attachment). In general,
-					this is the absolute worst way to do parallax from a performance point of view. Everything must
+					this is the worst way to do parallax from a performance point of view. Everything must
 					be recalculated and re-painted on scroll, so avoid this if possible. The upside: you can support
 					IE8 this way.</li>
 					<li><strong>3D transforms</strong>: how the code herein operates. We offload elements in their
@@ -170,8 +170,8 @@
 								<td>integer</td>
 								<td>1</td>
 								<td>There are two different modes:<br />
-									Start parallaxing items only when they appear on screen (mode 1, default) *<br />
-									Parallax items immediately on load, irrespective of where they are on the page. (mode 0)
+									Commence parallaxing items only when they appear within the viewport (mode 1, default) *<br /><br />
+									Parallax items universally, irrespective of where they are on the page. (mode 0)
 								</td>
 							</tr>
 							<tr>

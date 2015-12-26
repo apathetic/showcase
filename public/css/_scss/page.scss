@@ -21,6 +21,7 @@ header {
 	background: $color-grey-dark;
 	color: #fff;
 	text-align: center;
+	margin-bottom: 48px;
 
 	h1 {
 		color: #fff;
@@ -28,6 +29,11 @@ header {
 		padding: 0.6em;
 	}
 }
+
+footer {
+	margin-top: 48px;
+}
+
 
 /* ---------------------------------------
 	1.	Sticky
@@ -38,7 +44,7 @@ header {
 
 	nav {
 		ul {
-			margin-top: 24px;
+			margin: 2em 0;
 		}
 
 		li {
@@ -131,5 +137,9 @@ main.component {
 			margin-left: 2em;
 			list-style-type: disc;
 		}
+	}
+
+	p + *:not(p) {
+		margin-top: 2em;
 	}
 }
