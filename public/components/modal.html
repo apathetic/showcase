@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Modals.</title>
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="https://cdn.rawgit.com/apathetic/modals/master/demo/styles.css">
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<script src="/js/prism.js"></script>
+	<script src="https://cdn.rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+			stickyNav.init({ nav: '#sticky' });
+		});
+	</script>
+
+</style>
+<body>
+
+	<header>
+		<h1>Modals.</h1>
+	</header>
+
+	<nav>
+		<div id="sticky">
+			<div class="container">
+				<nav data-autogenerate="true">
+					<ul></ul>
+				</nav>
+			</div>
+		</div>
+	</nav>
+
+	<main class="component left-rail">
+
+		<section data-nav="About" id="about">
+			<div class="container">
+				<h2>About</h2>
+				<p>lorme.</p>
+
+				<h3>A Note On Approaches</h3>
+				<p>There are several ...</p>
+			</div>
+		</section>
+
+		<section data-nav="Download" id="download">
+			<div class="container">
+				<h2>Download</h2>
+				<h3>Github</h3>
+				<p><a href="https://github.com/apathetic/modals">Get it from Github</a></p>
+			</div>
+		</section>
+
+		<section data-nav="Demo" id="demo">
+			<div class="container">
+				<h2>Demo</h2>
+
+				<p>The default uses <em>data-modal</em> attributes as triggers for a particular modal.</p>
+				<p><button class="button" data-modal="#terms">Show Modal</button></p>
+
+				<pre><code class="language-markup">
+&lt;!-- modal -->
+&lt;div id="terms" class="modal">
+	&lt;div class="content">
+		&lt;i class="icon icon-close">&lt;/i>
+		&lt;h3>Hello&lt;/h3>
+		&lt;p>Random text here, something important.&lt;/p>
+	&lt;/div>
+&lt;/div>
+
+&lt;!-- modal trigger -->
+&lt;button data-modal="#terms">show&lt;/button>
+				</code></pre>
+
+				<p>However, you can also programmatically open a particular modal by way of its <em>querySelector</em>.</p>
+
+				<pre><code class="language-javascript">
+Modal.show('#error');
+Modal.hide()
+				</code></pre>
+
+				<p><button class="button" onclick="Modal.show('#error')">Modal.show()</button></p>
+
+
+			</div>
+		</section>
+
+		<section data-nav="Requirements" id="requirements">
+			<div class="container">
+				<h2>Requirements</h2>
+				<p>None. All vanilla JS.</p>
+			</div>
+		</section>
+
+		<section data-nav="Compatibility" id="compatibility">
+			<div class="container">
+				<h2>Compatibility</h2>
+				<ul>
+					<li>IE8+</li>
+					<li>Firefox, Webkit, Opera</li>
+					<li>iOS, Android</li>
+				</ul>
+			</div>
+		</section>
+
+		<section data-nav="Methods" id="methods">
+			<div class="container">
+				<h2>Methods</h2>
+				<div class="table-responsive">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th style="width: 100px;">Name</th>
+								<th style="width: 100px;">args</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>show</td>
+								<td>querySelector (String)</td>
+								<td>shows the modal that is referenced by the given querySelector</td>
+							</tr>
+							<tr>
+								<td>hide</td>
+								<td></td>
+								<td>hides any currently-displaying modal</td>
+							</tr>
+							<tr>
+								<td>bind</td>
+								<td>querySelector (String)</td>
+								<td>programmatically binds modal functionality to an element</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+
+	<footer>
+		<div class="container">
+		</div>
+	</footer>
+
+
+	<div id="terms" class="modal">
+		<i class="icon close"></i>
+		<div class="content">
+			<h3>Hello</h3>
+			<p>Random text here, something important.</p>
+			<p>Here, we showcase one option for the placement of the "close" icon.</p>
+		</div>
+	</div>
+
+	<div id="error" class="modal">
+		<div class="content">
+			<i class="icon close"></i>
+			<h3>Error!</h3>
+			<p>These aren't the droids you're looking for.</p>
+			<p>You can also close the current modal programmatically. Clicking this button will trigger the Modal hide action:</p>
+			<p><button class="button" onclick="Modal.hide()">Modal.hide()</button></p>
+		</div>
+	</div>
+
+
+	<script src="https://cdn.rawgit.com/apathetic/modals/master/dist/modals.min.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', Modal.init);
+	</script>
+
+
+</body>
+</html>
