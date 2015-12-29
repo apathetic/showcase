@@ -132,14 +132,75 @@ main.component {
 	section {
 		padding: 2em 0;
 		overflow: hidden;
+	}
 
-		li {
-			margin-left: 2em;
-			list-style-type: disc;
-		}
+	.bullets li {
+		margin-left: 2em;
+		list-style-type: disc;
 	}
 
 	p + *:not(p) {
 		margin-top: 2em;
 	}
+}
+
+
+.demo-nav {
+	font-size: 0.5em;
+	width: 100%;
+	text-align: center;
+	position: static;
+
+	ul {
+		height: 3em;
+	}
+
+	li {
+		display: inline-block;
+		cursor: pointer;
+		color: grey;
+		list-style: none !important;
+		width: 1em;
+		height: 1em;
+		margin: 1em;
+		border-radius: 50%;
+		background: #ddd;
+
+		&.active {
+			background:#ec008c;
+		}
+	}
+
+	.prev, .next {
+		position: absolute;
+		top: 50%;
+		background-color: #ec008c;
+		color: #fff;
+		font-size: 24px;
+		border-radius: 50%;
+		width: 2em;
+		height: 2em;
+		margin-top: -1em;
+		line-height: 2em;
+		opacity: 0.3;
+		transition: opacity 0.5s;
+		z-index: 100;
+
+		span {
+			color: #fff;
+		}
+
+		.disabled {
+			opacity: 0.2;
+		}
+
+
+		.carousel:hover & {
+			opacity: 1;
+		}
+	}
+
+	.prev { left: -1em; }
+	.next { right: -1em; }
+
 }
