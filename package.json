@@ -15,11 +15,11 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "compile": "harp compile && exit 1",
+    "compile": "harp compile",
     "showcase": "",
     "git-commit": "git checkout gh-pages && git add -A www/ && git commit -a -m 'gh-pages update'",
     "git-push": "git push github gh-pages --force && git checkout harp",
-    "deploy": "npm run compile && npm run git-commit && npm run git-push && npm run showcase"
+    "deploy": "npm run compile && npm run git-commit && npm run git-push"
   },
   "author": "wes hatch",
   "license": "MIT"
