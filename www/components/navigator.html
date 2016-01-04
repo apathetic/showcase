@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Navigator.</title>
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="stylesheet" href="https://rawgit.com/apathetic/navigator/master/src/panel-styles.css">
+	<link rel="stylesheet" href="https://rawgit.com/apathetic/navigator/master/demo/styles.css">
+	<link rel="stylesheet" href="/css/styles.css">
+
+	<script src="/js/prism.js"></script>
+	<script src="https://rawgit.com/apathetic/navigator/master/dist/nav.min.js"></script>
+	<script src="https://rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"></script>
+
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+			stickyNav.init({ nav: '#sticky' });
+		});
+	</script>
+
+</head>
+
+<body>
+
+	<header>
+		<h1>Navigator.</h1>
+	</header>
+
+	<main class="component left-rail">
+
+		<nav>
+			<div id="sticky">
+				<div class="container">
+					<nav data-autogenerate="true">
+						<ul></ul>
+					</nav>
+				</div>
+			</div>
+		</nav>
+
+		<section data-nav="About" id="about">
+			<div class="container">
+				<h2>About</h2>
+				<p>Navigator. Animate through some panels.</p>
+			</div>
+		</section>
+
+		<section data-nav="Download" id="download" >
+			<div class="container">
+				<h2>Download</h2>
+				<h3>Stash</h3>
+				<p><a href="https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse">Get it from the Stash repo</a></p>
+			</div>
+		</section>
+
+		<section data-nav="Demo" id="demo">
+			<div class="container">
+				<h2>Demo</h2>
+
+				<h3>Sliding transition</h3>
+				<div id="demo-one" class="carousel fx-slide">
+
+					<ul class="panels">
+						<li class="panel active"><h3>Panel 1</h3></li>
+						<li class="panel"><h3>Panel 2</h3></li>
+						<li class="panel"><h3>Panel 3</h3></li>
+						<li class="panel"><h3>Panel 4</h3></li>
+					</ul>
+
+					<nav class="demo-nav">
+						<a href="#prev" class="prev" aria-hidden="true"> <span>&lang;</span> </a>
+						<ul>
+							<li class="active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<a href="#next" class="next" aria-hidden="true"> <span>&rang;</span> </a>
+					</nav>
+
+					<script>
+						window.addEventListener('DOMContentLoaded', function() {
+							var container1 = document.querySelector('#demo-one .panels');
+							var bullets1 = document.querySelectorAll('#demo-one nav li');
+							var prev1 = document.querySelector('#demo-one .prev');
+							var next1 = document.querySelector('#demo-one .next');
+							var navigation1 = new Nav(container1, {
+								slides: ".panel",
+								onSlide: function(to, from){
+									bullets1[from].className = '';
+									bullets1[to].className = 'active';
+								}
+							});
+
+
+							Array.prototype.forEach.call(bullets1, function(item, index){
+								item.addEventListener('click', function(e) {
+									e.preventDefault();
+									navigation1.go(index);
+								});
+							});
+
+							prev1.addEventListener('click', function(e) {
+								e.preventDefault();
+								navigation1.go(navigation1.current - 1);
+							});
+
+							next1.addEventListener('click', function(e) {
+								e.preventDefault();
+								navigation1.go(navigation1.current + 1);
+							});
+
+
+						});
+					</script>
+
+				</div>
+
+				<hr />
+
+				<h3>Fade transition</h3>
+				<div id="demo-three" class="carousel fx-fade">
+					<ul class="panels">
+						<li class="panel active"><h3>Panel 1</h3></li>
+						<li class="panel"><h3>Panel 2</h3></li>
+						<li class="panel"><h3>Panel 3</h3></li>
+						<li class="panel"><h3>Panel 4</h3></li>
+					</ul>
+
+					<nav class="demo-nav">
+						<a href="#prev" class="prev" aria-hidden="true"> <span>&lang;</span> </a>
+						<ul>
+							<li class="active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<a href="#next" class="next" aria-hidden="true"> <span>&rang;</span> </a>
+					</nav>
+
+					<script>
+						window.addEventListener('DOMContentLoaded', function() {
+
+							// ------------------------------------------------------------------
+							// Fade transition
+
+							var container3 = document.querySelector('#demo-three .panels');
+							var bullets3 = document.querySelectorAll('#demo-three nav li');
+							var prev3 = document.querySelector('#demo-three .prev');
+							var next3 = document.querySelector('#demo-three .next');
+							var nav3 = new Nav(container3, {
+								slides: ".panel",
+								onSlide: function(to, from){
+									bullets3[from].className = '';
+									bullets3[to].className = 'active';
+								}
+							});
+
+							Array.prototype.forEach.call(bullets3, function(item, index){
+								item.addEventListener('click', function(e) {
+									e.preventDefault();
+									nav3.go(index);
+								});
+							});
+
+							prev3.addEventListener('click', function(e) {
+								e.preventDefault();
+								nav3.go(nav3.current - 1);
+							});
+
+							next3.addEventListener('click', function(e) {
+								e.preventDefault();
+								nav3.go(nav3.current + 1);
+							});
+
+						});
+					</script>
+
+				</div>
+
+				<hr />
+
+				<h3>Multiple transitions</h3>
+				<div id="demo-four" class="carousel fx-fade fx-slide">
+					<ul class="panels">
+						<li class="panel active"><h3>Panel 1</h3></li>
+						<li class="panel"><h3>Panel 2</h3></li>
+						<li class="panel"><h3>Panel 3</h3></li>
+						<li class="panel"><h3>Panel 4</h3></li>
+					</ul>
+
+					<nav class="demo-nav">
+						<a href="#prev" class="prev" aria-hidden="true"> <span>&lang;</span> </a>
+						<ul>
+							<li class="active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<a href="#next" class="next" aria-hidden="true"> <span>&rang;</span> </a>
+					</nav>
+				</div>
+
+				<script>
+					window.addEventListener('DOMContentLoaded', function() {
+
+						var container4 = document.querySelector('#demo-four .panels');
+						var bullets4 = document.querySelectorAll('#demo-four nav li');
+						var prev4 = document.querySelector('#demo-four .prev');
+						var next4 = document.querySelector('#demo-four .next');
+						var nav4 = new Nav(container4, {
+							slides: ".panel",
+							onSlide: function(to, from){
+								bullets4[from].className = '';
+								bullets4[to].className = 'active';
+							}
+						});
+
+						Array.prototype.forEach.call(bullets4, function(item, index){
+							item.addEventListener('click', function(e) {
+								e.preventDefault();
+								nav4.go(index);
+							});
+						});
+
+						prev4.addEventListener('click', function(e) {
+							e.preventDefault();
+							nav4.go(nav4.current - 1);
+						});
+
+						next4.addEventListener('click', function(e) {
+							e.preventDefault();
+							nav4.go(nav4.current + 1);
+						});
+
+					});
+				</script>
+
+			</div>
+		</section>
+
+		<section data-nav="Code" id="code">
+			<div class="container">
+				<h2>Code</h2>
+<!--
+				<h4>Markup</h4>
+
+				<h5>Basic markup</h5>
+				<pre><code class="language-markup">
+	&lt;div id="demo" class="carousel fx-slide">
+		&lt;ul class="panels">
+			&lt;li class="panel">&lt;/li>
+			...
+			&lt;li>&lt;/li>
+		&lt;/ul>
+	&lt;/div>
+				</code></pre>
+
+				<h5>Bullet navigation markup</h5>
+				<pre><code class="language-markup">
+	&lt;nav class="demo-nav">
+		&lt;a href="#prev" class="prev" aria-hidden="true">&lt;span> &lang; &lt;/span>&lt;/a>
+		&lt;ul>
+			&lt;li class="active">&lt;/li>
+			...
+			&lt;li>&lt;/li>
+		&lt;/ul>
+		&lt;a href="#next" class="next" aria-hidden="true">&lt;span> &rang; &lt;/span>&lt;/a>
+	&lt;/nav>
+				</code></pre>
+-->
+
+				<h4>Javascript</h4>
+				<h5>Basic set up</h5>
+				<pre><code class="language-javascript">
+	var container = document.querySelector('#demo .panels');
+	var navigator = new Nav(container, {
+		slides: ".panel",
+	});
+				</pre></code>
+
+				<h5>Bullet Navigation</h5>
+				<pre><code class="language-javascript">
+	// example with bullet navigation
+	var container = document.querySelector('#demo .panels');
+	var bullets = document.querySelectorAll('#demo nav li');
+	var navigator = new Nav(container, {
+		slides: ".panel",
+		onSlide: function(to, from){
+			bullets[from].className = '';
+			bullets[to].className = 'active';
+		}
+	});
+
+	// set up navigation UI
+	Array.prototype.forEach.call(bullets, function(item, index){
+		item.addEventListener('click', function(e) {
+			e.preventDefault();
+			navigation.go(index);
+		});
+	});
+				</code></pre>
+
+				<h5>Sample Previous &amp; Next buttons</h5>
+				<pre><code class="language-javascript">
+	// example with previous and next button functionality
+	var prev = document.querySelector('#demo .prev');
+	var next = document.querySelector('#demo .next');
+
+	prev.addEventListener('click', function(e) {
+		e.preventDefault();
+		navigation.go(navigation.current - 1);
+	});
+
+	next.addEventListener('click', function(e) {
+		e.preventDefault();
+		navigation.go(navigation.current + 1);
+	});
+				</code></pre>
+
+
+
+			</div>
+		</section>
+
+		<section data-nav="Prereqs" id="prereqs">
+			<div class="container">
+				<h2>Prereqs</h2>
+				<p>none.</p>
+			</div>
+		</section>
+
+		<section data-nav="Compatibility" id="compatibility">
+			<div class="container">
+				<h2>Compatibility</h2>
+				<ul class="bullets">
+					<li>IE9+</li>
+					<li>Firefox, Webkit, Opera</li>
+					<li>no mobile</li>
+				</ul>
+			</div>
+		</section>
+
+		<section data-nav="Options" id="options">
+			<div class="container">
+				<h2>Options</h2>
+				<div class="table-responsive">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th style="width: 100px;">Name</th>
+								<th style="width: 50px;">type</th>
+								<th style="width: 50px;">default</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>slides</td>
+								<td>string</td>
+								<td>none</td>
+								<td>querySelectorselector of panel elements</td>
+							</tr>
+							<tr>
+								<td>onSlide</td>
+								<td>function</td>
+								<td>none</td>
+								<td>Callback function on slide. Arguments are to and from</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer>
+		<div class="container">
+		</div>
+	</footer>
+
+</body>
+
+</html>
