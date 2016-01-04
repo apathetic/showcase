@@ -15,11 +15,15 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "compile": "harp compile && exit 1",
-    "showcase": "",
-    "git-commit": "git checkout gh-pages && git add -A www/ && git commit -a -m 'gh-pages update'",
-    "git-push": "git push github gh-pages --force && git checkout harp",
-    "deploy": "npm run compile && npm run git-commit && npm run git-push && npm run showcase"
+    "compile": "harp compile",
+
+    "git-commit": "git add www && git commit -m 'gh-pages update'",
+    "git-push": "git subtree push --prefix www github gh-pages",
+    "deploy": "npm run compile && npm run git-commit && npm run git-push",
+
+    "deployTEMP": "git checkout harp && git subtree split --prefix www -b gh-pages && git push -f github gh-pages:gh-pages && git branch -D gh-pages"
+
+
   },
   "author": "wes hatch",
   "license": "MIT"
