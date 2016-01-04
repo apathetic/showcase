@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node app.js",
     "compile": "harp compile",
-    "git-commit": "##git add www && git commit -m 'gh-pages update'",
+    "git-commit": "git add www && git commit -m 'gh-pages update'",
     "git-push": "git subtree push --prefix www github gh-pages",
     "deploy": "npm run compile && npm run git-commit && npm run git-push"
   },
