@@ -144,7 +144,7 @@
 		<section data-nav="Compatibility" id="compatibility">
 			<div class="container">
 				<h2>Compatibility</h2>
-				<ul>
+				<ul class="bullets">
 					<li>IE8+</li>
 					<li>Firefox, Webkit, Opera</li>
 					<li>iOS, Android</li>
@@ -183,49 +183,29 @@
 					<table class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th style="width: 100px;">Name</th>
-								<th style="width: 50px;">type</th>
-								<th style="width: 50px;">default</th>
+								<th>method</th>
+								<th style="width:240px">arguments</th>
 								<th>description</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>el</td>
-								<td>string</td>
-								<td>.parallax</td>
-								<td>selector of elements to parallax-ify</td>
-							</tr>
-							<tr>
-								<td>mode</td>
-								<td>integer</td>
-								<td>1</td>
-								<td>There are two different modes:<br />
-									Start parallaxing items only when they appear on screen (mode 1, default) *<br />
-									Parallax items immediately on load, irrespective of where they are on the page. (mode 0)
+								<td>check</td>
+								<td>element,<br />function success()</td>
+								<td>Pass in a field or a DOM element. Checks if field (or fields within the DOM element)
+									are valid according to any data-validate / required attributes on each field.
 								</td>
 							</tr>
 							<tr>
-								<td>range</td>
-								<td>integer</td>
-								<td>200</td>
-								<td>The total distance (in px) to parallax an element. Only applies when parallax mode = 1</td>
-							</tr>
-							<tr>
-								<td>data-parallax-speed</td>
-								<td>string</td>
-								<td>0</td>
-								<td>Data attribute on the element specifying the speed of parallax. Some examples:<br />
-									<b>-1</b>: translate up as fast as you scroll up (ie. moving upwards at 2x the scroll)<br />
-									<b>0</b>: normal (ie. no translation)<br />
-									<strong>1</strong>: translate down as fast as you scroll up (ie. "fixed" position)<br />
+								<td>updateRule</td>
+								<td>name,<br />function validator(value)</td>
+								<td>Create your own validation rule. Give it a <em>name</em> and the function to be used when
+									validating a field. Use your new rule by placing <em>data-validate="name"</em> on a field
+									to validate. The validation function gets the field value to check against.
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<p>* note: if an element loads within the viewport, the engine will calculate the amount of parallax based on
-					its position and adjust accordingly. Because of this, it may be a good idea to only fire the init() function
-					after all assets (ie. images, etc) have loaded.</p>
 				</div>
 			</div>
 		</section>
