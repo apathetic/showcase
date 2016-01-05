@@ -17,7 +17,10 @@
     "start": "node app.js",
     "compile": "harp compile",
     "git-commit": "git add www && git commit -m 'gh-pages update'",
-    "git-push": "git subtree push --prefix www github gh-pages",
+
+    "git-push_OLD": "git subtree push --prefix www github gh-pages",
+    "git-push": "git push github `git subtree split --prefix www harp`:gh-pages --force",
+
     "deploy": "npm run compile && npm run git-commit && npm run git-push"
   },
   "author": "wes hatch",
