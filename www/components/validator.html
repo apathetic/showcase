@@ -7,12 +7,12 @@
     <title>Validator.</title>
     <meta name="viewport" content="width=device-width">
 
-	<link rel="stylesheet" href="https://cdn.rawgit.com/apathetic/validator/master/demo/styles.css">
+	<link rel="stylesheet" href="https://rawgit.com/apathetic/validator/master/demo/styles.css">
 	<link rel="stylesheet" href="/showcase/css/styles.css">
 
 	<script src="/showcase/js/prism.js"></script>
-	<script src="https://cdn.rawgit.com/apathetic/validator/master/dist/validator.min.js"></script>
-	<script src="https://cdn.rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"></script>
+	<script src="https://rawgit.com/apathetic/validator/master/dist/validator.min.js"></script>
+	<script src="https://rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"></script>
 
 	<script>
 		window.addEventListener('DOMContentLoaded', function() {
@@ -90,9 +90,9 @@
 
 					<div class="form-group">
 						<label class="font-small" for="comment">Message</label>
+						<span class="character-count"><i>40</i> characters left</span>
 						<textarea name="comment" placeholder="Using a custom validation method! Try typing more than 40 characters" data-validate="count" required></textarea>
-						<span class="error-message font-small">Please add a message that is 90 characters or less</span>
-						<span class="character-count"><i>90</i> characters left</span>
+						<span class="error-message font-small">Please add a message that is 40 characters or less</span>
 					</div>
 
 
@@ -100,7 +100,7 @@
 						<label class="font-small" for="officeLocation">Your Country</label>
 						<div class="select">
 							<select id="officeLocation" name="country" required>
-								<option value="" disabled>Select your country</option>
+								<option value="">Select your country</option>
 								<option value="AO">Angola</option>
 								<option value="AR">Argentina</option>
 								<option value="AU">Australia</option>
@@ -147,7 +147,7 @@
 				<ul>
 					<li>IE8+</li>
 					<li>Firefox, Webkit, Opera</li>
-					<li>iOS, Androie</li>
+					<li>iOS, Android</li>
 				</ul>
 			</div>
 		</section>
@@ -167,7 +167,7 @@
 				<pre><code class="language-javascript">
 	// add a rule called "count" that checks an input's length
 	validator.updateRule('count', function count(val) {
-		return val.length <= 90;
+		return val.length <= 40;
 	});
 				</pre></code>
 
@@ -249,7 +249,7 @@
 			 * You update it with your own rules!
 			 */
 			validator.updateRule('count', function count(val) {
-				return val.length <= 90;
+				return val.length <= 40;
 			});
 
 			form.addEventListener('submit', function(e) {
@@ -291,7 +291,7 @@
 			checkLength();
 
 			function checkLength(e) {
-				var remaining = 90 - textarea.value.length;
+				var remaining = 40 - textarea.value.length;
 				num.innerHTML = remaining;
 				if (remaining < 0) {
 					count.classList.add('has-error');
