@@ -12,7 +12,7 @@
 					<li class="slide">
 						<div class="v-center">
 							<span class="eyebrow">Module by <%= component.author %></span>
-							<h1><a href="/components/<%= name %>"><%= component.title %></a></h1>
+							<h1><a href="components/<%= name %>"><%= component.title %></a></h1>
 							<p><%= component.blurb %></p>
 						</div>
 					</li>
@@ -57,7 +57,7 @@
 				<% for (var i in component.tags) { %><strong><%= component.tags[i] %></strong> <% if(i != component.tags.length-1) { %> / <% } %>  <% } %>
 				</span>
 
-				<h2><a href="/components/<%= name %>"><%= component.title %></a></h2>
+				<h2><a href="components/<%= name %>"><%= component.title %></a></h2>
 
 				<p><%= component.blurb %></p>
 

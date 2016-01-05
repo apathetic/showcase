@@ -16,9 +16,8 @@
   "scripts": {
     "start": "node app.js",
     "compile": "harp compile",
-    "showcase": "",
-    "git-commit": "git checkout gh-pages && git add -A www/ && git commit -a -m 'gh-pages update'",
-    "git-push": "git push github gh-pages --force && git checkout harp",
+    "git-commit": "git add www && git commit -m 'gh-pages update'",
+    "git-push": "git subtree push --prefix www github gh-pages",
     "deploy": "npm run compile && npm run git-commit && npm run git-push"
   },
   "author": "wes hatch",
