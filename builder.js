@@ -46,6 +46,9 @@ function build() {
 		}
 	}
 
+	process.exit();
+
+
 
 	/**
 	 * [scrape description]
@@ -82,13 +85,12 @@ function build() {
 			});
 
 			// console.log(page);
-			// fs.writeFile(path + '/' + component, page);
+			fs.writeFile(path + '/_' + component + '.html', page);
 
 		} catch(e) {
 			console.log('Error: missing or incorrect Component data in JSON file', e);
 		}
 	}
-
 
 }
 
