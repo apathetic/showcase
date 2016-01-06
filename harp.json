@@ -12,7 +12,7 @@
 				"github": "https://github.com/apathetic/parallax",
 				"useGenerator": true,
 				"assets": {
-					"index": "demo/index.html",
+					"html": "demo/index.html",
 					"css": "src/parallax.css",
 					"js": "src/parallax.js"
 				}
