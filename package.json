@@ -1,24 +1,29 @@
 {
   "name": "Components",
   "version": "0.1.0",
+  "description": "A showcase of HUGE components",
+  "main": "app.js",
   "repository": {
     "type": "git",
     "url": "https://stash.hugeinc.com/projects/CMPTS/repos/showcase/browse"
   },
-  "dependencies": {
-    "ejs": "^2.3.4",
-    "express": "^4.13.3",
-    "harp": "^0.19.0",
-    "noodlejs": "^0.3.2"
+  "devDependencies": {
+	"babel-core": "^6.1.2",
+    "babel-eslint": "^4.1.3",
+    "babel-loader": "^6.0.0",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-plugin-transform-remove-console": "^6.0.14",
+    "babel-polyfill": "^6.0.14",
+	"eslint": "^1.8.0",
+    "eslint-loader": "^1.1.1",
+	"harp": "^0.20.0",
+	"webpack": "^1.12.2"
   },
-  "description": "A showcase of HUGE components",
-  "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "compile": "harp compile",
-    "git-commit": "git add www && git commit -m 'gh-pages update'",
+	"dev": "webpack --progress --colors --watch",
+    "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js",
 
-    "git-push_OLD": "git subtree push --prefix www github gh-pages",
+    "git-commit": "git add www && git commit -m 'gh-pages update'",
     "git-push": "git push github `git subtree split --prefix www harp`:gh-pages --force",
 
     "deploy": "npm run compile && npm run git-commit && npm run git-push"
