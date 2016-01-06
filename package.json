@@ -17,12 +17,9 @@
     "eslint": "^1.8.0",
     "eslint-loader": "^1.1.1",
     "harp": "^0.20.0",
-    "webpack": "^1.12.2",
-    "webpack-dev-server": "^1.14.0"
+    "webpack": "^1.12.2"
   },
   "scripts": {
-    "start": "webpack-dev-server",
-
     "dev": "webpack --progress --colors --watch",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "git-commit": "git add www && git commit -m 'gh-pages update'",
