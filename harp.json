@@ -55,7 +55,7 @@
 				"author": "Wes Hatch",
 				"date": "Feb 28, 2013",
 				"blurb": "A basic yet powerful modal system with a straightforward API",
-				"tags": ["js", "validation"],
+				"tags": ["js", "modal"],
 				"github": "https://github.com/apathetic/modals"
 			},
 
