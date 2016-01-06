@@ -2,10 +2,13 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-    entry: ['babel-polyfill','./public/js/home.js'],
+    entry: {
+		home: ['babel-polyfill', './public/_js/home.js'],
+		component: ['babel-polyfill', './public/_js/component.js']
+	},
     output: {
         path: __dirname,
-        filename: './public/js/script.js'
+        filename: './public/js/[name].js'
     },
     module: {
         loaders: [

@@ -45,7 +45,7 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(1);
-	module.exports = __webpack_require__(195);
+	module.exports = __webpack_require__(192);
 
 
 /***/ },
@@ -5768,86 +5768,25 @@
 	};
 
 /***/ },
-/* 192 */,
-/* 193 */,
-/* 194 */,
-/* 195 */
+/* 192 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 	
-	var _flexicarousel = __webpack_require__(196);
+	var _stickynav = __webpack_require__(193);
 	
-	var _flexicarousel2 = _interopRequireDefault(_flexicarousel);
+	var _prism = __webpack_require__(194);
+	
+	var _prism2 = _interopRequireDefault(_prism);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	// ---- carousel ---- //
-	var featured = document.querySelector('#featured'),
-	    bullets = featured.querySelectorAll('nav li'),
-	    carousel = new _flexicarousel2.default(featured, {
-		slides: '.slide',
-		offscreen: 1,
-		onSlide: updateNav
+	window.addEventListener('DOMContentLoaded', function () {
+		_stickynav.stickyNav.init({ nav: '#sticky' });
 	});
-	
-	featured.querySelector('.prev').addEventListener('click', function () {
-		carousel.prev();
-	});
-	featured.querySelector('.next').addEventListener('click', function () {
-		carousel.next();
-	});
-	
-	Array.prototype.forEach.call(bullets, function (bullet, to) {
-		bullet.addEventListener('click', function (e) {
-			carousel.go(to);
-		});
-	});
-	
-	function updateNav(current) {
-		for (i = bullets.length; i--;) {
-			bullets[i].classList.remove('active');
-			bullets[current].classList.add('active');
-		}
-	}
-	
-	// ---- filters ---- //
-	var sections = document.querySelectorAll('main section'),
-	    tabs = document.querySelectorAll('#tabs li'),
-	    tab,
-	    tags,
-	    i,
-	    j;
-	
-	for (i = tabs.length; i--;) {
-		tab = tabs[i];
-		tab.addEventListener('click', function (e) {
-			var filter, regex;
-	
-			e.preventDefault();
-			for (j = tabs.length; j--;) {
-				tabs[j].classList.remove('active');
-			}
-	
-			this.classList.add('active');
-			filter = this.getAttribute('data-filter');
-	
-			for (j = sections.length; j--;) {
-				tags = sections[j].getAttribute('data-tags') || '';
-				tags = tags.toLowerCase();
-				regex = new RegExp(filter, "i"); // ghetto, doesn't care about surrounding whitespace
-	
-				if (!tags.match(regex)) {
-					sections[j].classList.add('collapsed');
-				} else {
-					sections[j].classList.remove('collapsed');
-				}
-			}
-		});
-	}
 
 /***/ },
-/* 196 */
+/* 193 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -5855,412 +5794,364 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.default = Carousel;
 	/*
-	 * carousel ten billion
-	 * https://github.com/apathetic/flexicarousel-3
+	 * sticky nav
+	 * https://github.com/apathetic/stickynav
 	 *
 	 * Copyright (c) 2013 Wes Hatch
 	 * Licensed under the MIT license.
 	 *
 	 */
 	
-	function Carousel(container, options) {
+	/**
+	 * Sticky Element: sets up a sticky bar which attaches / detaches to top of viewport
+	 * @param {HTMLElement} sticky The element to sticky-ify
+	 * @return {void}
+	 */
+	function stickyElement(_sticky, bounded) {
 	
-		this.handle = container;
+		if (!_sticky || !_sticky.getBoundingClientRect) {
+			return false; // progressive enhancement for newer browers only.
+		}
 	
-		// default options
-		// --------------------
-		this.defaults = {
-			activeClass: 'active',
-			slideWrap: 'ul', // for binding touch events
-			slides: 'li', // the slide
-			infinite: true, // infinite scrolling or not
-			display: 1, // the minimum # of slides to display at a time
-			offscreen: 0, // the # of slides to "view ahead" ie. position offscreen
-			disableDragging: false
+		bounded = bounded || _sticky.getAttribute('data-bounded') || false;
+	
+		var parent = _sticky.parentNode,
+		    stickyPosition,
+		    parentPosition,
+		    currentState = '_',
+		    stateSwitcher,
+		    determine = {
+			normal: function normal() {
+				stickyPosition = _sticky.getBoundingClientRect();
+				if (stickyPosition.top < 1) {
+					return setState('sticky');
+				}
+			},
+			sticky: function sticky() {
+				parentPosition = parent.getBoundingClientRect();
+				if (parentPosition.top > 1) {
+					return setState('normal');
+				}
+				if (!bounded) {
+					return;
+				} // don't worry about bottom edge
+				stickyPosition = _sticky.getBoundingClientRect();
+				if (parentPosition.bottom < stickyPosition.bottom) {
+					return setState('bottom');
+				}
+			},
+			bottom: function bottom() {
+				stickyPosition = _sticky.getBoundingClientRect();
+				if (stickyPosition.top > 1) {
+					return setState('sticky');
+				}
+			}
 		};
 	
-		// state vars
-		// --------------------
-		this.current = 0;
-		this.slides = [];
-		this.sliding = false;
-		this.cloned = 0;
+		function setState(state) {
+			if (currentState === state) {
+				return;
+			}
+			_sticky.classList.remove(currentState);
+			_sticky.classList.add(state);
+			currentState = state;
+			stateSwitcher = determine[state];
+		}
 	
-		// touch vars
-		// --------------------
-		this.dragging = false;
-		this.dragThreshold = 50;
-		this.deltaX = 0;
+		stickyPosition = _sticky.getBoundingClientRect();
 	
-		// feature detection
-		// --------------------
-		this.isTouch = 'ontouchend' in document;
-		var style = document.body.style;
-		var tests = {
-			'transform': 'transitionend',
-			'OTransform': 'oTransitionEnd',
-			'MozTransform': 'transitionend',
-			'webkitTransform': 'webkitTransitionEnd'
-		};
-		// note: we don't test "ms" prefix, (as that gives us IE9 which doesn't support transforms3d anyway. IE10 test will work with "transform")
-		for (var x in tests) {
-			if (style[x] !== undefined) {
-				this.transform = x;
-				this.transitionEnd = tests[x];
-				break;
+		//sticky initial position
+		if (stickyPosition.top < 1) {
+			setState('sticky');
+			stateSwitcher(); // edge case: check if bottom of sticky collides w/ bounding container
+		} else {
+				setState('normal');
+			}
+	
+		// window.addEventListener('scroll', stateSwitcher);
+		window.addEventListener('scroll', function () {
+			stateSwitcher();
+		}); // stateSwitcher changes, so cannot pass (ie. bind directly) here
+		window.addEventListener('resize', function () {
+			stateSwitcher();
+		});
+	}
+	
+	/**
+	 * [description]
+	 * @param  {[type]} function( [description]
+	 * @return {[type]}           [description]
+	 */
+	exports.stickyElement = stickyElement;
+	var stickyNav = exports.stickyNav = (function () {
+	
+		var handle, sections;
+	
+		var items = [],
+		    currentSection,
+		    ticking,
+		    isScrolling = false;
+	
+		/**
+	  * Generate the nav <li>'s and setup the Event Listeners
+	  * @return {void}
+	  */
+		function generateMenu() {
+	
+			var nav = handle.querySelector('ul');
+	
+			Array.prototype.forEach.call(sections, function (section) {
+				var title = section.getAttribute('data-nav'),
+				    id = section.id || '',
+				    item = document.createElement('li');
+	
+				item.innerHTML = '<a href="#' + id + '">' + title + '</a>';
+				item.addEventListener('click', function (e) {
+					e.preventDefault();
+					items.forEach(function (item) {
+						return item.className = '';
+					});
+					this.classList.add('active');
+					scrollPage(section);
+				});
+	
+				items.push(item);
+				nav.appendChild(item);
+			});
+	
+			window.addEventListener('scroll', updateSelectedItem);
+		}
+	
+		/**
+	  * Update the active nav item on window.scroll
+	  * @return {void}
+	  */
+		function updateSelectedItem() {
+			if (!ticking && !isScrolling) {
+				ticking = true;
+				window.requestAnimationFrame(checkSectionPosition);
 			}
 		}
 	
-		// engage engines
-		// --------------------
-		this.init(options);
-	};
-	
-	Carousel.prototype = {
-	
 		/**
-	  * Initialize the carousel and set some defaults
-	  * @param  {object} options List of key: value options
+	  * Check each section's getBoundingClientRect to determine which is active
 	  * @return {void}
 	  */
-		init: function init(options) {
+		function checkSectionPosition() {
+			var i;
 	
-			// set up options
-			this.options = this._extend(this.defaults, options);
-	
-			// find carousel elements
-			if (!(this.slideWrap = this.handle.querySelector(this.options.slideWrap))) {
-				return;
-			} // note: assignment
-			if (!(this.slides = this.slideWrap.querySelectorAll(this.options.slides))) {
-				return;
-			} // note: assignment
-	
-			this.numSlides = this.slides.length;
-	
-			// check if we have sufficient slides to make a carousel
-			if (this.numSlides < this.options.display) {
-				this.sliding = true;return;
-			} // this.sliding deactivates carousel. I will better-ify this one day. Maybe "this.active" ?
-			if (this.options.infinite) {
-				this._cloneSlides(this.options.display);
+			// Find i. Start at end and work back
+			for (i = sections.length; i--;) {
+				if (~ ~sections[i].getBoundingClientRect().top <= 0) {
+					// note: ~~ is Math.floor
+					break;
+				}
 			}
 	
-			this.go(0);
+			// Add active class to currentSection, or remove if nothing is currently active
+			if (i !== currentSection) {
+				items.forEach(function (item) {
+					return item.classList.remove('active');
+				});
+				if (i >= 0) {
+					items[i].classList.add('active');
+				}
+				currentSection = i;
+			}
 	
-			// set up Events
-			if (!this.options.disableDragging) {
-				if (this.isTouch) {
-					this.slideWrap.addEventListener('touchstart', this._dragStart.bind(this));
-					this.slideWrap.addEventListener('touchmove', this._drag.bind(this));
-					this.slideWrap.addEventListener('touchend', this._dragEnd.bind(this));
-					this.slideWrap.addEventListener('touchcancel', this._dragEnd.bind(this));
+			ticking = false;
+		}
+	
+		/**
+	  * Scroll the page to a particular page anchor
+	  * @param  {string} to	id of the element to scroll to
+	  * @return {void}
+	  */
+		function scrollPage(to, offset, callback) {
+	
+			offset = offset || 0;
+	
+			var root = document.body;
+			var duration = 500;
+			var startTime,
+			    startPos = root.scrollTop,
+			    endPos = ~ ~(to.getBoundingClientRect().top - offset);
+	
+			function easeInOutCubic(t, b, c, d) {
+				if ((t /= d / 2) < 1) {
+					return c / 2 * t * t * t + b;
+				}
+				return c / 2 * ((t -= 2) * t * t + 2) + b;
+			}
+	
+			function scroll(timestamp) {
+				startTime = startTime || timestamp;
+				var elapsed = timestamp - startTime;
+				root.scrollTop = easeInOutCubic(elapsed, startPos, endPos, duration);
+				if (elapsed < duration) {
+					requestAnimationFrame(scroll);
 				} else {
-					this.slideWrap.addEventListener('mousedown', this._dragStart.bind(this));
-					this.slideWrap.addEventListener('mousemove', this._drag.bind(this));
-					this.slideWrap.addEventListener('mouseup', this._dragEnd.bind(this));
-					this.slideWrap.addEventListener('mouseleave', this._dragEnd.bind(this));
+					isScrolling = false;
+					// callback.call(to);
 				}
 			}
 	
-			window.addEventListener('resize', this._updateView.bind(this));
-			window.addEventListener('orientationchange', this._updateView.bind(this));
-	
-			return this;
-		},
-	
-		/**
-	  * Go to the next slide
-	  * @return {void}
-	  */
-		next: function next() {
-			if (this.options.infinite || this.current !== this.numSlides - 1) {
-				this.go(this.current + 1);
-			} else {
-				this.go(this.numSlides - 1);
-			}
-		},
-	
-		/**
-	  * Go to the previous slide
-	  * @return {void}
-	  */
-		prev: function prev() {
-			if (this.options.infinite || this.current !== 0) {
-				this.go(this.current - 1);
-			} else {
-				this.go(0); // allow the slide to "snap" back if dragging and not infinite
-			}
-		},
-	
-		/**
-	  * Go to a particular slide. Prime the "to" slide by positioning it, and then calling _slide() if needed
-	  * @param  {int} to		the slide to go to
-	  * @return {void}
-	  */
-		go: function go(to) {
-			// var options = this.options,
-			// 	slides = this.slides;
-	
-			if (this.sliding) {
-				return;
-			}
-	
-			this.width = this.slides[0].offsetWidth; // check every time
-			this.offset = this.cloned * this.width;
-	
-			if (to < 0 || to >= this.numSlides) {
-				// position the carousel if infinite and at end of bounds
-				var temp = to < 0 ? this.current + this.numSlides : this.current - this.numSlides;
-				this._slide(-(temp * this.width - this.deltaX));
-	
-				/* jshint ignore:start */
-				this.slideWrap.offsetHeight; // force a repaint to actually position "to" slide. *Important*
-				/* jshint ignore:end */
-			}
-	
-			to = this._loop(to);
-			this._slide(-(to * this.width), true);
-	
-			if (this.options.onSlide) {
-				this.options.onSlide.call(this, to, this.current);
-			} // note: doesn't check if it's a function
-	
-			this._removeClass(this.slides[this.current], this.options.activeClass);
-			this._addClass(this.slides[to], this.options.activeClass);
-			this.current = to;
-		},
-	
-		// ------------------------------------- "mobile" starts here ------------------------------------- //
-	
-		/**
-	  * Start dragging (via touch)
-	  * @param  {event} e Touch event
-	  * @return {void}
-	  */
-		_dragStart: function _dragStart(e) {
-			var touches;
-	
-			if (this.sliding) {
-				return false;
-			}
-	
-			e = e.originalEvent || e;
-			touches = e.touches !== undefined ? e.touches : false;
-	
-			this.dragThresholdMet = false;
-			this.dragging = true;
-			this.cancel = false;
-			this.startClientX = touches ? touches[0].pageX : e.clientX;
-			this.startClientY = touches ? touches[0].pageY : e.clientY;
-			this.deltaX = 0; // reset for the case when user does 0,0 touch
-			this.deltaY = 0; // reset for the case when user does 0,0 touch
-	
-			if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-				e.target.draggable = false;
-			}
-		},
-	
-		/**
-	  * Update slides positions according to user's touch
-	  * @param  {event} e Touch event
-	  * @return {void}
-	  */
-		_drag: function _drag(e) {
-			var abs = Math.abs,
-			    // helper fn
-			touches;
-	
-			if (!this.dragging || this.cancel) {
-				return;
-			}
-	
-			e = e.originalEvent || e;
-			touches = e.touches !== undefined ? e.touches : false;
-			this.deltaX = (touches ? touches[0].pageX : e.clientX) - this.startClientX;
-			this.deltaY = (touches ? touches[0].pageY : e.clientY) - this.startClientY;
-	
-			// determine if we should do slide, or cancel and let the event pass through to the page
-			if (this.dragThresholdMet || abs(this.deltaX) > abs(this.deltaY) && abs(this.deltaX) > 10) {
-				// 10 from empirical testing
-	
-				e.preventDefault();
-				e.stopPropagation();
-				e.stopImmediatePropagation();
-	
-				this.dragThresholdMet = true;
-				this._slide(-(this.current * this.width - this.deltaX));
-			} else if (abs(this.deltaY) > abs(this.deltaX) && abs(this.deltaY) > 10) {
-				this.cancel = true;
-			}
-		},
-	
-		/**
-	  * Drag end, calculate slides' new positions
-	  * @param  {event} e Touch event
-	  * @return {void}
-	  */
-		_dragEnd: function _dragEnd() {
-			if (!this.dragging || this.cancel) {
-				return;
-			}
-	
-			this.dragging = false;
-	
-			if (this.deltaX !== 0 && Math.abs(this.deltaX) < this.dragThreshold) {
-				this.go(this.current);
-			} else if (this.deltaX > 0) {
-				// var jump = Math.round(this.deltaX / this.width);	// distance-based check to swipe multiple slides
-				// this.go(this.current - jump);
-				this.prev();
-			} else if (this.deltaX < 0) {
-				this.next();
-			}
-	
-			this.deltaX = 0;
-		},
-	
-		// ------------------------------------- carousel engine ------------------------------------- //
-	
-		/**
-	  * Helper function to translate slide in browser
-	  * @param  {[type]} el     [description]
-	  * @param  {[type]} offset [description]
-	  * @return {[type]}        [description]
-	  */
-		_slide: function _slide(offset, animate) {
-			offset -= this.offset;
-	
-			if (animate) {
-				this.sliding = true;
-				this._addClass(this.slideWrap, 'animate');
-	
-				var delay = 400;
-				var self = this;
-				setTimeout(function () {
-					self.sliding = false;
-					self._removeClass(self.slideWrap, 'animate');
-				}, delay);
-			}
-	
-			if (this.transform) {
-				this.slideWrap.style[this.transform] = 'translate3d(' + offset + 'px, 0, 0)';
-			} else {
-				this.slideWrap.style.left = offset + 'px';
-			}
-		},
-	
-		// ------------------------------------- "helper" functions ------------------------------------- //
-	
-		/**
-	  * Helper function. Calculate modulo of a slides position
-	  * @param  {int} val Slide's position
-	  * @return {int} the index modulo the # of slides
-	  */
-		_loop: function _loop(val) {
-			return (this.numSlides + val % this.numSlides) % this.numSlides;
-		},
-	
-		/**
-	  * Update the slides' position on a resize. This is throttled at 300ms
-	  * @return {void}
-	  */
-		_updateView: function _updateView() {
-			var self = this;
-			clearTimeout(this.timer);
-			this.timer = setTimeout(function () {
-				self.go(self.current);
-			}, 300);
-		},
-	
-		/**
-	  * Duplicate the first and last N slides so that infinite scrolling can work.
-	  * Depends on how many slides are visible at a time, and any outlying slides as well
-	  * @return {void}
-	  */
-		_cloneSlides: function _cloneSlides() {
-			var beg, end, duplicate, i;
-	
-			end = this.options.display + this.options.offscreen - 1;
-			end = end > this.numSlides ? this.numSlides : end;
-			beg = this.numSlides - this.options.offscreen - 1;
-	
-			// beginning
-			for (i = this.numSlides; i > beg; i--) {
-				duplicate = this.slides[i - 1].cloneNode(true); // cloneNode --> true is deep cloning
-				duplicate.removeAttribute('id');
-				duplicate.setAttribute('aria-hidden', 'true');
-				this._addClass(duplicate, 'clone');
-				this.slideWrap.insertBefore(duplicate, this.slideWrap.firstChild); // add duplicate to beg'n of slides
-				this.cloned++;
-			}
-	
-			// end
-			for (i = 0; i < end; i++) {
-				duplicate = this.slides[i].cloneNode(true);
-				duplicate.removeAttribute('id');
-				duplicate.setAttribute('aria-hidden', 'true');
-				this._addClass(duplicate, 'clone');
-				this.slideWrap.appendChild(duplicate);
-			}
-	
-			// this.slideWrap.style.marginLeft = (-offscreen)+'00%';					// use marginLeft (not left) so IE8/9 etc can use left to slide
-		},
-	
-		/**
-	  * Helper function to add a class to an element
-	  * @param  {int} i    Index of the slide to add a class to
-	  * @param  {string} name Class name
-	  * @return {void}
-	  */
-		_addClass: function _addClass(el, name) {
-			if (el.classList) {
-				el.classList.add(name);
-			} else {
-				el.className += ' ' + name;
-			}
-		},
-	
-		/**
-	  * Helper function to remove a class from an element
-	  * @param  {int} i    Index of the slide to remove class from
-	  * @param  {string} name Class name
-	  * @return {void}
-	  */
-		_removeClass: function _removeClass(el, name) {
-			if (el.classList) {
-				el.classList.remove(name);
-			} else {
-				el.className = el.className.replace(new RegExp('(^|\\b)' + name.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-			}
-		},
-	
-		/**
-	  * Helper function. Simple way to merge objects
-	  * @param  {object} obj A list of objects to extend
-	  * @return {object}     The extended object
-	  */
-		_extend: function _extend(obj) {
-			var args = Array.prototype.slice.call(arguments, 1);
-			for (var i = 0; i < args.length; i++) {
-				var source = args[i];
-				if (source) {
-					for (var prop in source) {
-						obj[prop] = source[prop];
-					}
-				}
-			}
-			return obj;
+			isScrolling = true;
+			requestAnimationFrame(scroll);
 		}
 	
-	};
+		return {
+			init: function init(options) {
+	
+				options = options || {};
+	
+				sections = document.querySelectorAll('[data-nav]');
+				handle = document.querySelector(options.nav);
+	
+				if (!sections || !handle) {
+					return false;
+				}
+	
+				var offset = options.offset || 0,
+				    bounded = options.bounded || false;
+				// onScroll = options.onScroll \| false
+	
+				generateMenu();
+				checkSectionPosition();
+				stickyElement(handle, bounded);
+	
+				window.addEventListener('scroll', updateSelectedItem);
+			}
+		};
+	})();
 	
 	// module.exports = {
-	// 	Carousel: Carousel,
+	// 	stickyElement: stickyElement,
+	// 	stickyNav: stickyNav
 	// };
+
+/***/ },
+/* 194 */
+/***/ function(module, exports) {
+
+	/* WEBPACK VAR INJECTION */(function(global) {"use strict";
+	
+	/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
+	var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {},
+	    Prism = (function () {
+	  var e = /\blang(?:uage)?-(?!\*)(\w+)\b/i,
+	      t = _self.Prism = { util: { encode: function encode(e) {
+	        return e instanceof n ? new n(e.type, t.util.encode(e.content), e.alias) : "Array" === t.util.type(e) ? e.map(t.util.encode) : e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
+	      }, type: function type(e) {
+	        return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1];
+	      }, clone: function clone(e) {
+	        var n = t.util.type(e);switch (n) {case "Object":
+	            var a = {};for (var r in e) {
+	              e.hasOwnProperty(r) && (a[r] = t.util.clone(e[r]));
+	            }return a;case "Array":
+	            return e.map && e.map(function (e) {
+	              return t.util.clone(e);
+	            });}return e;
+	      } }, languages: { extend: function extend(e, n) {
+	        var a = t.util.clone(t.languages[e]);for (var r in n) {
+	          a[r] = n[r];
+	        }return a;
+	      }, insertBefore: function insertBefore(e, n, a, r) {
+	        r = r || t.languages;var l = r[e];if (2 == arguments.length) {
+	          a = arguments[1];for (var i in a) {
+	            a.hasOwnProperty(i) && (l[i] = a[i]);
+	          }return l;
+	        }var o = {};for (var s in l) {
+	          if (l.hasOwnProperty(s)) {
+	            if (s == n) for (var i in a) {
+	              a.hasOwnProperty(i) && (o[i] = a[i]);
+	            }o[s] = l[s];
+	          }
+	        }return t.languages.DFS(t.languages, function (t, n) {
+	          n === r[e] && t != e && (this[t] = o);
+	        }), r[e] = o;
+	      }, DFS: function DFS(e, n, a) {
+	        for (var r in e) {
+	          e.hasOwnProperty(r) && (n.call(e, r, e[r], a || r), "Object" === t.util.type(e[r]) ? t.languages.DFS(e[r], n) : "Array" === t.util.type(e[r]) && t.languages.DFS(e[r], n, r));
+	        }
+	      } }, plugins: {}, highlightAll: function highlightAll(e, n) {
+	      for (var a, r = document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'), l = 0; a = r[l++];) {
+	        t.highlightElement(a, e === !0, n);
+	      }
+	    }, highlightElement: function highlightElement(n, a, r) {
+	      for (var l, i, o = n; o && !e.test(o.className);) {
+	        o = o.parentNode;
+	      }o && (l = (o.className.match(e) || [, ""])[1], i = t.languages[l]), n.className = n.className.replace(e, "").replace(/\s+/g, " ") + " language-" + l, o = n.parentNode, /pre/i.test(o.nodeName) && (o.className = o.className.replace(e, "").replace(/\s+/g, " ") + " language-" + l);var s = n.textContent,
+	          u = { element: n, language: l, grammar: i, code: s };if (!s || !i) return t.hooks.run("complete", u), void 0;if ((t.hooks.run("before-highlight", u), a && _self.Worker)) {
+	        var g = new Worker(t.filename);g.onmessage = function (e) {
+	          u.highlightedCode = e.data, t.hooks.run("before-insert", u), u.element.innerHTML = u.highlightedCode, r && r.call(u.element), t.hooks.run("after-highlight", u), t.hooks.run("complete", u);
+	        }, g.postMessage(JSON.stringify({ language: u.language, code: u.code, immediateClose: !0 }));
+	      } else u.highlightedCode = t.highlight(u.code, u.grammar, u.language), t.hooks.run("before-insert", u), u.element.innerHTML = u.highlightedCode, r && r.call(n), t.hooks.run("after-highlight", u), t.hooks.run("complete", u);
+	    }, highlight: function highlight(e, a, r) {
+	      var l = t.tokenize(e, a);return n.stringify(t.util.encode(l), r);
+	    }, tokenize: function tokenize(e, n) {
+	      var a = t.Token,
+	          r = [e],
+	          l = n.rest;if (l) {
+	        for (var i in l) {
+	          n[i] = l[i];
+	        }delete n.rest;
+	      }e: for (var i in n) {
+	        if (n.hasOwnProperty(i) && n[i]) {
+	          var o = n[i];o = "Array" === t.util.type(o) ? o : [o];for (var s = 0; s < o.length; ++s) {
+	            var u = o[s],
+	                g = u.inside,
+	                c = !!u.lookbehind,
+	                f = 0,
+	                h = u.alias;u = u.pattern || u;for (var p = 0; p < r.length; p++) {
+	              var d = r[p];if (r.length > e.length) break e;if (!(d instanceof a)) {
+	                u.lastIndex = 0;var m = u.exec(d);if (m) {
+	                  c && (f = m[1].length);var y = m.index - 1 + f,
+	                      m = m[0].slice(f),
+	                      v = m.length,
+	                      k = y + v,
+	                      b = d.slice(0, y + 1),
+	                      w = d.slice(k + 1),
+	                      P = [p, 1];b && P.push(b);var A = new a(i, g ? t.tokenize(m, g) : m, h);P.push(A), w && P.push(w), Array.prototype.splice.apply(r, P);
+	                }
+	              }
+	            }
+	          }
+	        }
+	      }return r;
+	    }, hooks: { all: {}, add: function add(e, n) {
+	        var a = t.hooks.all;a[e] = a[e] || [], a[e].push(n);
+	      }, run: function run(e, n) {
+	        var a = t.hooks.all[e];if (a && a.length) for (var r, l = 0; r = a[l++];) {
+	          r(n);
+	        }
+	      } } },
+	      n = t.Token = function (e, t, n) {
+	    this.type = e, this.content = t, this.alias = n;
+	  };if ((n.stringify = function (e, a, r) {
+	    if ("string" == typeof e) return e;if ("Array" === t.util.type(e)) return e.map(function (t) {
+	      return n.stringify(t, a, e);
+	    }).join("");var l = { type: e.type, content: n.stringify(e.content, a, r), tag: "span", classes: ["token", e.type], attributes: {}, language: a, parent: r };if (("comment" == l.type && (l.attributes.spellcheck = "true"), e.alias)) {
+	      var i = "Array" === t.util.type(e.alias) ? e.alias : [e.alias];Array.prototype.push.apply(l.classes, i);
+	    }t.hooks.run("wrap", l);var o = "";for (var s in l.attributes) {
+	      o += (o ? " " : "") + s + '="' + (l.attributes[s] || "") + '"';
+	    }return "<" + l.tag + ' class="' + l.classes.join(" ") + '" ' + o + ">" + l.content + "</" + l.tag + ">";
+	  }, !_self.document)) return _self.addEventListener ? (_self.addEventListener("message", function (e) {
+	    var n = JSON.parse(e.data),
+	        a = n.language,
+	        r = n.code,
+	        l = n.immediateClose;_self.postMessage(t.highlight(r, t.languages[a], a)), l && _self.close();
+	  }, !1), _self.Prism) : _self.Prism;var a = document.getElementsByTagName("script");return a = a[a.length - 1], a && (t.filename = a.src, document.addEventListener && !a.hasAttribute("data-manual") && document.addEventListener("DOMContentLoaded", t.highlightAll)), _self.Prism;
+	})();"undefined" != typeof module && module.exports && (module.exports = Prism), "undefined" != typeof global && (global.Prism = Prism);
+	Prism.languages.markup = { comment: /<!--[\w\W]*?-->/, prolog: /<\?[\w\W]+?\?>/, doctype: /<!DOCTYPE[\w\W]+?>/, cdata: /<!\[CDATA\[[\w\W]*?]]>/i, tag: { pattern: /<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i, inside: { tag: { pattern: /^<\/?[^\s>\/]+/i, inside: { punctuation: /^<\/?/, namespace: /^[^\s>\/:]+:/ } }, "attr-value": { pattern: /=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i, inside: { punctuation: /[=>"']/ } }, punctuation: /\/?>/, "attr-name": { pattern: /[^\s>\/]+/, inside: { namespace: /^[^\s>\/:]+:/ } } } }, entity: /&#?[\da-z]{1,8};/i }, Prism.hooks.add("wrap", function (a) {
+	  "entity" === a.type && (a.attributes.title = a.content.replace(/&amp;/, "&"));
+	}), Prism.languages.xml = Prism.languages.markup, Prism.languages.html = Prism.languages.markup, Prism.languages.mathml = Prism.languages.markup, Prism.languages.svg = Prism.languages.markup;
+	Prism.languages.css = { comment: /\/\*[\w\W]*?\*\//, atrule: { pattern: /@[\w-]+?.*?(;|(?=\s*\{))/i, inside: { rule: /@[\w-]+/ } }, url: /url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i, selector: /[^\{\}\s][^\{\};]*?(?=\s*\{)/, string: /("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/, property: /(\b|\B)[\w-]+(?=\s*:)/i, important: /\B!important\b/i, "function": /[-a-z0-9]+(?=\()/i, punctuation: /[(){};:]/ }, Prism.languages.css.atrule.inside.rest = Prism.util.clone(Prism.languages.css), Prism.languages.markup && (Prism.languages.insertBefore("markup", "tag", { style: { pattern: /(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i, lookbehind: !0, inside: Prism.languages.css, alias: "language-css" } }), Prism.languages.insertBefore("inside", "attr-value", { "style-attr": { pattern: /\s*style=("|').*?\1/i, inside: { "attr-name": { pattern: /^\s*style/i, inside: Prism.languages.markup.tag.inside }, punctuation: /^\s*=\s*['"]|['"]\s*$/, "attr-value": { pattern: /.+/i, inside: Prism.languages.css } }, alias: "language-css" } }, Prism.languages.markup.tag));
+	Prism.languages.clike = { comment: [{ pattern: /(^|[^\\])\/\*[\w\W]*?\*\//, lookbehind: !0 }, { pattern: /(^|[^\\:])\/\/.*/, lookbehind: !0 }], string: /(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/, "class-name": { pattern: /((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i, lookbehind: !0, inside: { punctuation: /(\.|\\)/ } }, keyword: /\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/, "boolean": /\b(true|false)\b/, "function": /[a-z0-9_]+(?=\()/i, number: /\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i, operator: /--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/, punctuation: /[{}[\];(),.:]/ };
+	Prism.languages.javascript = Prism.languages.extend("clike", { keyword: /\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/, number: /\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/, "function": /[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i }), Prism.languages.insertBefore("javascript", "keyword", { regex: { pattern: /(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/, lookbehind: !0 } }), Prism.languages.insertBefore("javascript", "class-name", { "template-string": { pattern: /`(?:\\`|\\?[^`])*`/, inside: { interpolation: { pattern: /\$\{[^}]+\}/, inside: { "interpolation-punctuation": { pattern: /^\$\{|\}$/, alias: "punctuation" }, rest: Prism.languages.javascript } }, string: /[\s\S]+/ } } }), Prism.languages.markup && Prism.languages.insertBefore("markup", "tag", { script: { pattern: /(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i, lookbehind: !0, inside: Prism.languages.javascript, alias: "language-javascript" } }), Prism.languages.js = Prism.languages.javascript;
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ }
 /******/ ]);
-//# sourceMappingURL=home.js.map
+//# sourceMappingURL=component.js.map
