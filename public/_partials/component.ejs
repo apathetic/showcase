@@ -1,39 +1,48 @@
-	<%- include("header", { title: title }) %>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>{{ title }}</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="../css/styles.css">
 
 
-<!--
-vars:
+	<!-- component stuffs -->
+	<link rel="stylesheet" href="{{ assets.css }}">
+	<script src="{{ assets.js }}"></script>
+	<!-- end component stuffs -->
 
-title
-next_page
-prev_page
-content
--->
+</head>
+
+<body>
 
 
 	<header>
-		<nav>
-		</nav>
-
-		<div class="container">
-			<a href="/"><i class="fa fa-home"></i></a>
-			<h1><%- title %></h1>
-		</div>
+		<h1>{{ title }}</h1>
 	</header>
 
+	<nav>
+		<div id="sticky">
+			<div class="container">
+				<nav data-autogenerate="true">
+					<ul></ul>
+				</nav>
+			</div>
+		</div>
+	</nav>
 
-
-	<main>
+	<main class="component left-rail">
 		<%- content %>
 	</main>
 
+	<footer>
+		<div class="container">
+		</div>
+	</footer>
 
-	<%- include("footer") %>
+	<script src="/js/component.js"></script>
 
-
-	<script src="https://cdn.rawgit.com/apathetic/stickynav/blob/master/dist/stickynav.min.js"></script>
-	<script>
-		stickyNav.init({
-			nav: '#sticky nav'
-		});
-	</script>
+</body>
+</html>
