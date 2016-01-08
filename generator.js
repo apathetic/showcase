@@ -87,16 +87,13 @@ function build() {
 
 		// scrape script tags
 		var script = noodle.html.select(content, {
-			selector: 'script'
+			selector: 'body script'
 		});
 
 		Promise.all([main, script]).then(function(scraped) {
-
 			var html = scraped[0].results[0];
 			var scripts = scraped[1].results.filter(function(s){ return s !== ''; });
-			console.log(scripts);
-
-			render(component, html);
+			render(component, html, scripts);
 		})
 		.catch(function(e){
 			console.log('  - Error: could not parse any data from the following component:', component);
@@ -108,9 +105,10 @@ function build() {
 	 * Generate a Component page from the scraped markup
 	 * @param  {String} component The name of the Component
 	 * @param  {String} html The HTML to use in the Component demo page
+	 * @param  {Array} scripts An array of (inlined) scripts to add to the generated page
 	 * @return {void}
 	 */
-	function render(component, html) {
+	function render(component, html, scripts) {
 		try {
 			var data = components[component];
 			var page = ejs.render(template, {
@@ -118,6 +116,7 @@ function build() {
 				js: data.assets.js,
 				css: data.assets.css,
 				content: html,
+				scripts: scripts,
 				filename: filename		// provides context for includes within the template
 			});
 

@@ -64,6 +64,13 @@ Next, update all component demo pages by running the following command. This wil
 $ npm run build
 ```
 
+
+Recap:
+- wrap documentation + demo in <main>
+- use data-nav on each section
+- put any scripts, etc. in <body> (not <head>, as they won't get scraped there).
+
+
 ##### Notes
 
 The default Showcase styles and JS are used, which includes the stickyNav component (if you'd like to use it); it'll look for data-nav attributes on each section and programmatically generate a navigation for you.
