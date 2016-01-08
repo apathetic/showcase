@@ -5,3 +5,5 @@
 www/
 public/build/
 node_modules/
+
+public/js/home.js
