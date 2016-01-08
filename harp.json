@@ -13,7 +13,7 @@
 				"useGenerator": true,
 				"assets": {
 					"html": "demo/index.html",
-					"css": "https://rawgit.com/apathetic/parallax/master/demo/parallax.css",
+					"css": "https://rawgit.com/apathetic/parallax/master/demo/styles.css",
 					"js": "https://rawgit.com/apathetic/parallax/master/dist/parallax.min.js"
 				}
 			},

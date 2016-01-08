@@ -34,7 +34,7 @@ function clean() {
 					console.log('  - removing:', filePath);
 				}
 			} catch(e) {
-				console.log('  - Error: did not find file: ', filePath);
+				console.log('  - Error: could not clean file: ', filePath);
 			}
 		}
 	}
@@ -79,12 +79,24 @@ function build() {
 	function scrape(component) {
 		var content = fs.readFileSync(__dirname + '/components/' + component + '/' + data.assets.html, 'UTF-8');
 
-		noodle.html.select(content, {
+		// scrape all HTML
+		var main = noodle.html.select(content, {
 			selector: 'main',
 			extract: 'html'
-		})
-		.then(function(scraped) {
-			render(component, scraped.results[0]);
+		});
+
+		// scrape script tags
+		var script = noodle.html.select(content, {
+			selector: 'script'
+		});
+
+		Promise.all([main, script]).then(function(scraped) {
+
+			var html = scraped[0].results[0];
+			var scripts = scraped[1].results.filter(function(s){ return s !== ''; });
+			console.log(scripts);
+
+			render(component, html);
 		})
 		.catch(function(e){
 			console.log('  - Error: could not parse any data from the following component:', component);
