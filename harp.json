@@ -10,8 +10,11 @@
 				"tags": ["js", "parallax"],
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/parallax/browse",
 				"github": "https://github.com/apathetic/parallax",
-				"demo": {
-					"index": "demo/index.html"
+				"useGenerator": true,
+				"assets": {
+					"html": "demo/index.html",
+					"css": "src/parallax.css",
+					"js": "src/parallax.js"
 				}
 			},
 			"navigator": {
@@ -23,7 +26,7 @@
 				"github": "https://github.com/apathetic/navigator"
 			},
 			"flexicarousel": {
-				"title": "Flexicarousel",
+				"title": "Flexicarousel.",
 				"author": "Wes Hatch",
 				"date": "2014-03-05",
 				"featured": true,

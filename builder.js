@@ -6,6 +6,7 @@ var components = config.globals.components;
 var path = 'public/components';
 
 
+
 /**
  * Deletes all files in the components/ directory
  * @return {void}
@@ -32,6 +33,7 @@ function clean() {
  */
 function build() {
 	console.log('Building new component files...');
+
 	var filename = __dirname + '/public/_partials/component.ejs';
 	var template = fs.readFileSync(filename, 'UTF-8');
 
@@ -39,38 +41,69 @@ function build() {
 
 		var data = components[component];
 
-		if (data.demo){
-			(function(component){
-				var content = fs.readFileSync(__dirname + '/components/' + component + '/' + data.demo, 'UTF-8');
+		if (data.useGenerator){
+			scrape(component);
+		}
+	}
 
-				noodle.html.select(content, {
-					selector: 'main',
-					extract: 'text'
-				})
-				.then(function(scraped) {
-					console.log(scraped);
+	process.exit();
 
-					try {
-						var page = ejs.render(template, {
-							prev_page: false,
-							next_page: 'a',
-							title: data.title,
-							content: content,
-							filename: filename		// provides context for includes
-						});
-						fs.writeFile(path + '/' + component, page);
-					} catch(e) {
-						console.log('Error: missing or incorrect Component data in JSON file', e);
-					}
-				});
-			})(component);
+
+
+	/**
+	 * [scrape description]
+	 * @param  {[type]} component [description]
+	 * @return {[type]}           [description]
+	 */
+	function scrape(component) {
+		var content = fs.readFileSync(__dirname + '/components/' + component + '/' + data.assets.html, 'UTF-8');
+
+		noodle.html.select(content, {
+			selector: 'main',
+			extract: 'html'
+		})
+		.then(function(scraped) {
+			render(component, scraped.results[0]);
+		});
+	}
+
+
+	/**
+	 * Generate a Component page from the scraped markup
+	 * @param  {String} component The name of the Component
+	 * @param  {String} html The HTML to use in the Component demo page
+	 * @return {void}
+	 */
+	function render(component, html) {
+		try {
+			var page = ejs.render(template, {
+				title: data.title,
+				// js: data.assets.js,
+				// css: data.assets.css,
+				content: html,
+				filename: filename		// provides context for includes within the template
+			});
+
+			// console.log(page);
+			fs.writeFile(path + '/_' + component + '.html', page);
+
+		} catch(e) {
+			console.log('Error: missing or incorrect Component data in JSON file', e);
 		}
 	}
 
 }
 
 
-module.exports = {
-	clean: clean,
-	build: build
-};
+// var argv = a...
+// if (clean) {
+// 	clean();
+// }
+//
+build();
+
+
+// module.exports = {
+// 	clean: clean,
+// 	build: build
+// };
