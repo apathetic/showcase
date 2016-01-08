@@ -6,22 +6,16 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Flexicarousel.</title>
 	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="https://rawgit.com/apathetic/flexicarousel/master/demo/styles.css">
-	<link rel="stylesheet" href="https://rawgit.com/apathetic/flexicarousel/master/src/flexicarousel.css">
 	<link rel="stylesheet" href="../css/styles.css">
 
-	<script src="../js/prism.js"></script>
+	<!-- component stuffs -->
+	<link rel="stylesheet" href="https://rawgit.com/apathetic/flexicarousel/master/demo/styles.css">
+	<link rel="stylesheet" href="https://rawgit.com/apathetic/flexicarousel/master/src/flexicarousel.css">
 	<script src="https://rawgit.com/apathetic/flexicarousel/master/dist/flexicarousel.min.js"></script>
-	<script src="https://rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"></script>
-
-	<script>
-		window.addEventListener('DOMContentLoaded', function() {
-			stickyNav.init({ nav: '#sticky' });
-		});
-	</script>
+	<!-- /component stuffs --->
 
 </head>
+
 <body>
 
 	<header>
@@ -315,127 +309,135 @@ container.querySelector('.next').addEventListener('click', carousel.next);
 
 			</div>
 		</section>
+
+		<script>
+
+			/**
+			 * Removes whitespace nodes. Useful to normalize inline-block layouts (IE)
+			 * @param  {DOMElement} handle the element to remove whitespace nodes from
+			 * @return {void}
+			 */
+			function removeEmptyNodes (handle) {
+				var spaces = _.filter(handle.childNodes,
+					function(el) {
+						return (el.nodeType === 3 && !/\S/.test(el.nodeValue));
+					});
+
+				_.each(spaces, function(space) {
+					handle.removeChild(space);
+				});
+			}
+
+
+			function updateNav(i) {
+
+				var bullets = this.handle.querySelectorAll('.demo-nav li');
+				var next = this.handle.querySelector('.demo-nav .next');
+				var prev = this.handle.querySelector('.demo-nav .prev');
+
+				if (!this.options.infinite) {
+					if (prev) {
+						prev.classList.toggle('disabled', i === 0);
+					}
+					if (next) {
+						next.classList.toggle('disabled', i + 1 >= this.numSlides);
+					}
+				}
+
+				if (bullets && bullets.length > 0) {
+					Array.prototype.forEach.call(bullets, function(bullet){
+						bullet.classList.remove('active');
+					});
+					bullets[i].classList.add('active');
+				}
+			}
+
+
+			// ===================================================================
+
+
+			var container = document.querySelector('#ten');
+			var bullets = container.querySelectorAll('.bullets li');
+			var carousel = new Carousel(container, {
+				'onSlide': updateNav,
+				'display': 4,
+				'offscreen': 2
+			});
+
+			container.querySelector('.prev').addEventListener('click', function(e){
+				e.preventDefault();
+				carousel.prev();
+			});
+
+			container.querySelector('.next').addEventListener('click', function(e){
+				e.preventDefault();
+				carousel.next();
+			});
+
+			Array.prototype.forEach.call(bullets, function(bullet, index){
+				bullet.addEventListener('click', function(e) {
+					e.preventDefault();
+					carousel.go(index);
+				});
+			});
+
+
+
+			// ===================================================================
+
+			var container2 = document.querySelector('#billion');
+			var carousel2 = new Carousel(container2, {
+				'infinite': false,
+				'onSlide': updateNav
+			});
+
+			container2.querySelector('.prev').addEventListener('click', function(e){
+				e.preventDefault();
+				carousel2.prev();
+			});
+
+			container2.querySelector('.next').addEventListener('click', function(e){
+				e.preventDefault();
+				carousel2.next();
+			});
+
+
+
+			// ===================================================================
+
+			var skip = 3;
+			var container3 = document.querySelector('#seven');
+			var carousel3 = new Carousel(container3, {
+				'infinite': true,
+				'display': 5,
+				'offscreen': skip
+			});
+
+			container3.querySelector('.prev').addEventListener('click', function(e){
+				e.preventDefault();
+				carousel3.go(carousel3.current - skip);
+			});
+
+			container3.querySelector('.next').addEventListener('click', function(e){
+				e.preventDefault();
+				carousel3.go(carousel3.current + skip);
+			});
+
+
+
+
+
+
+		</script>
+
 	</main>
 
-	<script>
+	<footer>
+		<div class="container">
+		</div>
+	</footer>
 
-		/**
-		 * Removes whitespace nodes. Useful to normalize inline-block layouts (IE)
-		 * @param  {DOMElement} handle the element to remove whitespace nodes from
-		 * @return {void}
-		 */
-		function removeEmptyNodes (handle) {
-			var spaces = _.filter(handle.childNodes,
-				function(el) {
-					return (el.nodeType === 3 && !/\S/.test(el.nodeValue));
-				});
-
-			_.each(spaces, function(space) {
-				handle.removeChild(space);
-			});
-		}
-
-
-		function updateNav(i) {
-
-			var bullets = this.handle.querySelectorAll('.demo-nav li');
-			var next = this.handle.querySelector('.demo-nav .next');
-			var prev = this.handle.querySelector('.demo-nav .prev');
-
-			if (!this.options.infinite) {
-				if (prev) {
-					prev.classList.toggle('disabled', i === 0);
-				}
-				if (next) {
-					next.classList.toggle('disabled', i + 1 >= this.numSlides);
-				}
-			}
-
-			if (bullets && bullets.length > 0) {
-				Array.prototype.forEach.call(bullets, function(bullet){
-					bullet.classList.remove('active');
-				});
-				bullets[i].classList.add('active');
-			}
-		}
-
-
-		// ===================================================================
-
-
-		var container = document.querySelector('#ten');
-		var bullets = container.querySelectorAll('.bullets li');
-		var carousel = new Carousel(container, {
-			'onSlide': updateNav,
-			'display': 4,
-			'offscreen': 2
-		});
-
-		container.querySelector('.prev').addEventListener('click', function(e){
-			e.preventDefault();
-			carousel.prev();
-		});
-
-		container.querySelector('.next').addEventListener('click', function(e){
-			e.preventDefault();
-			carousel.next();
-		});
-
-		Array.prototype.forEach.call(bullets, function(bullet, index){
-			bullet.addEventListener('click', function(e) {
-				e.preventDefault();
-				carousel.go(index);
-			});
-		});
-
-
-
-		// ===================================================================
-
-		var container2 = document.querySelector('#billion');
-		var carousel2 = new Carousel(container2, {
-			'infinite': false,
-			'onSlide': updateNav
-		});
-
-		container2.querySelector('.prev').addEventListener('click', function(e){
-			e.preventDefault();
-			carousel2.prev();
-		});
-
-		container2.querySelector('.next').addEventListener('click', function(e){
-			e.preventDefault();
-			carousel2.next();
-		});
-
-
-
-		// ===================================================================
-
-		var skip = 3;
-		var container3 = document.querySelector('#seven');
-		var carousel3 = new Carousel(container3, {
-			'infinite': true,
-			'display': 5,
-			'offscreen': skip
-		});
-
-		container3.querySelector('.prev').addEventListener('click', function(e){
-			e.preventDefault();
-			carousel3.go(carousel3.current - skip);
-		});
-
-		container3.querySelector('.next').addEventListener('click', function(e){
-			e.preventDefault();
-			carousel3.go(carousel3.current + skip);
-		});
-
-
-
-
-
-
-	</script>
+	<script src="/js/component.js"></script>
 
 </body>
 </html>
