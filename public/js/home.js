@@ -5855,7 +5855,7 @@
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	exports.default = Carousel;
+	exports.Carousel = Carousel;
 	/*
 	 * carousel ten billion
 	 * https://github.com/apathetic/flexicarousel-3
@@ -6256,10 +6256,6 @@
 		}
 	
 	};
-	
-	// module.exports = {
-	// 	Carousel: Carousel,
-	// };
 
 /***/ }
 /******/ ]);
