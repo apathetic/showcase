@@ -13,8 +13,8 @@
 				"useGenerator": true,
 				"assets": {
 					"html": "demo/index.html",
-					"css": "src/parallax.css",
-					"js": "src/parallax.js"
+					"css": "https://rawgit.com/apathetic/parallax/master/demo/parallax.css",
+					"js": "https://rawgit.com/apathetic/parallax/master/dist/parallax.min.js"
 				}
 			},
 			"navigator": {

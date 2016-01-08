@@ -6,6 +6,15 @@ var components = config.globals.components;
 var path = 'public/components';
 
 
+/**
+ * Helper function to consistently generate path/filenames
+ * @param  {[type]} component [description]
+ * @return {[type]}           [description]
+ */
+function getPath(component) {
+	return __dirname + '/' + path + '/' + component + '.html';
+}
+
 
 /**
  * Deletes all files in the components/ directory
@@ -13,17 +22,34 @@ var path = 'public/components';
  */
 function clean() {
 	console.log('Cleaning old component files...');
-	var files;
 
-	try { files = fs.readdirSync(path); }
-	catch(e) { console.log('Error: nothing to clean'); return; }
-
-	files.forEach(function(file) {
-		var filePath = path + '/' + file;
-		if (fs.statSync(filePath).isFile()) {
-			fs.unlinkSync(filePath);
+	// Only remove files that were programatically generated. If it was not, we leave it be.
+	for (var component in components) {
+		var data = components[component];
+		if (data.useGenerator){
+			try {
+				var filePath = getPath(component);
+				if (fs.statSync(filePath).isFile()) {
+					// fs.unlinkSync(filePath);
+					console.log('  - removing:', filePath);
+				}
+			} catch(e) {
+				console.log('  - Error: did not find file: ', filePath);
+			}
 		}
-	});
+	}
+
+	// var files;
+	//
+	// try { files = fs.readdirSync(path); }
+	// catch(e) { console.log('Error: nothing to clean'); return; }
+	//
+	// files.forEach(function(file) {
+	// 	var filePath = path + '/' + file;
+	// 	if (fs.statSync(filePath).isFile()) {
+	// 		fs.unlinkSync(filePath);
+	// 	}
+	// });
 }
 
 
@@ -38,16 +64,11 @@ function build() {
 	var template = fs.readFileSync(filename, 'UTF-8');
 
 	for (var component in components) {
-
 		var data = components[component];
-
 		if (data.useGenerator){
 			scrape(component);
 		}
 	}
-
-	process.exit();
-
 
 
 	/**
@@ -64,6 +85,9 @@ function build() {
 		})
 		.then(function(scraped) {
 			render(component, scraped.results[0]);
+		})
+		.catch(function(e){
+			console.log('  - Error: could not parse any data from the following component:', component);
 		});
 	}
 
@@ -76,19 +100,22 @@ function build() {
 	 */
 	function render(component, html) {
 		try {
+			var data = components[component];
 			var page = ejs.render(template, {
 				title: data.title,
-				// js: data.assets.js,
-				// css: data.assets.css,
+				js: data.assets.js,
+				css: data.assets.css,
 				content: html,
 				filename: filename		// provides context for includes within the template
 			});
 
 			// console.log(page);
-			fs.writeFile(path + '/_' + component + '.html', page);
+			var filePath = getPath(component);
+			console.log('  - generating:', filePath);
+			fs.writeFile(filePath, page);
 
 		} catch(e) {
-			console.log('Error: missing or incorrect Component data in JSON file', e);
+			console.log('  - Error: missing or incorrect Component data in JSON file', e);
 		}
 	}
 
@@ -100,10 +127,7 @@ function build() {
 // 	clean();
 // }
 //
+clean();
 build();
 
-
-// module.exports = {
-// 	clean: clean,
-// 	build: build
-// };
+// process.exit();		// this will exit before Noodle can return scraped contents

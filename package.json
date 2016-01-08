@@ -23,7 +23,7 @@
   },
   "scripts": {
     "start": "harp server",
-    "build": "node builder.js",
+    "build": "node generator.js",
     "dev": "webpack --progress --colors --watch",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "git-commit": "git add www && git commit -m 'gh-pages update'",
