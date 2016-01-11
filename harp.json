@@ -61,7 +61,7 @@
 				"tags": ["navigation", "javascript", "widget"],
 				"stash": "",
 				"github": "https://github.com/apathetic/stickynav",
-				"useGenerator": true,
+				"useGenerator": false,
 				"assets": {
 					"html": "demo/index.html",
 					"css": ["https://rawgit.com/apathetic/stickynav/master/demo/styles.css"],
@@ -80,7 +80,7 @@
 				"assets": {
 					"html": "demo/index.html",
 					"css": ["https://rawgit.com/apathetic/validator/master/demo/styles.css"],
-					"js": "https://rawgit.com/apathetic/stickynav/master/dist/validator.min.js"
+					"js": "https://rawgit.com/apathetic/validator/master/dist/validator.min.js"
 				}
 			},
 			"modals": {
