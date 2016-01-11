@@ -13,7 +13,7 @@
 				"useGenerator": true,
 				"assets": {
 					"html": "demo/index.html",
-					"css": "https://rawgit.com/apathetic/parallax/master/demo/styles.css",
+					"css": ["https://rawgit.com/apathetic/parallax/master/demo/styles.css"],
 					"js": "https://rawgit.com/apathetic/parallax/master/dist/parallax.min.js"
 				}
 			},
@@ -43,7 +43,6 @@
 				"tags": ["carousel", "ie9", "mobile", "js", "widget"],
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/flexicarousel/browse",
 				"github": "https://github.com/apathetic/flexicarousel",
-
 				"useGenerator": true,
 				"assets": {
 					"html": "demo/index.html",
@@ -62,12 +61,11 @@
 				"tags": ["navigation", "javascript", "widget"],
 				"stash": "",
 				"github": "https://github.com/apathetic/stickynav",
-
 				"useGenerator": true,
 				"assets": {
 					"html": "demo/index.html",
-					"css": "https://rawgit.com/apathetic/stickynav/master/demo/styles.css",
-					"js": "https://rawgit.com/apathetic/stickynav/master/dist/stickynav.min.j.min.js"
+					"css": ["https://rawgit.com/apathetic/stickynav/master/demo/styles.css"],
+					"js": "https://rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"
 				}
 			},
 			"validator": {
@@ -78,16 +76,15 @@
 				"featured": true,
 				"tags": ["js", "validation"],
 				"github": "https://github.com/apathetic/validator",
-
 				"useGenerator": true,
 				"assets": {
 					"html": "demo/index.html",
-					"css": "https://rawgit.com/apathetic/validator/master/demo/styles.css",
-					"js": "https://rawgit.com/apathetic/stickynav/master/dist/validator.min.j.min.js"
+					"css": ["https://rawgit.com/apathetic/validator/master/demo/styles.css"],
+					"js": "https://rawgit.com/apathetic/stickynav/master/dist/validator.min.js"
 				}
 			},
-			"modal": {
-				"title": "Modal.",
+			"modals": {
+				"title": "Modals.",
 				"author": "Wes Hatch",
 				"date": "Feb 28, 2013",
 				"blurb": "A basic yet powerful modal system with a straightforward API",
@@ -96,7 +93,7 @@
 				"useGenerator": true,
 				"assets": {
 					"html": "demo/index.html",
-					"css": "https://rawgit.com/apathetic/modals/master/demo/styles.css",
+					"css": ["https://rawgit.com/apathetic/modals/master/demo/styles.css"],
 					"js": "https://rawgit.com/apathetic/modals/master/dist/modals.min.js"
 				}
 			},
