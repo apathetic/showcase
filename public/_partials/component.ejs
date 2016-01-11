@@ -10,7 +10,9 @@
 
 
 	<!-- component stuffs -->
-	<link rel="stylesheet" href="<%- css %>">
+	<% for (var i=0; i<css.length; i++) { %>
+	<link rel="stylesheet" href="<%- css[i] %>">
+	<% } %>
 	<script src="<%- js %>"></script>
 	<!-- end component stuffs -->
 
