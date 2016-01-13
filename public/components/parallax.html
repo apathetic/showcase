@@ -4,22 +4,19 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Parallax.</title>
+	<title>Parallax</title>
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="../css/styles.css">
 
 
 	<!-- component stuffs -->
-	
 	<link rel="stylesheet" href="https://rawgit.com/apathetic/parallax/master/demo/styles.css">
-	
 	<script src="https://rawgit.com/apathetic/parallax/master/dist/parallax.min.js"></script>
-	<!-- end component stuffs -->
+	<!-- /component stuffs --->
 
 </head>
 
 <body>
-
 
 	<header>
 		<h1>Parallax.</h1>
@@ -36,12 +33,11 @@
 	</nav>
 
 	<main class="component left-rail">
-		
 
 		<section data-nav="About" id="about">
 			<div class="container">
 				<h2>About</h2>
-				<p>Parallax. Moves stuff on scroll.</p>
+				<p>A robust parallaxing base. Moves stuff on user-scroll.</p>
 
 				<h3>A Note On Approaches</h3>
 				<p>There are several ways to approach building a parallax effect on a site. Paul Lewis has
@@ -98,7 +94,7 @@
 				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 				<div class="clip">
-					<img class="parallax" data-parallax-speed="0.7" src="images/pastoral.jpg" alt="">
+					<img class="parallax" data-parallax-speed="0.7" src="../images/pastoral.jpg" alt="" />
 				</div>
 
 				<div class="clip">
@@ -160,8 +156,8 @@
 								<td>mode</td>
 								<td>integer</td>
 								<td>1</td>
-								<td>There are two different modes:<br>
-									Commence parallaxing items only when they appear within the viewport (mode 1, default) *<br><br>
+								<td>There are two different modes:<br />
+									Commence parallaxing items only when they appear within the viewport (mode 1, default) *<br /><br />
 									Parallax items universally, irrespective of where they are on the page. (mode 0)
 								</td>
 							</tr>
@@ -175,10 +171,10 @@
 								<td>data-parallax-speed</td>
 								<td>string</td>
 								<td>0</td>
-								<td>Data attribute on the element specifying the speed of parallax. Some examples:<br>
-									<b>-1</b>: translate up as fast as you scroll up (ie. moving upwards at 2x the scroll)<br>
-									<b>0</b>: normal (ie. no translation)<br>
-									<strong>1</strong>: translate down as fast as you scroll up (ie. "fixed" position)<br>
+								<td>Data attribute on the element specifying the speed of parallax. Some examples:<br />
+									<b>-1</b>: translate up as fast as you scroll up (ie. moving upwards at 2x the scroll)<br />
+									<b>0</b>: normal (ie. no translation)<br />
+									<strong>1</strong>: translate down as fast as you scroll up (ie. "fixed" position)<br />
 								</td>
 							</tr>
 						</tbody>
@@ -190,18 +186,22 @@
 			</div>
 		</section>
 
-	
+		<script>
+			window.addEventListener('DOMContentLoaded', function() {
+				parallax.init({ el: '.parallax' });
+			});
+		</script>
+
 	</main>
+
 
 	<footer>
 		<div class="container">
 		</div>
 	</footer>
 
-	
-	<script>window.addEventListener('DOMContentLoaded', function() {			parallax.init({ el: '.parallax' });		});</script>
-	
 	<script src="/js/component.js"></script>
 
 </body>
+
 </html>
