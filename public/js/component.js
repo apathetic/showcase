@@ -233,7 +233,7 @@
 	    } catch (e) {/* empty */}
 	    if (has(O, P)) return createDesc(!ObjectProto.propertyIsEnumerable.call(O, P), O[P]);
 	  };
-	  $.setDescs = defineProperties = function (O, Properties) {
+	  $.setDescs = defineProperties = function defineProperties(O, Properties) {
 	    anObject(O);
 	    var keys = $.getKeys(Properties),
 	        length = keys.length,
@@ -474,7 +474,7 @@
 	module.exports = {
 	  create: $Object.create,
 	  getProto: $Object.getPrototypeOf,
-	  isEnum: ({}).propertyIsEnumerable,
+	  isEnum: {}.propertyIsEnumerable,
 	  getDesc: $Object.getOwnPropertyDescriptor,
 	  setDesc: $Object.defineProperty,
 	  setDescs: $Object.defineProperties,
@@ -727,7 +727,7 @@
 
 	'use strict';
 	
-	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
 	module.exports = function (it) {
 	  return (typeof it === 'undefined' ? 'undefined' : _typeof(it)) === 'object' ? it !== null : typeof it === 'function';
@@ -739,7 +739,7 @@
 
 	"use strict";
 	
-	var hasOwnProperty = ({}).hasOwnProperty;
+	var hasOwnProperty = {}.hasOwnProperty;
 	module.exports = function (it, key) {
 	  return hasOwnProperty.call(it, key);
 	};
@@ -750,7 +750,7 @@
 
 	"use strict";
 	
-	var toString = ({}).toString;
+	var toString = {}.toString;
 	
 	module.exports = function (it) {
 	  return toString.call(it).slice(8, -1);
@@ -1034,7 +1034,7 @@
 	'use strict';
 	// ECMAScript 6 symbols shim
 	
-	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
 	var $ = __webpack_require__(4),
 	    global = __webpack_require__(6),
@@ -1162,7 +1162,7 @@
 	    args.push($$[i++]);
 	  }replacer = args[1];
 	  if (typeof replacer == 'function') $replacer = replacer;
-	  if ($replacer || !isArray(replacer)) replacer = function (key, value) {
+	  if ($replacer || !isArray(replacer)) replacer = function replacer(key, value) {
 	    if ($replacer) value = $replacer.call(this, key, value);
 	    if (!isSymbol(value)) return value;
 	  };
@@ -1187,7 +1187,7 @@
 	    return this._k;
 	  });
 	
-	  isSymbol = function (it) {
+	  isSymbol = function isSymbol(it) {
 	    return it instanceof $Symbol;
 	  };
 	
@@ -1306,12 +1306,12 @@
 
 	'use strict';
 	
-	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
 	// fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
 	var toIObject = __webpack_require__(25),
 	    getNames = __webpack_require__(4).getNames,
-	    toString = ({}).toString;
+	    toString = {}.toString;
 	
 	var windowNames = (typeof window === 'undefined' ? 'undefined' : _typeof(window)) == 'object' && Object.getOwnPropertyNames ? Object.getOwnPropertyNames(window) : [];
 	
@@ -1463,7 +1463,7 @@
 	};
 	module.exports = {
 	  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
-	  (function (test, buggy, set) {
+	  function (test, buggy, set) {
 	    try {
 	      set = __webpack_require__(14)(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
 	      set(test, []);
@@ -1476,7 +1476,7 @@
 	      if (buggy) O.__proto__ = proto;else set(O, proto);
 	      return O;
 	    };
-	  })({}, false) : undefined),
+	  }({}, false) : undefined),
 	  check: check
 	};
 
@@ -1507,9 +1507,9 @@
 	    TAG = __webpack_require__(33)('toStringTag')
 	// ES3 wrong here
 	,
-	    ARG = cof((function () {
+	    ARG = cof(function () {
 	  return arguments;
-	})()) == 'Arguments';
+	}()) == 'Arguments';
 	
 	module.exports = function (it) {
 	  var O, T, B;
@@ -3312,7 +3312,7 @@
 	  return P.resolve(test) === test;
 	};
 	
-	var USE_NATIVE = (function () {
+	var USE_NATIVE = function () {
 	  var works = false;
 	  function P2(x) {
 	    var self = new P(x);
@@ -3341,7 +3341,7 @@
 	    works = false;
 	  }
 	  return works;
-	})();
+	}();
 	
 	// helpers
 	var sameConstructor = function sameConstructor(a, b) {
@@ -3669,7 +3669,7 @@
 	
 	// Node.js
 	if (isNode) {
-	  notify = function () {
+	  notify = function notify() {
 	    process.nextTick(flush);
 	  };
 	  // browsers with MutationObserver
@@ -3677,12 +3677,12 @@
 	    var toggle = 1,
 	        node = document.createTextNode('');
 	    new Observer(flush).observe(node, { characterData: true }); // eslint-disable-line no-new
-	    notify = function () {
+	    notify = function notify() {
 	      node.data = toggle = -toggle;
 	    };
 	    // environments with maybe non-completely correct, but existent Promise
 	  } else if (Promise && Promise.resolve) {
-	      notify = function () {
+	      notify = function notify() {
 	        Promise.resolve().then(flush);
 	      };
 	      // for other environments - macrotask based on:
@@ -3692,7 +3692,7 @@
 	      // - onreadystatechange
 	      // - setTimeout
 	    } else {
-	        notify = function () {
+	        notify = function notify() {
 	          // strange IE + webpack dev server bug - use .call(global)
 	          macrotask.call(global, flush);
 	        };
@@ -3757,7 +3757,7 @@
 	  };
 	  // Node.js 0.8-
 	  if (__webpack_require__(20)(process) == 'process') {
-	    defer = function (id) {
+	    defer = function defer(id) {
 	      process.nextTick(ctx(run, id, 1));
 	    };
 	    // Browsers with MessageChannel, includes WebWorkers
@@ -3769,13 +3769,13 @@
 	      // Browsers with postMessage, skip WebWorkers
 	      // IE8 has postMessage, but it's sync & typeof its postMessage is 'object'
 	    } else if (global.addEventListener && typeof postMessage == 'function' && !global.importScripts) {
-	        defer = function (id) {
+	        defer = function defer(id) {
 	          global.postMessage(id + '', '*');
 	        };
 	        global.addEventListener('message', listner, false);
 	        // IE8-
 	      } else if (ONREADYSTATECHANGE in cel('script')) {
-	          defer = function (id) {
+	          defer = function defer(id) {
 	            html.appendChild(cel('script'))[ONREADYSTATECHANGE] = function () {
 	              html.removeChild(this);
 	              run.call(id);
@@ -3783,7 +3783,7 @@
 	          };
 	          // Rest old browsers
 	        } else {
-	            defer = function (id) {
+	            defer = function defer(id) {
 	              setTimeout(ctx(run, id, 1), 0);
 	            };
 	          }
@@ -3837,7 +3837,7 @@
 
 	'use strict';
 	
-	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
 	var $ = __webpack_require__(4),
 	    hide = __webpack_require__(8),
@@ -5020,7 +5020,7 @@
 
 	/* WEBPACK VAR INJECTION */(function(global, module, process) {"use strict";
 	
-	function _typeof(obj) { return obj && typeof Symbol !== "undefined" && obj.constructor === Symbol ? "symbol" : typeof obj; }
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol ? "symbol" : typeof obj; };
 	
 	/**
 	 * Copyright (c) 2014, Facebook, Inc.
@@ -5032,7 +5032,7 @@
 	 * the same directory.
 	 */
 	
-	!(function (global) {
+	!function (global) {
 	  "use strict";
 	
 	  var hasOwn = Object.prototype.hasOwnProperty;
@@ -5641,7 +5641,7 @@
 	      return ContinueSentinel;
 	    }
 	  };
-	})(
+	}(
 	// Among the various tricks for obtaining a reference to the global
 	// object, this seems to be the most reliable technique that does not
 	// use indirect eval (which violates Content Security Policy).
@@ -5884,7 +5884,7 @@
 	 * @return {[type]}           [description]
 	 */
 	exports.stickyElement = stickyElement;
-	var stickyNav = exports.stickyNav = (function () {
+	var stickyNav = exports.stickyNav = function () {
 	
 		var handle, sections;
 	
@@ -5910,7 +5910,7 @@
 				item.addEventListener('click', function (e) {
 					e.preventDefault();
 					items.forEach(function (item) {
-						return item.className = '';
+						item.className = '';
 					});
 					this.classList.add('active');
 					scrollPage(section);
@@ -5952,7 +5952,7 @@
 			// Add active class to currentSection, or remove if nothing is currently active
 			if (i !== currentSection) {
 				items.forEach(function (item) {
-					return item.classList.remove('active');
+					item.classList.remove('active');
 				});
 				if (i >= 0) {
 					items[i].classList.add('active');
@@ -6024,12 +6024,7 @@
 				window.addEventListener('scroll', updateSelectedItem);
 			}
 		};
-	})();
-	
-	// module.exports = {
-	// 	stickyElement: stickyElement,
-	// 	stickyNav: stickyNav
-	// };
+	}();
 
 /***/ },
 /* 194 */
@@ -6039,7 +6034,7 @@
 	
 	/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 	var _self = "undefined" != typeof window ? window : "undefined" != typeof WorkerGlobalScope && self instanceof WorkerGlobalScope ? self : {},
-	    Prism = (function () {
+	    Prism = function () {
 	  var e = /\blang(?:uage)?-(?!\*)(\w+)\b/i,
 	      t = _self.Prism = { util: { encode: function encode(e) {
 	        return e instanceof n ? new n(e.type, t.util.encode(e.content), e.alias) : "Array" === t.util.type(e) ? e.map(t.util.encode) : e.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/\u00a0/g, " ");
@@ -6083,7 +6078,7 @@
 	      for (var l, i, o = n; o && !e.test(o.className);) {
 	        o = o.parentNode;
 	      }o && (l = (o.className.match(e) || [, ""])[1], i = t.languages[l]), n.className = n.className.replace(e, "").replace(/\s+/g, " ") + " language-" + l, o = n.parentNode, /pre/i.test(o.nodeName) && (o.className = o.className.replace(e, "").replace(/\s+/g, " ") + " language-" + l);var s = n.textContent,
-	          u = { element: n, language: l, grammar: i, code: s };if (!s || !i) return t.hooks.run("complete", u), void 0;if ((t.hooks.run("before-highlight", u), a && _self.Worker)) {
+	          u = { element: n, language: l, grammar: i, code: s };if (!s || !i) return t.hooks.run("complete", u), void 0;if (t.hooks.run("before-highlight", u), a && _self.Worker) {
 	        var g = new Worker(t.filename);g.onmessage = function (e) {
 	          u.highlightedCode = e.data, t.hooks.run("before-insert", u), u.element.innerHTML = u.highlightedCode, r && r.call(u.element), t.hooks.run("after-highlight", u), t.hooks.run("complete", u);
 	        }, g.postMessage(JSON.stringify({ language: u.language, code: u.code, immediateClose: !0 }));
@@ -6129,21 +6124,21 @@
 	      } } },
 	      n = t.Token = function (e, t, n) {
 	    this.type = e, this.content = t, this.alias = n;
-	  };if ((n.stringify = function (e, a, r) {
+	  };if (n.stringify = function (e, a, r) {
 	    if ("string" == typeof e) return e;if ("Array" === t.util.type(e)) return e.map(function (t) {
 	      return n.stringify(t, a, e);
-	    }).join("");var l = { type: e.type, content: n.stringify(e.content, a, r), tag: "span", classes: ["token", e.type], attributes: {}, language: a, parent: r };if (("comment" == l.type && (l.attributes.spellcheck = "true"), e.alias)) {
+	    }).join("");var l = { type: e.type, content: n.stringify(e.content, a, r), tag: "span", classes: ["token", e.type], attributes: {}, language: a, parent: r };if ("comment" == l.type && (l.attributes.spellcheck = "true"), e.alias) {
 	      var i = "Array" === t.util.type(e.alias) ? e.alias : [e.alias];Array.prototype.push.apply(l.classes, i);
 	    }t.hooks.run("wrap", l);var o = "";for (var s in l.attributes) {
 	      o += (o ? " " : "") + s + '="' + (l.attributes[s] || "") + '"';
 	    }return "<" + l.tag + ' class="' + l.classes.join(" ") + '" ' + o + ">" + l.content + "</" + l.tag + ">";
-	  }, !_self.document)) return _self.addEventListener ? (_self.addEventListener("message", function (e) {
+	  }, !_self.document) return _self.addEventListener ? (_self.addEventListener("message", function (e) {
 	    var n = JSON.parse(e.data),
 	        a = n.language,
 	        r = n.code,
 	        l = n.immediateClose;_self.postMessage(t.highlight(r, t.languages[a], a)), l && _self.close();
 	  }, !1), _self.Prism) : _self.Prism;var a = document.getElementsByTagName("script");return a = a[a.length - 1], a && (t.filename = a.src, document.addEventListener && !a.hasAttribute("data-manual") && document.addEventListener("DOMContentLoaded", t.highlightAll)), _self.Prism;
-	})();"undefined" != typeof module && module.exports && (module.exports = Prism), "undefined" != typeof global && (global.Prism = Prism);
+	}();"undefined" != typeof module && module.exports && (module.exports = Prism), "undefined" != typeof global && (global.Prism = Prism);
 	Prism.languages.markup = { comment: /<!--[\w\W]*?-->/, prolog: /<\?[\w\W]+?\?>/, doctype: /<!DOCTYPE[\w\W]+?>/, cdata: /<!\[CDATA\[[\w\W]*?]]>/i, tag: { pattern: /<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i, inside: { tag: { pattern: /^<\/?[^\s>\/]+/i, inside: { punctuation: /^<\/?/, namespace: /^[^\s>\/:]+:/ } }, "attr-value": { pattern: /=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i, inside: { punctuation: /[=>"']/ } }, punctuation: /\/?>/, "attr-name": { pattern: /[^\s>\/]+/, inside: { namespace: /^[^\s>\/:]+:/ } } } }, entity: /&#?[\da-z]{1,8};/i }, Prism.hooks.add("wrap", function (a) {
 	  "entity" === a.type && (a.attributes.title = a.content.replace(/&amp;/, "&"));
 	}), Prism.languages.xml = Prism.languages.markup, Prism.languages.html = Prism.languages.markup, Prism.languages.mathml = Prism.languages.markup, Prism.languages.svg = Prism.languages.markup;

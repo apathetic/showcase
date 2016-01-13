@@ -2,33 +2,41 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Validator.</title>
-    <meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="https://rawgit.com/apathetic/validator/master/demo/styles.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Validator.</title>
+	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="../css/styles.css">
 
-	<script src="../js/prism.js"></script>
-	<script src="https://rawgit.com/apathetic/validator/master/dist/validator.min.js"></script>
-	<script src="https://rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"></script>
 
-	<script>
-		window.addEventListener('DOMContentLoaded', function() {
-			stickyNav.init({ nav: '#sticky' });
-		});
-	</script>
+	<!-- component stuffs -->
+	
+	<link rel="stylesheet" href="https://rawgit.com/apathetic/validator/master/demo/styles.css">
+	
+	<script src="https://rawgit.com/apathetic/validator/master/dist/validator.min.js"></script>
+	<!-- end component stuffs -->
 
 </head>
 
 <body>
 
+
 	<header>
 		<h1>Validator.</h1>
 	</header>
 
+	<nav>
+		<div id="sticky">
+			<div class="container">
+				<nav data-autogenerate="true">
+					<ul></ul>
+				</nav>
+			</div>
+		</div>
+	</nav>
+
 	<main class="component left-rail">
+		
 
 		<nav>
 			<div id="sticky">
@@ -67,23 +75,23 @@
 			<div class="container">
 				<h2>Demo</h2>
 
-				<form id="demo-form" novalidate>
+				<form id="demo-form" novalidate="">
 
 					<div class="form-group">
 						<label class="font-small" for="name">Your Name</label>
-						<input id="name" name="name" required />
+						<input id="name" name="name" required>
 						<span class="error-message font-small">Please enter your name</span>
 					</div>
 
 					<div class="form-group">
 						<label class="font-small" for="email">Your Email</label>
-						<input id="email" name="email" data-validate="email" required />
+						<input id="email" name="email" data-validate="email" required>
 						<span class="error-message font-small">Please enter a valid email</span>
 					</div>
 
 					<div class="form-group">
 						<label class="font-small" for="phone">Phone</label>
-						<input id="phone" name="phone" data-validate="phone" required />
+						<input id="phone" name="phone" data-validate="phone" required>
 						<span class="error-message font-small">Please enter your phone number and area code</span>
 					</div>
 
@@ -113,14 +121,14 @@
 
 					<ul class="radio-buttons form-group">
 						<li>
-							<input type="radio" name="gender" value="male" id="male" required />
-							<label class="font-small" class="button button-white" for="male">
+							<input type="radio" name="gender" value="male" id="male" required>
+							<label class="button button-white" for="male">
 								<i class="icon icon-male"></i>Male
 							</label>
 						</li>
 						<li>
-							<input type="radio" name="gender" value="female" id="female" required />
-							<label class="font-small" class="button button-white" for="female">
+							<input type="radio" name="gender" value="female" id="female" required>
+							<label class="button button-white" for="female">
 								<i class="icon icon-female"></i>Female
 							</label>
 						</li>
@@ -161,15 +169,13 @@
 	var validator = new Validator();
 	var form = document.querySelector('#demo-form');
 	var valid = validator.check(form);
-				</pre></code>
+				</code></pre>
 
 				<h3>Adding a custom rule</h3>
 				<pre><code class="language-javascript">
 	// add a rule called "count" that checks an input's length
 	validator.updateRule('count', function count(val) {
-		return val.length <= 40;
-	});
-				</pre></code>
+		return val.length <= 40;="" });=""></=></code></pre>
 
 
 
@@ -178,7 +184,7 @@
 
 		<section data-nav="Options" id="options">
 			<div class="container">
-				<h2>Options</h2>
+				<h2>API</h2>
 				<div class="table-responsive">
 					<table class="table table-bordered table-striped">
 						<thead>
@@ -191,14 +197,14 @@
 						<tbody>
 							<tr>
 								<td>check</td>
-								<td>element,<br />function success()</td>
+								<td>element,<br>function success()</td>
 								<td>Pass in a field or a DOM element. Checks if field (or fields within the DOM element)
 									are valid according to any data-validate / required attributes on each field.
 								</td>
 							</tr>
 							<tr>
 								<td>updateRule</td>
-								<td>name,<br />function validator(value)</td>
+								<td>name,<br>function validator(value)</td>
 								<td>Create your own validation rule. Give it a <em>name</em> and the function to be used when
 									validating a field. Use your new rule by placing <em>data-validate="name"</em> on a field
 									to validate. The validation function gets the field value to check against.
@@ -210,84 +216,18 @@
 			</div>
 		</section>
 
+	
 	</main>
-
 
 	<footer>
 		<div class="container">
 		</div>
 	</footer>
 
-
-	<script>
-		function validate() {
-			var form = document.querySelector('#demo-form');
-			var message = document.querySelector('.valid');
-			var validator = new Validator();
-
-			/*
-			 * You update it with your own rules!
-			 */
-			validator.updateRule('count', function count(val) {
-				return val.length <= 40;
-			});
-
-			form.addEventListener('submit', function(e) {
-				e.preventDefault();
-
-				/**
-				 * Lets validate the form in "groups". We can divide it up however we like,
-				 * or pass in the form in its entirety
-				 */
-				var groups = form.querySelectorAll('.form-group');
-				var valid = true;
-
-				Array.prototype.forEach.call(groups, function(group){
-
-					/*
-					 * Here is where we check every form group. If any fail, we keep track
-					 * with valid but still keep going through the rest -- we want to check
-					 * them too and to bind the appropriate listeners
-					 */
-					valid = validator.check(group) && valid;
-				});
-
-				if (valid) {
-					message.classList.remove('hidden');
-				} else {
-					e.stopImmediatePropagation();
-					message.classList.add('hidden');
-					document.querySelector('.has-error').scrollIntoView();		// grabs first in document
-				}
-			});
-		}
-
-		function characterCounter() {
-			var textarea = document.querySelector('textarea');
-			var count = document.querySelector('.character-count');
-			var num = count ? count.querySelector('i') : 0;
-
-			textarea.addEventListener('keyup', checkLength);
-			checkLength();
-
-			function checkLength(e) {
-				var remaining = 40 - textarea.value.length;
-				num.innerHTML = remaining;
-				if (remaining < 0) {
-					count.classList.add('has-error');
-				} else {
-					count.classList.remove('has-error');
-				}
-			}
-		}
-
-		window.addEventListener('DOMContentLoaded', validate);
-		window.addEventListener('DOMContentLoaded', characterCounter);
-
-
-</script>
-
+	
+	<script>function validate() {			var form = document.querySelector('#demo-form');			var message = document.querySelector('.valid');			var validator = new Validator();			/*			 * You update it with your own rules!			 */			validator.updateRule('count', function count(val) {				return val.length <= 40;			});			form.addEventListener('submit', function(e) {				e.preventDefault();				/**				 * Lets validate the form in "groups". We can divide it up however we like,				 * or pass in the form in its entirety				 */				var groups = form.querySelectorAll('.form-group');				var valid = true;				Array.prototype.forEach.call(groups, function(group){					/*					 * Here is where we check every form group. If any fail, we keep track					 * with valid but still keep going through the rest -- we want to check					 * them too and to bind the appropriate listeners					 */					valid = validator.check(group) && valid;				});				if (valid) {					message.classList.remove('hidden');				} else {					e.stopImmediatePropagation();					message.classList.add('hidden');					document.querySelector('.has-error').scrollIntoView();		// grabs first in document				}			});		}		function characterCounter() {			var textarea = document.querySelector('textarea');			var count = document.querySelector('.character-count');			var num = count ? count.querySelector('i') : 0;			textarea.addEventListener('keyup', checkLength);			checkLength();			function checkLength(e) {				var remaining = 40 - textarea.value.length;				num.innerHTML = remaining;				if (remaining < 0) {					count.classList.add('has-error');				} else {					count.classList.remove('has-error');				}			}		}		window.addEventListener('DOMContentLoaded', validate);		window.addEventListener('DOMContentLoaded', characterCounter);</script>
+	
+	<script src="/js/component.js"></script>
 
 </body>
-
 </html>

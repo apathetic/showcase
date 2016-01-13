@@ -6,30 +6,39 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<title>Navigator.</title>
 	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="https://rawgit.com/apathetic/navigator/master/src/panel-styles.css">
-	<link rel="stylesheet" href="https://rawgit.com/apathetic/navigator/master/demo/styles.css">
 	<link rel="stylesheet" href="../css/styles.css">
 
-	<script src="../js/prism.js"></script>
-	<script src="https://rawgit.com/apathetic/navigator/master/dist/nav.min.js"></script>
-	<script src="https://rawgit.com/apathetic/stickynav/master/dist/stickynav.min.js"></script>
 
-	<script>
-		window.addEventListener('DOMContentLoaded', function() {
-			stickyNav.init({ nav: '#sticky' });
-		});
-	</script>
+	<!-- component stuffs -->
+	
+	<link rel="stylesheet" href="https://rawgit.com/apathetic/navigator/master/src/panel-styles.css">
+	
+	<link rel="stylesheet" href="https://rawgit.com/apathetic/navigator/master/demo/styles.css">
+	
+	<script src="https://rawgit.com/apathetic/navigator/master/dist/nav.min.js"></script>
+	<!-- end component stuffs -->
 
 </head>
 
 <body>
 
+
 	<header>
 		<h1>Navigator.</h1>
 	</header>
 
+	<nav>
+		<div id="sticky">
+			<div class="container">
+				<nav data-autogenerate="true">
+					<ul></ul>
+				</nav>
+			</div>
+		</div>
+	</nav>
+
 	<main class="component left-rail">
+		
 
 		<nav>
 			<div id="sticky">
@@ -48,7 +57,7 @@
 			</div>
 		</section>
 
-		<section data-nav="Download" id="download" >
+		<section data-nav="Download" id="download">
 			<div class="container">
 				<h2>Download</h2>
 				<h3>Stash</h3>
@@ -119,7 +128,7 @@
 
 				</div>
 
-				<hr />
+				<hr>
 
 				<h3>Fade transition</h3>
 				<div id="demo-three" class="carousel fx-fade">
@@ -181,7 +190,7 @@
 
 				</div>
 
-				<hr />
+				<hr>
 
 				<h3>Multiple transitions</h3>
 				<div id="demo-four" class="carousel fx-fade fx-slide">
@@ -280,7 +289,7 @@
 	var navigator = new Nav(container, {
 		slides: ".panel",
 	});
-				</pre></code>
+				</code></pre>
 
 				<h5>Bullet Navigation</h5>
 				<pre><code class="language-javascript">
@@ -376,6 +385,7 @@
 			</div>
 		</section>
 
+	
 	</main>
 
 	<footer>
@@ -383,6 +393,14 @@
 		</div>
 	</footer>
 
-</body>
+	
+	<script>window.addEventListener('DOMContentLoaded', function() {							var container1 = document.querySelector('#demo-one .panels');							var bullets1 = document.querySelectorAll('#demo-one nav li');							var prev1 = document.querySelector('#demo-one .prev');							var next1 = document.querySelector('#demo-one .next');							var navigation1 = new Nav(container1, {								slides: ".panel",								onSlide: function(to, from){									bullets1[from].className = '';									bullets1[to].className = 'active';								}							});							Array.prototype.forEach.call(bullets1, function(item, index){								item.addEventListener('click', function(e) {									e.preventDefault();									navigation1.go(index);								});							});							prev1.addEventListener('click', function(e) {								e.preventDefault();								navigation1.go(navigation1.current - 1);							});							next1.addEventListener('click', function(e) {								e.preventDefault();								navigation1.go(navigation1.current + 1);							});						});</script>
+	
+	<script>window.addEventListener('DOMContentLoaded', function() {							// ------------------------------------------------------------------							// Fade transition							var container3 = document.querySelector('#demo-three .panels');							var bullets3 = document.querySelectorAll('#demo-three nav li');							var prev3 = document.querySelector('#demo-three .prev');							var next3 = document.querySelector('#demo-three .next');							var nav3 = new Nav(container3, {								slides: ".panel",								onSlide: function(to, from){									bullets3[from].className = '';									bullets3[to].className = 'active';								}							});							Array.prototype.forEach.call(bullets3, function(item, index){								item.addEventListener('click', function(e) {									e.preventDefault();									nav3.go(index);								});							});							prev3.addEventListener('click', function(e) {								e.preventDefault();								nav3.go(nav3.current - 1);							});							next3.addEventListener('click', function(e) {								e.preventDefault();								nav3.go(nav3.current + 1);							});						});</script>
+	
+	<script>window.addEventListener('DOMContentLoaded', function() {						var container4 = document.querySelector('#demo-four .panels');						var bullets4 = document.querySelectorAll('#demo-four nav li');						var prev4 = document.querySelector('#demo-four .prev');						var next4 = document.querySelector('#demo-four .next');						var nav4 = new Nav(container4, {							slides: ".panel",							onSlide: function(to, from){								bullets4[from].className = '';								bullets4[to].className = 'active';							}						});						Array.prototype.forEach.call(bullets4, function(item, index){							item.addEventListener('click', function(e) {								e.preventDefault();								nav4.go(index);							});						});						prev4.addEventListener('click', function(e) {							e.preventDefault();							nav4.go(nav4.current - 1);						});						next4.addEventListener('click', function(e) {							e.preventDefault();							nav4.go(nav4.current + 1);						});					});</script>
+	
+	<script src="/js/component.js"></script>
 
+</body>
 </html>
