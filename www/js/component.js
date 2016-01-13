@@ -5909,9 +5909,11 @@
 				item.innerHTML = '<a href="#' + id + '">' + title + '</a>';
 				item.addEventListener('click', function (e) {
 					e.preventDefault();
+	
 					items.forEach(function (item) {
-						item.className = '';
+						return item.className = '';
 					});
+	
 					this.classList.add('active');
 					scrollPage(section);
 				});
@@ -5951,9 +5953,11 @@
 	
 			// Add active class to currentSection, or remove if nothing is currently active
 			if (i !== currentSection) {
+	
 				items.forEach(function (item) {
-					item.classList.remove('active');
+					return item.classList.remove('active');
 				});
+	
 				if (i >= 0) {
 					items[i].classList.add('active');
 				}
