@@ -27,7 +27,7 @@
     "dev": "webpack --progress --colors --watch",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js",
     "git-commit": "git add www && git commit -m 'gh-pages update'",
-    "git-push": "git push github `git subtree split --prefix www harp`:gh-pages --force",
+    "git-push": "git push github `git subtree split --prefix www webpack`:gh-pages --force",
     "deploy": "npm run compile && npm run git-commit && npm run git-push"
   },
   "author": "wes hatch",

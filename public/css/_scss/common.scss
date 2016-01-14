@@ -64,6 +64,13 @@ h6 {
 	line-height: 1;
 }
 
+
+@include at-breakpoint('mobile') {
+	h1 {
+		font-size: 3em;
+	}
+}
+
 p {
 	margin-bottom: 1em;
 }
@@ -116,7 +123,6 @@ a {
 	border-radius: 3px;
 	display: inline-block;
 	width: 100%;
-	// font-family: $font-HP;
 	font-size: 1rem;
 	padding: 1em;	// 1.2em;
 }
@@ -189,7 +195,6 @@ table {
 .table > tbody > tr > th,
 .table > tbody > tr > td {
 	padding: 12px;
-	// line-height: 1.42857143;
 	vertical-align: top;
 	border-top: 1px solid $color-border;
 }
@@ -215,7 +220,3 @@ th {
 	max-width: 1280px;
 	margin: 0 10%;
 }
-
-// main {
-// 	padding: 48px 0 100px;
-// }

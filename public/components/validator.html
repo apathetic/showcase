@@ -10,9 +10,9 @@
 
 
 	<!-- component stuffs -->
-	
+
 	<link rel="stylesheet" href="https://rawgit.com/apathetic/validator/master/demo/styles.css">
-	
+
 	<script src="https://rawgit.com/apathetic/validator/master/dist/validator.min.js"></script>
 	<!-- end component stuffs -->
 
@@ -36,7 +36,7 @@
 	</nav>
 
 	<main class="component left-rail">
-		
+
 
 		<nav>
 			<div id="sticky">
@@ -122,15 +122,11 @@
 					<ul class="radio-buttons form-group">
 						<li>
 							<input type="radio" name="gender" value="male" id="male" required>
-							<label class="button button-white" for="male">
-								<i class="icon icon-male"></i>Male
-							</label>
+							<label class="font-small" for="male">Male</label>
 						</li>
 						<li>
 							<input type="radio" name="gender" value="female" id="female" required>
-							<label class="button button-white" for="female">
-								<i class="icon icon-female"></i>Female
-							</label>
+							<label class="font-small" for="female">Female</label>
 						</li>
 					</ul>
 
@@ -175,9 +171,9 @@
 				<pre><code class="language-javascript">
 	// add a rule called "count" that checks an input's length
 	validator.updateRule('count', function count(val) {
-		return val.length <= 40;="" });=""></=></code></pre>
-
-
+		return val.length <= 40;
+	});
+				</code></pre>
 
 			</div>
 		</section>
@@ -216,7 +212,7 @@
 			</div>
 		</section>
 
-	
+
 	</main>
 
 	<footer>
@@ -224,10 +220,10 @@
 		</div>
 	</footer>
 
-	
-	<script>function validate() {			var form = document.querySelector('#demo-form');			var message = document.querySelector('.valid');			var validator = new Validator();			/*			 * You update it with your own rules!			 */			validator.updateRule('count', function count(val) {				return val.length <= 40;			});			form.addEventListener('submit', function(e) {				e.preventDefault();				/**				 * Lets validate the form in "groups". We can divide it up however we like,				 * or pass in the form in its entirety				 */				var groups = form.querySelectorAll('.form-group');				var valid = true;				Array.prototype.forEach.call(groups, function(group){					/*					 * Here is where we check every form group. If any fail, we keep track					 * with valid but still keep going through the rest -- we want to check					 * them too and to bind the appropriate listeners					 */					valid = validator.check(group) && valid;				});				if (valid) {					message.classList.remove('hidden');				} else {					e.stopImmediatePropagation();					message.classList.add('hidden');					document.querySelector('.has-error').scrollIntoView();		// grabs first in document				}			});		}		function characterCounter() {			var textarea = document.querySelector('textarea');			var count = document.querySelector('.character-count');			var num = count ? count.querySelector('i') : 0;			textarea.addEventListener('keyup', checkLength);			checkLength();			function checkLength(e) {				var remaining = 40 - textarea.value.length;				num.innerHTML = remaining;				if (remaining < 0) {					count.classList.add('has-error');				} else {					count.classList.remove('has-error');				}			}		}		window.addEventListener('DOMContentLoaded', validate);		window.addEventListener('DOMContentLoaded', characterCounter);</script>
-	
-	<script src="/js/component.js"></script>
+
+	<script>function validate() {			var form = document.querySelector('#demo-form');			var message = document.querySelector('.valid');			var validator = new Validator();			/*			 * You update it with your own rules!			 */			validator.updateRule('count', function count(val) {				return val.length <= 40;			});			form.addEventListener('submit', function(e) {				e.preventDefault();				/**				 * Lets validate the form in "groups". We can divide it up however we like,				 * or pass in the form in its entirety				 */				var groups = form.querySelectorAll('.form-group');				var valid = true;				Array.prototype.forEach.call(groups, function(group){					/*					 * Here is where we check every form group. If any fail, we keep track					 * with valid but still keep going through the rest -- we want to check					 * them too and to bind the appropriate listeners					 */					valid = validator.check(group) && valid;				});				if (valid) {					message.classList.remove('hidden');				} else {					e.stopImmediatePropagation();					message.classList.add('hidden');					document.querySelector('.has-error').scrollIntoView();				}			});		}		function characterCounter() {			var textarea = document.querySelector('textarea');			var count = document.querySelector('.character-count');			var num = count ? count.querySelector('i') : 0;			textarea.addEventListener('keyup', checkLength);			checkLength();			function checkLength(e) {				var remaining = 40 - textarea.value.length;				num.innerHTML = remaining;				if (remaining < 0) {					count.classList.add('has-error');				} else {					count.classList.remove('has-error');				}			}		}		window.addEventListener('DOMContentLoaded', validate);		window.addEventListener('DOMContentLoaded', characterCounter);</script>
+
+	<script src="../js/component.js"></script>
 
 </body>
 </html>

@@ -77,20 +77,24 @@ function build() {
 	 * @return {[type]}           [description]
 	 */
 	function scrape(component) {
+		var content,
+			main,
+			script;
+
 		try {
-			var content = fs.readFileSync(__dirname + '/components/' + component + '/' + data.assets.html, 'UTF-8');
+			content = fs.readFileSync(__dirname + '/components/' + component + '/' + data.assets.html, 'UTF-8');
 		} catch(e) {
 			console.log('  - Error: could not find the following file:', data.assets.html);
 		}
 
 		// scrape all HTML
-		var main = noodle.html.select(content, {
+		main = noodle.html.select(content, {
 			selector: 'main',
 			extract: 'html'
 		});
 
 		// scrape script tags
-		var script = noodle.html.select(content, {
+		script = noodle.html.select(content, {
 			selector: 'body script'
 		});
 

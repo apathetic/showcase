@@ -43,7 +43,7 @@
 				"tags": ["carousel", "ie9", "mobile", "js", "widget"],
 				"stash": "https://stash.hugeinc.com/projects/CMPTS/repos/flexicarousel/browse",
 				"github": "https://github.com/apathetic/flexicarousel",
-				"useGenerator": true,
+				"useGenerator": false,
 				"assets": {
 					"html": "demo/index.html",
 					"css": [

@@ -30,7 +30,7 @@ Description:	Styles for Landing Page
 	header {
 		text-align: center;
 		color: #999;
-		min-height: 150px;
+		// min-height: 150px;
 		background: $color-grey-dark;
 
 		.v-center {
@@ -55,59 +55,8 @@ Description:	Styles for Landing Page
 			margin: 0 auto;
 		}
 
-		// ul.wrap {
-		// 	min-height: 500px;
-		// 	li {
-		// 		padding-top: 160px;
-		// 	}
-		// }
-
-
-		// .fa-home {
-		// 	font-size: 40px;
-		// 	color: #fff;
-		// 	margin-right: 20px;
-		// }
-
 		nav {
 			position: static;
-			// 	position:absolute;
-			// 	bottom: 0;
-			// 	left:0;
-			// 	width:100%;
-			// 	height:0;
-			// 	z-index: 1234;
-			//
-			// 	a {
-			// 		display: block;
-			// 		line-height: 40px;
-			// 		top: 54px;
-			// 		&:after {
-			// 			display: inline-block;
-			// 			width: 40px;
-			// 			height: 40px;
-			// 			border-radius: 20px;
-			// 			background: #fff;
-			// 			margin:0 12px;
-			// 			text-align: center;
-			// 			font: 24px / 40px Heiti, 'Lucida Grande';
-			// 			color: #000;
-			// 		}
-			// 		&.next {
-			// 			margin-right: 20px;
-			// 			&:after {
-			// 				content: "←";
-			// 				float:left;
-			// 			}
-			// 		}
-			// 		&.prev {
-			// 			margin-left: 20px;
-			// 			&:after {
-			// 				content: "→";
-			// 				float:right;
-			// 			}
-			// 		}
-			// 	}
 		}
 	}
 
@@ -173,46 +122,9 @@ Description:	Styles for Landing Page
 		cursor: move;
 		text-align: center;
 
-		// &.slide {
 		.animate {
 			transition: all 0.4s ease-in-out;
 		}
-
-		// .wrap li,
-		// .wrap .before {
-		// 	z-index: 1;
-		// 	transform: translateX(-100%);
-		// }
-		//
-		// .wrap .after {
-		// 	z-index: 1;
-		// 	transform: translateX(100%);
-		// }
-		//
-		// .active {
-		// 	position: relative;
-		// 	z-index: 5;
-		// 	transform: translateX(0);
-		// }
-		// }
-
-		// .wrap {
-			// margin:0;
-			// position: relative;
-			// overflow: hidden;
-			// list-style: none;
-			// min-height: 500px;
-
-			// li {
-			// 	position: absolute;
-			// 	top: 0;
-			// 	bottom: 0;
-			// 	left: 0;
-			// 	width: 100%;
-			// 	margin: 0;
-			// 	backface-visibility: hidden;
-			// }
-		// }
 
 		.wrap {
 			display: flex;
@@ -221,13 +133,10 @@ Description:	Styles for Landing Page
 			}
 		}
 
-
 		nav {
-			// position:static;
 			height: 3em;
 			width:100%;
 			text-align:center;
-			// z-index:10;
 
 			li {
 				cursor: pointer;
