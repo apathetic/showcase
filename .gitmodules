@@ -16,3 +16,9 @@
 [submodule "components/parallax"]
 	path = components/parallax
 	url = https://github.com/apathetic/parallax
+[submodule "components/scrollify"]
+	path = components/scrollify
+	url = git@github.com:apathetic/scrollify.git
+[submodule "components/asciify"]
+	path = components/asciify
+	url = git@github.com:apathetic/asciify.git
