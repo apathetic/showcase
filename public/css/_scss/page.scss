@@ -80,7 +80,6 @@ footer {
 		display: block;
 		height: 0;				// to prevent menu from affecting layout
 		width: 100%;
-		position:relative;
 		z-index: 1;
 
 		nav {
@@ -107,7 +106,7 @@ footer {
 	}
 
 	@include at-breakpoint('desktop') {
-		position: fixed !important;
+		position: fixed;
 		top: 0;
 		left: 0;
 	}
