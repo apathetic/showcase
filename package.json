@@ -26,8 +26,10 @@
     "build": "node generator.js",
     "dev": "webpack --progress --colors --watch",
     "prod": "NODE_ENV=production webpack -p --config webpack.production.config.js",
+    "compile": "node_modules/.bin/harp compile",
     "git-commit": "git add www && git commit -m 'gh-pages update'",
-    "git-push": "git push github `git subtree split --prefix www webpack`:gh-pages --force",
+    "git-push": "git push origin `git subtree split --prefix www master`:gh-pages --force",
+    "xxxxs": "git subtree push --prefix www origin gh-pages",
     "deploy": "npm run compile && npm run git-commit && npm run git-push"
   },
   "author": "wes hatch",
