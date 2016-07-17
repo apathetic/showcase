@@ -1,0 +1,55 @@
+grow_version: ">=0.0.60"
+home: /content/pages/home.yaml
+root: ""
+
+localization:
+  default_locale: en
+
+title: "Android N"
+meta:
+  google_analytics_id: ""
+  image_path: /source/images/social_image.jpg
+  favicon_path: /source/images/favicon.png
+  social:
+    twitter: example
+    facebook: example
+
+static_dirs:
+- static_dir: /dist/
+  serve_at: "/assets/"
+  fingerprinted: true
+- static_dir: /source/images/
+  serve_at: "/assets/images/"
+  fingerprinted: true
+- static_dir: /source/video/
+  serve_at: "/assets/video/"
+  fingerprinted: true
+- static_dir: /source/fonts/
+  serve_at: "/assets/fonts/"
+  fingerprinted: true
+
+sitemap:
+  enabled: true
+
+# This is nice, but let's let npm handle all building until better JS support is available
+# preprocessors:
+# - kind: sass
+#   name: sass
+#   sass_dir: /source/sass/
+#   out_dir: /dist/css/
+# - kind: babel ...were that this was possible...
+#   name: babel
+#   js_dir: /source/js/
+#   out_dir: /dist/js/
+
+
+deployments:
+  default:                # Deployment name.
+    destination: local    # Destination kind.
+    out_dir: ~/Sites/Google/Android/deploy
+
+  aws:
+    destination: s3
+    bucket: androidn
+    # bucket: androidn.s3-website-us-east-1.amazonaws.com
+
