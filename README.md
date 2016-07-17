@@ -1,4 +1,4 @@
-Huge Showcase
+Showcase
 =========
 
 A repo to house documentation and examples for all our internal components
