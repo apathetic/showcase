@@ -1,35 +1,35 @@
 /**
 
-File:			mixins.css
-Description:	Main styles for the Huge Showcase
+File:     mixins.css
+Description:  Main styles for the Huge Showcase
 
 
-		◡◠ ✥ ◠◡
+    ◡◠ ✥ ◠◡
 
-	Table of Contents:
+  Table of Contents:
 
-	2. Default styles
-		- typograpy
-		- links
-	3. Layout
+  2. Default styles
+    - typograpy
+    - links
+  3. Layout
 
 */
 
 
 /* ---------------------------------------
-	1.	Breakpoint
------------------------------------------*/
+  1.  Breakpoint
+---------------------------------------- */
+
 @mixin at-breakpoint($viewport) {
+  @if nth($viewport, 1) == mobile {
+    @media (max-width: 767px) {
+      @content;
+    }
+  }
 
-	@if nth($viewport, 1) == mobile {
-		@media (max-width: 767px) {
-			@content;
-		}
-	}
-
-	@else if nth($viewport, 1) == desktop {
-		@media (min-width: 768px) {
-			@content;
-		}
-	}
+  @else if nth($viewport, 1) == desktop {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
 }
