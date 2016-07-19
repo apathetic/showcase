@@ -2,8 +2,5 @@
 *.log
 *.map
 
-public/build/
+dist/
 node_modules/
-
-#public/js/home.js*
-#public/js/component.js*

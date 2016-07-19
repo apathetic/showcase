@@ -1,0 +1,258 @@
+
+<html lang="{{doc.locale}}">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, height=device-height">
+    <title>{% if doc.title %}{{doc.title}} – {% endif %}{{podspec.title}}</title>
+    {% if podspec.meta.image %}
+      <meta property="og:image" content="{{g.static(podspec.meta.image).url}}">
+    {% endif %}
+    <meta property="og:title" content="{% if doc.title %}{{doc.title}} – {% endif %}{{podspec.title}}">
+    <meta property="og:site_name" content="{{podspec.title}}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{doc.url}}">
+    {% if doc.description %}
+    <meta name="description" content="{{doc.description}}">
+    <meta property="og:description" content="{{doc.description}}">
+    {% endif %}
+    {% if podspec.meta.favicon_path %}
+    <link rel="shortcut icon" href="{{g.static(podspec.meta.favicon_path).url.path}}">
+    {% endif %}
+    <link rel="stylesheet" href="{{g.static('/dist/css/main.min.css').url.path}}">
+  </head>
+  <body>
+
+    {# click here. then: apple+K, apple+5 #}
+    {% include "/views/partials/header.html" %}
+
+    <main>
+      <article class="exposition">
+
+        <div id="device">
+          <div class="video-mask">
+            <video src="/assets/video/sample.mp4" autoplay loop></video>
+          </div>
+          <canvas width="800" height="800"></canvas>
+        </div>
+
+        <section id="intro">
+          <div class="parallax purple-stars"></div>
+          <div class="container grid">
+            <div class="content text-center text-white">
+              <span class="eyebrow">{{_(doc.intro.eyebrow)}}</span>
+              <h1 class="heading-1">{{_(doc.intro.heading)}}</h1>
+              <p class="sub-head">{{_(doc.intro.text)}}</p>
+              <button class="button button-outline" data-modal="#modal-phones">{{_(doc.intro.cta)}}</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="expression">
+          <div class="container grid align-left">
+            <div class="content large-third">
+              <h2>{{_(doc.expression.heading)}}</h2>
+              <p class="sub-head">{{_(doc.expression.text)}}</p>
+              <img class="phone" src="/assets/images/phone/tilt-01.png">
+              <ul>
+                {% for feature in doc.expression.features | sort(attribute='order') %}
+                <li class="js-{{ feature.name }}" data-duration="800">{# for the timing animation #}
+                  <span class="button button-feature">
+                    <img src="/assets/images/buttons/{{ feature.name }}.png">
+                  </span>
+                  <span class="feature">{{ feature.title }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="multitask">
+          <div class="container grid align-right">
+            <div class="content large-third">
+              <h2>{{_(doc.multitask.heading)}}</h2>
+              <p class="sub-head">{{_(doc.multitask.text)}}</p>
+              <img class="phone" src="/assets/images/phone/tilt-01.png">
+              <ul>
+                {% for feature in doc.multitask.features | sort(attribute='order') %}
+                <li class="js-{{ feature.name }}" data-duration="800">{# for the timing animation #}
+                  <span class="button button-feature">
+                    <img src="/assets/images/buttons/{{ feature.name }}.svg">
+                  </span>
+                  <span class="feature">{{ feature.title }}</span>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="experience">
+          <div class="parallax pastoral full-size"></div>
+          <div class="container grid clip">{# TODO **** This will fail in IE, which doesnt support clip-path, and needs clip + pos:abs fallback #}
+            <div class="content text-center">
+              <h2 class="heading-3">{{_(doc.experience.heading)}}</h2>
+              <p class="sub-head">{{_(doc.experience.text)}}</p>
+
+              <img class="hide-large" src="/assets/images/phone-exciting.jpg">
+
+              <div class="footnote">
+                <strong>{{_(doc.experience.footnote)}}</strong>
+                <p>{{_(doc.experience.xxx)}}</p>
+                <button class="button button-outline button-dark">{{_(doc.experience.cta)}}</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="exciting">
+          <div class="clip">
+            <div class="parallax racing full-size"></div>{# clipped bg #}
+          </div>
+          <div class="container grid clip">{# TODO **** This will fail in IE, which doesnt support clip-path, and needs clip + pos:abs fallback #}
+            <div class="content text-center text-white">
+              <h2 class="heading-3">{{_(doc.experience.heading)}}</h2>
+              <p class="sub-head">{{_(doc.experience.text)}}</p>
+
+              <img class="hide-large" src="/assets/images/phone-exciting.jpg">{# need for speed #}
+
+              <div class="footnote">
+                <strong>{{_(doc.exciting.footnote)}}</strong>
+                <p>{{_(doc.exciting.xxx)}}</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="battery">
+          <div class="container grid">
+            <div class="content">
+              <h2 class="text-center">{{_(doc.battery.heading)}}</h2>
+
+              <img class="phone" src="/assets/images/phone/tilt-01.png">
+
+              <div class="grid">
+
+                {% for feature in doc.battery.features | sort(attribute='order') %}
+                <div class="grid-item">
+                  <span class="button button-feature">
+                    <img src="/assets/images/buttons/{{ feature.name }}.svg">
+                  </span>
+                  <h3 class="heading-4">{{ feature.title }}</h3>
+                  <p class="feature">{{ feature.text }}</p>
+                  <figure>
+                    <img src="/assets/images/graph-{{ feature.name }}.png" alt="{{ feature.title }}">
+                  </figure>(SVGs here)?
+                </div>
+                {% endfor %}
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </article>
+      <article class="development">
+
+        <section id="moment">
+          <div class="container">
+            <!-- <div class="content"> -->
+              <h2>{{_(doc.moment.heading)}}</h2>
+              <p class="sub-head">{{_(doc.moment.text)}}</p>
+
+              <div class="grid">
+                <figure class="grid-item">
+                  <img src="/assets/images/bg-moment.jpg" alt="">
+                </figure>
+
+                <ul class="grid-item">
+                  {% for feature in doc.moment.features | sort(attribute='order') %}
+                  <li class="js-{{ feature.name }}">
+                    <span class="button button-feature">
+                      <img src="/assets/images/buttons/{{ feature.name }}.svg">
+                    </span>
+                    <h3 class="feature">{{ feature.title }}</h3>
+                    <p>{{ feature.text }}</p>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            <!-- </div> -->
+          </div>
+        </section>
+
+        <section id="choose">
+          <div class="container">
+            <div class="content">
+              <h2>{{_(doc.choose.heading)}}</h2>{# TODO: h1 style on mobile / h2 style on desktop #}
+              <p class="sub-head">{{_(doc.choose.text)}}</p>
+              <div class="grid">
+                <ul class="grid-item">
+                  {% for feature in doc.choose.features | sort(attribute='order') %}
+                  <li class="js-{{ feature.name }}">
+                    <span class="button button-feature">
+                      <img src="/assets/images/buttons/{{ feature.name }}.svg">
+                    </span>
+                    <h3 class="feature">{{ feature.title }}</h3>
+                    <p>{{ feature.text }}</p>
+                  </li>
+                  {% endfor %}
+                </ul>
+                <!-- <figure class="grid-item"> -->
+                  <!-- <img class="phone" src="/assets/images/phone/tilt-01.png" alt=""> -->
+                <!-- </figure> -->
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="secure">
+          <div class="container grid">
+            <div class="content">
+              <img src="/assets/images/phone/tilt-01.png" alt="">
+            </div>
+            <div class="content">
+              <h2>{{_(doc.secure.heading)}}</h2>
+              <p>{{_(doc.secure.text)}}</p>
+              <ul>
+                {% for feature in doc.secure.features | sort(attribute='order') %}
+                  <li class="js-{{ feature.name }}">
+                  <span class="button button-feature">
+                    <img src="/assets/images/buttons/{{ feature.name }}.svg">
+                  </span>
+                  <h3 class="feature">{{ feature.title }}</h3>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <footer class="coda text-white">{# article footer, not page footer #}
+        <h3>{{_(doc.footer.heading)}}</h3>
+        <button class="button button-outline">{{_(doc.footer.cta1)}}</button>
+        <button class="button button-outline" data-modal="#modal-phones">{{_(doc.footer.cta2)}}</button>
+      </footer>
+
+    </main>
+
+    {% include "/views/partials/footer.html" %}
+
+    {% include "/views/modals/phones.html" %}
+
+    <script src="/assets/js/main.min.js"></script>
+
+    {% if podspec.meta.google_analytics_id %}
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', '{{podspec.meta.google_analytics_id}}', 'auto');
+      ga('send', 'pageview');
+    </script>
+    {% endif %}
+    </body>
+</html>

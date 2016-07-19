@@ -1,0 +1,24 @@
+$title: Flexicarousel
+$path: /{root}/
+$order: -1
+
+description: "A touch-friendly, lightwieght carousel. Uses CSS3 transforms for its transitions.",
+author: "Wes Hatch"
+date: "2014-03-05"
+featured: true
+tags:
+  - carousel
+  - ie9
+  - mobile
+  - js
+  - widget
+stash: "https://stash.hugeinc.com/projects/CMPTS/repos/flexicarousel/browse"
+github: "https://github.com/apathetic/flexicarousel"
+assets:
+  html: "demo/index.html"
+  css:
+    - "https://rawgit.com/apathetic/flexicarousel/master/demo/styles.css",
+    - "https://rawgit.com/apathetic/flexicarousel/master/src/flexicarousel.css"
+  js:
+    - "https://rawgit.com/apathetic/flexicarousel/master/dist/flexicarousel.min.js"
+
