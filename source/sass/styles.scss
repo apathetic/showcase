@@ -1,16 +1,23 @@
 /**	These styles are shared by the component pages **/
 
-// util
-@import "_scss/variables";
-@import "_scss/reset";
-@import "_scss/fonts";
-@import "_scss/prism";
-@import "_scss/mixins";
+// settings
+@import "settings/variables";
 
-// common
-// @import "_scss/header";
-@import "_scss/common";
+// base
+@import "base/reset";
+@import "base/fonts";
+@import "base/typography";
+@import "base/common";
+
+// util
+@import "utility/prism";
+@import "utility/syntax";
+@import "utility/mixins";
+
+// elements
+@import "elements/buttons";
+@import "elements/table";
 
 // pages
-@import "_scss/page";
-@import "_scss/index";
+@import "page/page";
+@import "page/index";

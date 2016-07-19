@@ -1,0 +1,64 @@
+// --- Typography ---
+
+h1, h2, h3, h4, h5, h6 {
+	color: #000;
+	font-family: "HUGEAvantGardeBold", sans-serif;
+	letter-spacing: -0.06em;
+	margin: 0 0 0.6em;
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+h1 {
+	font-size: 4em;
+}
+
+h2 {
+	font-size: 2.4em;
+}
+
+h3 {
+	font-size: 1.8em;
+}
+
+h4 {
+    font-size: 1.5em;
+}
+
+h6 {
+	line-height: 1;
+}
+
+
+@include at-breakpoint('mobile') {
+	h1 {
+		font-size: 3em;
+	}
+}
+
+p {
+	margin-bottom: 1em;
+}
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+sup {
+	font-size: 0.5em;
+	vertical-align: super;
+}
+
+pre {
+	border: 1px solid #ddd;
+	margin-bottom: 2em !important;
+}
+
+hr {
+	margin: 4em 0;
+	border: 1px solid $color-border;
+}

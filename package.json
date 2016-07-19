@@ -1,5 +1,7 @@
 {
   "name": "Components",
+  "author": "wes hatch",
+  "license": "MIT",
   "version": "0.1.0",
   "description": "A showcase of handy components",
   "main": "app.js",
@@ -8,16 +10,7 @@
     "url": "https://stash.hugeinc.com/projects/CMPTS/repos/showcase/browse"
   },
   "main": "source/js/main.js",
-  "scripts": {
-    "clean": "#rm -rf dist/**/*",
-    "lint:css": "node_modules/.bin/stylelint source/sass/**/*.scss --syntax scss",
-    "lint:js": "eslint source/js/*.js",
-    "build:css": "npm run lint:css && node-sass --include-path source/sass source/sass/main.scss | postcss --use autoprefixer | cleancss > dist/css/main.min.css",
-    "build:js": "npm run lint:js && rollup -c",
-    "watch:css": "watch 'npm run build:css' source/sass",
-    "watch:js": "watch 'npm run build:js' source/js",
-    "watch": "run-p watch:**"
-  },
+
   "devDependencies": {
     "autoprefixer": "^6.3.3",
     "babel-eslint": "^6.0.4",
@@ -34,8 +27,29 @@
     "rollup-plugin-uglify": "^1.0.0",
     "stylelint": "^6.5.1",
     "stylelint-config-standard": "^7.0.0",
-    "watch": "^0.18.0"
+    "watch": "^0.18.0",
+
+
+
+
+    "asciify": "git+https://github.com/apathetic/asciify.git",
+    "flexicarousel": "git+https://github.com/apathetic/flexicarousel",
+    "modal": "git+https://github.com/apathetic/modals.git",
+    "navigator": "git+https://github.com/apathetic/navigator.git",
+    "parallax": "git+https://github.com/apathetic/parallax.git",
+    "scrollify": "git+https://github.com/apathetic/scrollify.git",
+    "stickynav": "git+https://github.com/apathetic/stickynav.git",
+    "validator": "git+https://github.com/apathetic/validator.git"
+
   },
-  "author": "wes hatch",
-  "license": "MIT"
+  "scripts": {
+    "clean": "#rm -rf dist/**/*",
+    "lint:css": "node_modules/.bin/stylelint source/sass/**/*.scss --syntax scss",
+    "lint:js": "eslint source/js/*.js",
+    "build:css": "npm run lint:css && node-sass --include-path source/sass source/sass/main.scss | postcss --use autoprefixer | cleancss > dist/css/main.min.css",
+    "build:js": "npm run lint:js && rollup -c",
+    "watch:css": "watch 'npm run build:css' source/sass",
+    "watch:js": "watch 'npm run build:js' source/js",
+    "watch": "run-p watch:**"
+  }
 }

@@ -1,11 +1,10 @@
 grow_version: ">=0.0.60"
 home: /content/pages/home.yaml
-root: ""
 
 localization:
   default_locale: en
 
-title: "Android N"
+title: "Components"
 meta:
   google_analytics_id: ""
   image_path: /source/images/social_image.jpg
@@ -20,9 +19,6 @@ static_dirs:
   fingerprinted: true
 - static_dir: /source/images/
   serve_at: "/assets/images/"
-  fingerprinted: true
-- static_dir: /source/video/
-  serve_at: "/assets/video/"
   fingerprinted: true
 - static_dir: /source/fonts/
   serve_at: "/assets/fonts/"
@@ -46,10 +42,9 @@ sitemap:
 deployments:
   default:                # Deployment name.
     destination: local    # Destination kind.
-    out_dir: ~/Sites/Google/Android/deploy
+    out_dir: ~/Sites/showcase/build
 
-  aws:
-    destination: s3
-    bucket: androidn
-    # bucket: androidn.s3-website-us-east-1.amazonaws.com
+  github:
+    destination: github
+    repo: xxx
 

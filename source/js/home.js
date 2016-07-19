@@ -1,5 +1,5 @@
 
-import Carousel from '../../components/flexicarousel/dist/flexicarousel.es6';
+import Carousel from 'flexicarousel';
 
 
 
