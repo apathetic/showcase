@@ -1,86 +1,78 @@
 /**
 
-File:			main.css
-Description:	Main styles for the Huge Showcase
+File:     main.css
+Description:  Main styles for the Huge Showcase
 
+    ◡◠ ✥ ◠◡
 
-		◡◠ ✥ ◠◡
+  Table of Contents:
 
-	Table of Contents:
+  1. Element styles
+    - typograpy
+    - links
+  3. Layout
 
-	1. Element styles
-		- typograpy
-		- links
-	3. Layout
-
-
-	** note: in Sublime text: <command + K + 1> to visually format this document **
-
+  ** note: in Sublime text: <command + K + 1> to visually format this document **
 
 */
 
 
 body {
-	background: $color-off-white;
-	font:16px / 24px "Galaxie", Georgia, serif;
-	color: $color-font-dark;
-	margin: 0;
+  background: $color-off-white;
+  font: 16px / 24px "Galaxie", Georgia, serif;
+  color: $color-font-dark;
+  margin: 0;
 }
 
 
 /* ---------------------------------------
-	1.	Element Styles
------------------------------------------*/
+  1.  Element Styles
+---------------------------------------- */
 
 
 // --- Links ---
 
 a {
-	text-decoration: none;
-	color: #ec008c;
+  text-decoration: none;
+  color: #ec008c;
 
-	&:visited {
-		color: #ec008c;
-	}
+  &:visited {
+    color: #ec008c;
+  }
 
-	&:hover {
-		color: lighten($color-magenta, 20%);
-	}
+  &:hover {
+    color: lighten($color-magenta, 20%);
+  }
 }
 
 
-
-
-
 /* ---------------------------------------
-	3.	Icons
------------------------------------------*/
+  3.  Icons
+---------------------------------------- */
 
 [class*="icon-"] {
-	font-family: 'icons' !important;
-	speak: none;
-	font-style: normal;
-	font-weight: normal;
-	font-variant: normal;
-	text-transform: none;
-	line-height: 1;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  font-family: 'icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-twitter:before { content: "\f099"; }
-.icon-facebook:before { content: "\f09a"; }
-.icon-github:before { content: "\f09b"; }
-.icon-stash:before { content: "\e900"; }
-
+.icon-twitter::before { content: "\f099"; }
+.icon-facebook::before { content: "\f09a"; }
+.icon-github::before { content: "\f09b"; }
+.icon-stash::before { content: "\e900"; }
 
 
 /* ---------------------------------------
-	3.	Layout
------------------------------------------*/
-
+  3.  Layout
+---------------------------------------- */
 
 .container {
-	max-width: 1280px;
-	margin: 0 10%;
+  max-width: 1280px;
+  margin: 0 10%;
 }

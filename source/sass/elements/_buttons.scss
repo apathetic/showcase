@@ -1,29 +1,29 @@
 /* ---------------------------------------
-	2.	Buttons
------------------------------------------*/
+  2.  Buttons
+---------------------------------------- */
 
 %brick {
-	border-radius: 3px;
-	display: inline-block;
-	width: 100%;
-	font-size: 1rem;
-	padding: 1em;	// 1.2em;
+  border-radius: 3px;
+  display: inline-block;
+  width: 100%;
+  font-size: 1rem;
+  padding: 1em; // 1.2em;
 }
 
 .button {
-	@extend %brick;
-	color: #fff;
-	background-color: $color-blue;
-	text-align: center;
-	cursor: pointer;
-	border: 1px solid transparent;
-	margin: 0.5em 0;
-	max-width: 18em;
-	vertical-align: top;
-	transition: background 0.2s ease-in-out;
+  @extend %brick;
+  color: #fff;
+  background-color: $color-blue;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin: 0.5em 0;
+  max-width: 18em;
+  vertical-align: top;
+  transition: background 0.2s ease-in-out;
 
-	&:hover {
-		background-color: lighten($color-blue, 20%);
-	}
+  &:hover {
+    background-color: lighten($color-blue, 20%);
+  }
 }
 
