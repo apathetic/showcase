@@ -1,0 +1,41 @@
+
+{% extends "/views/base.html" %}
+
+{% block main %}
+
+    <div id="tabs">
+      <ul>
+        <li data-filter="all" class="active">all.</li>
+        <li data-filter="css">css</li>
+        <li data-filter="js">js</li>
+        <li data-filter="carousel">carousel</li>
+        <li data-filter="slider">slider</li>
+      </ul>
+    </div>
+
+  {{doc.html|safe}}
+
+
+  {% for name in g.docs('components') %}
+    {% if (component.display === false) continue; %}
+    <section class="tile" data-tags="all {% for (var i in component.tags) { %}{%= component.tags[i] %} {% } %}">
+      <div>
+        <span class="eyebrow">
+        {% for (var i in component.tags) { %}<strong>{%= component.tags[i] %}</strong> {% if(i != component.tags.length-1) { %} / {% } %}  {% } %}
+        </span>
+
+        <h2><a href="components/{%= name %}">{%= component.title %}</a></h2>
+
+        <p>{%= component.blurb %}</p>
+
+        <p class="install">
+          {% if (component.stash)  { %}<a class="icon-stash" href="{%= component.stash  %}">stash</a> {% } %}
+          {% if (component.github) { %}<a class="icon-github" href="{%= component.github %}">github</a> {% } %}
+        </p>
+      </div>
+    </section>
+
+  {% endfor %}
+
+
+{% endblock %}

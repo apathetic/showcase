@@ -1,63 +1,61 @@
-
 import Carousel from 'flexicarousel';
 
-
-
 // ---- carousel ---- //
-var featured = document.querySelector('#featured'),
-	bullets = featured.querySelectorAll('nav li'),
-	carousel = new Carousel(featured, {
-		slides: '.slide',
-		offscreen: 1,
-		onSlide: updateNav
-	});
+let featured = document.querySelector('#featured');
+let bullets = featured.querySelectorAll('nav li');
+let carousel;
 
-featured.querySelector('.prev').addEventListener('click', function(){ carousel.prev(); });
-featured.querySelector('.next').addEventListener('click', function(){ carousel.next(); });
+carousel = new Carousel(featured, {
+  slides: '.slide',
+  offscreen: 1,
+  onSlide: updateNav
+});
 
-Array.prototype.forEach.call(bullets, function(bullet, to) {
-	bullet.addEventListener('click', function(e) { carousel.go(to); });
+featured.querySelector('.prev').addEventListener('click', carousel.prev);
+featured.querySelector('.next').addEventListener('click', carousel.next);
+
+Array.prototype.forEach.call(bullets, (bullet, to) => {
+  bullet.addEventListener('click', (e) => { carousel.go(to); });
 });
 
 function updateNav(current) {
-	for (i = bullets.length; i--;) {
-		bullets[i].classList.remove('active');
-		bullets[current].classList.add('active');
-	}
+  for (i = bullets.length; i--;) {
+    bullets[i].classList.remove('active');
+    bullets[current].classList.add('active');
+  }
 }
 
 
 // ---- filters ---- //
-var sections = document.querySelectorAll('main section'),
-	tabs = document.querySelectorAll('#tabs li'),
-	tab,
-	tags,
-	i, j;
+let sections = document.querySelectorAll('main section');
+let tabs = document.querySelectorAll('#tabs li');
+let tags;
+let i, j;
 
-for (i = tabs.length; i--;) {
-	tab = tabs[i];
-	tab.addEventListener('click', function(e){
-		var filter,
-			regex;
+Array.prototype.forEach.call(tabs, (tab) => {
+  tab.addEventListener('click', function(e) {
+    let filter = tab.getAttribute('data-filter');
+    let regex;
 
-		e.preventDefault();
-		for (j = tabs.length; j--;) {
-			tabs[j].classList.remove('active');
-		}
+    e.preventDefault();
 
-		this.classList.add('active');
-		filter = this.getAttribute('data-filter');
+    for (j = tabs.length; j--;) {
+      tabs[j].classList.remove('active');
+    }
 
-		for (j = sections.length; j--;) {
-			tags = sections[j].getAttribute('data-tags') || '';
-			tags = tags.toLowerCase();
-			regex = new RegExp(filter, "i");		// ghetto, doesn't care about surrounding whitespace
+    tab.classList.add('active');
 
-			if (!tags.match(regex)) {
-				sections[j].classList.add('collapsed');
-			} else {
-				sections[j].classList.remove('collapsed');
-			}
-		}
-	});
-}
+    for (j = sections.length; j--;) {
+      tags = sections[j].getAttribute('data-tags') || '';
+      tags = tags.toLowerCase();
+      regex = new RegExp(filter, 'i');    // ghetto, doesn't care about surrounding whitespace
+
+      if (!tags.match(regex)) {
+        sections[j].classList.add('collapsed');
+      } else {
+        sections[j].classList.remove('collapsed');
+      }
+    }
+
+  });
+});

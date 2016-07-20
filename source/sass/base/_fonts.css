@@ -22,11 +22,11 @@
 
 @font-face {
   font-family: 'icons';
-  src:url('fonts/icons.eot?q2z3x2');
-  src:url('fonts/icons.eot?q2z3x2#iefix') format('embedded-opentype'),
-    url('fonts/icons.ttf?q2z3x2') format('truetype'),
-    url('fonts/icons.woff?q2z3x2') format('woff'),
-    url('fonts/icons.svg?q2z3x2#icons') format('svg');
+  src:url('/assets/fonts/icons.eot');
+  src:url('/assets/fonts/icons.eot') format('embedded-opentype'),
+    url('/assets/fonts/icons.ttf') format('truetype'),
+    url('/assets/fonts/icons.woff') format('woff'),
+    url('/assets/fonts/icons.svg') format('svg');
   font-weight: normal;
   font-style: normal;
 }

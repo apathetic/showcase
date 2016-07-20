@@ -3,7 +3,8 @@
   "root": true,
   "extends": "defaults/configurations/google",
   "globals": {
-    "window": true
+    "window": true,
+    "document": true
   },
 
   // add your custom rules here
