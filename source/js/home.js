@@ -1,15 +1,17 @@
-import Carousel from 'flexicarousel';
+import Scrollify from '@apatheticwes/scrollify';
+import Carousel from '@apatheticwes/flexicarousel';
+
 
 // ---- carousel ---- //
 let featured = document.querySelector('#featured');
 let bullets = featured.querySelectorAll('nav li');
-let carousel;
-
-carousel = new Carousel(featured, {
+let carousel = new Carousel(featured, {
   slides: '.slide',
-  offscreen: 1,
-  onSlide: updateNav
+  offscreen: 1
+  // onSlide: updateNav
 });
+
+/* * /
 
 featured.querySelector('.prev').addEventListener('click', carousel.prev);
 featured.querySelector('.next').addEventListener('click', carousel.next);
@@ -59,3 +61,4 @@ Array.prototype.forEach.call(tabs, (tab) => {
 
   });
 });
+/* */

@@ -4,46 +4,40 @@
   "license": "MIT",
   "version": "0.1.0",
   "description": "A showcase of handy components",
-  "main": "app.js",
+  "main": "......js",
   "repository": {
     "type": "git",
     "url": "https://stash.hugeinc.com/projects/CMPTS/repos/showcase/browse"
   },
-  "main": "source/js/main.js",
-
   "devDependencies": {
+    "@apatheticwes/scrollify": "^0.2.0",
+    "asciify": "git+https://github.com/apathetic/asciify.git",
     "autoprefixer": "^6.3.3",
     "babel-eslint": "^6.0.4",
+    "babel-preset-es2015": "^6.9.0",
     "babel-preset-es2015-rollup": "^1.1.1",
     "babel-preset-stage-2": "^6.5.0",
     "clean-css": "^3.4.17",
     "eslint": "^2.11.1",
     "eslint-config-defaults": "^9.0.0",
+    "modal": "git+https://github.com/apathetic/modals.git",
+    "navigator": "git+https://github.com/apathetic/navigator.git",
     "node-sass": "^3.7.0",
     "npm-run-all": "^2.2.0",
+    "parallax": "git+https://github.com/apathetic/parallax.git",
     "postcss-cli": "^2.5.2",
     "rollup": "^0.27.1",
     "rollup-plugin-babel": "^2.5.1",
+    "rollup-plugin-node-resolve": "^1.7.1",
     "rollup-plugin-uglify": "^1.0.0",
+    "stickynav": "git+https://github.com/apathetic/stickynav.git",
     "stylelint": "^6.5.1",
     "stylelint-config-standard": "^7.0.0",
-    "watch": "^0.18.0",
-
-
-
-
-    "asciify": "git+https://github.com/apathetic/asciify.git",
-    "flexicarousel": "git+https://github.com/apathetic/flexicarousel",
-    "modal": "git+https://github.com/apathetic/modals.git",
-    "navigator": "git+https://github.com/apathetic/navigator.git",
-    "parallax": "git+https://github.com/apathetic/parallax.git",
-    "scrollify": "git+https://github.com/apathetic/scrollify.git",
-    "stickynav": "git+https://github.com/apathetic/stickynav.git",
-    "validator": "git+https://github.com/apathetic/validator.git"
-
+    "validator": "git+https://github.com/apathetic/validator.git",
+    "watch": "^0.18.0"
   },
   "scripts": {
-    "clean": "#rm -rf dist/**/*",
+    "clean": "rm -rf dist/**/*",
     "lint:css": "node_modules/.bin/stylelint source/sass/**/*.scss --syntax scss",
     "lint:js": "eslint source/js/*.js",
     "build:css": "npm run lint:css && node-sass --include-path source/sass source/sass/main.scss | postcss --use autoprefixer | cleancss > dist/css/main.min.css",

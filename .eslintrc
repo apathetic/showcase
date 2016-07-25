@@ -4,7 +4,9 @@
   "extends": "defaults/configurations/google",
   "globals": {
     "window": true,
-    "document": true
+    "document": true,
+    "module": true,
+    "require": true
   },
 
   // add your custom rules here
