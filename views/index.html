@@ -13,10 +13,10 @@
       </ul>
     </div>
 
-  {{doc.html|safe}}
+asfd
+  {% for component in g.docs('components') %}
 
 
-  {% for name in g.docs('components') %}
     {% if (component.display === false) continue; %}
     <section class="tile" data-tags="all {% for (var i in component.tags) { %}{%= component.tags[i] %} {% } %}">
       <div>

@@ -1,5 +1,5 @@
 $title: Scrollify
-$slug: scrollify
+$path: /{root}/
 
 description: "A simple Class to \"do things on scroll.\""
 author: "Wes Hatch"

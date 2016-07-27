@@ -5,6 +5,15 @@
 		<div class="sliding carousel" id="featured">
 			<ul class="wrap">
 
+    {% for component in g.docs('components') %}
+      {{ component.description }}
+    {% endfor %}
+
+    {% for component in g.categories.components %}
+     ddd {{ component }}
+    {% endfor %}
+
+
 			<% var count = 0; for (var name in components) { %>
 				<% var component = components[name] %>
 				<% if (component.featured) { %>

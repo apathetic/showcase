@@ -29,12 +29,13 @@
     <main>
 
       {% block main %}
-        {{doc.html|safe}}
+        base.
+        {{ doc.html|safe }}
       {% endblock %}
 
     </main>
 
-    {% include "/views/partials/footer.html" %}
+    {# % include "/views/partials/footer.html" %#}
 
     <script src="/assets/js/home.min.js"></script>
 

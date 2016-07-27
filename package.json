@@ -10,6 +10,7 @@
     "url": "https://stash.hugeinc.com/projects/CMPTS/repos/showcase/browse"
   },
   "devDependencies": {
+    "@apatheticwes/flexicarousel": "^0.6.0",
     "@apatheticwes/scrollify": "^0.2.0",
     "asciify": "git+https://github.com/apathetic/asciify.git",
     "autoprefixer": "^6.3.3",
