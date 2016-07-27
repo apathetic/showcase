@@ -13,12 +13,16 @@ export default {
         'node_modules/**',
         'source/js/lib/**'
       ],
-      presets: 'es2015-rollup'
+      presets: ['es2015-rollup']
     }),
     resolve({
       jsnext: true,
       main: true,
-      browser: true
+
+
+      // Some package.json files have a `browser` field which specifies alternative files to load for people bundling
+      // for the browser. If that's you, use this option, otherwise pkg.browser will be ignored.
+      browser: false  // true
     }),
     uglify()
   ]
