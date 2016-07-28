@@ -1,5 +1,6 @@
 $title: Scrollify
 $slug: scrollify
+$view: /views/components/scrollify.html
 $hidden: false
 
 description: "A simple Class to \"do things on scroll.\""
