@@ -1,43 +1,33 @@
+  <header class="hero">
 
+    <div class="carousel" id="featured">
 
-	<header class="hero">
+      <ul class="wrap">
+        {% for component in g.docs('components') if component.featured %}
+        <li class="slide">
+          <div class="v-center">
+            <span class="eyebrow">Module by {{ component.author }}</span>
+            <h1><a href="components/{{ component.slug }}">{{ component.title }}</a></h1>
+            <p>{{ component.description }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
 
-		<div class="sliding carousel" id="featured">
-			<ul class="wrap">
+      <nav>
+        <div class="prev">
+          <span>←</span>
+        </div>
 
-    {% for component in g.docs('components') %}
-      {{ component.description }}
-    {% endfor %}
+        <ul>
+          {% for component in g.docs('components') if component.featured %}<li></li>{% endfor %}
+        </ul>
 
-    {% for component in g.categories.components %}
-     ddd {{ component }}
-    {% endfor %}
+        <div class="next">
+          <span>→</span>
+        </div>
+      </nav>
 
+    </div>
 
-			<% var count = 0; for (var name in components) { %>
-				<% var component = components[name] %>
-				<% if (component.featured) { %>
-					<li class="slide">
-						<div class="v-center">
-							<span class="eyebrow">Module by <%= component.author %></span>
-							<h1><a href="components/<%= name %>"><%= component.title %></a></h1>
-							<p><%= component.blurb %></p>
-						</div>
-					</li>
-				<% count++; } %>
-			<% } %>
-
-			</ul>
-
-			<nav>
-				<div class="prev"><span>←</span></div>
-				<ul>
-					<% for (var i = 0; i < count; i++) { %>
-					<li></li>
-					<% } %>
-				</ul>
-				<div class="next"><span>→</span></div>
-			</nav>
-		</div>
-
-	</header>
+  </header>

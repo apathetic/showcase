@@ -3,24 +3,11 @@
 
 {% block main %}
 
-	<header>
-		<h1><%- title %></h1>
-
-    <h1><a href="{{doc.url.path}}">{{doc.title}}</a></h1>
+  <header>
+    <h1>{{ doc.title }}</h1>
     <div class="attribution">
-      {{_('Posted %(date)s', date=doc.dates('published'))}}
+      {{ _('Posted %(date)s', date=doc.published ) }}
     </div>
-	</header>
-
-	<nav>
-		<div id="sticky">
-			<div class="container">
-				<nav data-autogenerate="true">
-					<ul></ul>
-				</nav>
-			</div>
-		</div>
-	</nav>
 
 
     {% set next_doc = doc.next() %}
@@ -33,18 +20,23 @@
     {% endif %}
 
 
-	<main class="component left-rail">
-		<%- content %>
-	</main>
+  </header>
 
-	<footer>
-		<div class="container">
-		</div>
-	</footer>
+  <nav>
+    <div id="sticky">
+      <div class="container">
+        <nav data-autogenerate="true">
+          <ul></ul>
+        </nav>
+      </div>
+    </div>
+  </nav>
 
-	<% for (var i=0; i<scripts.length; i++) { %>
-	<script><%- scripts[i] %></script>
-	<% } %>
-	<script src="../js/component.js"></script>
+  <main class="component left-rail">
+    main
+    {% block component %}<!-- -->{% endblock %}
+  </main>
+
+  <script src="../js/component.js"></script>
 
 {% endblock %}

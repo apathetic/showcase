@@ -1,6 +1,6 @@
-$title: Home
+$title: Components
 $path: /{root}/
-$order: -1
+
 description: A basic Grow demo website.
 
 # sections:

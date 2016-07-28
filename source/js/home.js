@@ -1,5 +1,5 @@
 import Scrollify from '@apatheticwes/scrollify';
-import Carousel from '@apatheticwes/flexicarousel';
+import Carousel from  '@apatheticwes/flexicarousel';
 
 
 // ---- carousel ---- //
@@ -11,7 +11,7 @@ let carousel = new Carousel(featured, {
   // onSlide: updateNav
 });
 
-/* * /
+
 
 featured.querySelector('.prev').addEventListener('click', carousel.prev);
 featured.querySelector('.next').addEventListener('click', carousel.next);
@@ -21,12 +21,13 @@ Array.prototype.forEach.call(bullets, (bullet, to) => {
 });
 
 function updateNav(current) {
-  for (i = bullets.length; i--;) {
+  for (let i = bullets.length; i--;) {
     bullets[i].classList.remove('active');
     bullets[current].classList.add('active');
   }
 }
 
+/* * /
 
 // ---- filters ---- //
 let sections = document.querySelectorAll('main section');

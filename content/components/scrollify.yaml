@@ -1,5 +1,6 @@
 $title: Scrollify
-$path: /{root}/
+$slug: scrollify
+$hidden: false
 
 description: "A simple Class to \"do things on scroll.\""
 author: "Wes Hatch"
@@ -12,7 +13,6 @@ tags:
 stash: "https://stash.hugeinc.com/projects/CMPTS/repos/scrollify/browse"
 github: "https://github.com/apathetic/scrollify"
 assets:
-  html: "demo/index.html"
   css:
     - "https://rawgit.com/apathetic/scrollify/master/demo/styles.css"
   js:

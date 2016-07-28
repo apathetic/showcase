@@ -1,2 +1,2 @@
-view: /views/component.html
-path: /component/{slug}/
+#view: /views/component.html
+path: /components/{slug}/
