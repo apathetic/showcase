@@ -1,9 +1,23 @@
 
 {% extends "/views/base.html" %}
 
+{% block assets %}
+
+  {% for style in doc.assets.css %}
+    <link rel="stylesheet" href="{{ style }}">
+  {% endfor %}
+
+  {% for script in doc.assets.js %}
+    <script src="{{ script }}"></script>
+  {% endfor %}
+
+{% endblock %}
+
+
+
 {% block main %}
 
-  <header>
+  <header class="condensed">
     <h1>{{ doc.title }}</h1>
     <p class="attribution">{{ _('Posted %(date)s', date=doc.published ) }}</p>
 
@@ -13,7 +27,7 @@
     {% if prev_doc %}
     <div>
       <span> << </span>
-      <a href="{{next_doc.url.path}}">{{next_doc.title}}</a>
+      <a href="{{prev_doc.url.path}}">{{prev_doc.title}}</a>
     </div>
     {% endif %}
     {% if next_doc %}
@@ -43,18 +57,19 @@
   </nav>
 
   <main class="component left-rail">
-    main
     {% block component %}<!-- -->{% endblock %}
   </main>
 
+  <!--
   {% for style in doc.assets.css %}
-    {{ style }}
+    <link rel="stylesheet" href="{{ style }}">
   {% endfor %}
 
   {% for script in doc.assets.js %}
-    {{ script }}
+    <script src="{{ script }}"></script>
   {% endfor %}
+  -->
 
-  <script src="../js/component.js"></script>
+  <script src="/assets/js/component.js"></script>
 
 {% endblock %}

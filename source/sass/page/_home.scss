@@ -20,96 +20,36 @@ Description:  Styles for Landing Page
   2.  Default Styles
 ---------------------------------------- */
 
+header.hero {
+  text-align: center;
+  color: #999;
+  // min-height: 150px;
+  background: colors('grey-dark');
 
-#home {
-  header {
-    text-align: center;
-    color: #999;
-    // min-height: 150px;
-    background: colors('grey-dark');
-
-    .v-center {
-      padding: 6em 20%;
-    }
-
-    .eyebrow {
-      font-size: 13px;
-      font-family: $font-serif;
-    }
-
-    h1 {
-      margin: 0.4em;
-
-      a {
-        color: #fff;
-        text-decoration: none;
-      }
-    }
-
-    p {
-      max-width: 960px;
-      margin: 0 auto;
-    }
-
-    nav {
-      position: static;
-    }
-  }
-
-  main {
-    text-align: center;
-  }
-
-  .tile {
-    color: $color-font-light;
-    overflow: hidden;
-    max-height: 250px;
-    transition: transform 0.8s, max-height 1s, opacity 0.5s;
-    opacity: 1;
-    transform-origin: top;
-
-    &:hover {
-      animation: blip 2s;
-    }
-
-    &.collapsed {
-      max-height: 0;
-      opacity: 0;
-      transform: rotateX(90deg);
-    }
-
-    > div {
-      padding: 2em 20%;
-    }
-
-    h2 {
-      margin-bottom: 0.2em;
-
-      a {
-        color: #000;
-      }
-    }
+  .v-center {
+    padding: 6em 20%;
   }
 
   .eyebrow {
-    font: 12px Arial, sans-serif;
-    display: inline-block;
-    padding: 1em;
-    color: $color-font-dark;
+    font-size: 13px;
+    font-family: $font-serif;
   }
 
-  .install {
-    padding-top: 10px;
-    font-size: 12px;
-    font-weight: bold;
-
+  h1 {
+    // margin: 0.4em;
     a {
-      margin: 0.5em;
-
-      &::before {
-        margin-right: 0.2em;
-      }
+      color: #fff;
+      text-decoration: none;
     }
+  }
+
+  p {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  nav {
+    position: static;
   }
 
   .carousel {
@@ -190,12 +130,68 @@ Description:  Styles for Landing Page
     }
 
   }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.tile {
+  color: $color-font-light;
+  overflow: hidden;
+  max-height: 250px;
+  transition: transform 0.8s, max-height 1s, opacity 0.5s;
+  opacity: 1;
+  transform-origin: top;
+
+  &:hover {
+    animation: blip 2s;
+  }
+
+  &.collapsed {
+    max-height: 0;
+    opacity: 0;
+    transform: rotateX(90deg);
+  }
+
+  > div {
+    padding: 2em 20%;
+  }
+
+  h2 {
+    margin-bottom: 0.2em;
+
+    a {
+      color: #000;
+    }
+  }
+
+  .eyebrow {
+    font: 12px Arial, sans-serif;
+    display: inline-block;
+    padding: 1em;
+    color: $color-font-dark;
+  }
+
+  .install {
+    padding-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+
+    a {
+      margin: 0.5em;
+
+      &::before {
+        margin-right: 0.2em;
+      }
+    }
+  }
 
 }
 
 .filters {
-  padding-bottom: 2em;
-  text-align: center;
+  padding: 2em;
+  // text-align: center;
 
   li {
     width: 90px;
@@ -225,6 +221,7 @@ Description:  Styles for Landing Page
     color: #fff;
     background: colors('grey-dark');
     border-color: colors('grey-dark');
+
     &::after {
       border-top-color: colors('grey-dark');
       bottom: -16px;

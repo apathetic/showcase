@@ -46,7 +46,7 @@ $colors: (
   'border': #dadada
 );
 
-@function color($color) {
+@function colors($color) {
   @if not map-has-key($colors, $color) {
     @warn 'No color found for `#{$color}`.';
   }
