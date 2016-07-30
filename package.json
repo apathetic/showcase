@@ -10,7 +10,6 @@
     "url": "https://stash.hugeinc.com/projects/CMPTS/repos/showcase/browse"
   },
   "devDependencies": {
-    "@apatheticwes/flexicarousel": "^0.6.0",
     "@apatheticwes/scrollify": "^0.2.0",
     "asciify": "git+https://github.com/apathetic/asciify.git",
     "autoprefixer": "^6.3.3",
@@ -29,6 +28,7 @@
     "postcss-cli": "^2.5.2",
     "rollup": "^0.27.1",
     "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-buble": "^0.12.1",
     "rollup-plugin-node-resolve": "^1.7.1",
     "rollup-plugin-uglify": "^1.0.1",
     "stickynav": "git+https://github.com/apathetic/stickynav.git",
