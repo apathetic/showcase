@@ -7,15 +7,16 @@ h4,
 h5,
 h6 {
   color: #000;
-  font-family: "HUGEAvantGardeBold", sans-serif;
+  font-family: $font-default;
   letter-spacing: -0.06em;
-  margin: 0 0 0.6em;
+  margin-bottom: 1rem;
   font-weight: 500;
   line-height: 1.2;
 }
 
-h1 {
-  font-size: 4em;
+h1,
+.heading-1 {
+  font-size: em(60px);
 }
 
 h2 {
@@ -65,5 +66,5 @@ pre {
 
 hr {
   margin: 4em 0;
-  border: 1px solid $color-border;
+  border: 1px solid colors('border');
 }

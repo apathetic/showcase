@@ -13,12 +13,36 @@ Description:  Main styles for the Huge Showcase
   3. Layout
 */
 
+/* ---------------------------------------
+  1.  Global
+---------------------------------------- */
+
+* {
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  position: relative;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;    // only OS X
+  -webkit-font-smoothing: antialiased;   // we put this here to overcome webkit bug when doing -webkit-transforms
+
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  color: $color-font-dark;
+  font-family: $font-serif;
+  // font-weight: 100;
+  font-kerning: normal;
+  font-size: $font-size-base;
+  line-height: 1.4;
+}
+
 
 body {
-  background: $color-off-white;
-  font: 16px / 24px "Galaxie", Georgia, serif;
-  color: $color-font-dark;
-  margin: 0;
+  background: colors('off-white');
 }
 
 /* ---------------------------------------

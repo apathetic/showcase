@@ -1,28 +1,104 @@
-/* Responsive
----------------------------------------------------------------------------- */
+/**
+
+File:         variables.scss
+Description:  Site-wide variables
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Grid
+    2. Colours
+    3. Typography
+    4. Transitions
+    5. z-index
+
+*/
+
+/* ---------------------------------------
+  1.  Grid
+---------------------------------------- */
+
+$breakpoints: (
+  small:  (null, 40em),
+  medium: (40em, 65em),
+  large:  (65em, null)
+);
+$max-width: 96em;
+$columns: 12;
+$gutter: 30px;
+$padding: $gutter / 2;
 
 
-/* Colors
----------------------------------------------------------------------------- */
+/* ---------------------------------------
+  2.  Colours
+---------------------------------------- */
 
-$color-magenta: #ec008c;	// HUGE branded
-$color-blue: #0096d6;
+$colors: (
+  'grey': #54595f,
+  'grey-dark': #2a2c2e,
+  'grey-light': #f4f4f4,
 
-$color-font-dark: #333;
+  'off-white': #f4f4f4,
+  'magenta': #ec008c,
+  'blue': #0096d6,
+  'blue-light': lighten(#0096d6, 20%),
+  'border': #dadada
+);
+
+@function color($color) {
+  @if not map-has-key($colors, $color) {
+    @warn 'No color found for `#{$color}`.';
+  }
+
+  @return map-get($colors, $color);
+}
+
+
+/* ---------------------------------------
+  3.  Typography
+---------------------------------------- */
+
+$font-sans: Arial, sans-serif;
+$font-serif: 'Galaxie', Georgia, serif;
+$font-default: 'HUGE', $font-sans;
+
+$font-size-base: 15px;
+
 $color-font-medium: #666;
 $color-font-light: #999;
+$color-font-dark: #333;
 
-$color-border: #dadada;
-$color-grey-dark: #232525;
 
-$color-off-white: #f4f4f4;
+/* ---------------------------------------
+  4.  Transitions
+---------------------------------------- */
 
-$color-border: #ddd;
+$transition-time: 0.2s;
 
-/* Fonts
----------------------------------------------------------------------------- */
 
-$font-hugeAvantGarde: 'HUGEAvantGardeBold', sans-serif;
-$font-galaxie: 'Galaxie';
-$font-galaxieItalic: 'GalaxieItalic';
-$font-sans: Arial, sans-serif;
+/* ---------------------------------------
+  5.  z-index
+---------------------------------------- */
+
+
+$zindex: (
+  'base': 1,
+  'section': 100,
+  '3': 300,
+  '4': 400,
+  '5': 500,
+  '6': 600,
+  '7': 700,
+  '8': 800,
+  '9': 900
+);
+
+
+@function zindex($layer) {
+  @if not map-has-key($index, $layer) {
+    @warn 'No z-index layer found for `#{$layer}`.';
+  }
+
+  @return map-get($zindex, $layer);
+}

@@ -8,17 +8,11 @@ Description:  Main styles for the Huge Showcase
 
   Table of Contents:
 
-  2. Default styles
-    - typograpy
-    - links
-  3. Layout
-
-
 */
 
 header {
   min-height: 150px;
-  background: $color-grey-dark;
+  background: colors('grey-dark');
   color: #fff;
   text-align: center;
   margin-bottom: 48px;

@@ -11,6 +11,6 @@ a {
   }
 
   &:hover {
-    color: lighten($color-magenta, 20%);
+    color: colors('magenta');
   }
 }

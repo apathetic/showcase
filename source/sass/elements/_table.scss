@@ -9,7 +9,7 @@ table {
   background-color: transparent;
   border-spacing: 0;
   border-collapse: collapse;
-  border: 1px solid $color-border;
+  border: 1px solid colors('border');
 }
 
 .table > thead:first-child > tr:first-child > th {
@@ -27,7 +27,7 @@ table {
 .table > tbody > tr > td {
   padding: 12px;
   vertical-align: top;
-  border-top: 1px solid $color-border;
+  border-top: 1px solid colors('border');
 }
 
 td,
@@ -37,7 +37,7 @@ th {
 }
 
 th {
-  font-family: HUGEAvantGardeBold, sans-serif;
+  font-family: $font-default;
   background-color: #777;
   color: #fff;
 }

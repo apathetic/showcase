@@ -20,25 +20,21 @@ Description:  Styles for Landing Page
   2.  Default Styles
 ---------------------------------------- */
 
-@keyframes blip {
-  0% { background: #f8fafa; }
-  100% { background: #f4f4f4; }
-}
-
 
 #home {
   header {
     text-align: center;
     color: #999;
     // min-height: 150px;
-    background: $color-grey-dark;
+    background: colors('grey-dark');
 
     .v-center {
       padding: 6em 20%;
     }
 
     .eyebrow {
-      font: 13px "GalaxieItalic";
+      font-size: 13px;
+      font-family: $font-serif;
     }
 
     h1 {
@@ -197,9 +193,8 @@ Description:  Styles for Landing Page
 
 }
 
-/* ripped from HUGEINC */
-#tabs {
-  padding-bottom: 36px;
+.filters {
+  padding-bottom: 2em;
   text-align: center;
 
   li {
@@ -228,48 +223,12 @@ Description:  Styles for Landing Page
 
   .active {
     color: #fff;
-    background: $color-grey-dark;
-    border-color: $color-grey-dark;
+    background: colors('grey-dark');
+    border-color: colors('grey-dark');
     &::after {
-      border-top-color: $color-grey-dark;
+      border-top-color: colors('grey-dark');
       bottom: -16px;
     }
   }
 
-}
-
-footer {
-  background: #000;
-  color: #999;
-  font-size: 11px;
-  padding: 80px 0 40px;
-  text-align: center;
-}
-
-#logo {
-  display: inline-block;
-  width: 46px;
-  height: 54px;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAiCAYAAABBY8kOAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAF1JREFUeNpi+E8YbABiBgJ4AyFDmBjoBEYtGrVo1KJRizABCxFqRIDYgQg1eAEjqMCjh49GLRq1aIRbdBSIawioaQFia0pLhjdAfIAINaOl96hFoxaNWjRYLQIIMABdEogcjpWdDQAAAABJRU5ErkJggg==") 50% 50% no-repeat;
-}
-
-#meta {
-  margin-top: 5em;
-  border-top: 1px solid #333;
-  padding-top: 2em;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 11px;
-  height: 64px;
-
-  a {
-    float: right;
-    color: #fff;
-    font-size: 2em;
-    margin: 0.5em;
-  }
-
-  span {
-    float: left;
-    margin: 1em;
-  }
 }

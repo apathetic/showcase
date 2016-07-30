@@ -1,0 +1,72 @@
+
+{% extends "/views/base.html" %}
+
+{% block main %}
+
+  <header class="hero">
+    <div class="carousel" id="featured">
+      <ul class="wrap">
+        {% for component in g.docs('components') if component.featured %}
+        <li class="slide">
+          <div class="v-center">
+            <span class="eyebrow">Module by {{ component.author }}</span>
+            <h1><a href="components/{{ component.slug }}">{{ component.title }}</a></h1>
+            <p>{{ component.description }}</p>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+
+      <nav>
+        <div class="prev">
+          <span>←</span>
+        </div>
+
+        <ul>
+          {% for component in g.docs('components') if component.featured %}<li></li>{% endfor %}
+        </ul>
+
+        <div class="next">
+          <span>→</span>
+        </div>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+    <div class="filters">
+      <ul>
+        <li data-filter="all" class="active">all.</li>
+        <li data-filter="css">css</li>
+        <li data-filter="js">js</li>
+        <li data-filter="carousel">carousel</li>
+        <li data-filter="slider">slider</li>
+      </ul>
+    </div>
+
+    {% for component in g.docs('components') %}
+      {% if not component.hidden %}
+      <section class="tile" data-tags="all {% for tag in component.tags %}{{ tag }}{% endfor %}">
+        <div>
+          <span class="eyebrow">
+          {% for tag in component.tags %}<strong>{{ tag }}</strong>{% endfor %}
+          </span>
+
+          <h2><a href="components/{{ component.slug }}">{{ component.title }}</a></h2>
+
+          <p>{{ component.description }}</p>
+          <p class="install">
+            {% if (component.stash)  %}<a class="icon-stash" href="{{ component.stash  }}">stash</a>{% endif %}
+            {% if (component.github) %}<a class="icon-github" href="{{ component.github }}">github</a>{% endif %}
+          </p>
+        </div>
+      </section>
+      {% endif %}
+    {% endfor %}
+
+  </main>
+
+  <script src="/assets/js/home.min.js"></script>
+
+{% endblock %}

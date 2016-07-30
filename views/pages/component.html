@@ -5,20 +5,30 @@
 
   <header>
     <h1>{{ doc.title }}</h1>
-    <div class="attribution">
-      {{ _('Posted %(date)s', date=doc.published ) }}
-    </div>
+    <p class="attribution">{{ _('Posted %(date)s', date=doc.published ) }}</p>
 
 
     {% set next_doc = doc.next() %}
     {% set prev_doc = doc.prev() %}
+    {% if prev_doc %}
+    <div>
+      <span> << </span>
+      <a href="{{next_doc.url.path}}">{{next_doc.title}}</a>
+    </div>
+    {% endif %}
     {% if next_doc %}
     <div>
-      <span>{{_('Next:')}}</span>
+      <span> >> </span>
       <a href="{{next_doc.url.path}}">{{next_doc.title}}</a>
     </div>
     {% endif %}
 
+    {% if doc.github %}
+    <h2>Download</h2>
+      <button class="button button--outline">
+      <a href="{{ doc.github }}">Github</a>
+    </button>
+    {% endif %}
 
   </header>
 
@@ -36,6 +46,14 @@
     main
     {% block component %}<!-- -->{% endblock %}
   </main>
+
+  {% for style in doc.assets.css %}
+    {{ style }}
+  {% endfor %}
+
+  {% for script in doc.assets.js %}
+    {{ script }}
+  {% endfor %}
 
   <script src="../js/component.js"></script>
 

@@ -1,2 +1,2 @@
-view: /views/home.html
+view: /views/pages/home.html
 path: /{base}/

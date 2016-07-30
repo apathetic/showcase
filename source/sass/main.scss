@@ -11,18 +11,21 @@
 // base
 @import "base/reset";
 @import "base/fonts";
+@import "base/global";
 @import "base/typography";
 @import "base/links";
 @import "base/layout";
-@import "base/common";
 
 // elements
 @import "elements/buttons";
 @import "elements/table";
-@import "elements/carousel";
+
+// modules
+@import "modules/carousel";
+@import "modules/footer";
 
 // pages
-@import "page/index";
+@import "page/home";
 @import "page/component";
 
 
