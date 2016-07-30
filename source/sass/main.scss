@@ -12,15 +12,18 @@
 @import "base/reset";
 @import "base/fonts";
 @import "base/typography";
+@import "base/links";
+@import "base/layout";
 @import "base/common";
 
 // elements
 @import "elements/buttons";
 @import "elements/table";
+@import "elements/carousel";
 
 // pages
-@import "page/page";
 @import "page/index";
+@import "page/component";
 
 
 // @import "../../node_modules/@apatheticwes/flexicarousel/src/carousel.css";

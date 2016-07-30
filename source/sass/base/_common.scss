@@ -11,9 +11,6 @@ Description:  Main styles for the Huge Showcase
     - typograpy
     - links
   3. Layout
-
-  ** note: in Sublime text: <command + K + 1> to visually format this document **
-
 */
 
 
@@ -23,28 +20,6 @@ body {
   color: $color-font-dark;
   margin: 0;
 }
-
-
-/* ---------------------------------------
-  1.  Element Styles
----------------------------------------- */
-
-
-// --- Links ---
-
-a {
-  text-decoration: none;
-  color: #ec008c;
-
-  &:visited {
-    color: #ec008c;
-  }
-
-  &:hover {
-    color: lighten($color-magenta, 20%);
-  }
-}
-
 
 /* ---------------------------------------
   3.  Icons
@@ -66,13 +41,3 @@ a {
 .icon-facebook::before { content: "\f09a"; }
 .icon-github::before { content: "\f09b"; }
 .icon-stash::before { content: "\e900"; }
-
-
-/* ---------------------------------------
-  3.  Layout
----------------------------------------- */
-
-.container {
-  max-width: 1280px;
-  margin: 0 10%;
-}
