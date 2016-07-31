@@ -1,4 +1,21 @@
-// --- Typography ---
+/**
+
+File:         elements.scss
+Description:  All general elements styles (ie. tags without classes) can go in here
+
+    ◡◠ ✥ ◠◡
+
+    Table of Contents:
+
+    1. Headings
+    2. Text style
+    3. Paragraphs
+
+*/
+
+/* ---------------------------------------
+  1.  Headings
+---------------------------------------- */
 
 h1,
 h2,
@@ -35,6 +52,11 @@ h6 {
   line-height: 1;
 }
 
+.eyebrow {
+  font-size: 13px;
+  font-family: $font-serif;
+}
+
 
 @include at-breakpoint('mobile') {
   h1 {
@@ -42,9 +64,10 @@ h6 {
   }
 }
 
-p {
-  margin-bottom: 1em;
-}
+
+/* ---------------------------------------
+  2.  Text Style
+---------------------------------------- */
 
 strong {
   font-weight: bold;
@@ -67,4 +90,12 @@ pre {
 hr {
   margin: 4em 0;
   border: 1px solid colors('border');
+}
+
+/* ---------------------------------------
+  3.  Paragraphs
+---------------------------------------- */
+
+p {
+  margin-bottom: 1em;
 }

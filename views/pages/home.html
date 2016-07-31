@@ -3,16 +3,14 @@
 
 {% block main %}
 
-  <header class="hero">
+  <header class="hero align-center">
     <div class="carousel" id="featured">
-      <ul class="wrap">
+      <ul class="carousel__wrap">
         {% for component in g.docs('components') if component.featured %}
-        <li class="slide">
-          <div class="v-center">
-            <span class="eyebrow">Module by {{ component.author }}</span>
-            <h1><a href="components/{{ component.slug }}">{{ component.title }}</a></h1>
-            <p>{{ component.description }}</p>
-          </div>
+        <li class="carousel__slide">
+          <span class="eyebrow">Module by {{ component.author }}</span>
+          <h1><a href="components/{{ component.slug }}">{{ component.title }}</a></h1>
+          <p>{{ component.description }}</p>
         </li>
         {% endfor %}
       </ul>

@@ -1,6 +1,7 @@
 // import babel from 'rollup-plugin-babel';
 import buble from 'rollup-plugin-buble';
 import resolve from 'rollup-plugin-node-resolve';
+import multiEntry from 'rollup-plugin-multi-entry';
 import uglify from 'rollup-plugin-uglify';
 
 export default {
@@ -8,8 +9,8 @@ export default {
   dest: 'dist/js/home.min.js',
   // format: 'cjs',
   format: 'iife',
-  // format: 'umd',
   plugins: [
+    // multiEntry(),
     resolve({
       jsnext: true,
       main: true,

@@ -3,10 +3,11 @@
 // settings
 @import "settings/variables";
 
-// util
+// utility
 @import "utility/prism";
 @import "utility/syntax";
 @import "utility/mixins";
+@import "utility/helpers";
 
 // base
 @import "base/reset";
@@ -18,7 +19,7 @@
 
 // elements
 @import "elements/buttons";
-@import "elements/table";
+@import "elements/tables";
 
 // modules
 @import "modules/carousel";
