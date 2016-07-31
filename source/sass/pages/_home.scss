@@ -66,6 +66,20 @@ header.hero {
     display: inline-block;
     padding: 1em;
     color: $color-font-dark;
+
+    strong {
+      padding-right: 0.5em;
+
+      &::after {
+        content: '/';
+        padding-left: 0.5em;
+      }
+
+      &:last-child::after {
+        content: '';
+      }
+
+    }
   }
 
   .install {

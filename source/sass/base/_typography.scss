@@ -58,7 +58,7 @@ h6 {
 }
 
 
-@include at-breakpoint('mobile') {
+@include at-breakpoint('small') {
   h1 {
     font-size: 3em;
   }

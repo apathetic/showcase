@@ -3,11 +3,11 @@ import Carousel from  '@apatheticwes/flexicarousel';
 // ---- carousel ---- //
 const featured = document.querySelector('#featured');
 const sections = document.querySelectorAll('main section');
-const tabs = document.querySelectorAll('#tabs li');
+const tabs = document.querySelectorAll('.filters li');
 const bullets = featured.querySelectorAll('nav li');
 const carousel = new Carousel(featured, {
-  slides: '.slide',
-  offscreen: 1,
+  slides: '.carousel__slide',
+  // offscreen: 1,
   onSlide: (current) => {
     for (let i = bullets.length; i--;) {
       bullets[i].classList.remove('active');
@@ -18,12 +18,15 @@ const carousel = new Carousel(featured, {
 
 
 featured.querySelector('.prev').addEventListener('click', () => {
+  window.console.log(carousel);
   carousel.prev();
 });
 featured.querySelector('.next').addEventListener('click', () => {
   carousel.next();
 });
-Array.from(bullets, (bullet, to) => {
+
+// Array.from(bullets, (bullet, to) => {
+Array.prototype.forEach.call(bullets, (bullet, to) => {     // "safe ES5 transform
   bullet.addEventListener('click', () => {
     carousel.go(to);
   });
@@ -31,7 +34,8 @@ Array.from(bullets, (bullet, to) => {
 
 
 // ---- filters ---- //
-Array.from(tabs, (tab) => {
+// Array.from(tabs, (tab) => {
+Array.prototype.forEach.call(tabs, (tab) => {     // "safe ES5 transform
   const filter = tab.getAttribute('data-filter');
 
   tab.addEventListener('click', function(e) {
