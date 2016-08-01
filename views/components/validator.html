@@ -1,52 +1,7 @@
-<!DOCTYPE html>
-<html>
+{% extends "/views/pages/component.html" %}
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Validator.</title>
-	<meta name="viewport" content="width=device-width">
-	<link rel="stylesheet" href="../css/styles.css">
+{% block component %}
 
-
-	<!-- component stuffs -->
-
-	<link rel="stylesheet" href="https://rawgit.com/apathetic/validator/master/demo/styles.css">
-
-	<script src="https://rawgit.com/apathetic/validator/master/dist/validator.min.js"></script>
-	<!-- end component stuffs -->
-
-</head>
-
-<body>
-
-
-	<header>
-		<h1>Validator.</h1>
-	</header>
-
-	<nav>
-		<div id="sticky">
-			<div class="container">
-				<nav data-autogenerate="true">
-					<ul></ul>
-				</nav>
-			</div>
-		</div>
-	</nav>
-
-	<main class="component left-rail">
-
-
-		<nav>
-			<div id="sticky">
-				<div class="container">
-					<nav data-autogenerate="true">
-						<ul></ul>
-					</nav>
-				</div>
-			</div>
-		</nav>
 
 		<section data-nav="About" id="about">
 			<div class="container">
@@ -63,13 +18,13 @@
 			</div>
 		</section>
 
-		<section data-nav="Download" id="download">
+		<!-- <section data-nav="Download" id="download">
 			<div class="container">
 				<h2>Download</h2>
 				<h3>Github</h3>
 				<p><a href="https://github.com/apathetic/validator">Get it from Github</a></p>
 			</div>
-		</section>
+		</section> -->
 
 		<section data-nav="Demo" id="demo">
 			<div class="container">
@@ -212,18 +167,4 @@
 			</div>
 		</section>
 
-
-	</main>
-
-	<footer>
-		<div class="container">
-		</div>
-	</footer>
-
-
-	<script>function validate() {			var form = document.querySelector('#demo-form');			var message = document.querySelector('.valid');			var validator = new Validator();			/*			 * You update it with your own rules!			 */			validator.updateRule('count', function count(val) {				return val.length <= 40;			});			form.addEventListener('submit', function(e) {				e.preventDefault();				/**				 * Lets validate the form in "groups". We can divide it up however we like,				 * or pass in the form in its entirety				 */				var groups = form.querySelectorAll('.form-group');				var valid = true;				Array.prototype.forEach.call(groups, function(group){					/*					 * Here is where we check every form group. If any fail, we keep track					 * with valid but still keep going through the rest -- we want to check					 * them too and to bind the appropriate listeners					 */					valid = validator.check(group) && valid;				});				if (valid) {					message.classList.remove('hidden');				} else {					e.stopImmediatePropagation();					message.classList.add('hidden');					document.querySelector('.has-error').scrollIntoView();				}			});		}		function characterCounter() {			var textarea = document.querySelector('textarea');			var count = document.querySelector('.character-count');			var num = count ? count.querySelector('i') : 0;			textarea.addEventListener('keyup', checkLength);			checkLength();			function checkLength(e) {				var remaining = 40 - textarea.value.length;				num.innerHTML = remaining;				if (remaining < 0) {					count.classList.add('has-error');				} else {					count.classList.remove('has-error');				}			}		}		window.addEventListener('DOMContentLoaded', validate);		window.addEventListener('DOMContentLoaded', characterCounter);</script>
-
-	<script src="../js/component.js"></script>
-
-</body>
-</html>
+    {% endblock %}

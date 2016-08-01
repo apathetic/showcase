@@ -1,0 +1,19 @@
+$title: Modals
+$slug: modals
+$view: /views/components/modals.html
+$hidden: false
+
+description: "A basic yet powerful modal system with a straightforward API"
+author: "Wes Hatch"
+date: "2013-02-28"
+featured: false
+tags:
+  - js
+  - modal
+stash: "https://stash.hugeinc.com/projects/CMPTS/repos/modals/browse"
+github: "https://github.com/apathetic/modals"
+assets:
+  css:
+    - "https://rawgit.com/apathetic/modals/master/demo/styles.css"
+  js:
+    - "https://rawgit.com/apathetic/modals/master/dist/modals.min.js"

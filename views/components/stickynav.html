@@ -1,35 +1,6 @@
-<!DOCTYPE html>
-<html>
+{% extends "/views/pages/component.html" %}
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<title>Sticky Navigation</title>
-	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="https://rawgit.com/apathetic/stickynav/master/demo/styles.css">
-	<link rel="stylesheet" href="../css/styles.css">
-
-</head>
-
-<body>
-
-
-	<header>
-		<h1>Sticky Nav.</h1>
-	</header>
-
-	<nav>
-		<div id="sticky">
-			<div class="container">
-				<nav data-autogenerate="true">
-					<ul></ul>
-				</nav>
-			</div>
-		</div>
-	</nav>
-
-	<main class="component left-rail">
+{% block component %}
 
 		<section data-nav="About" id="about">
 			<div class="container">
@@ -177,9 +148,4 @@
 			</div>
 		</section>
 
-	</main>
-
-	<script src="/js/component.js"></script>
-
-</body>
-</html>
+    {% endblock %}
