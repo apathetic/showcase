@@ -48,10 +48,12 @@
           <h2><a href="components/{{ component.slug }}">{{ component.title }}</a></h2>
 
           <p>{{ component.description }}</p>
+          {#
           <p class="install">
             {% if (component.stash)  %}<a class="icon-stash" href="{{ component.stash  }}">stash</a>{% endif %}
             {% if (component.github) %}<a class="icon-github" href="{{ component.github }}">github</a>{% endif %}
           </p>
+          #}
         </div>
       </section>
       {% endif %}

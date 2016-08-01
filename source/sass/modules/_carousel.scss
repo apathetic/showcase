@@ -61,9 +61,18 @@
     padding: 0 20vw;
   }
 
+  // TODO: move to flexicarousel css:
+  &__nav {
+    button {
+      background: none;
+      color: #fff;
+      font-size: 4em;
+    }
+  }
+
+  &:hover nav button { opacity: 1; }
+
   nav {
-    // height: 3em;
-    // width: 100%;
     text-align: center;
     position: static;
 
@@ -92,37 +101,24 @@
     button {
       position: absolute;
       cursor: pointer;
-      // top: 0;
       top: 50%;
+      height: 4em;
       margin-top: -2em;
       padding: 0.5em;
-
-      background: none;
-      color: #fff;
-      font-size: 4em;
-      // width: 1em;
-      height: 4em;
-
       opacity: 0;
       transition: all 0.3s;
-
-      // width: 20%;
-      // height: 100%;
-      // z-index: 1000;
 
       &.disabled {
         opacity: 0.2;
       }
     }
-  }
 
-  &:hover nav button { opacity: 1; }
+    .prev {
+      left: 0;
+    }
 
-  .prev {
-    left: 0;
-  }
-
-  .next {
-    right: 0;
+    .next {
+      right: 0;
+    }
   }
 }

@@ -14,31 +14,33 @@
   {% set next_doc = doc.next() %}
   {% set prev_doc = doc.prev() %}
 
-  <header class="condensed">
+  <header class="condensed align-center">
     <h1>{{ doc.title }}</h1>
     <!-- <p class="attribution">{{ _('Posted %(date)s', date=doc.published ) }}</p> -->
 
     <nav>
     {% if prev_doc %}
-    <div>
-      <span> << </span>
-      <a href="{{prev_doc.url.path}}">{{prev_doc.title}}</a>
-    </div>
+      <a class="button prev" href="{{ prev_doc.url.path }}">
+        ⟨
+        <span>{{ prev_doc.title }}</span>
+      </a>
     {% endif %}
     {% if next_doc %}
-    <div>
-      <span> >> </span>
-      <a href="{{next_doc.url.path}}">{{next_doc.title}}</a>
-    </div>
+      <a class="next button" href="{{ next_doc.url.path }}">
+        <span>{{ next_doc.title }}</span>
+        ⟩
+      </a>
     {% endif %}
     </nav>
 
     {% if doc.github %}
-    <p>Download:
     <a class="button button--outline button--small" href="{{ doc.github }}">
-      <i class="icon-github"></i>
-      Github
-    </a></p>
+      <i class="icon-github"></i> Github
+    </a>
+
+    <a class="button button--outline button--small" href="{{ doc.github }}/archive/master.zip">
+      ⇩ Download
+    </a>
     {% endif %}
 
   </header>

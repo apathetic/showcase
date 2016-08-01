@@ -11,21 +11,23 @@ Description:  Main styles for the Huge Showcase
 */
 
 header.condensed {
-  min-height: 150px;
-  background: colors('grey-dark');
   color: #fff;
-  text-align: center;
-  padding: 1em;
-  margin-bottom: 48px;
+  padding: 1em 0;
+  margin-bottom: 3em;
 
   h1 {
     color: #fff;
-    display: inline-block;
-    // margin: 0;
   }
 
-  nav {
+  .prev {
     position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .next {
+    position: absolute;
+    right: 0;
     top: 0;
   }
 }

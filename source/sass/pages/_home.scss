@@ -21,39 +21,12 @@ Description:  Styles for Landing Page
 ---------------------------------------- */
 
 header.hero {
-  // text-align: center;
   color: $color-font-light;
-  background: colors('grey-dark');
-
-  a {
-    color: #fff;
-    text-decoration: none;
-  }
-
-  .carousel {
-    nav {
-      button {
-        // position: absolute;
-        // top: 50%;
-        // width: 3em;
-        // height: 3em;
-        // top: 50%;
-        // margin-top: -1.5em;
-        // font: 1.8em / 3em 'Lucida Grande';
-        // display: inline-block;
-        font-family: 'Lucida Grande';
-        background: #393c3c;
-        color: #000;
-        font-size: 2em;
-        // opacity: 0;
-        // transition: all 0.3s;
-      }
-    }
-  }
 }
 
 .tile {
   color: $color-font-light;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.6);
   overflow: hidden;
   max-height: 250px;
   transition: transform 0.8s, max-height 1s, opacity 0.5s;
