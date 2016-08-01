@@ -2,6 +2,12 @@
   2.  Buttons
 ---------------------------------------- */
 
+button {
+  outline: 0;
+  border: 0;
+  -webkit-appearance: none;
+}
+
 %brick {
   border-radius: 3px;
   display: inline-block;
@@ -28,6 +34,10 @@
     &:hover {
       background-color: colors('blue-light');
     }
+  }
+
+  &--small {
+    font-size: 0.7em;
   }
 
   &--outline {

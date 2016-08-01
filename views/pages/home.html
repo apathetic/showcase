@@ -16,17 +16,11 @@
       </ul>
 
       <nav>
-        <div class="prev">
-          <span>←</span>
-        </div>
-
+        <button class="prev">←</button>
         <ul>
           {% for component in g.docs('components') if component.featured %}<li></li>{% endfor %}
         </ul>
-
-        <div class="next">
-          <span>→</span>
-        </div>
+        <button class="next">→</button>
       </nav>
 
     </div>

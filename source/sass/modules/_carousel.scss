@@ -80,46 +80,40 @@
       transition: all 0.5s;
 
       &.active {
-        border-color: #fff;
+        border-color: colors('magenta');
         background-color: transparent;
       }
     }
 
-    div {
+    button {
       position: absolute;
       cursor: pointer;
-      top: 0;
-      width: 20%;
-      height: 100%;
-      z-index: 1000;
+      // top: 0;
+      top: 50%;
+      margin-top: -2em;
+      padding: 0.5em;
 
-      &:hover span { opacity: 0.75; }
+      color: #fff;
+      font-size: 2em;
+      // width: 1em;
+      height: 4em;
 
-      span {
-        position: absolute;
-        top: 50%;
-        width: 3em;
-        height: 3em;
-        margin-top: -1.5em;
-        font: 1.8em / 3em 'Lucida Grande';
-        display: inline-block;
-        background: #393c3c;
-        color: #000;
-        opacity: 0;
-        transition: all 0.3s;
-        // vertical-align: middle;
-      }
+      opacity: 0;
+      transition: all 0.3s;
+
+      // width: 20%;
+      // height: 100%;
+      // z-index: 1000;
     }
   }
 
-  .prev,
-  .prev span {
+  &:hover nav button { opacity: 1; }
+
+  .prev {
     left: 0;
   }
 
-  .next,
-  .next span {
+  .next {
     right: 0;
   }
-
 }

@@ -29,6 +29,26 @@ header.hero {
     color: #fff;
     text-decoration: none;
   }
+
+  .carousel {
+    nav {
+      button {
+        // position: absolute;
+        // top: 50%;
+        // width: 3em;
+        // height: 3em;
+        // top: 50%;
+        // margin-top: -1.5em;
+        // font: 1.8em / 3em 'Lucida Grande';
+        // display: inline-block;
+        font-family: 'Lucida Grande';
+        background: #393c3c;
+        color: #000;
+        // opacity: 0;
+        // transition: all 0.3s;
+      }
+    }
+  }
 }
 
 .tile {
