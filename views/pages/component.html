@@ -1,8 +1,6 @@
-
 {% extends "/views/base.html" %}
 
 {% block assets %}
-
   {% for style in doc.assets.css %}
     <link rel="stylesheet" href="{{ style }}">
   {% endfor %}
@@ -10,20 +8,17 @@
   {% for script in doc.assets.js %}
     <script src="{{ script }}"></script>
   {% endfor %}
-
 {% endblock %}
 
-
-
 {% block main %}
+  {% set next_doc = doc.next() %}
+  {% set prev_doc = doc.prev() %}
 
   <header class="condensed">
     <h1>{{ doc.title }}</h1>
-    <p class="attribution">{{ _('Posted %(date)s', date=doc.published ) }}</p>
+    <!-- <p class="attribution">{{ _('Posted %(date)s', date=doc.published ) }}</p> -->
 
-
-    {% set next_doc = doc.next() %}
-    {% set prev_doc = doc.prev() %}
+    <nav>
     {% if prev_doc %}
     <div>
       <span> << </span>
@@ -36,12 +31,14 @@
       <a href="{{next_doc.url.path}}">{{next_doc.title}}</a>
     </div>
     {% endif %}
+    </nav>
 
     {% if doc.github %}
-    <h2>Download</h2>
-      <button class="button button--outline">
-      <a href="{{ doc.github }}">Github</a>
-    </button>
+    <p>Download:
+    <a class="button button--outline" href="{{ doc.github }}">
+      <i class="icon-github"></i>
+      Github
+    </a></p>
     {% endif %}
 
   </header>

@@ -15,12 +15,18 @@ header.condensed {
   background: colors('grey-dark');
   color: #fff;
   text-align: center;
+  padding: 1em;
   margin-bottom: 48px;
 
   h1 {
     color: #fff;
-    margin: 0;
-    padding: 0.6em;
+    display: inline-block;
+    // margin: 0;
+  }
+
+  nav {
+    position: absolute;
+    top: 0;
   }
 }
 

@@ -5,7 +5,7 @@
 %brick {
   border-radius: 3px;
   display: inline-block;
-  width: 100%;
+  // width: 100%;
   font-size: 1rem;
   padding: 1em; // 1.2em;
 }
@@ -13,16 +13,29 @@
 .button {
   @extend %brick;
   color: #fff;
-  background-color: colors('blue');
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
   margin: 0.5em 0;
   max-width: 18em;
+  min-width: 10em;
   vertical-align: top;
   transition: background 0.2s ease-in-out;
 
-  &:hover {
-    background-color: colors('blue-light');
+  &--default {
+    background-color: colors('blue');
+
+    &:hover {
+      background-color: colors('blue-light');
+    }
+  }
+
+  &--outline {
+    border: 1px solid #fff;
+    color: #fff !important;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.6);
+    }
   }
 }

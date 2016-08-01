@@ -1,6 +1,7 @@
-// import stickyNav from 'stickynav';
-// import Prism from './prism.js';
-//
-// window.addEventListener('DOMContentLoaded', function() {
-//   stickyNav.init({ nav: '#sticky' });
-// });
+// import stickynav from 'stickynav';
+import stickynav from '../../node_modules/@apatheticwes/stickynav';
+import Prism from './lib/prism.js';
+
+window.addEventListener('DOMContentLoaded', function() {
+  stickynav({ nav: '#sticky' });
+});
