@@ -18,6 +18,6 @@ github: "https://github.com/apathetic/flexicarousel"
 assets:
   css:
     - "https://rawgit.com/apathetic/flexicarousel/master/demo/styles.css"
-    - "https://rawgit.com/apathetic/flexicarousel/master/src/flexicarousel.css"
+    - "https://rawgit.com/apathetic/flexicarousel/master/src/carousel.css"
   js:
-    - "https://rawgit.com/apathetic/flexicarousel/master/dist/flexicarousel.min.js"
+    - "https://rawgit.com/apathetic/flexicarousel/master/dist/carousel.min.js"
