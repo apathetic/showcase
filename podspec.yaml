@@ -40,11 +40,12 @@ sitemap:
 
 
 deployments:
-  default:                # Deployment name.
+  test:                   # Deployment name.
     destination: local    # Destination kind.
-    out_dir: ~/Sites/showcase/build
+    out_dir: ~/Sites/COMPONENTS/SHOWCASE/www
 
   github:
-    destination: github
-    repo: xxx
-
+    destination: git
+    repo: https://github.com/apathetic/showcase.git
+    branch: gh-pages
+    root_dir: /
