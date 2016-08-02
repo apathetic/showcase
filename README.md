@@ -46,11 +46,10 @@ $ grow run
 Adding your own Component
 -----------
 
-First, add an entry for your component into the data.json file. Then, create your page... it may be
-easiest to copy / paste and existing page for reference.
+First, create a ```yaml``` file for your component that will contain various meta-data, description, dates, etc. about your component. Feel free to copy / paste an existing file for reference.
 
 ### Save it
-Simply make your own <component>.html page in public/components/
+Next, create the template that will showcase your component. Simply make a <component>.html page in ```views/components/``` that contains documentation and perhaps a demo.  It should extend the base component.html template.
 
 
 Updating the Showcase Website

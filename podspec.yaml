@@ -48,4 +48,4 @@ deployments:
     destination: git
     repo: https://github.com/apathetic/showcase.git
     branch: gh-pages
-    root_dir: /
+    # root_dir: /
