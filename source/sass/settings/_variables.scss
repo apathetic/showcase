@@ -21,10 +21,10 @@ Description:  Site-wide variables
 
 $breakpoints: (
   small:  (null, 40em),
-  medium: (40em, 64em),
-  large:  (64em, null)
+  medium: (40em, 60em),
+  large:  (60em, null)
 );
-$max-width: 88em;
+$max-width: 80em;
 $columns: 12;
 // $gutter: 30px;
 $gutter: 2em;

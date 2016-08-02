@@ -121,7 +121,8 @@ main.component {
     list-style-type: disc;
   }
 
-  // p + *:not(p) {
-  //   margin-top: 2em;
-  // }
+  p + *:not(p),
+  ul + *:not(p) {
+    margin-top: 2em;
+  }
 }
