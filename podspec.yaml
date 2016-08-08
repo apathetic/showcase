@@ -46,6 +46,7 @@ deployments:
     out_dir: ~/Sites/COMPONENTS/SHOWCASE/www
     env:
       host: apathetic.github.io/showcase
+      scheme: https
 
   wes:
     destination: git
