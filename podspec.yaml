@@ -1,4 +1,5 @@
-grow_version: ">=0.0.60"
+grow_version: ">=0.0.65"
+# root: /
 home: /content/pages/home.yaml
 
 localization:
@@ -43,16 +44,23 @@ deployments:
   test:                   # Deployment name.
     destination: local    # Destination kind.
     out_dir: ~/Sites/COMPONENTS/SHOWCASE/www
+    env:
+      host: apathetic.github.io/showcase
 
-  github:
+  wes:
     destination: git
-    repo: https://github.com/apathetic/showcase.git
+    # repo: https://github.com/apathetic/showcase.git
+    repo: git@github.com:apathetic/showcase.git
+    branch: gh-pages
+    env:
+      host: apathetic.github.io/showcase
+      scheme: https
+
+  huge:
+    destination: git
+    repo: https://github.com/hugeinc/showcase.git
     branch: gh-pages
     # root_dir: /
-
-  test:
-    destination: scp
-    host: 104.131.202.107
-    port: 22
-    username: wes
-    root_dir: /home/wes/test
+    env:
+      host: hugeinc.github.io/showcase
+      scheme: https

@@ -2,10 +2,3 @@ $title: Components
 $path: /{root}/
 
 description: A basic Grow demo website.
-
-# sections:
-intro:
-  eyebrow@: "Android 7.0 Nutella"
-  heading@: "Made for you"
-  text@: "With more ways to make Android your own, Android Nutella is our sweetest release yet."
-  cta@: "See the phones"

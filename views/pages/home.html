@@ -39,7 +39,7 @@
 
     {% for component in g.docs('components') %}
       {% if not component.hidden %}
-      <section class="tile" data-tags="all {% for tag in component.tags %}{{ tag }}{% endfor %}">
+      <section class="tile" data-tags="all{% for tag in component.tags %} {{ tag }}{% endfor %}">
         <div>
           <span class="eyebrow">
           {% for tag in component.tags %}<strong>{{ tag }}</strong>{% endfor %}
@@ -61,6 +61,6 @@
 
   </main>
 
-  <script src="{{ g.static('/dist/js/home.js').url.path }}"></script>
+  <script src="{{ g.static('/dist/js/home.js').url }}"></script>
 
 {% endblock %}
