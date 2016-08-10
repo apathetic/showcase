@@ -1,12 +1,12 @@
 $title: Asciify
 $slug: asciify
 $view: /views/components/asciify.html
-$hidden: false
+$hidden: true
 
 description: "Turn all images and video on your site into ASCII art."
 author: "Wes Hatch"
 date: "2013-02-28"
-featured: true
+featured: false
 tags:
   - text
   - ascii
