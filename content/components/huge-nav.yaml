@@ -1,7 +1,7 @@
 $title: "Huge Inc. Nav"
 $slug: huge-nav
 $view: /views/components/huge-nav.html
-$hidden: false
+$hidden: true
 
 description: "The full-screen nav that is featured on Huge Inc."
 author: "Wes Hatch"
