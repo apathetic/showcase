@@ -23,7 +23,7 @@ static_dirs:
   fingerprinted: true
 - static_dir: /source/fonts/
   serve_at: "/assets/fonts/"
-  fingerprinted: true
+  fingerprinted: false
 
 sitemap:
   enabled: true
