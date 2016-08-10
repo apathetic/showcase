@@ -17,10 +17,10 @@ meta:
 static_dirs:
 - static_dir: /dist/
   serve_at: "/assets/"
-  fingerprinted: true
+  fingerprinted: false
 - static_dir: /source/images/
   serve_at: "/assets/images/"
-  fingerprinted: true
+  fingerprinted: false
 - static_dir: /source/fonts/
   serve_at: "/assets/fonts/"
   fingerprinted: false
@@ -61,7 +61,6 @@ deployments:
     destination: git
     repo: https://github.com/hugeinc/showcase.git
     branch: gh-pages
-    # root_dir: /
     env:
       host: hugeinc.github.io/showcase
       scheme: https
