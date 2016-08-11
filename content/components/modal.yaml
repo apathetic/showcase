@@ -1,6 +1,6 @@
-$title: Modals
-$slug: modals
-$view: /views/components/modals.html
+$title: Modal
+$slug: modal
+$view: /views/components/modal.html
 $hidden: false
 
 description: "A basic yet powerful modal system with a straightforward API"
@@ -16,4 +16,4 @@ assets:
   css:
     - "https://rawgit.com/apathetic/modals/master/demo/styles.css"
   js:
-    - "https://rawgit.com/apathetic/modals/master/dist/modals.js"
+    - "https://rawgit.com/apathetic/modals/master/dist/modal.js"

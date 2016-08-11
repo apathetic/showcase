@@ -40,7 +40,7 @@
 							var bullets1 = document.querySelectorAll('#demo-one nav li');
 							var prev1 = document.querySelector('#demo-one .prev');
 							var next1 = document.querySelector('#demo-one .next');
-							var navigation1 = new Nav(container1, {
+							var navigation1 = new Panels(container1, {
 								slides: ".panel",
 								onSlide: function(to, from){
 									bullets1[from].className = '';
@@ -101,7 +101,7 @@
 							var bullets3 = document.querySelectorAll('#demo-three nav li');
 							var prev3 = document.querySelector('#demo-three .prev');
 							var next3 = document.querySelector('#demo-three .next');
-							var nav3 = new Nav(container3, {
+							var nav3 = new Panels(container3, {
 								slides: ".panel",
 								onSlide: function(to, from){
 									bullets3[from].className = '';
@@ -161,7 +161,7 @@
 						var bullets4 = document.querySelectorAll('#demo-four nav li');
 						var prev4 = document.querySelector('#demo-four .prev');
 						var next4 = document.querySelector('#demo-four .next');
-						var nav4 = new Nav(container4, {
+						var nav4 = new Panels(container4, {
 							slides: ".panel",
 							onSlide: function(to, from){
 								bullets4[from].className = '';
@@ -199,7 +199,7 @@
 				<h5>Basic set up</h5>
 				<pre><code class="language-javascript">
 	var container = document.querySelector('#demo .panels');
-	var navigator = new Nav(container, {
+	var panels = new Panels(container, {
 		slides: ".panel",
 	});
 				</code></pre>
@@ -209,7 +209,7 @@
 	// example with bullet navigation
 	var container = document.querySelector('#demo .panels');
 	var bullets = document.querySelectorAll('#demo nav li');
-	var navigator = new Nav(container, {
+	var panels = new Panels(container, {
 		slides: ".panel",
 		onSlide: function(to, from){
 			bullets[from].className = '';
@@ -221,7 +221,7 @@
 	Array.prototype.forEach.call(bullets, function(item, index){
 		item.addEventListener('click', function(e) {
 			e.preventDefault();
-			navigation.go(index);
+			panels.go(index);
 		});
 	});
 				</code></pre>
@@ -234,12 +234,12 @@
 
 	prev.addEventListener('click', function(e) {
 		e.preventDefault();
-		navigation.go(navigation.current - 1);
+		panels.go(panels.current - 1);
 	});
 
 	next.addEventListener('click', function(e) {
 		e.preventDefault();
-		navigation.go(navigation.current + 1);
+		panels.go(panels.current + 1);
 	});
 				</code></pre>
 			</div>
