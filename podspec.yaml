@@ -43,7 +43,7 @@ sitemap:
 deployments:
   test:                   # Deployment name.
     destination: local    # Destination kind.
-    out_dir: ~/Sites/COMPONENTS/SHOWCASE/www
+    out_dir: ~/Sites/SHOWCASE/build
     env:
       host: hugeinc.github.io/showcase
       scheme: https

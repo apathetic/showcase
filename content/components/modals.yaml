@@ -16,4 +16,4 @@ assets:
   css:
     - "https://rawgit.com/apathetic/modals/master/demo/styles.css"
   js:
-    - "https://rawgit.com/apathetic/modals/master/dist/modals.min.js"
+    - "https://rawgit.com/apathetic/modals/master/dist/modals.js"

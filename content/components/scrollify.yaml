@@ -17,4 +17,4 @@ assets:
   css:
     - "https://rawgit.com/apathetic/scrollify/master/demo/styles.css"
   js:
-    - "https://rawgit.com/apathetic/scrollify/master/dist/scrollify.min.js"
+    - "https://rawgit.com/apathetic/scrollify/master/dist/scrollify.js"
