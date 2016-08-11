@@ -33,11 +33,15 @@
     {% endif %}
     </nav>
 
+    {% if doc.npm %}
+    <a class="button button--outline button--small" href="{{ doc.npm }}">
+      npm
+    </a>
+    {% endif %}
     {% if doc.github %}
     <a class="button button--outline button--small" href="{{ doc.github }}">
       <i class="icon-github"></i> Github
     </a>
-
     <a class="button button--outline button--small" href="{{ doc.github }}/archive/master.zip">
       ⇩ Download
     </a>
