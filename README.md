@@ -7,11 +7,6 @@ A repo to house documentation and examples for all our internal components
   - Code said idea
   - Show it off in this here Showcase
 
-
-TODO
-----
-
-
 Version
 ----
 
@@ -21,52 +16,50 @@ Version
 Tech
 -----------
 
-Huge showcase makes use of a number of technologies:
+THe Huge showcase makes use of a number of technologies:
 
-* [Grow.io] - awesome static site generator
-* [Rollup] - compiles ES6 JS assets
+* [Grow.io](http://grow.io/) - awesome static site generator
+* [Rollup](http://rollupjs.org/) - compiles ES6 JS assets
 
 
 Installation
 --------------
 
-### Quick Version
-
-You will need pip and npm:
+You will need npm:
 
 ```sh
-$ pip install grow
-$ ssh://git@stash.hugeinc.com:7999/cmpts/showcase.git
+$ curl https://install.growsdk.org | bash
+$ git clone git@github.com:hugeinc/showcase.git
 $ npm install
 $ npm run watch
 $ grow run
 ```
 
 
-Adding your own Component
+Adding your own Component(s)
 -----------
 
-First, create a ```yaml``` file for your component that will contain various meta-data, description, dates, etc. about your component. Feel free to copy / paste an existing file for reference.
+### Content
+First, create a ```yaml``` file for your component that will contain various meta-data, description, dates, etc. about your component. Save this in _content/components_. Feel free to copy / paste an existing file for reference i.e. to see which fields are available, etc.
 
-### Save it
-Next, create the template that will showcase your component. Simply make a <component>.html page in ```views/components/``` that contains documentation and perhaps a demo.  It should extend the base component.html template.
+### Template
+Next, create the HTML template that will showcase your component. Simply make a <component>.html page in ```views/components/``` that contains documentation and perhaps a demo.  It should extend the base component.html template. Again, feel free to copy / paste an existing page.
 
 
-Updating the Showcase Website
+Deploying
 --------------
 
-```sh
-$ grow deploy showcase
-```
-
-...this builds and pushes to showcase.hugeops.com.
-
+To build and push to hugeinc.github.io/showcase:
 
 ```sh
-$ grow deploy github
+$ grow deploy huge
 ```
 
-...will build and push to hugeinc.github.io/showcase
+_(NOTE: I've deprecated showcase.hugeops.com to avoid any confusion)._
+
+
+TODO
+----
 
 
 
