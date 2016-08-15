@@ -1,11 +1,11 @@
 $title: Modal
 $slug: modal
 $view: /views/components/modal.html
+$date: "2013-02-28"
 $hidden: false
 
 description: "A basic yet powerful modal system with a straightforward API"
 author: "Wes Hatch"
-date: "2013-02-28"
 featured: false
 tags:
   - js

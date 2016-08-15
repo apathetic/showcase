@@ -37,7 +37,8 @@
       </ul>
     </div>
 
-    {% for component in g.docs('components') %}
+    {% set components = g.docs('components', order_by='date') | reverse() %}
+    {% for component in components %}
       {% if not component.hidden %}
       <section class="tile" data-tags="all{% for tag in component.tags %} {{ tag }}{% endfor %}">
         <div>

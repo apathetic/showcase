@@ -1,11 +1,11 @@
 $title: "Huge Inc. Nav"
 $slug: huge-nav
 $view: /views/components/huge-nav.html
+$date: "2014-05-05"
 $hidden: true
 
 description: "The full-screen nav that is featured on Huge Inc."
 author: "Wes Hatch"
-date: "2014-05-05"
 featured: false
 tags:
   - js

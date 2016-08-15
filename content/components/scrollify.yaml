@@ -1,11 +1,11 @@
 $title: Scrollify
 $slug: scrollify
 $view: /views/components/scrollify.html
+$date: "2016-04-15"
 $hidden: false
 
 description: "A simple Class to \"do things on scroll.\""
 author: "Wes Hatch"
-date: "2016-04-15"
 featured: true
 tags:
   - js
