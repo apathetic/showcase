@@ -1,11 +1,11 @@
 $title: Validator
 $slug: validator
 $view: /views/components/validator.html
+$date: "2013-02-28"
 $hidden: false
 
 description: "A simple, powerful, and extensible client-side validation object."
 author: "Wes Hatch"
-date: "2013-02-28"
 featured: false
 tags:
   - js

@@ -1,11 +1,11 @@
 $title: "Sticky Nav"
 $slug: stickynav
 $view: /views/components/stickynav.html
+$date: "2014-04-26"
 $hidden: false
 
 description: "A navigation bar (or menu) that efficiently attaches / detaches to the top of the viewport upon scrolling."
 author: "Wes Hatch"
-date: "2014-04-26"
 featured: true
 tags:
   - navigation

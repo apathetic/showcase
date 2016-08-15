@@ -1,11 +1,11 @@
 $title: Parallax
 $slug: parallax
 $view: /views/components/parallax.html
+$date: "2014-05-02"
 $hidden: false
 
 description: "A simple, robust, and powerful parallax-ing framework."
 author: "Wes Hatch"
-date: "2014-05-02"
 featured: false
 tags:
   - js

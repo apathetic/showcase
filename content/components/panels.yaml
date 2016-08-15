@@ -1,11 +1,11 @@
 $title: Panels
 $slug: panels
 $view: /views/components/panels.html
+$date: "2014-03-05"
 $hidden: false
 
 description: "A basic Javascript prototype to navigate through a series of panels."
 author: "Wes Hatch"
-date: "2014-03-05"
 featured: false
 tags:
   - js
