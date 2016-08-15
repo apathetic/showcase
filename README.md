@@ -43,7 +43,7 @@ Adding your own Component(s)
 First, create a ```yaml``` file for your component that will contain various meta-data, description, dates, etc. about your component. Save this in _content/components_. Feel free to copy / paste an existing file for reference i.e. to see which fields are available, etc.
 
 ### Template
-Next, create the HTML template that will showcase your component. Simply make a <component>.html page in ```views/components/``` that contains documentation and perhaps a demo.  It should extend the base component.html template. Again, feel free to copy / paste an existing page.
+Next, create the HTML template that will showcase your component. Simply make a ```<component>.html``` page in ```views/components/``` that contains documentation and perhaps a demo.  It should extend the base component.html template. Again, feel free to copy / paste an existing page.
 
 
 Deploying
