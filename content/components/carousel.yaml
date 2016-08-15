@@ -1,6 +1,6 @@
-$title: Flexicarousel
-$slug: flexicarousel
-$view: /views/components/flexicarousel.html
+$title: Carousel
+$slug: carousel
+$view: /views/components/carousel.html
 $hidden: false
 
 description: "A touch-friendly, lightwieght carousel. Uses CSS3 transforms for its transitions."

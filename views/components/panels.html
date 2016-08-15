@@ -2,6 +2,8 @@
 
 {% block component %}
 
+		<style>.carousel { cursor: default; }</style>
+
 		<section data-nav="About" id="about">
 			<div class="container">
 				<h2>About</h2>
@@ -50,7 +52,6 @@
 									bullets1[to].className = 'active';
 								}
 							});
-
 
 							Array.prototype.forEach.call(bullets1, function(item, index){
 								item.addEventListener('click', function(e) {
