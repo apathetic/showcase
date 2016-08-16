@@ -1,7 +1,7 @@
 $title: Asciify
 $slug: asciify
 $view: /views/components/asciify.html
-$date: "2013-02-28"
+$date: "2016-07-28"
 $hidden: true
 
 description: "Turn all images and video on your site into ASCII art."
@@ -10,10 +10,7 @@ featured: false
 tags:
   - text
   - ascii
-stash: "https://stash.hugeinc.com/projects/CMPTS/repos/asciify/browse"
 github: "https://github.com/apathetic/asciify"
 assets:
-  css:
-    - "https://rawgit.com/apathetic/asciify/master/demo/styles.css"
   js:
-    - "https://rawgit.com/apathetic/asciify/master/dist/asciify.min.js"
+    - "https://rawgit.com/apathetic/asciify/master/dist/asciify.js"

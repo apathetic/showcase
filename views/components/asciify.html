@@ -2,53 +2,85 @@
 
 {% block component %}
 
-  <script src="js/ascii.js"></script>
   <style>
-    img, video, p { display:block; max-width:640px; }
-    div { width:640px; height:400px; background-size:cover }
+    img, video { display:block; max-width:640px; }
+    .video-wrap pre { margin:0 !important; border:0; }
   </style>
 
-<h2>Commands:</h2>
-<ul>
-  <li>"ascii"</li>
-  <li>"clippy"</li>
-  <li>"sepia"</li>
-  <li>"monochrome"</li>
-  <li>"acid"</li>
-  <li>"seasick"</li>
-</ul>
+  <section data-nav="About" id="about">
+    <div class="container">
+      <h2>About</h2>
+      <p>Turn any images, videos, or elements with a background-image into crappy lo-fi ascii art. Your site will be faster and more user-friendly as a result. Which equals more users and big dollars. Everyone wins!</p>
+      <p>While you're at it, for maximum optimization you can also take advantage of a few of the bundled features, which strip out all these "new-fangled" browser enhancements, such as border-radius, custom fonts, and color.</p>
+    </div>
+  </section>
 
+  <section data-nav="Demo" id="demo">
+    <div class="container">
+      <h2>Demo</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <!-- <h3>Commands:</h3>
+      <ul>
+        <li>"ascii"</li>
+        <li>"clippy"</li>
+        <li>"sepia"</li>
+        <li>"monochrome"</li>
+        <li>"acid"</li>
+        <li>"seasick"</li>
+      </ul> -->
 
-<img src="https://c2.staticflickr.com/4/3825/10538921244_4f214545b7_c.jpg" alt="car">
+      <p>
+        <img src="{{ g.static('/source/images/asciify/car.jpg').url }}" alt="car" id="car">
+        <button data-asciify="#car" class="button button--default">ASCIIFY</button>
+      </p>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<!--
-<video width="640" height="360" controls="" autoplay="">
-  <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4">
-  <source src="http://clips.vorwaerts-gmbh.de/VfE.webm" type="video/webm">
-  <source src="http://clips.vorwaerts-gmbh.de/VfE.ogv" type="video/ogg">
-</video>
--->
- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div id="lady" style="background: url({{ g.static('/source/images/asciify/cow.jpg').url }}); width:640px; height:400px; background-size:cover"></div>
+      <button data-asciify="#lady" class="button button--default">ASCIIFY</button>
 
-<div style="background: url(https://c2.staticflickr.com/6/5180/5388135593_36074cd26d_z.jpg)"</div>
+      <div class="video-wrap">
+        <video id="vid" width="640" height="360" controls autoplay loop>
+          <source src="{{ g.static('/source/images/asciify/vid.mp4').url }}" type="video/mp4">
+            <source src="{{ g.static('/source/images/asciify/vid.webm').url }}" type="video/webm">
+        </video>
+      </div>
+      <button data-asciify="#vid" class="button button--default">ASCIIFY</button>
 
+    </div>
+  </section>
 
-  {% endblock %}
+  <section data-nav="Code" id="code">
+    <div class="container">
+      <h2>Code</h2>
+
+      <pre><code class="language-javascript">
+// Works on images:
+var image = document.querySelector('#image');
+new Asciify(image);
+
+// Works on background images:
+var bg = document.querySelector('[style*="background"]');
+new Asciify(image);
+
+// WORKS ON VIDEO
+var vid = document.querySelector('video');  // (HTML5)
+new Asciify(vid);
+// note: for now, you'll need to wrap the &lt;video> in a &lt;div>
+      </code></pre>
+    </div>
+  </section>
+
+  <script>
+    Array.from(document.querySelectorAll('button'), function(button) {
+      var target = document.querySelector(button.getAttribute('data-asciify'));
+      if (target) {
+        button.addEventListener('click', function convert() {
+          new Asciify(target);
+          button.removeEventListener('click', convert);
+          button.innerHTML = 'Optimized!';
+          button.classList.remove('button--default');
+        });
+      }
+    });
+  </script>
+
+{% endblock %}
