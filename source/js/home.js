@@ -1,4 +1,4 @@
-import Carousel from  '@apatheticwes/flexicarousel';
+import Carousel from  '@hugeinc/carousel';
 
 // ---- carousel ---- //
 const featured = document.querySelector('#featured');
@@ -7,7 +7,6 @@ const tabs = document.querySelectorAll('.filters li');
 const bullets = featured.querySelectorAll('nav li');
 const carousel = new Carousel(featured, {
   slides: '.carousel__slide',
-  // offscreen: 1,
   onSlide: (current) => {
     for (let i = bullets.length; i--;) {
       bullets[i].classList.remove('active');

@@ -4,33 +4,26 @@
   "license": "MIT",
   "version": "0.1.0",
   "description": "A showcase of handy components",
-  "main": "......js",
   "repository": {
     "type": "git",
-    "url": "https://stash.hugeinc.com/projects/CMPTS/repos/showcase/browse"
+    "url": "https://github.com/hugeinc/showcase"
   },
   "devDependencies": {
-    "@apatheticwes/scrollify": "^0.2.0",
-    "asciify": "git+https://github.com/apathetic/asciify.git",
+    "@hugeinc/carousel": "^0.6.0",
+    "@hugeinc/stickynav": "^0.1.0",
     "autoprefixer": "^6.3.3",
-    "babel-eslint": "^6.0.4",
     "clean-css": "^3.4.17",
     "eslint": "^2.13.1",
     "eslint-config-defaults": "^9.0.0",
-    "modal": "git+https://github.com/apathetic/modals.git",
-    "navigator": "git+https://github.com/apathetic/navigator.git",
     "node-sass": "^3.7.0",
     "npm-run-all": "^2.3.0",
-    "parallax": "git+https://github.com/apathetic/parallax.git",
     "postcss-cli": "^2.5.2",
     "rollup": "^0.27.1",
     "rollup-plugin-buble": "^0.12.1",
     "rollup-plugin-node-resolve": "^1.7.1",
     "rollup-plugin-uglify": "^1.0.1",
-    "stickynav": "git+https://github.com/apathetic/stickynav.git",
     "stylelint": "^6.9.0",
     "stylelint-config-standard": "^7.0.0",
-    "validator": "git+https://github.com/apathetic/validator.git",
     "watch": "^0.18.0"
   },
   "scripts": {

@@ -5,10 +5,7 @@
 		<section data-nav="About" id="about">
 			<div class="container">
 				<h2>About</h2>
-				<p>lorme.</p>
-
-				<h3>A Note On Approaches</h3>
-				<p>There are several ...</p>
+				<p>There are several ways to trigger the modal (ie. programmatically, or via a click Event), as well as to dismiss the modal (programmatically, mouse Events or the escape key). You can also easily customize the default CSS for a particular interaction.</p>
 			</div>
 		</section>
 
@@ -22,8 +19,8 @@
 				<pre><code class="language-markup">
 &lt;!-- modal -->
 &lt;div id="terms" class="modal">
-	&lt;div class="content">
-		&lt;i class="icon icon-close">&lt;/i>
+	&lt;div class="modal--content">
+		&lt;i class="modal--close icon-close">&lt;/i>
 		&lt;h3>Hello&lt;/h3>
 		&lt;p>Random text here, something important.&lt;/p>
 	&lt;/div>
@@ -101,8 +98,8 @@ Modal.hide()
 
 
 		<div id="terms" class="modal">
-			<i class="icon close"></i>
-			<div class="content">
+			<i class="icon modal--close"></i>
+			<div class="modal--content">
 				<h3>Hello</h3>
 				<p>Random text here, something important.</p>
 				<p>Here, we showcase one option for the placement of the "close" icon.</p>
@@ -110,8 +107,8 @@ Modal.hide()
 		</div>
 
 		<div id="error" class="modal">
-			<div class="content">
-				<i class="icon close"></i>
+			<div class="modal--content">
+				<i class="icon modal--close"></i>
 				<h3>Error!</h3>
 				<p>These aren't the droids you're looking for.</p>
 				<p>You can also close the current modal programmatically. Clicking this button will trigger the Modal hide action:</p>
