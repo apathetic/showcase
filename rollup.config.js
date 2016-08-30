@@ -1,12 +1,10 @@
 import buble from 'rollup-plugin-buble';              // quicker, simpler babel
-import resolve from 'rollup-plugin-node-resolve';     // let's us fetch ES6 bundles from node_modules
+import resolve from 'rollup-plugin-node-resolve';     // lets us fetch ES6 bundles from node_modules
 import uglify from 'rollup-plugin-uglify';            //
 
 export default {
   entry: `source/js/${process.env.entry}.js`,
   dest: `dist/js/${process.env.entry}.js`,
-
-  moduleName: 'stuffs',
   format: 'iife',
   plugins: [
     resolve({                                         // this allows us to pull in other modules as ES6 bundles
