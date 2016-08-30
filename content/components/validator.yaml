@@ -10,10 +10,12 @@ featured: false
 tags:
   - js
   - validation
+
 stash: "https://stash.hugeinc.com/projects/CMPTS/repos/validator/browse"
-github: "https://github.com/apathetic/validator"
+npm: "https://www.npmjs.com/package/@hugeinc/validator"
+github: "https://github.com/hugeinc/component-validator"
 assets:
   css:
-    - "https://rawgit.com/apathetic/validator/master/demo/styles.css"
+    - "https://rawgit.com/hugeinc/component-validator/master/demo/styles.css"
   js:
-    - "https://rawgit.com/apathetic/validator/master/dist/validator.js"
+    - "https://rawgit.com/hugeinc/component-validator/master/dist/validator.js"
