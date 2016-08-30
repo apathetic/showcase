@@ -117,7 +117,7 @@
 				<h3>Adding a custom rule</h3>
 				<pre><code class="language-javascript">
 	// add a rule called "count" that checks an input's length
-	validator.updateRule('count', function count(val) {
+	validator.addRule('count', function count(val) {
 		return val.length <= 40;
 	});
 				</code></pre>
@@ -146,7 +146,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td>updateRule</td>
+								<td>addRule</td>
 								<td>name,<br>function validator(value)</td>
 								<td>Create your own validation rule. Give it a <em>name</em> and the function to be used when
 									validating a field. Use your new rule by placing <em>data-validate="name"</em> on a field
@@ -170,7 +170,7 @@
 	      /*
 	       * You update it with your own rules!
 	       */
-	      Validator.updateRule('count', function count(val) {
+	      Validator.addRule('count', function count(val) {
 	        return val.length <= 40;
 	      });
 

@@ -59,7 +59,8 @@ deployments:
 
   huge:
     destination: git
-    repo: https://github.com/hugeinc/showcase.git
+    # repo: https://github.com/hugeinc/showcase.git
+    repo: git@github.com:hugeinc/showcase.git
     branch: gh-pages
     env:
       host: hugeinc.github.io/showcase
