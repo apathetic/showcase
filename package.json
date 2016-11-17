@@ -9,8 +9,8 @@
     "url": "https://github.com/hugeinc/showcase"
   },
   "devDependencies": {
-    "@hugeinc/carousel": "^0.6.0",
-    "@hugeinc/stickynav": "^0.1.0",
+    "@hugeinc/carousel": "^0.8.0",
+    "@hugeinc/stickynav": "^0.2.1",
     "autoprefixer": "^6.3.3",
     "clean-css": "^3.4.17",
     "eslint": "^2.13.1",
