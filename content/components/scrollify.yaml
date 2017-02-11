@@ -11,7 +11,7 @@ tags:
   - js
   - parallax
   - scroll
-npm: "https://www.npmjs.com/package/@hugeinc/scrollify"
+npm: "https://www.npmjs.com/package/@apatheticwes/scrollify"
 github: "https://github.com/apathetic/scrollify"
 assets:
   css:

@@ -12,7 +12,7 @@ tags:
   - validation
 
 stash: "https://stash.hugeinc.com/projects/CMPTS/repos/validator/browse"
-npm: "https://www.npmjs.com/package/@hugeinc/validator"
+npm: "https://www.npmjs.com/package/@apatheticwes/validator"
 github: "https://github.com/hugeinc/component-validator"
 assets:
   css:
