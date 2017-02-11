@@ -1,3 +1,5 @@
+Demo here: [http://apathetic.github.io/showcase/](http://apathetic.github.io/showcase/)
+
 Showcase
 =========
 
@@ -49,18 +51,11 @@ Next, create the HTML template that will showcase your component. Simply make a 
 Deploying
 --------------
 
-To build and push to hugeinc.github.io/showcase:
+To build and push to apathetic.github.io/showcase:
 
 ```sh
-$ grow deploy huge
+$ grow deploy
 ```
-
-_(NOTE: I've deprecated showcase.hugeops.com to avoid any confusion)._
-
-
-TODO
-----
-
 
 
 License
