@@ -18,7 +18,7 @@ Version
 Tech
 -----------
 
-THe Huge showcase makes use of a number of technologies:
+The Huge showcase makes use of a number of technologies:
 
 * [Grow.io](http://grow.io/) - awesome static site generator
 * [Rollup](http://rollupjs.org/) - compiles ES6 JS assets

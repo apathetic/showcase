@@ -41,6 +41,10 @@ header.condensed {
   display: none;
   left: 0;
 
+  .container {
+    padding: 0;
+  }
+
   nav {
     ul {
       margin: 2em 0;
