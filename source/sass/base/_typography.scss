@@ -84,7 +84,7 @@ sup {
 
 pre {
   border: 1px solid #ddd;
-  margin: 0 0 2em;   // override prism margin
+  margin: 0 0 2em !important;   // override prism margin
 }
 
 hr {

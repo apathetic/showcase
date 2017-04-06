@@ -54,7 +54,7 @@ Deploying
 To build and push to apathetic.github.io/showcase:
 
 ```sh
-$ grow deploy
+$ grow deploy wes
 ```
 
 
