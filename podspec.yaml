@@ -45,7 +45,7 @@ deployments:
     destination: local    # Destination kind.
     out_dir: ~/Sites/SHOWCASE/build
     env:
-      host: hugeinc.github.io/showcase
+      host: 98d9d592.ngrok.io
       scheme: https
 
   wes:

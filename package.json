@@ -35,6 +35,7 @@
     "build": "npm run clean && npm run build:js && npm run build:css",
     "watch:css": "watch 'npm run build:css' source/sass",
     "watch:js": "watch 'npm run build:js' source/js",
-    "watch": "run-p watch:**"
+    "watch": "run-p watch:**",
+    "start": "grow run"
   }
 }
