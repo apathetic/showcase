@@ -2,7 +2,7 @@
   "name": "Components",
   "author": "wes hatch",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "A showcase of handy components",
   "repository": {
     "type": "git",
@@ -36,6 +36,7 @@
     "watch:css": "watch 'npm run build:css' source/sass",
     "watch:js": "watch 'npm run build:js' source/js",
     "watch": "run-p watch:**",
-    "start": "grow run"
+    "serve": "grow run",
+    "start": "npm run build && run-p watch:** serve"
   }
 }

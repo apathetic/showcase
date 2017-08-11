@@ -12,7 +12,7 @@ A repo to house documentation and examples for all our internal components
 Version
 ----
 
-0.2.0
+0.3.0
 
 
 Tech
@@ -23,18 +23,26 @@ The Huge showcase makes use of a number of technologies:
 * [Grow.io](http://grow.io/) - awesome static site generator
 * [Rollup](http://rollupjs.org/) - compiles ES6 JS assets
 
+It is also assumed that you have both [git](https://git-scm.com/) and [npm](https://www.npmjs.com/) installed.
+
 
 Installation
 --------------
 
-You will need npm:
+You will need these here things:
 
 ```sh
 $ curl https://install.growsdk.org | bash
 $ git clone git@github.com:hugeinc/showcase.git
 $ npm install
-$ npm run watch
-$ grow run
+```
+
+
+Run Locally
+--------------
+
+```
+$ npm start
 ```
 
 

@@ -50,8 +50,8 @@ deployments:
 
   wes:
     destination: git
-    # repo: https://github.com/apathetic/showcase.git
-    repo: git@github.com:apathetic/showcase.git
+    # repo: git@github.com:apathetic/showcase.git
+    repo: https://github.com/apathetic/showcase.git
     branch: gh-pages
     env:
       host: apathetic.github.io/showcase
