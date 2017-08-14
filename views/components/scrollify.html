@@ -79,15 +79,15 @@
           <p>The easiest way to get started is to create a new Scrollify instance, with the
             DOM element you'd like to manipulate. Next, create a Scene, and define which
             effect to apply.
-          </p>
+           </p>
           <!--
            THIS IS THE IDEAL UPDATED API
            <pre><code class="language-javascript">new Scrollify('#transformer') // the element to scrollify
             .addScene({
               effects: [{
                 scale: {                // what effect to apply
-                  to: 1.2,              // some options for the effect
-                  from: 1.0
+                  from: 1.0,              // some options for the effect
+                  to: 1.2
                 }
               }]
             });</code></pre> -->
@@ -96,25 +96,28 @@
   effects: [{
     fn: Scrollify.fx.scale,   // what effect to apply
     options: {
-      to: 1.2,                // some options for the effect
-      from: 1.0
+      from: 1.0, // some options for the effect
+      to: 1.2
     }
   }]
 });</code></pre>
 
           <!-- demo here -->
           <h5>Result:</h5>
-          <p id="transformer" class="demo">This element will scale from 1 to 1.2x as it moves across the viewport.</p>
+          <p id="transformer" class="demo">This element (#transformer) will scale from 1 to 1.2x as it moves across the viewport. &nbsp;(<em></em>)</p>
           <script>
             window.addEventListener('load', function() {
+              var debug1 = document.querySelector('#transformer em');
               new Scrollify('#transformer')
                 .addScene({
                   effects: [{
                     fn: Scrollify.fx.scale,
                     options: {
-                      to: 1.2,
-                      from: 1.0
+                      from: 1.0,
+                      to: 1.2
                     }
+                  }, {
+                    fn: function(p) { debug1.innerHTML = p.toFixed(3); }
                   }]
                 });
             });
@@ -137,29 +140,32 @@
   effects: [{
     fn: Scrollify.fx.scale,
     options: {
-      to: 1.2,
-      from: 1.0
+      from: 1.0,
+      to: 1.2
     }
   }]
 });</code></pre>
 
           <!-- demo here -->
           <h5>Result:</h5>
-          <p id="transformer-2" class="demo">This element will only start transforming at 20% of the way up from the
-            bottom, and stop after 300px.
+          <p id="transformer-2" class="demo">This element (#transformer-2) will only start transforming at 20% of the way up from the
+             bottom, and stop after 300px. &nbsp;(<em></em>)
           </p>
           <script>
             window.addEventListener('load', function(event) {
+              var debug2 = document.querySelector('#transformer-2 em');
               new Scrollify('#transformer-2')
                 .addScene({
-                  start: 0.2,     		// start the Scene when the element reaches 20% of the viewport
+                  start: 0.2,         // start the Scene when the element reaches 20% of the viewport
                   duration: '300px',  // do something for 300 pixels
                   effects: [{
                     fn: Scrollify.fx.scale,
                     options: {
-                      to: 1.2,
-                      from: 1.0
+                      from: 1.0,
+                      to: 1.2
                     }
+                  }, {
+                    fn: function(p) { debug2.innerHTML = p.toFixed(3); }
                   }]
                 });
             });
@@ -208,7 +214,7 @@
         <dt><h4>Custom Easing</h4></dt>
         <dd>
           <p>Use a custom (built in) easing function. The easing function is specific
-             to the Scene it is defined on, and applies to all child effects.
+              to the Scene it is defined on, and applies to all child effects.
           </p>
             <pre><code class="language-javascript">new Scrollify('#transformer-4')
 .addScene({
@@ -218,8 +224,8 @@
   effects: [{
     fn: Scrollify.fx.scale,
     options : {
-      to: 1.5,
-      from: 1.0
+      from: 1.0,
+      to: 1.5
     }
   }]
 });</code></pre>
@@ -227,6 +233,7 @@
           <!-- demo here -->
           <script>
             window.addEventListener('load', function() {
+              var debug3 = document.querySelector('#transformer-4 em');
               new Scrollify('#transformer-4')
                 .addScene({
                   start: 0.3,
@@ -235,16 +242,18 @@
                   effects: [{
                     fn: Scrollify.fx.scale,
                     options: {
-                      to: 1.5,
-                      from: 1.0
+                      from: 1.0,
+                      to: 1.5
                     }
+                  }, {
+                    fn: function(p) { debug3.innerHTML = p.toFixed(3); }
                   }]
                 });
             });
           </script>
           <h5>Result:</h5>
           <p id="transformer-4" class="demo">
-            This element uses an elastic easing function.
+            This element (#transformer-4) uses an elastic easing function. &nbsp;(<em></em>)
           </p>
         </dd>
 
@@ -258,8 +267,8 @@
     {
       fn: Scrollify.fx.scale,
       options: {
-        to: 0.5,
-        from: 1.0
+        from: 1.0,
+        to: 0.5
       }
     }, {
       fn: Scrollify.fx.rotate,       // add other effects if you wish
@@ -269,8 +278,8 @@
     }, {
       fn: Scrollify.fx.translateX,   // add other effects if you wish
       options: {
-        to: 400,
-        from: 0
+        from: 0,
+        to: 400
       }
     }
   }]
@@ -279,16 +288,16 @@
           <!-- demo here -->
           <script>
             window.addEventListener('load', function() {
+              var debug5 = document.querySelector('#transformer-5 span');
               new Scrollify('#transformer-5')
                 .addScene({
-                  debug: true,
                   start: 0.4,
                   effects: [
                     {
                       fn: Scrollify.fx.scale,
                       options: {
-                        to: 0.5,
-                        from: 1.0
+                        from: 1.0,
+                        to: 0.5
                       },
                     }, {
                       fn: Scrollify.fx.rotate,
@@ -298,15 +307,17 @@
                     }, {
                       fn: Scrollify.fx.translateX,
                       options: {
-                        to: 400,
-                        from: 0
+                        from: 0,
+                        to: 400
                       }
+                    }, {
+                      fn: function(p) { debug5.innerHTML = p.toFixed(3); }
                     }
                   ]
                 });
             });
           </script>
-          <p id="transformer-5" class="demo">This element will scale, rotate <em>and</em> tranlate</p>
+          <p id="transformer-5" class="demo">This element (#transformer-5) will scale, rotate <em>and</em> translate. &nbsp;(<span></span>)</p>
         </dd>
 
         <dt><h4>Chain Scenes</h4></dt>
@@ -358,8 +369,8 @@
   effects: [{
     fn: Scrollify.fx.translateY,
     options: {
-      to: 300,
-      from: 0
+      from: 0,
+      to: 300
     }
   }]
 })
@@ -370,8 +381,8 @@
   effects: [{
     fn: Scrollify.fx.fade,
     options: {
-      to: 0,
-      from: 1
+      from: 1,
+      to: 0
     }
   }]
 })
@@ -383,13 +394,13 @@
   {
     fn: Scrollify.fx.translateY,
     options: {
-      to: 300,
+      to: 300
     }
   }, {
     fn: Scrollify.fx.fade,
     options: {
-      to: 1,
-      from: 0
+      from: 0,
+      to: 1
     }
   }]
 });</code></pre>
@@ -406,14 +417,14 @@
                     {
                       fn: Scrollify.fx.translateY,
                       options: {
-                        to: 300,
-                        from: 0 // TODO: getComputedStyle instead
+                        from: 0, // TODO: getComputedStyle instead
+                        to: 300
                       }
                     }, {
                       fn: Scrollify.fx.fade,
                       options: {
-                        to: .5,
-                        from: 1
+                        from: 1,
+                        to: .5
                       }
                     }, {
                       fn: Scrollify.fx.rotate,
@@ -431,14 +442,14 @@
                     {
                       fn: Scrollify.fx.translateY,
                       options: {
-                        to: 0,			// TODO -=, or skip from
-                        from: 300				// TODO: getComputedStyle instead
+                        from: 300,        // TODO: getComputedStyle instead
+                        to: 0             // TODO -=, or skip from
                       }
                     }, {
                       fn: Scrollify.fx.fade,
                       options: {
-                        to: 1,
-                        from: 0.5
+                        from: 0.5,
+                        to: 1
                       }
                     }
                   ]
@@ -471,51 +482,69 @@ new Scrollify('#parallax').addEffect(Scrollify.fx.parallax, options);</code></pr
           </script>
         </dd>
 
-        <dt><h4>Stick</h4></dt>
+        <dt><h4>Stick <span style="color:orange">(experimental)</span> </h4></dt>
         <dd>
           <p>There is a <strong>sticky</strong> function as well; keep in mind that you'll need
           to CSSify a few things, though. It's probably easiest if you wrap your element in an empty
-          "spacer" element, which would serve as a placeholder for changes in the display
+          <em>spacer</em> element, which would serve as a placeholder for changes in the display
           property of the sticky element -- preventing the page from collapsing or shifting when
-          it's taken out of the flow.</p>
+          it's taken out of the flow. You'll also need to provide the CSS for three classes that
+          are used:</p>
+          <ul class="bullets">
+            <li>"normal": identifies the top (start)</li>
+            <li>"bottom": used at the bottom (finish)</li>
+            <li>"sticky": used when the element is fixed.</li>
+          </ul>
+          <p>Also note: it's recommended <em>not</em> to use the "stickified" element as the trigger,
+          as resizing the viewport may cause unexpected results.</p>
 
           <pre><code class="language-markup">&lt;div class="spacer">&lt;!-- the placeholder element -->
-&lt;img class="scrollify" src="photo.jpg">&lt;!-- target element -->
+&lt;p id="stick">&lt;!-- target element -->
+  &lt;strong>Sticks!&lt;/strong> I'll hang around for &lt;strong>300 px&lt;/strong>.
+&lt;/p>
 &lt;/div></code></pre>
           <pre><code class="language-javascript">new Scrollify('#stick')  // the element to target
 .addScene({
-  'start': 0.5,         // 'start': when at 50% of the viewport
-  'duration': '300px',  // 'duration': 300 pixels
-  'effects': [{
-    'fn': Scrollify.fx.stick
+  trigger: '.spacer',
+  start: 0.5,         // 'start': when at 50% of the viewport
+  duration: '300px',  // 'duration': 300 pixels
+  effects: [{
+    fn: Scrollify.fx.stick
   }]
 });</code></pre>
           <script>
             window.addEventListener('load', function(event) {
               var stick = Scrollify.fx.stick;
-              new Scrollify('#stick')										// the element to target
-                .addScene({															// start / stop, duration etc. of the effect
-                  'start': 0.5,													//   'start': when at 50% of the viewport
-                  'duration': '300px',								//   'duration': 300 pixels
-                  'effects': [{
-                    'fn': stick												// the effect to apply, and when (within the progress of the scene)
+              var debug6 = document.querySelector('#stick em');
+              new Scrollify('#stick')               // the element to target
+                .addScene({                         // start / stop, duration etc. of the effect
+                  trigger: '.stick-spacer',
+                  start: 0.5,                       //   start: when at 50% of the viewport
+                  duration: '300px',                //   'duration': 300 pixels
+                  effects: [{
+                    fn: stick                       // the effect to apply, and when (within the progress of the scene)
+                  }, {
+                    fn: function(p) { debug6.innerHTML = p.toFixed(3); }
                   }]
                 });
             });
           </script>
-          <p class="spacer stick-spacer">
-            <span id="stick">
-              <strong>Sticks!</strong> I'll hang around for <strong>300 px</strong>.
-              Lorem ipsum dolor sit amet,	consectetur adipisicing elit, sed do eiusmod.
-            </span>
-          </p>
+          <div class="spacer stick-spacer">
+            <p id="stick" class="">
+              <strong>Sticks!</strong> I'll hang around for <strong>300 px</strong>. &nbsp;(<em></em>)
+              <br /><br />
+              <code class="normalCSS">.normal { position: absolute; }</code>
+              <code class="stickyCSS">.sticky { position: fixed; }</code>
+              <code class="bottomCSS">.bottom { position: absolute; bottom: 0; }</code>
+            </p>
+          </div>
         </dd>
 
         <dt><h4>Toggle Classes</h4></dt>
         <dd>
           <p>You can toggle a CSS class on / off at a pre-defined scroll point. The options for the
-            <em>toggle</em> function need to be bounded on the Scene timeline, between 0 and 1.</p>
-          <pre><code class="language-javascript">new Scrollify('#transformer-8')
+          <em>toggle</em> function need to be bounded on the Scene timeline, between 0 and 1.</p>
+<pre><code class="language-javascript">new Scrollify('#transformer-8')
 .addScene({
   'effects': [{
     'fn': Scrollify.fx.toggle,
@@ -525,7 +554,7 @@ new Scrollify('#parallax').addEffect(Scrollify.fx.parallax, options);</code></pr
       0.7: 'green'    // toggle class "green" at 70%
   }]
 });</code></pre>
-          <p class="scrollify transition" id="transformer-8"><strong>This element
+          <p class="scrollify transition" id="transformer-8"><strong>This element (#transformer-8)
           is toggling various classes on and off. At 20%, 50%, and 70%.</strong> Lorem
           ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -536,10 +565,10 @@ new Scrollify('#parallax').addEffect(Scrollify.fx.parallax, options);</code></pr
             window.addEventListener('load', function() {
               new Scrollify('#transformer-8')
                 .addScene({
-                  'applyTransform': false,
-                  'effects': [{
-                    'fn': Scrollify.fx.toggle,
-                    'options': {
+                  applyTransform: false,
+                  effects: [{
+                    fn: Scrollify.fx.toggle,
+                    options: {
                       0.2: 'red',
                       0.5: 'blue',
                       0.7: 'green'
@@ -574,7 +603,7 @@ new Scrollify(el).addEffect(fx, opts);
             <div class="parallax item" data-scrollify="['parallax', { range:-400 }]"> 5 </div>
           </div>
 
-          <p class="blur" data-scrollify="['blur', {to:8, from: 0}]">
+          <p class="blur" data-scrollify="['blur', {from:0, to: 8}]">
             <span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -585,7 +614,7 @@ new Scrollify(el).addEffect(fx, opts);
             </span>
           </p>
 
-          <p class="parallax" data-scrollify="['translateX', {to:-300, from: 0}]">
+          <p class="parallax" data-scrollify="['translateX', {from: 0, to:-300}]">
             <span>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -639,7 +668,7 @@ new Scrollify('#custom')
   }]
 });</code></pre>
 
-          <p class="demo" id="custom">Oh hello. Prepared to see my reality warped and twisted.
+          <p class="demo" id="custom">(#custom) Oh hello. Prepared to see my reality warped and twisted.
             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -666,7 +695,7 @@ new Scrollify('#custom')
 
         <dt><h4>Fade in / out</h4></dt>
         <dd>
-          <p id="fader"><strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          <p id="fader">(#fader)<strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
           quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -679,13 +708,13 @@ new Scrollify('#custom')
               var oscillate = Scrollify.easings.oscillate;
               new Scrollify('#fader')
                 .addScene({
-                  'start': 0,
-                  'applyTransform': false,
-                  'easing': oscillate,
-                  'effects': [{
-                    'fn': fade,
-                    'options': {
-                      'to': 0
+                  start: 0,
+                  applyTransform: false,
+                  easing: oscillate,
+                  effects: [{
+                    fn: fade,
+                    options: {
+                      to: 0
                     }
                   }]
                 });
@@ -693,7 +722,7 @@ new Scrollify('#custom')
           </script>
         </dd>
 
-        <dt><h4>Image animation</h4></dt>
+        <dt><h4>Image animation (#sequence)</h4></dt>
         <dd>
           <div id="sequence">
             <img src="images/seq/horse_01.jpg" style="opacity:1" alt="">
@@ -732,12 +761,12 @@ new Scrollify('#custom')
 
               new Scrollify('#sequence')
                 .addScene({
-                  'start': 0.3,
-                  'duration': '600px',
-                  // 'duration': function() { return window.innerHeight + 200 },
-                  // 'duration': function() { return window.innerHeight * 1.2 },		// "speed" of 0.2
-                  'effects': [
-                    { 'fn': sequencer }
+                  start: 0.3,
+                  duration: '600px',
+                  // duration: function() { return window.innerHeight + 200 },
+                  // duration: function() { return window.innerHeight * 1.2 },    // "speed" of 0.2
+                  effects: [
+                    { fn: sequencer }
                   ]
                 });
             });
@@ -805,14 +834,14 @@ new Scrollify('#custom')
                 duration(Integer)<br>
                 effects(Array)
             </td>
-            <td>							</td>
+            <td>              </td>
           </tr>
           <tr>
             <td>addEffect</td>
             <td>name(String|Function)<br>
                 options(Object)
             </td>
-            <td> 								</td>
+            <td>                 </td>
           </tr>
         </tbody>
       </table>
