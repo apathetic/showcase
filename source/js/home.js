@@ -17,7 +17,6 @@ const carousel = new Carousel(featured, {
 
 
 featured.querySelector('.prev').addEventListener('click', () => {
-  window.console.log(carousel);
   carousel.prev();
 });
 featured.querySelector('.next').addEventListener('click', () => {

@@ -61,18 +61,7 @@
     padding: 0 20vw;
   }
 
-  // TODO: move to flexicarousel css:
   &__nav {
-    button {
-      background: none;
-      color: #fff;
-      font-size: 4em;
-    }
-  }
-
-  &:hover nav button { opacity: 1; }
-
-  nav {
     text-align: center;
     position: static;
 
@@ -99,13 +88,16 @@
     }
 
     button {
-      position: absolute;
+      background: none;
       cursor: pointer;
-      top: 50%;
+      color: #fff;
+      font-size: 4em;
       height: 4em;
       margin-top: -2em;
-      padding: 0.5em;
       opacity: 0;
+      padding: 0.5em;
+      position: absolute;
+      top: 50%;
       transition: all 0.3s;
 
       &.disabled {
@@ -121,4 +113,7 @@
       right: 0;
     }
   }
+
+  &:hover .prev,
+  &:hover .next { opacity: 1; }
 }
