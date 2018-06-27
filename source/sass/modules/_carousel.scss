@@ -58,7 +58,10 @@
 
   &__slide {
     flex: 1 0 100%;
-    padding: 0 20vw;
+
+    &--spaced {
+      padding: 0 20vw;
+    }
   }
 
   &__nav {
