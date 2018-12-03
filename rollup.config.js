@@ -13,6 +13,6 @@ export default {
       browser: false                                  // ... some package.json files have a "browser" field which specifies alternative files to load for people bundling for the browser
     }),
     buble(),
-    // uglify()
+    uglify()
   ]
 };

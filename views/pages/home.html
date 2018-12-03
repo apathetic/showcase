@@ -7,7 +7,7 @@
     <div class="carousel" id="featured">
       <ul class="carousel__wrap">
         {% for component in g.docs('components') if component.featured %}
-        <li class="carousel__slide">
+        <li class="carousel__slide carousel__slide--spaced">
           <span class="eyebrow">Module by {{ component.author }}</span>
           <h1><a href="components/{{ component.slug }}">{{ component.title }}</a></h1>
           <p>{{ component.description }}</p>
@@ -15,7 +15,7 @@
         {% endfor %}
       </ul>
 
-      <nav>
+      <nav class="carousel__nav">
         <button class="prev">←</button>
         <ul>
           {% for component in g.docs('components') if component.featured %}<li></li>{% endfor %}
