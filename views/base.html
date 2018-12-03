@@ -19,7 +19,7 @@
     {% if podspec.meta.favicon_path %}
     <link rel="shortcut icon" href="{{ g.static(podspec.meta.favicon_path).url.path }}">
     {% endif %}
-    <link rel="stylesheet" href="{{ g.static('/dist/css/main.min.css').url.path }}">
+    <link rel="stylesheet" href="{{ g.static('/dist/css/main.min.css').url }}">
 
     {% block assets %}<!-- -->{% endblock %}
   </head>
