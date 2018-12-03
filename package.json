@@ -32,6 +32,7 @@
     "lint:js": "eslint source/js/*.js",
     "build:css": "npm run lint:css && node-sass --include-path source/sass source/sass/main.scss | postcss --use autoprefixer | csso > dist/css/main.min.css",
     "build:js": "npm run lint:js && rollup -c --environment entry:home && rollup -c --environment entry:component",
+    "build:fonts": "cp -r source/fonts dist/fonts",
     "build": "npm run clean && npm run build:js && npm run build:css",
     "watch:css": "watch 'npm run build:css' source/sass",
     "watch:js": "watch 'npm run build:js' source/js",

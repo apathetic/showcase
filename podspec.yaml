@@ -47,8 +47,8 @@ deployments:
     repo: https://github.com/apathetic/showcase.git
     branch: gh-pages
     env:
-      host: https://apathetic.github.io/showcase
-      # scheme: https
+      host: apathetic.github.io/showcase
+      scheme: https
 
   huge:
     destination: git
