@@ -17,7 +17,7 @@ npm: "https://www.npmjs.com/package/@apatheticwes/flexicarousel"
 github: "https://github.com/apathetic/flexicarousel"
 assets:
   css:
-    - "https://rawgit.com/apathetic/flexicarousel/master/demo/styles.css"
-    - "https://rawgit.com/apathetic/flexicarousel/master/src/carousel.css"
+    - "https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/demo/styles.css"
+    - "https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/src/carousel.css"
   js:
-    - "https://rawgit.com/apathetic/flexicarousel/master/dist/carousel.js"
+    - "https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/dist/carousel.js"

@@ -13,6 +13,6 @@ tags:
 github: "https://github.com/hugeinc/huge-nav"
 assets:
   css:
-    - "https://rawgit.com/hugeinc/huge-nav/master/demo/styles.css"
+    - "https://cdn.jsdelivr.net/gh/hugeinc/huge-nav/demo/styles.css"
   js:
-    - "https://rawgit.com/hugeinc/huge-nav/master/dist/huge-nav.min.js"
+    - "https://cdn.jsdelivr.net/gh/hugeinc/huge-nav/dist/huge-nav.min.js"

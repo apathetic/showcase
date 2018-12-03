@@ -13,6 +13,6 @@ tags:
 github: "https://github.com/apathetic/parallax"
 assets:
   css:
-    - "https://rawgit.com/apathetic/parallax/master/demo/styles.css"
+    - "https://cdn.jsdelivr.net/gh/apathetic/parallax/demo/styles.css"
   js:
-    - "https://rawgit.com/apathetic/parallax/master/dist/parallax.js"
+    - "https://cdn.jsdelivr.net/gh/apathetic/parallax/dist/parallax.js"
