@@ -11,9 +11,8 @@ tags:
   - js
   - validation
 
-stash: "https://stash.hugeinc.com/projects/CMPTS/repos/validator/browse"
 npm: "https://www.npmjs.com/package/@apatheticwes/validator"
-github: "https://github.com/hugeinc/component-validator"
+github: "https://github.com/apathetic/validator"
 assets:
   css:
     - "https://rawgit.com/apathetic/validator/master/demo/styles.css"

@@ -13,11 +13,11 @@ tags:
   - mobile
   - js
   - widget
-npm: "https://www.npmjs.com/package/@hugeinc/carousel"
-github: "https://github.com/hugeinc/component-carousel"
+npm: "https://www.npmjs.com/package/@apatheticwes/flexicarousel"
+github: "https://github.com/apathetic/flexicarousel"
 assets:
   css:
-    - "https://rawgit.com/hugeinc/component-carousel/master/demo/styles.css"
-    - "https://rawgit.com/hugeinc/component-carousel/master/src/carousel.css"
+    - "https://rawgit.com/apathetic/flexicarousel/master/demo/styles.css"
+    - "https://rawgit.com/apathetic/flexicarousel/master/src/carousel.css"
   js:
-    - "https://rawgit.com/hugeinc/component-carousel/master/dist/carousel.js"
+    - "https://rawgit.com/apathetic/flexicarousel/master/dist/carousel.js"

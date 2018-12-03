@@ -33,7 +33,7 @@ You will need these here things:
 
 ```sh
 $ curl https://install.growsdk.org | bash
-$ git clone git@github.com:hugeinc/showcase.git
+$ git clone git@github.com:apathetic/showcase.git
 $ npm install
 ```
 

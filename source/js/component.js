@@ -1,5 +1,5 @@
-import { StickyNav } from '@hugeinc/stickynav';
-// import { StickyNav } from '../../node_modules/@hugeinc/stickynav';
+import { StickyNav } from '@apatheticwes/stickynav';
+// import { StickyNav } from '../../node_modules/@apatheticwes/stickynav';
 import polyfill from './lib/polyfills.js';
 import * as Prism from './lib/prism.js';
 

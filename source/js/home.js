@@ -1,4 +1,4 @@
-import Carousel from  '@hugeinc/carousel';
+import Carousel from  '@apathetic/flexicarousel';
 
 // ---- carousel ---- //
 const featured = document.querySelector('#featured');

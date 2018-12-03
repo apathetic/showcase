@@ -6,16 +6,16 @@
   "description": "A showcase of handy components",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hugeinc/showcase"
+    "url": "https://github.com/apathetic/showcase"
   },
   "devDependencies": {
-    "@hugeinc/carousel": "^0.8.2",
-    "@hugeinc/stickynav": "^0.5.2",
+    "@apatheticwes/flexicarousel": "^0.8.2",
+    "@apatheticwes/stickynav": "^0.5.2",
     "autoprefixer": "^6.7.7",
     "csso-cli": "^1.0.0",
     "eslint": "^3.19.0",
     "eslint-config-defaults": "^9.0.0",
-    "node-sass": "^4.5.2",
+    "node-sass": "^4.11.0",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^3.1.1",
     "rollup": "^0.41.6",

@@ -11,8 +11,7 @@ tags:
   - js
   - modal
 
-stash: "https://stash.hugeinc.com/projects/CMPTS/repos/modals/browse"
-npm: "https://www.npmjs.com/package/@hugeinc/modal"
+npm: "https://www.npmjs.com/package/@apatheticwes/modal"
 github: "https://github.com/apathetic/modals"
 assets:
   css:

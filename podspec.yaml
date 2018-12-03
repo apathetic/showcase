@@ -41,25 +41,17 @@ sitemap:
 
 
 deployments:
-  test:                   # Deployment name.
-    destination: local    # Destination kind.
-    out_dir: ~/Sites/SHOWCASE/build
-    env:
-      host: 98d9d592.ngrok.io
-      scheme: https
-
   wes:
     destination: git
     # repo: git@github.com:apathetic/showcase.git
     repo: https://github.com/apathetic/showcase.git
     branch: gh-pages
     env:
-      host: apathetic.github.io/showcase
-      scheme: https
+      host: https://apathetic.github.io/showcase
+      # scheme: https
 
   huge:
     destination: git
-    # repo: https://github.com/hugeinc/showcase.git
     repo: git@github.com:hugeinc/showcase.git
     branch: gh-pages
     env:
