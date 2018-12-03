@@ -1,4 +1,4 @@
-import Carousel from  '@apathetic/flexicarousel';
+import Carousel from  '@apatheticwes/flexicarousel';
 
 // ---- carousel ---- //
 const featured = document.querySelector('#featured');
