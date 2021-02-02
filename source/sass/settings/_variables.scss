@@ -27,8 +27,21 @@ $breakpoints: (
 $max-width: 80em;
 $columns: 12;
 $gutter: 2em;
-$padding: $gutter / 2;
+// $padding: $gutter / 2;
 
+:root {
+  --max-width: 80em;
+  --gutter: 2em;
+  --color-grey-dark: #2a2c2e;
+  --color-grey-base: #54595f;
+  --color-grey-light: #f4f4f4;
+  --color-magenta-base: #ec008c;
+  --color-blue-light: lighten(#0096d6, 20%);
+  --color-blue-base: #0096d6;
+  --font-sans: Arial, sans-serif;
+  --font-serif: 'Galaxie', Georgia, serif;
+  --font-default: 'HUGE', var(--font-sans);
+}
 
 /* ---------------------------------------
   2.  Colours

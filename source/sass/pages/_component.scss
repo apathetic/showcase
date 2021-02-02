@@ -10,15 +10,11 @@ Description:  Main styles for the Huge Showcase
 
 */
 
-header.condensed {
-  color: #fff;
-  padding: 1em 0;
-  margin-bottom: 3em;
+/* ---------------------------------------
+  1.  Component nav
+---------------------------------------- */
 
-  h1 {
-    color: #fff;
-  }
-
+nav.component {
   .prev {
     position: absolute;
     left: 0;
@@ -30,119 +26,62 @@ header.condensed {
     right: 0;
     top: 0;
   }
+
+  @media (min-width: 960px) {
+    .prev,
+    .next {
+      position: relative;
+    }
+  }
 }
 
 
 /* ---------------------------------------
-  1.  Sticky
+  2.  Side-nav
 ---------------------------------------- */
-
 #sticky {
+  position: sticky !important;
+  left: 0 !important;
+  top: 0;
+}
+
+nav.mini-nav {
   display: none;
   left: 0;
 
-  nav {
-    ul {
-      margin: 2em 0;
-    }
+  li {
+    list-style: none;
+    width: 200px;
+    margin: 4px 0;
+    text-align: right;
+  }
 
-    li {
-      list-style: none;
-      width: 200px;
-      margin: 4px 0;
-      text-align: right;
-    }
+  a {
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+    background: colors('grey-dark');
+    padding: 0.25em 0.75em;
+    font-size: 14px;
+    line-height: 1.5em;
+    font-weight: bold;
+  }
 
-    a {
-      color: #fff;
-      display: inline-block;
-      text-decoration: none;
-      background: colors('grey-dark');
-      padding: 0.25em 0.75em;
-      font-size: 14px;
-      line-height: 1.5em;
-      font-weight: bold;
-    }
-
-    .active a {
-      background: colors('magenta');
-
-      &::after {
-        content: '';
-        position: absolute;
-        top: 6px;
-        right: -8px;
-      }
-    }
+  .active a {
+    background: colors('magenta');
   }
 
   @include at-breakpoint('large') {
     display: inline-block;
-    z-index: 10;
-
-    &.normal {
-      position: absolute;
-      top: 0;
-    }
-
-    &.sticky {
-      position: fixed;
-      top: 0;
-    }
-
-    &.bottom {
-      position: absolute;
-      bottom: 0;
-    }
   }
-
-  // @include from-breakpoint($max-width) {
-  //   left: calc(50vw - #{$max-width / 2});
-  // }
-  $hack-width: 1215px;
-
-  @include from-breakpoint($hack-width) {    // I dont know. I'll figure this out later.
-    left: calc(50vw - #{$hack-width / 2});
-  }
-}
-
-.mini-nav {
-  margin: 0 auto;
-  height: 0;        // to prevent menu from affecting layout
 }
 
 
 /* ---------------------------------------
   2.  Other
 ---------------------------------------- */
-
-main.component {
-  @include at-breakpoint('large') {
-    &.left-rail {
-      .container {
-        padding-left: 240px;
-      }
-    }
-  }
-
-  section {
-    padding: 2em 0;
-  }
-
-  .bullets li {
-    margin-left: 2em;
-    margin-bottom: 1em;
-    list-style-type: disc;
-  }
-
-  h1:not(:first-child),
-  h2:not(:first-child),
-  h3:not(:first-child),
-  h4:not(:first-child) {
-    margin-top: 2em;
-  }
-
-  // p + *:not(p) {
-  //   margin-top: 2em;
-  // }
+.bullets li {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+  list-style-type: disc;
 }

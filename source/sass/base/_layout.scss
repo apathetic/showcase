@@ -2,14 +2,44 @@
   3.  Layout
 ---------------------------------------- */
 
+@media (min-width: 960px) {
+  body {
+    display: grid;
+    grid-template:
+      "side-rail-head content" 240px
+      "side-rail-nav  content" 1fr
+      "x              footer"  240px /
+      240px           1fr;
+  }
+
+  header {
+    grid-area: side-rail-head;
+  }
+
+  nav.mini-nav {
+    grid-area: side-rail-nav;
+    height: 100%;
+    background: #2a2c2e;
+  }
+
+  main { grid-area: content; }
+
+  footer {
+    grid-column-end: -1;
+    background:
+      repeating-linear-gradient(
+        45deg,
+        rgb(244, 244, 244),
+        rgb(244, 244, 244) 16px,
+        #a2a2a2 18px
+      );
+  }
+}
+
 .container {
   margin: 0 auto;
-  max-width: $max-width;
-  padding: 0 5%;
-
-  @include from-breakpoint($max-width) {
-    padding: 0 $max-width * 0.05;
-  }
+  max-width: var(--max-width);
+  padding: 0 2rem;
 }
 
 
@@ -19,6 +49,5 @@
 
 section {
   overflow: hidden;
-
-  @include clearfix;
+  padding: 2rem 0;
 }

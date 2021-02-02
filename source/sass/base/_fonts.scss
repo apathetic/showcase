@@ -13,7 +13,12 @@ Description:    Site fonts are included here
 
 */
 
-$url: "/showcase/assets/fonts";
+$url: "/showcase/assets/fonts" !default;
+$ENV: "production" !default;
+
+@if ($ENV == "development") {
+  $url: "/assets/fonts";
+}
 
 
 @font-face {

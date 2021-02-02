@@ -11,26 +11,27 @@ button {
 %brick {
   border-radius: 3px;
   display: inline-block;
-  // width: 100%;
   font-size: 1rem;
-  padding: 1em; // 1.2em;
+  padding: 1em;
 }
 
 .button {
   @extend %brick;
 
-  color: #fff;
+  // color: #fff;
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
-  margin: 0.5em 0;
-  max-width: 18em;
-  min-width: 10em;
-  vertical-align: top;
   transition: background 0.2s ease-in-out;
 
   &--default {
     background-color: colors('blue');
+    //
+    margin: 0.5em 0;
+    max-width: 18em;
+    min-width: 10em;
+    vertical-align: top;
+
 
     &:hover {
       background-color: colors('blue-light');
@@ -50,5 +51,18 @@ button {
       background-color: rgba(255, 255, 255, 0.9);
       color: #000;
     }
+  }
+
+  &--icon {
+    border: 1px solid #fff;
+    border-color: #fff;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-flex;
+    flex-wrap: wrap;
+    height: 36px;
+    padding: 0;
+    place-content: center;
+    width: 36px;
   }
 }

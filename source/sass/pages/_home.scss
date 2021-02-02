@@ -21,7 +21,12 @@ Description:  Styles for Landing Page
 ---------------------------------------- */
 
 header.hero {
+  grid-area: 1/1/2/3;
   color: $color-font-light;
+}
+
+main.components {
+  grid-area: 2/1/3/3;
 }
 
 .tile {
@@ -43,9 +48,7 @@ header.hero {
     transform: rotateX(90deg);
   }
 
-  > div {
-    padding: 2em 20%;
-  }
+  > div { padding: 2rem; }
 
   h2 {
     margin-bottom: 0.2em;

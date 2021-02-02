@@ -1,5 +1,7 @@
 grow_version: ">=0.0.65"
-# root: /
+
+# root: /showcase
+root: '/'
 home: /content/pages/home.yaml
 
 localization:
@@ -12,17 +14,16 @@ meta:
   favicon_path: /source/images/favicon.png
   social:
     twitter: example
-    facebook: example
 
 static_dirs:
 - static_dir: /dist/
-  serve_at: "/assets/"
+  serve_at: "{root}/assets/"
   fingerprinted: false
 - static_dir: /source/images/
-  serve_at: "/assets/images/"
+  serve_at: "{root}/assets/images/"
   fingerprinted: false
 - static_dir: /source/fonts/
-  serve_at: "/assets/fonts/"
+  serve_at: "{root}/assets/fonts/"
   fingerprinted: false
 
 sitemap:
@@ -41,19 +42,21 @@ sitemap:
 
 
 deployments:
-  wes:
-    destination: git
-    # repo: git@github.com:apathetic/showcase.git
-    repo: https://github.com/apathetic/showcase.git
-    branch: gh-pages
+  # build this locally and instead deploy with a script
+  github:
+    destination: local
+    out_dir: ./build/
     env:
       host: apathetic.github.io/showcase
       scheme: https
 
-  huge:
+  default:
     destination: git
-    repo: git@github.com:hugeinc/showcase.git
+    # repo: git@github.com:apathetic/showcase.git
+    repo: https://github.com/apathetic/showcase.git
     branch: gh-pages
+    # root_dir: showcase
     env:
-      host: hugeinc.github.io/showcase
+      host: apathetic.github.io/showcase
       scheme: https
+

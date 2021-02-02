@@ -26,7 +26,7 @@
     </div>
   </header>
 
-  <main class="align-center">
+  <main class="components align-center">
     <div class="filters">
       <ul>
         <li data-filter="all" class="active">all.</li>
@@ -38,9 +38,10 @@
     </div>
 
     {% set components = g.docs('components', order_by='date') | reverse() %}
+    <ul>
     {% for component in components %}
       {% if not component.hidden %}
-      <section class="tile" data-tags="all{% for tag in component.tags %} {{ tag }}{% endfor %}">
+      <li class="tile" data-tags="all{% for tag in component.tags %} {{ tag }}{% endfor %}">
         <div>
           <span class="eyebrow">
           {% for tag in component.tags %}<strong>{{ tag }}</strong>{% endfor %}
@@ -56,9 +57,10 @@
           </p>
           #}
         </div>
-      </section>
+      </li>
       {% endif %}
     {% endfor %}
+    </ul>
 
   </main>
 

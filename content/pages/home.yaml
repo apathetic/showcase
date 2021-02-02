@@ -1,4 +1,5 @@
-$title: Components
-$path: /{root}/
+$title: wes hatch - components showcase
+$view: /views/pages/home.html
 
-description: A basic Grow demo website.
+$path: /{root}/
+description: A showcase of components from over the years.

@@ -1,8 +1,8 @@
 {
-  "name": "Components",
+  "name": "components",
   "author": "wes hatch",
   "license": "MIT",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "description": "A showcase of handy components",
   "repository": {
     "type": "git",
@@ -15,7 +15,7 @@
     "csso-cli": "^1.0.0",
     "eslint": "^3.19.0",
     "eslint-config-defaults": "^9.0.0",
-    "node-sass": "^4.11.0",
+    "node-sass": "^5.0.0",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^3.1.1",
     "rollup": "^0.41.6",
@@ -32,12 +32,12 @@
     "lint:js": "eslint source/js/*.js",
     "build:css": "npm run lint:css && node-sass --include-path source/sass source/sass/main.scss | postcss --use autoprefixer | csso > dist/css/main.min.css",
     "build:js": "npm run lint:js && rollup -c --environment entry:home && rollup -c --environment entry:component",
-    "build:fonts": "cp -r source/fonts dist/fonts",
-    "build": "npm run clean && npm run build:js && npm run build:css",
-    "watch:css": "watch 'npm run build:css' source/sass",
+    "build": "npm run clean && npm run build:js && npm run build:css && pipenv run grow build",
+    "watch:css": "SASS_ENV=development watch 'npm run build:css' source/sass",
     "watch:js": "watch 'npm run build:js' source/js",
     "watch": "run-p watch:**",
-    "serve": "grow run",
+    "serve": "pipenv run grow run",
+    "deploy": "./scripts/deploy.sh",
     "start": "npm run build && run-p watch:** serve"
   }
 }

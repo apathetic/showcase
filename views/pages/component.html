@@ -14,11 +14,11 @@
   {% set next_doc = doc.next() %}
   {% set prev_doc = doc.prev() %}
 
-  <header class="condensed align-center">
-    <h1>{{ doc.title }}.</h1>
+  <header class="py-2 align-center">
+    <h1 class="px-2">{{ doc.title }}.</h1>
     <!-- <p class="attribution">{{ _('Posted %(date)s', date=doc.published ) }}</p> -->
 
-    <nav>
+    <nav class="component">
     {% if prev_doc %}
       <a class="button prev" href="{{ prev_doc.url }}">
         ⟨
@@ -34,16 +34,22 @@
     </nav>
 
     {% if doc.npm %}
-    <a class="button button--outline button--small" href="{{ doc.npm }}">
-      npm
+    <a class="button button--icon" href="{{ doc.npm }}">
+      <svg class="icon">
+        <use xlink:href="{{ g.static('/source/images/sprites.svg').url }}#npm"></use>
+      </svg>
     </a>
     {% endif %}
     {% if doc.github %}
-    <a class="button button--outline button--small" href="{{ doc.github }}">
-      <i class="icon-github"></i> Github
+    <a class="button button--icon" href="{{ doc.github }}">
+      <svg class="icon">
+        <use xlink:href="{{ g.static('/source/images/sprites.svg').url }}#github"></use>
+      </svg>
     </a>
-    <a class="button button--outline button--small" href="{{ doc.github }}/archive/master.zip">
-      ⇩ Download
+    <a class="button button--icon" href="{{ doc.github }}/archive/master.zip">
+      <svg class="icon">
+        <use xlink:href="{{ g.static('/source/images/sprites.svg').url }}#arrow-down"></use>
+      </svg>
     </a>
     {% endif %}
 
@@ -51,13 +57,11 @@
 
   <nav class="mini-nav">
     <div id="sticky">
-      <nav data-autogenerate="true">
-        <ul></ul>
-      </nav>
+        <ul class="py-2"></ul>
     </div>
   </nav>
 
-  <main class="component left-rail">
+  <main class="prose">
     {% block component %}<!-- -->{% endblock %}
   </main>
 
