@@ -11,17 +11,17 @@
   "devDependencies": {
     "@apatheticwes/flexicarousel": "^0.8.2",
     "@apatheticwes/stickynav": "^0.5.2",
+    "@rollup/plugin-buble": "^0.21.3",
+    "@rollup/plugin-node-resolve": "^11.1.1",
     "autoprefixer": "^6.7.7",
     "csso-cli": "^1.0.0",
-    "eslint": "^3.19.0",
-    "eslint-config-defaults": "^9.0.0",
+    "eslint": "^7.19.0",
+    "eslint-config-google": "^0.14.0",
     "node-sass": "^5.0.0",
     "npm-run-all": "^4.0.2",
     "postcss-cli": "^3.1.1",
-    "rollup": "^0.41.6",
-    "rollup-plugin-buble": "^0.15.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-uglify": "^1.0.1",
+    "rollup": "^2.38.4",
+    "rollup-plugin-uglify": "^1.0.2",
     "stylelint": "^7.10.1",
     "stylelint-config-standard": "^16.0.0",
     "watch": "^1.0.2"
@@ -38,6 +38,6 @@
     "watch": "run-p watch:**",
     "serve": "pipenv run grow run",
     "deploy": "./scripts/deploy.sh",
-    "start": "npm run build && run-p watch:** serve"
+    "start": "run-p watch:** serve"
   }
 }

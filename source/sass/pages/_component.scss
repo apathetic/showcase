@@ -15,23 +15,22 @@ Description:  Main styles for the Huge Showcase
 ---------------------------------------- */
 
 nav.component {
-  .prev {
+  position: static;
+  padding-top: 1em;
+
+  .prev,
+  .next {
+    font-size: 0.8em;
     position: absolute;
-    left: 0;
     top: 0;
+  }
+
+  .prev {
+    left: 0;
   }
 
   .next {
-    position: absolute;
     right: 0;
-    top: 0;
-  }
-
-  @media (min-width: 960px) {
-    .prev,
-    .next {
-      position: relative;
-    }
   }
 }
 

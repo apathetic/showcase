@@ -14,24 +14,21 @@
   {% set next_doc = doc.next() %}
   {% set prev_doc = doc.prev() %}
 
-  <header class="py-2 align-center">
-    <h1 class="px-2">{{ doc.title }}.</h1>
-    <!-- <p class="attribution">{{ _('Posted %(date)s', date=doc.published ) }}</p> -->
-
+  <header class="py-8 align-center">
     <nav class="component">
-    {% if prev_doc %}
-      <a class="button prev" href="{{ prev_doc.url }}">
-        ⟨
-        <span>{{ prev_doc.title }}</span>
+      {% if prev_doc %}
+      <a class="button prev text-sm" href="{{ prev_doc.url }}">
+        ⟨ {{ prev_doc.title }}
       </a>
-    {% endif %}
-    {% if next_doc %}
+      {% endif %}
+      {% if next_doc %}
       <a class="next button" href="{{ next_doc.url }}">
-        <span>{{ next_doc.title }}</span>
-        ⟩
+        {{ next_doc.title }} ⟩
       </a>
-    {% endif %}
+      {% endif %}
     </nav>
+
+    <h1 class="">{{ doc.title }}.</h1>
 
     {% if doc.npm %}
     <a class="button button--icon" href="{{ doc.npm }}">
@@ -57,11 +54,12 @@
 
   <nav class="mini-nav">
     <div id="sticky">
-        <ul class="py-2"></ul>
+        <ul class="py-4"></ul>
     </div>
   </nav>
 
-  <main class="prose">
+  <main class="prose py-4">
+    <!-- <p class="attribution">{{ _('Posted %(date)s', date=doc.published ) }}</p> -->
     {% block component %}<!-- -->{% endblock %}
   </main>
 

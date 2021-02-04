@@ -4,8 +4,7 @@
     "sourceType": "module"
   },
   "root": true,
-  "extends": "defaults/configurations/google",
-  "ignore": ["source/js/lib/*"],
+  "extends": "google",
   "globals": {
     "window": true,
     "document": true,

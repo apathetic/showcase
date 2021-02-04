@@ -1,8 +1,8 @@
-import Carousel from  '@apatheticwes/flexicarousel';
+import Carousel from '@apatheticwes/flexicarousel';
 
 // ---- carousel ---- //
 const featured = document.querySelector('#featured');
-const sections = document.querySelectorAll('main section');
+const sections = document.querySelectorAll('main .tile');
 const tabs = document.querySelectorAll('.filters li');
 const bullets = featured.querySelectorAll('nav li');
 const carousel = new Carousel(featured, {
@@ -12,7 +12,7 @@ const carousel = new Carousel(featured, {
       bullets[i].classList.remove('active');
     }
     bullets[current].classList.add('active');
-  }
+  },
 });
 
 
@@ -24,7 +24,7 @@ featured.querySelector('.next').addEventListener('click', () => {
 });
 
 // Array.from(bullets, (bullet, to) => {
-Array.prototype.forEach.call(bullets, (bullet, to) => {     // "safe ES5 transform
+Array.prototype.forEach.call(bullets, (bullet, to) => {
   bullet.addEventListener('click', () => {
     carousel.go(to);
   });
@@ -33,7 +33,7 @@ Array.prototype.forEach.call(bullets, (bullet, to) => {     // "safe ES5 transfo
 
 // ---- filters ---- //
 // Array.from(tabs, (tab) => {
-Array.prototype.forEach.call(tabs, (tab) => {     // "safe ES5 transform
+Array.prototype.forEach.call(tabs, (tab) => {
   const filter = tab.getAttribute('data-filter');
 
   tab.addEventListener('click', function(e) {
@@ -46,12 +46,11 @@ Array.prototype.forEach.call(tabs, (tab) => {     // "safe ES5 transform
     tab.classList.add('active');
 
     for (let i = sections.length; i--;) {
-      let regex;
+      const regex = new RegExp(filter, 'i');
       let tags;
 
       tags = sections[i].getAttribute('data-tags') || '';
       tags = tags.toLowerCase();
-      regex = new RegExp(filter, 'i');    // ghetto, doesn't care about surrounding whitespace
 
       if (!tags.match(regex)) {
         sections[i].classList.add('collapsed');
@@ -59,7 +58,6 @@ Array.prototype.forEach.call(tabs, (tab) => {     // "safe ES5 transform
         sections[i].classList.remove('collapsed');
       }
     }
-
   });
 });
 /* */

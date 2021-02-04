@@ -6,7 +6,7 @@
   body {
     display: grid;
     grid-template:
-      "side-rail-head content" 240px
+      "side-rail-head content" 160px
       "side-rail-nav  content" 1fr
       "x              footer"  240px /
       240px           1fr;
@@ -26,6 +26,7 @@
 
   footer {
     grid-column-end: -1;
+    grid-column-start: 1;
     background:
       repeating-linear-gradient(
         45deg,
