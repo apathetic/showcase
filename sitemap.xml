@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+      <loc>https://apathetic.github.io/showcase/</loc>
+    </url>
+    <url>
+      <loc>https://apathetic.github.io/showcase/components/carousel/</loc>
+    </url>
+    <url>
+      <loc>https://apathetic.github.io/showcase/components/modal/</loc>
+    </url>
+    <url>
+      <loc>https://apathetic.github.io/showcase/components/panels/</loc>
+    </url>
+    <url>
+      <loc>https://apathetic.github.io/showcase/components/parallax/</loc>
+    </url>
+    <url>
+      <loc>https://apathetic.github.io/showcase/components/scrollify/</loc>
+    </url>
+    <url>
+      <loc>https://apathetic.github.io/showcase/components/stickynav/</loc>
+    </url>
+    <url>
+      <loc>https://apathetic.github.io/showcase/components/validator/</loc>
+    </url>
+</urlset>

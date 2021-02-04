@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, height=device-height">
+    <title>Carousel – Components</title>
+    <meta property="og:title" content="Carousel – Components">
+    <meta property="og:site_name" content="Components">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apathetic.github.io/showcase/components/carousel/">
+    <meta name="description" content="A touch-friendly, lightwieght carousel. Uses CSS3 transforms for its transitions.">
+    <meta property="og:description" content="A touch-friendly, lightwieght carousel. Uses CSS3 transforms for its transitions.">
+    <link rel="shortcut icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="https://apathetic.github.io/showcase/assets/css/main.min.css">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/demo/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/src/carousel.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/dist/carousel.js"></script>
+  </head>
+  <body>
+
+
+  <header class="py-2 align-center">
+    <h1 class="px-2">Carousel.</h1>
+    <!-- <p class="attribution">Posted %(date)s</p> -->
+
+    <nav class="component">
+      <a class="next button" href="https://apathetic.github.io/showcase/components/modal/">
+        <span>Modal</span>
+        ⟩
+      </a>
+    </nav>
+
+    <a class="button button--icon" href="https://www.npmjs.com/package/@apatheticwes/flexicarousel">
+      npm
+    </a>
+    <a class="button button--icon" href="https://github.com/apathetic/flexicarousel">
+      <i class="icon-github"></i> Github
+    </a>
+    <a class="button button--icon" href="https://github.com/apathetic/flexicarousel/archive/master.zip">
+      ⇩ Download
+    </a>
+
+  </header>
+
+  <nav class="mini-nav">
+    <div id="sticky">
+        <ul class="py-2"></ul>
+    </div>
+  </nav>
+
+  <main class="prose">
+    <section data-nav="About" id="about">
+      <div class="container">
+        <h2>About</h2>
+        <p>A flexible carousel that works on both desktop and mobile devices, and is compleletely responsive. Additionally, there is a strict separation
+        of state and style. That is to say, javascript maintains the state of the carousel, while the CSS is responsible for the presentation and display
+        of this state</p>
+
+        <h3>Implementation</h3>
+        <p>Flexicarousel enables a touch-based interface (ie. sliding slides via dragging) while also respecting the separation of state and behaviour.
+        You can swipe to drag a slide yet still use CSS to control how the slide transitions will behave. You can also choose to change slides by
+        using the exposed API. The carousel works on both desktop and mobile, using only CSS to control the look and feel. The result is a basic yet
+        robust carousel, weighing in at under 2KB</p>
+      </div>
+    </section>
+
+    <section data-nav="Demo" id="demo">
+      <div class="container">
+        <h2>Demo</h2>
+
+        <h3>Simple demo</h3>
+        <div class="carousel clip" id="fah">
+          <ul class="wrap">
+            <li>
+              <h3>1</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/cow1.jpg">
+            </li>
+            <li>
+              <h3>2</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/cow2.jpg">
+            </li>
+            <li>
+              <h3>3</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/cow3.jpg">
+            </li>
+          </ul>
+
+          <nav class="carousel__nav">
+            <button class="prev">⟨</button>
+            <ul>
+              <li></li><li></li><li></li>
+            </ul>
+            <button class="next">⟩</button>
+          </nav>
+        </div>
+
+        <hr />
+
+        <h3>Infinite, overflowing</h3>
+        <div class="carousel" id="ten">
+          <ul class="wrap">
+            <li>
+              <h3>1</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face1.jpg">
+            </li>
+            <li>
+              <h3>2</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face2.jpg">
+            </li>
+            <li>
+              <h3>3</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face3.jpg">
+            </li>
+            <li>
+              <h3>4</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face4.jpg">
+            </li>
+            <li>
+              <h3>5</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face1.jpg">
+            </li>
+            <li>
+              <h3>6</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face2.jpg">
+            </li>
+            <li>
+              <h3>7</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face3.jpg">
+            </li>
+          </ul>
+
+          <nav class="carousel__nav">
+            <button class="prev">⟨</button>
+            <ul>
+              <li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+            </ul>
+            <button class="next">⟩</button>
+          </nav>
+        </div>
+
+
+        <hr />
+
+
+        <h3>Bounded, clipped</h3>
+        <div class="carousel clip" id="billion">
+          <ul class="wrap">
+            <li>
+              <h3>1</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face1.jpg">
+            </li>
+            <li>
+              <h3>2</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face2.jpg">
+            </li>
+            <li>
+              <h3>3</h3>
+              <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face3.jpg">
+            </li>
+          </ul>
+
+          <nav class="carousel__nav">
+            <button class="prev">⟨</button>
+            <ul>
+              <li></li><li></li><li></li>
+            </ul>
+            <button class="next">⟩</button>
+          </nav>
+        </div>
+
+
+        <hr />
+
+
+        <h3>Infinite, scroll by 3</h3>
+        <div class="carousel" id="seven">
+          <div class="clip">
+            <ul class="wrap">
+              <li>
+                <h3>1</h3>
+                <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face1.jpg">
+              </li>
+              <li>
+                <h3>2</h3>
+                <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face2.jpg">
+              </li>
+              <li>
+                <h3>3</h3>
+                <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face3.jpg">
+              </li>
+              <li>
+                <h3>4</h3>
+                <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face2.jpg">
+              </li>
+              <li>
+                <h3>5</h3>
+                <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face1.jpg">
+              </li>
+              <li>
+                <h3>6</h3>
+                <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face2.jpg">
+              </li>
+              <li>
+                <h3>7</h3>
+                <img src="https://apathetic.github.io/showcase/assets/images/flexicarousel/face3.jpg">
+              </li>
+            </ul>
+          </div>
+
+          <nav class="carousel__nav">
+            <button class="prev">⟨</button>
+            <button class="next">⟩</button>
+          </nav>
+        </div>
+
+      </div>
+    </section>
+
+    <section data-nav="Prereqs" id="prereqs">
+      <div class="container">
+        <h2>Prereqs</h2>
+        <p>none</p>
+      </div>
+    </section>
+
+    <section data-nav="Compatibility" id="compatibility">
+      <div class="container">
+        <h2>Compatibility</h2>
+        <ul class="bullets">
+          <li>IE8+</li>
+          <li>Firefox, Chrome, Opera</li>
+          <li>iOS, Android</li>
+        </ul>
+      </div>
+    </section>
+
+    <section data-nav="Code" id="code">
+      <div class="container">
+        <h2>Code</h2>
+
+        <pre><code class="language-javascript">
+var container = document.querySelector('#carousel');
+var carousel = new Carousel(container, {
+  infinite: true,
+  onSlide: function() { ... }
+});
+
+container.querySelector('.prev').addEventListener('click', carousel.prev);
+container.querySelector('.next').addEventListener('click', carousel.next);
+        </code></pre>
+
+      </div>
+    </section>
+
+    <section data-nav="API" id="api">
+      <div class="container">
+        <h2>API</h2>
+
+        <h3>Options</h3>
+
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:100px;">name</th>
+                <th style="width:50px;">type</th>
+                <th style="width:50px;">default</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>activeClass</td>
+                <td>string</td>
+                <td>active</td>
+                <td>Class to use on the active slide.</td>
+              </tr>
+              <tr>
+                <td>slideWrap</td>
+                <td>string</td>
+                <td>.wrap</td>
+                <td>The selector to use when searching for the slides' container. This is used only to bind touch events to, on mobile.</td>
+              </tr>
+              <tr>
+                <td>slides</td>
+                <td>string</td>
+                <td>li</td>
+                <td>The selector to use when searching for slides within the <code>slideWrap</code> container.</td>
+              </tr>
+              <tr>
+                <td>infinite</td>
+                <td>boolean</td>
+                <td>true</td>
+                <td>Enable infinite scrolling or not</td>
+              </tr>
+              <tr>
+                <td>onSlide</td>
+                <td>function</td>
+                <td>undefined</td>
+                <td>A function to execute on slide. It is passed <code>to</code> and <code>from</code> indices.</td>
+              </tr>
+              <tr>
+                <td>disableDragging</td>
+                <td>boolean</td>
+                <td>false</td>
+                <td>if you'd like to disable the touch UI for whatever reason</td>
+              </tr>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Methods</h3>
+
+        <div class="table-responsive">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th style="width:100px;">name</th>
+                <th style="width:50px;">method</th>
+                <th>description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Next Slide</td>
+                <td>carousel.next()</td>
+                <td>Advance carousel to the next slide</td>
+              </tr>
+              <tr>
+                <td>Previous Slide</td>
+                <td>carousel.prev()</td>
+                <td>Advance carousel to the previous slide</td>
+              </tr>
+              <tr>
+                <td>Go To Slide</td>
+                <td>carousel.to(i)</td>
+                <td>Advance carousel to the <em>i<sup>th</sup></em> slide</td>
+              </tr>
+              <tr>
+                <td>Destroy</td>
+                <td>carousel.destroy()</td>
+                <td>Destroys carousel and removes all Event Listeners</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </section>
+
+    <script>
+      /**
+       * Removes whitespace nodes. Useful to normalize inline-block layouts (IE)
+       * @param  {DOMElement} handle the element to remove whitespace nodes from
+       * @return {void}
+       */
+      function removeEmptyNodes(handle) {
+        var spaces = _.filter(handle.childNodes,
+          function(el) {
+            return el.nodeType === 3 && !/\S/.test(el.nodeValue);
+          });
+
+        _.each(spaces, function(space) {
+          handle.removeChild(space);
+        });
+      }
+
+
+      /**
+       * Update the active bullet in the navigation.
+       * @param  {[type]} i [description]
+       * @this Carousel
+       * @return {void}
+       */
+      function updateNav(i) {
+        var bullets = this.handle.querySelectorAll('nav li');
+        var next = this.handle.querySelector('.next');
+        var prev = this.handle.querySelector('.prev');
+
+        if (!this.options.infinite) {
+          if (prev) {
+            prev.classList.toggle('disabled', i === 0);
+          }
+          if (next) {
+            next.classList.toggle('disabled', i + 1 >= this.numSlides);
+          }
+        }
+
+        if (bullets && bullets.length > 0) {
+          Array.prototype.forEach.call(bullets, function(bullet) {
+            bullet.classList.remove('active');
+          });
+          bullets[i].classList.add('active');
+        }
+      }
+
+      // ===================================================================
+
+
+      var fah = document.querySelector('#fah');
+      var fah_bullets = fah.querySelectorAll('nav li');
+      var fah_carousel = new Carousel(fah, {
+        'onSlide': updateNav
+      });
+
+      fah.querySelector('.prev').addEventListener('click', function() {
+        fah_carousel.prev();
+      });
+
+      fah.querySelector('.next').addEventListener('click', function() {
+        fah_carousel.next();
+      });
+
+      Array.prototype.forEach.call(fah_bullets, function(bullet, index){
+        bullet.addEventListener('click', function(e) {
+          e.preventDefault();
+          fah_carousel.go(index);
+        });
+      });
+
+
+      // ===================================================================
+
+
+      var container = document.querySelector('#ten');
+      var bullets = container.querySelectorAll('nav li');
+      var carousel = new Carousel(container, {
+        'onSlide': updateNav,
+        'display': 5          // there are 3 showing, but we allow for 2 to be "hanging" off the end
+      });
+
+      container.querySelector('.prev').addEventListener('click', function(e) {
+        e.preventDefault();
+        carousel.prev();
+      });
+
+      container.querySelector('.next').addEventListener('click', function(e) {
+        e.preventDefault();
+        carousel.next();
+      });
+
+      Array.prototype.forEach.call(bullets, function(bullet, index) {
+        bullet.addEventListener('click', function(e) {
+          e.preventDefault();
+          carousel.go(index);
+        });
+      });
+
+
+
+      // ===================================================================
+
+      var container2 = document.querySelector('#billion');
+      var carousel2 = new Carousel(container2, {
+        'infinite': false,
+        'onSlide': updateNav
+      });
+
+      container2.querySelector('.prev').addEventListener('click', function(e) {
+        e.preventDefault();
+        carousel2.prev();
+      });
+
+      container2.querySelector('.next').addEventListener('click', function(e) {
+        e.preventDefault();
+        carousel2.next();
+      });
+
+
+
+      // ===================================================================
+
+      var skip = 3;
+      var container3 = document.querySelector('#seven');
+      var carousel3 = new Carousel(container3, {
+        'infinite': true,
+        'display': 5,
+        'offscreen': skip
+      });
+
+      container3.querySelector('.prev').addEventListener('click', function(e) {
+        e.preventDefault();
+        carousel3.go(carousel3.current - skip);
+      });
+
+      container3.querySelector('.next').addEventListener('click', function(e) {
+        e.preventDefault();
+        carousel3.go(carousel3.current + skip);
+      });
+    </script>
+
+  </main>
+
+  <!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/demo/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/src/carousel.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/apathetic/flexicarousel/dist/carousel.js"></script>
+  -->
+
+  <script src="https://apathetic.github.io/showcase/assets/js/component.js"></script>
+
+
+
+	<footer>
+		<div class="container">
+
+			<a href="http://weshatch.com" id="logo"> </a>
+
+			<p>Catchy tagline here.<sup>TM</sup></p>
+
+			<div id="meta">
+				<span>© 2014, 2017 Wes Hatch. All Rights Reserved.</span>
+			</div>
+
+		</div>
+	</footer>
+  </body>
+</html>

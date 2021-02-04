@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, height=device-height">
+    <title>Panels – Components</title>
+    <meta property="og:title" content="Panels – Components">
+    <meta property="og:site_name" content="Components">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://apathetic.github.io/showcase/components/panels/">
+    <meta name="description" content="A basic Javascript prototype to navigate through a series of panels.">
+    <meta property="og:description" content="A basic Javascript prototype to navigate through a series of panels.">
+    <link rel="shortcut icon" href="/assets/images/favicon.png">
+    <link rel="stylesheet" href="https://apathetic.github.io/showcase/assets/css/main.min.css">    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apathetic/navigator/src/panels.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apathetic/navigator/demo/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/apathetic/navigator/dist/panels.js"></script>
+  </head>
+  <body>
+
+
+  <header class="py-2 align-center">
+    <h1 class="px-2">Panels.</h1>
+    <!-- <p class="attribution">Posted %(date)s</p> -->
+
+    <nav class="component">
+      <a class="button prev" href="https://apathetic.github.io/showcase/components/modal/">
+        ⟨
+        <span>Modal</span>
+      </a>
+      <a class="next button" href="https://apathetic.github.io/showcase/components/parallax/">
+        <span>Parallax</span>
+        ⟩
+      </a>
+    </nav>
+
+    <a class="button button--icon" href="https://github.com/apathetic/panels">
+      <i class="icon-github"></i> Github
+    </a>
+    <a class="button button--icon" href="https://github.com/apathetic/panels/archive/master.zip">
+      ⇩ Download
+    </a>
+
+  </header>
+
+  <nav class="mini-nav">
+    <div id="sticky">
+        <ul class="py-2"></ul>
+    </div>
+  </nav>
+
+  <main class="prose">
+
+		<style>.carousel { cursor: default; }</style>
+
+		<section data-nav="About" id="about">
+			<div class="container">
+				<h2>About</h2>
+				<p>Navigate through some panels. This is a simple implemenation that
+					requires using the API to navigate (ie. previous, next, or indicator
+					bullets). For a touch-enabled option, see the <a href="../carousel">Carousel.</a>
+				</nav> </p>
+			</div>
+		</section>
+
+		<section data-nav="Demo" id="demo">
+			<div class="container">
+				<h2>Demo</h2>
+
+				<h3>Sliding transition</h3>
+				<div id="demo-one" class="carousel navigator fx-slide">
+
+					<ul class="panels">
+						<li class="panel active"><h3>Panel 1</h3></li>
+						<li class="panel"><h3>Panel 2</h3></li>
+						<li class="panel"><h3>Panel 3</h3></li>
+						<li class="panel"><h3>Panel 4</h3></li>
+					</ul>
+
+					<nav class="carousel__nav">
+						<button class="prev">&lang;</button>
+						<ul>
+							<li class="active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+						<button class="next">&rang;</button>
+					</nav>
+
+					<script>
+						window.addEventListener('DOMContentLoaded', function() {
+							var container1 = document.querySelector('#demo-one .panels');
+							var bullets1 = document.querySelectorAll('#demo-one nav li');
+							var prev1 = document.querySelector('#demo-one .prev');
+							var next1 = document.querySelector('#demo-one .next');
+							var navigation1 = new Panels(container1, {
+								slides: ".panel",
+								onSlide: function(to, from){
+									bullets1[from].className = '';
+									bullets1[to].className = 'active';
+								}
+							});
+
+							Array.prototype.forEach.call(bullets1, function(item, index){
+								item.addEventListener('click', function(e) {
+									e.preventDefault();
+									navigation1.go(index);
+								});
+							});
+
+							prev1.addEventListener('click', function(e) {
+								e.preventDefault();
+								navigation1.go(navigation1.current - 1);
+							});
+
+							next1.addEventListener('click', function(e) {
+								e.preventDefault();
+								navigation1.go(navigation1.current + 1);
+							});
+
+
+						});
+					</script>
+
+				</div>
+
+				<hr>
+
+				<h3>Fade transition</h3>
+				<div id="demo-three" class="carousel navigator fx-fade">
+					<ul class="panels">
+						<li class="panel active"><h3>Panel 1</h3></li>
+						<li class="panel"><h3>Panel 2</h3></li>
+						<li class="panel"><h3>Panel 3</h3></li>
+						<li class="panel"><h3>Panel 4</h3></li>
+					</ul>
+
+          <nav class="carousel__nav">
+						<button class="prev">&lang;</button>
+						<ul>
+							<li class="active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+            <button class="next">&rang;</button>
+					</nav>
+
+					<script>
+						window.addEventListener('DOMContentLoaded', function() {
+
+							var container3 = document.querySelector('#demo-three .panels');
+							var bullets3 = document.querySelectorAll('#demo-three nav li');
+							var prev3 = document.querySelector('#demo-three .prev');
+							var next3 = document.querySelector('#demo-three .next');
+							var nav3 = new Panels(container3, {
+								slides: ".panel",
+								onSlide: function(to, from){
+									bullets3[from].className = '';
+									bullets3[to].className = 'active';
+								}
+							});
+
+							Array.prototype.forEach.call(bullets3, function(item, index){
+								item.addEventListener('click', function(e) {
+									e.preventDefault();
+									nav3.go(index);
+								});
+							});
+
+							prev3.addEventListener('click', function(e) {
+								e.preventDefault();
+								nav3.go(nav3.current - 1);
+							});
+
+							next3.addEventListener('click', function(e) {
+								e.preventDefault();
+								nav3.go(nav3.current + 1);
+							});
+
+						});
+					</script>
+
+				</div>
+
+				<hr>
+
+				<h3>Multiple transitions</h3>
+				<div id="demo-four" class="carousel navigator fx-fade fx-slide">
+					<ul class="panels">
+						<li class="panel active"><h3>Panel 1</h3></li>
+						<li class="panel"><h3>Panel 2</h3></li>
+						<li class="panel"><h3>Panel 3</h3></li>
+						<li class="panel"><h3>Panel 4</h3></li>
+					</ul>
+
+          <nav class="carousel__nav">
+						<button class="prev">&lang;</button>
+						<ul>
+							<li class="active"></li>
+							<li></li>
+							<li></li>
+							<li></li>
+						</ul>
+            <button class="next">&rang;</button>
+					</nav>
+				</div>
+
+				<script>
+					window.addEventListener('DOMContentLoaded', function() {
+
+						var container4 = document.querySelector('#demo-four .panels');
+						var bullets4 = document.querySelectorAll('#demo-four nav li');
+						var prev4 = document.querySelector('#demo-four .prev');
+						var next4 = document.querySelector('#demo-four .next');
+						var nav4 = new Panels(container4, {
+							slides: ".panel",
+							onSlide: function(to, from){
+								bullets4[from].className = '';
+								bullets4[to].className = 'active';
+							}
+						});
+
+						Array.prototype.forEach.call(bullets4, function(item, index){
+							item.addEventListener('click', function(e) {
+								e.preventDefault();
+								nav4.go(index);
+							});
+						});
+
+						prev4.addEventListener('click', function(e) {
+							e.preventDefault();
+							nav4.go(nav4.current - 1);
+						});
+
+						next4.addEventListener('click', function(e) {
+							e.preventDefault();
+							nav4.go(nav4.current + 1);
+						});
+
+					});
+				</script>
+
+			</div>
+		</section>
+
+		<section data-nav="Code" id="code">
+			<div class="container">
+				<h2>Code</h2>
+				<h4>Javascript</h4>
+				<h5>Basic set up</h5>
+				<pre><code class="language-javascript">
+	var container = document.querySelector('#demo .panels');
+	var panels = new Panels(container, {
+		slides: ".panel",
+	});
+				</code></pre>
+
+				<h5>Bullet Navigation</h5>
+				<pre><code class="language-javascript">
+	// example with bullet navigation
+	var container = document.querySelector('#demo .panels');
+	var bullets = document.querySelectorAll('#demo nav li');
+	var panels = new Panels(container, {
+		slides: ".panel",
+		onSlide: function(to, from){
+			bullets[from].className = '';
+			bullets[to].className = 'active';
+		}
+	});
+
+	// set up navigation UI
+	Array.prototype.forEach.call(bullets, function(item, index){
+		item.addEventListener('click', function(e) {
+			e.preventDefault();
+			panels.go(index);
+		});
+	});
+				</code></pre>
+
+				<h5>Sample Previous &amp; Next buttons</h5>
+				<pre><code class="language-javascript">
+	// example with previous and next button functionality
+	var prev = document.querySelector('#demo .prev');
+	var next = document.querySelector('#demo .next');
+
+	prev.addEventListener('click', function(e) {
+		e.preventDefault();
+		panels.go(panels.current - 1);
+	});
+
+	next.addEventListener('click', function(e) {
+		e.preventDefault();
+		panels.go(panels.current + 1);
+	});
+				</code></pre>
+			</div>
+		</section>
+
+		<section data-nav="Prereqs" id="prereqs">
+			<div class="container">
+				<h2>Prereqs</h2>
+				<p>none.</p>
+			</div>
+		</section>
+
+		<section data-nav="Compatibility" id="compatibility">
+			<div class="container">
+				<h2>Compatibility</h2>
+				<ul class="bullets">
+					<li>IE9+</li>
+					<li>Firefox, Webkit, Opera</li>
+					<li>no mobile</li>
+				</ul>
+			</div>
+		</section>
+
+		<section data-nav="Options" id="options">
+			<div class="container">
+				<h2>Options</h2>
+				<div class="table-responsive">
+					<table class="table table-bordered table-striped">
+						<thead>
+							<tr>
+								<th style="width: 100px;">Name</th>
+								<th style="width: 50px;">type</th>
+								<th style="width: 50px;">default</th>
+								<th>description</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>slides</td>
+								<td>string</td>
+								<td>none</td>
+								<td>querySelectorselector of panel elements</td>
+							</tr>
+							<tr>
+								<td>onSlide</td>
+								<td>function</td>
+								<td>none</td>
+								<td>Callback function on slide. Arguments are to and from</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+  </main>
+
+  <!--
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apathetic/navigator/src/panels.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/apathetic/navigator/demo/styles.css">
+
+    <script src="https://cdn.jsdelivr.net/gh/apathetic/navigator/dist/panels.js"></script>
+  -->
+
+  <script src="https://apathetic.github.io/showcase/assets/js/component.js"></script>
+
+
+
+	<footer>
+		<div class="container">
+
+			<a href="http://weshatch.com" id="logo"> </a>
+
+			<p>Catchy tagline here.<sup>TM</sup></p>
+
+			<div id="meta">
+				<span>© 2014, 2017 Wes Hatch. All Rights Reserved.</span>
+			</div>
+
+		</div>
+	</footer>
+  </body>
+</html>
