@@ -1,1 +1,316 @@
-!function(){"use strict";function t(){function t(t,e){e=e||{bubbles:!1,cancelable:!1,detail:void 0};var n=document.createEvent("CustomEvent");return n.initCustomEvent(t,e.bubbles,e.cancelable,e.detail),n}if("function"==typeof window.CustomEvent)return!1;t.prototype=window.Event.prototype,window.CustomEvent=t}function e(){"function"!=typeof Object.assign&&Object.defineProperty(Object,"assign",{value:function(t,e){var n=arguments;if(null==t)throw new TypeError("Cannot convert undefined or null to object");for(var i=Object(t),a=1;a<arguments.length;a++){var s=n[a];if(null!=s)for(var r in s)Object.prototype.hasOwnProperty.call(s,r)&&(i[r]=s[r])}return i},writable:!0,configurable:!0})}function n(t){return t instanceof HTMLElement?t:document.querySelector(t)}function i(t,e,n,i){return(t/=i/2)<1?n/2*t*t*t+e:n/2*((t-=2)*t*t+2)+e}function a(t,e,n){void 0===e&&(e=0);var a,s=window.pageYOffset,r=~~(t.getBoundingClientRect().top-e),o=function(e){var l;a=a||e,l=e-a,document.body.scrollTop=document.documentElement.scrollTop=i(l,s,r,500),l<500?requestAnimationFrame(o):n&&n.call(t)};requestAnimationFrame(o)}function s(t){return t instanceof NodeList?Array.prototype.slice.call(t):t instanceof HTMLElement?[t]:"string"==typeof t?Array.prototype.slice.call(document.querySelectorAll(t)):[]}function r(){function t(t,e){e=e||{bubbles:!1,cancelable:!1,detail:void 0};var n=document.createEvent("CustomEvent");return n.initCustomEvent(t,e.bubbles,e.cancelable,e.detail),n}if("function"==typeof window.CustomEvent)return!1;t.prototype=window.Event.prototype,window.CustomEvent=t}function o(){"function"!=typeof Object.assign&&Object.defineProperty(Object,"assign",{value:function(t,e){var n=arguments;if(null==t)throw new TypeError("Cannot convert undefined or null to object");for(var i=Object(t),a=1;a<arguments.length;a++){var s=n[a];if(null!=s)for(var r in s)Object.prototype.hasOwnProperty.call(s,r)&&(i[r]=s[r])}return i},writable:!0,configurable:!0})}!function(){t(),e()}();var l={offset:0,boundedBy:!1},c=new CustomEvent("sticky",{bubbles:!0}),u=function(t,e){var i=this;if(this.element=n(t),!this.element)return!1;this.opts=Object.assign({},l,e),this.stateSwitcher,this.currentState=null,this.determine="normal",this.bounded=!!this.opts.boundedBy,this.parent="boolean"==typeof this.opts.boundedBy?this.element.parentNode:n(this.opts.boundedBy),this.element.getBoundingClientRect().top<this.opts.offset?(this.setState("sticky"),this.stateSwitcher()):this.setState("normal"),window.addEventListener("scroll",function(){i.stateSwitcher()}),window.addEventListener("resize",function(){i.stateSwitcher()})};u.prototype.normal=function(){if(this.element.getBoundingClientRect().top<this.opts.offset)return this.setState("sticky")},u.prototype.sticky=function(){var t=this.parent.getBoundingClientRect();if(t.top>this.opts.offset)return this.setState("normal");if(this.bounded){var e=this.element.getBoundingClientRect();if(t.bottom<e.bottom)return this.setState("bottom")}},u.prototype.bottom=function(){if(this.element.getBoundingClientRect().top>this.opts.offset)return this.setState("sticky")},u.prototype.setState=function(t){this.currentState!==t&&(this.element.classList.remove(this.currentState),this.element.classList.add(t),this.currentState=t,this.stateSwitcher=this[t],"sticky"===t&&this.element.dispatchEvent(c))};var g=function(t){if(void 0===t&&(t={}),this.handle=s(t.nav)[0],this.sections=s(t.sections||document.querySelectorAll("[data-nav]")),!this.sections||!this.handle)return console.log("StickyNav: missing nav or nav sections."),!1;this.items=[],this.isScrolling=!1,this.currentSection=null,this.ticking=!1,this.offset=t.offset||0,new u(this.handle,{boundedBy:t.boundedBy||!1,offset:this.offset}),this.generate(),this.checkSectionPosition(),window.addEventListener("scroll",this.updateActiveItem.bind(this))};g.prototype.generate=function(){var t=this,e=this.handle.querySelector("ul");Array.prototype.forEach.call(this.sections,function(n){var i=n.getAttribute("data-nav"),s=n.id||"",r=document.createElement("li");r.innerHTML='<a href="#'+s+'">'+i+"</a>",r.addEventListener("click",function(e){t.items.forEach(function(t){t.className=""}),r.classList.add("active"),t.isScrolling=!0,a(n,t.offset,function(){t.isScrolling=!1})}),t.items.push(r),e.appendChild(r)})},g.prototype.updateActiveItem=function(){this.ticking||this.isScrolling||(this.ticking=!0,window.requestAnimationFrame(this.checkSectionPosition.bind(this)))},g.prototype.checkSectionPosition=function(){var t=this,e=this.sections.length;for(e;e--&&!(~~t.sections[e].getBoundingClientRect().top<=t.offset););e!==this.currentSection&&(this.items.forEach(function(t){t.classList.remove("active")}),this.sections.forEach(function(t){t.classList.remove("active")}),e>=0&&(this.items[e].classList.add("active"),this.sections[e].classList.add("active")),this.currentSection=e),this.ticking=!1};var p="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},d=function(){var t=/\blang(?:uage)?-(?!\*)(\w+)\b/i,e=p.Prism={util:{encode:function(t){return t instanceof n?new n(t.type,e.util.encode(t.content),t.alias):"Array"===e.util.type(t)?t.map(e.util.encode):t.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(t){return Object.prototype.toString.call(t).match(/\[object (\w+)\]/)[1]},clone:function(t){switch(e.util.type(t)){case"Object":var n={};for(var i in t)t.hasOwnProperty(i)&&(n[i]=e.util.clone(t[i]));return n;case"Array":return t.map&&t.map(function(t){return e.util.clone(t)})}return t}},languages:{extend:function(t,n){var i=e.util.clone(e.languages[t]);for(var a in n)i[a]=n[a];return i},insertBefore:function(t,n,i,a){a=a||e.languages;var s=a[t];if(2==arguments.length){i=arguments[1];for(var r in i)i.hasOwnProperty(r)&&(s[r]=i[r]);return s}var o={};for(var l in s)if(s.hasOwnProperty(l)){if(l==n)for(var r in i)i.hasOwnProperty(r)&&(o[r]=i[r]);o[l]=s[l]}return e.languages.DFS(e.languages,function(e,n){n===a[t]&&e!=t&&(this[e]=o)}),a[t]=o},DFS:function(t,n,i){for(var a in t)t.hasOwnProperty(a)&&(n.call(t,a,t[a],i||a),"Object"===e.util.type(t[a])?e.languages.DFS(t[a],n):"Array"===e.util.type(t[a])&&e.languages.DFS(t[a],n,a))}},plugins:{},highlightAll:function(t,n){for(var i,a=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'),s=0;i=a[s++];)e.highlightElement(i,!0===t,n)},highlightElement:function(n,i,a){for(var s,r,o=n;o&&!t.test(o.className);)o=o.parentNode;o&&(s=(o.className.match(t)||[,""])[1],r=e.languages[s]),n.className=n.className.replace(t,"").replace(/\s+/g," ")+" language-"+s,o=n.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(t,"").replace(/\s+/g," ")+" language-"+s);var l=n.textContent,c={element:n,language:s,grammar:r,code:l};if(!l||!r)return void e.hooks.run("complete",c);if(e.hooks.run("before-highlight",c),i&&p.Worker){var u=new Worker(e.filename);u.onmessage=function(t){c.highlightedCode=t.data,e.hooks.run("before-insert",c),c.element.innerHTML=c.highlightedCode,a&&a.call(c.element),e.hooks.run("after-highlight",c),e.hooks.run("complete",c)},u.postMessage(JSON.stringify({language:c.language,code:c.code,immediateClose:!0}))}else c.highlightedCode=e.highlight(c.code,c.grammar,c.language),e.hooks.run("before-insert",c),c.element.innerHTML=c.highlightedCode,a&&a.call(n),e.hooks.run("after-highlight",c),e.hooks.run("complete",c)},highlight:function(t,i,a){var s=e.tokenize(t,i);return n.stringify(e.util.encode(s),a)},tokenize:function(t,n){var i=e.Token,a=[t],s=n.rest;if(s){for(var r in s)n[r]=s[r];delete n.rest}t:for(var r in n)if(n.hasOwnProperty(r)&&n[r]){var o=n[r];o="Array"===e.util.type(o)?o:[o];for(var l=0;l<o.length;++l){var c=o[l],u=c.inside,g=!!c.lookbehind,p=0,d=c.alias;c=c.pattern||c;for(var f=0;f<a.length;f++){var h=a[f];if(a.length>t.length)break t;if(!(h instanceof i)){c.lastIndex=0;var m=c.exec(h);if(m){g&&(p=m[1].length);var v=m.index-1+p,m=m[0].slice(p),y=m.length,b=v+y,w=h.slice(0,v+1),k=h.slice(b+1),S=[f,1];w&&S.push(w);var E=new i(r,u?e.tokenize(m,u):m,d);S.push(E),k&&S.push(k),Array.prototype.splice.apply(a,S)}}}}}return a},hooks:{all:{},add:function(t,n){var i=e.hooks.all;i[t]=i[t]||[],i[t].push(n)},run:function(t,n){var i=e.hooks.all[t];if(i&&i.length)for(var a,s=0;a=i[s++];)a(n)}}},n=e.Token=function(t,e,n){this.type=t,this.content=e,this.alias=n};if(n.stringify=function(t,i,a){if("string"==typeof t)return t;if("Array"===e.util.type(t))return t.map(function(e){return n.stringify(e,i,t)}).join("");var s={type:t.type,content:n.stringify(t.content,i,a),tag:"span",classes:["token",t.type],attributes:{},language:i,parent:a};if("comment"==s.type&&(s.attributes.spellcheck="true"),t.alias){var r="Array"===e.util.type(t.alias)?t.alias:[t.alias];Array.prototype.push.apply(s.classes,r)}e.hooks.run("wrap",s);var o="";for(var l in s.attributes)o+=(o?" ":"")+l+'="'+(s.attributes[l]||"")+'"';return"<"+s.tag+' class="'+s.classes.join(" ")+'" '+o+">"+s.content+"</"+s.tag+">"},!p.document)return p.addEventListener?(p.addEventListener("message",function(t){var n=JSON.parse(t.data),i=n.language,a=n.code,s=n.immediateClose;p.postMessage(e.highlight(a,e.languages[i],i)),s&&p.close()},!1),p.Prism):p.Prism;var i=document.getElementsByTagName("script");return i=i[i.length-1],i&&(e.filename=i.src,document.addEventListener&&!i.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",e.highlightAll)),p.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=d),"undefined"!=typeof global&&(global.Prism=d),d.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},d.hooks.add("wrap",function(t){"entity"===t.type&&(t.attributes.title=t.content.replace(/&amp;/,"&"))}),d.languages.xml=d.languages.markup,d.languages.html=d.languages.markup,d.languages.mathml=d.languages.markup,d.languages.svg=d.languages.markup,d.languages.css={comment:/\/\*[\w\W]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^\{\}\s][^\{\};]*?(?=\s*\{)/,string:/("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,property:/(\b|\B)[\w-]+(?=\s*:)/i,important:/\B!important\b/i,function:/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},d.languages.css.atrule.inside.rest=d.util.clone(d.languages.css),d.languages.markup&&(d.languages.insertBefore("markup","tag",{style:{pattern:/(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,lookbehind:!0,inside:d.languages.css,alias:"language-css"}}),d.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|').*?\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:d.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:d.languages.css}},alias:"language-css"}},d.languages.markup.tag)),d.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,boolean:/\b(true|false)\b/,function:/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/},d.languages.javascript=d.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,function:/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),d.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0}}),d.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\`|\\?[^`])*`/,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:d.languages.javascript}},string:/[\s\S]+/}}}),d.languages.markup&&d.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:d.languages.javascript,alias:"language-javascript"}}),d.languages.js=d.languages.javascript,function(){r(),o()}(),window.addEventListener("DOMContentLoaded",function(){new g({nav:"#sticky"})})}();
+(function () {
+  'use strict';
+
+  /**
+   * Custom Event Polyfill
+   * reference: https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+   * @return {[type]} [description]
+   */
+  function _customEvent() {
+    if (typeof window.CustomEvent === 'function') { return false; }
+
+    function CustomEvent ( event, params ) {
+      params = params || { bubbles: false, cancelable: false, detail: undefined };
+      var evt = document.createEvent( 'CustomEvent' );
+      evt.initCustomEvent( event, params.bubbles, params.cancelable, params.detail );
+      return evt;
+     }
+
+    CustomEvent.prototype = window.Event.prototype;
+
+    window.CustomEvent = CustomEvent;
+  }
+
+
+  /**
+   * Object Assign Polyfill
+   * reference: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+   * @return {[type]} [description]
+   */
+  function _objectAssign() {
+    if (typeof Object.assign != 'function') {
+      // Must be writable: true, enumerable: false, configurable: true
+      Object.defineProperty(Object, 'assign', {
+        value: function assign(target, varArgs) {
+          var arguments$1 = arguments;
+   // .length of function is 2
+          // 'use strict';
+          if (target == null) { // TypeError if undefined or null
+            throw new TypeError('Cannot convert undefined or null to object');
+          }
+
+          var to = Object(target);
+
+          for (var index = 1; index < arguments.length; index++) {
+            var nextSource = arguments$1[index];
+
+            if (nextSource != null) { // Skip over if undefined or null
+              for (var nextKey in nextSource) {
+                // Avoid bugs when hasOwnProperty is shadowed
+                if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                  to[nextKey] = nextSource[nextKey];
+                }
+              }
+            }
+          }
+          return to;
+        },
+        writable: true,
+        configurable: true
+      });
+    }
+  }
+
+
+
+  function polyfill() {
+    _customEvent();
+    _objectAssign();
+  }
+
+  polyfill();
+
+
+  // mini querySelector helper fn
+  function $(el) {
+    return el instanceof HTMLElement ? el : document.querySelector(el);
+  }
+
+  // Sticky element default options
+  var defaults = {
+    offset: 0,
+    boundedBy: false //  Defaults to the parent, but can be any element in the page.
+  };
+
+  // Sticky Event
+  var stickyEvent = new CustomEvent('sticky', {
+    bubbles: true
+  });
+
+
+  /**
+   * Set up a sticky element that attaches / detaches to top of viewport.
+   * @param {HTMLElement} element  The element to sticky-ify
+   * @param {Mixed} options        The bounding element for the sticky element,
+   *                               the offset at which to activate
+   * @return {void}
+   */
+  var Sticky = function Sticky(element, options) {
+    var this$1 = this;
+
+    this.element = $(element);
+    if (!this.element) { return false; }
+
+    this.opts = Object.assign({}, defaults, options);
+
+    this.stateSwitcher;
+    this.currentState = null;
+    this.determine = 'normal';
+    this.bounded = !!this.opts.boundedBy;
+    this.parent = (typeof this.opts.boundedBy === 'boolean') ? this.element.parentNode : $(this.opts.boundedBy);
+
+    // determine initial state
+    if (this.element.getBoundingClientRect().top < this.opts.offset) {
+      this.setState('sticky');
+      this.stateSwitcher();
+    } else {
+      this.setState('normal');
+    }
+
+    // window.addEventListener('scroll', this.stateSwitcher.bind(this));  // stateSwitcher changes, so cannot pass (ie. bind directly) like this
+    window.addEventListener('scroll', function () { this$1.stateSwitcher(); });
+    window.addEventListener('resize', function () { this$1.stateSwitcher(); });
+  };
+
+  Sticky.prototype.normal = function normal () {
+    var elementPosition = this.element.getBoundingClientRect();
+    if (elementPosition.top < this.opts.offset) {
+      return this.setState('sticky');
+    }
+  };
+
+  Sticky.prototype.sticky = function sticky () {
+    var parentPosition = this.parent.getBoundingClientRect();
+    if (parentPosition.top > this.opts.offset) {
+      return this.setState('normal');
+    }
+
+    if (this.bounded) {
+      var elementPosition = this.element.getBoundingClientRect();
+      if (parentPosition.bottom < elementPosition.bottom) {
+        return this.setState('bottom');
+      }
+    }
+  };
+
+  Sticky.prototype.bottom = function bottom () {
+    var elementPosition = this.element.getBoundingClientRect();
+    if (elementPosition.top > this.opts.offset) {
+      return this.setState('sticky');
+    }
+  };
+
+  Sticky.prototype.setState = function setState (state) {
+    if (this.currentState === state) { return; }
+    this.element.classList.remove(this.currentState);
+    this.element.classList.add(state);
+    this.currentState = state;
+    this.stateSwitcher = this[state]; // stateSwitcher will point at an internal fn
+
+    if (state === 'sticky') {
+      this.element.dispatchEvent(stickyEvent); // , { detail: state });
+    }
+  };
+
+  function easeInOutCubic(t, b, c, d) {
+    if ((t /= d / 2) < 1) { return c / 2 * t * t * t + b; }
+    return c / 2 * ((t -= 2) * t * t + 2) + b;
+  }
+
+  /**
+   * Scroll the page to a particular page anchor
+   * @param  {String} to: The id of the element to scroll to.
+   * @param  {Integer} offset: A scrolling offset.
+   * @param  {Function} callback: Function to apply after scrolling
+   * @return {void}
+   */
+  function scrollPage(to, offset, callback) {
+    if ( offset === void 0 ) { offset = 0; }
+
+    var startTime;
+    var duration = 500;
+    var startPos = window.pageYOffset;
+    var endPos = ~~(to.getBoundingClientRect().top - offset);
+    var scroll = function (timestamp) {
+      var elapsed;
+
+      startTime = startTime || timestamp;
+      elapsed = timestamp - startTime;
+
+      document.body.scrollTop = document.documentElement.scrollTop = easeInOutCubic(elapsed, startPos, endPos, duration);
+
+      if (elapsed < duration) {
+        requestAnimationFrame(scroll);
+      } else if (callback) {
+        callback.call(to);
+      }
+    };
+
+    requestAnimationFrame(scroll);
+  }
+
+  // mini querySelectorAll helper fn
+  function $$(els) {
+    return els instanceof NodeList ? Array.prototype.slice.call(els) :
+           els instanceof HTMLElement ? [els] :
+           typeof els === 'string' ? Array.prototype.slice.call(document.querySelectorAll(els)) :
+           [];
+  }
+
+  var Stickynav = function Stickynav(options) {
+    if ( options === void 0 ) { options={}; }
+
+    this.handle = $$(options.nav)[0];
+    this.sections = $$(options.sections || document.querySelectorAll('[data-nav]'));
+
+    if (!this.sections || !this.handle) { console.log('StickyNav: missing nav or nav sections.'); return false; }
+
+    this.items = [];
+    this.isScrolling = false;
+    this.currentSection = null;
+    this.ticking = false;
+    this.offset = options.offset || 0;
+
+    new Sticky(this.handle, {
+      boundedBy: options.boundedBy || false,
+      offset: this.offset
+    });
+
+    this.generate();
+    this.checkSectionPosition();
+
+    window.addEventListener('scroll', this.updateActiveItem.bind(this));
+  };
+
+  /**
+   * Generate the nav <li>'s and setup the Event Listeners
+   * @return {void}
+   */
+  Stickynav.prototype.generate = function generate () {
+      var this$1 = this;
+
+    var nav = this.handle.querySelector('ul');
+
+    Array.prototype.forEach.call(this.sections, function (section) {
+      var title = section.getAttribute('data-nav');
+      var id = section.id || '';
+      var item = document.createElement('li');
+
+      item.innerHTML = '<a href="#'+id+'">'+ title + '</a>';
+      item.addEventListener('click', function (e) {
+        this$1.items.forEach(function (i) { i.className = ''; });
+        item.classList.add('active');
+        this$1.isScrolling = true;
+        scrollPage(section, this$1.offset, function () { this$1.isScrolling = false; });
+      });
+
+      this$1.items.push(item);
+      nav.appendChild(item);
+    });
+  };
+
+  /**
+   * Update the active nav item on window.scroll. This decouples it from scroll events
+   * @return {void}
+   */
+  Stickynav.prototype.updateActiveItem = function updateActiveItem () {
+    if (!this.ticking && !this.isScrolling) {
+      this.ticking = true;
+      window.requestAnimationFrame(this.checkSectionPosition.bind(this));
+    }
+  };
+
+  /**
+   * Check each section's getBoundingClientRect to determine which is active
+   * @return {void}
+   */
+  Stickynav.prototype.checkSectionPosition = function checkSectionPosition () {
+      var this$1 = this;
+
+    var i = this.sections.length;
+
+    // Find i. Start at end and work back
+    for (i; i--;) {
+      if (~~this$1.sections[i].getBoundingClientRect().top <= this$1.offset) {// note: ~~ is Math.floor
+        break;
+      }
+    }
+
+    // Add active class to currentSection, or remove if nothing is currently active
+    if (i !== this.currentSection) {
+      this.items.forEach(function (item) { item.classList.remove('active'); });
+      this.sections.forEach(function (section) { section.classList.remove('active'); });
+
+      if (i >= 0) {
+        this.items[i].classList.add('active');
+        this.sections[i].classList.add('active');
+      }
+
+      this.currentSection = i;
+    }
+
+    this.ticking = false;
+  };
+
+  /* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
+  var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(?!\*)(\w+)\b/i,t=_self.Prism={util:{encode:function(e){return e instanceof n?new n(e.type,t.util.encode(e.content),e.alias):"Array"===t.util.type(e)?e.map(t.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},clone:function(e){var n=t.util.type(e);switch(n){case"Object":var a={};for(var r in e){ e.hasOwnProperty(r)&&(a[r]=t.util.clone(e[r])); }return a;case"Array":return e.map&&e.map(function(e){return t.util.clone(e)})}return e}},languages:{extend:function(e,n){var a=t.util.clone(t.languages[e]);for(var r in n){ a[r]=n[r]; }return a},insertBefore:function(e,n,a,r){r=r||t.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a){ a.hasOwnProperty(i)&&(l[i]=a[i]); }return l}var o={};for(var s in l){ if(l.hasOwnProperty(s)){if(s==n){ for(var i in a){ a.hasOwnProperty(i)&&(o[i]=a[i]); } }o[s]=l[s];} }return t.languages.DFS(t.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o);}),r[e]=o},DFS:function(e,n,a){for(var r in e){ e.hasOwnProperty(r)&&(n.call(e,r,e[r],a||r),"Object"===t.util.type(e[r])?t.languages.DFS(e[r],n):"Array"===t.util.type(e[r])&&t.languages.DFS(e[r],n,r)); }}},plugins:{},highlightAll:function(e,n){for(var a,r=document.querySelectorAll('code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'),l=0;a=r[l++];){ t.highlightElement(a,e===!0,n); }},highlightElement:function(n,a,r){for(var l,i,o=n;o&&!e.test(o.className);){ o=o.parentNode; }o&&(l=(o.className.match(e)||[,""])[1],i=t.languages[l]),n.className=n.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=n.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=n.textContent,u={element:n,language:l,grammar:i,code:s};if(!s||!i){ return t.hooks.run("complete",u),void 0; }if(t.hooks.run("before-highlight",u),a&&_self.Worker){var g=new Worker(t.filename);g.onmessage=function(e){u.highlightedCode=e.data,t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),t.hooks.run("after-highlight",u),t.hooks.run("complete",u);},g.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}));}else { u.highlightedCode=t.highlight(u.code,u.grammar,u.language),t.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(n),t.hooks.run("after-highlight",u),t.hooks.run("complete",u); }},highlight:function(e,a,r){var l=t.tokenize(e,a);return n.stringify(t.util.encode(l),r)},tokenize:function(e,n){var a=t.Token,r=[e],l=n.rest;if(l){for(var i in l){ n[i]=l[i]; }delete n.rest;}e:for(var i in n){ if(n.hasOwnProperty(i)&&n[i]){var o=n[i];o="Array"===t.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],g=u.inside,c=!!u.lookbehind,f=0,h=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var d=r[p];if(r.length>e.length){ break e; }if(!(d instanceof a)){u.lastIndex=0;var m=u.exec(d);if(m){c&&(f=m[1].length);var y=m.index-1+f,m=m[0].slice(f),v=m.length,k=y+v,b=d.slice(0,y+1),w=d.slice(k+1),P=[p,1];b&&P.push(b);var A=new a(i,g?t.tokenize(m,g):m,h);P.push(A),w&&P.push(w),Array.prototype.splice.apply(r,P);}}}}} }return r},hooks:{all:{},add:function(e,n){var a=t.hooks.all;a[e]=a[e]||[],a[e].push(n);},run:function(e,n){var a=t.hooks.all[e];if(a&&a.length){ for(var r,l=0;r=a[l++];){ r(n); } }}}},n=t.Token=function(e,t,n){this.type=e,this.content=t,this.alias=n;};if(n.stringify=function(e,a,r){if("string"==typeof e){ return e; }if("Array"===t.util.type(e)){ return e.map(function(t){return n.stringify(t,a,e)}).join(""); }var l={type:e.type,content:n.stringify(e.content,a,r),tag:"span",classes:["token",e.type],attributes:{},language:a,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===t.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i);}t.hooks.run("wrap",l);var o="";for(var s in l.attributes){ o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"'; }return "<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document){ return _self.addEventListener?(_self.addEventListener("message",function(e){var n=JSON.parse(e.data),a=n.language,r=n.code,l=n.immediateClose;_self.postMessage(t.highlight(r,t.languages[a],a)),l&&_self.close();},!1),_self.Prism):_self.Prism; }var a=document.getElementsByTagName("script");return a=a[a.length-1],a&&(t.filename=a.src,document.addEventListener&&!a.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",t.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+  Prism.languages.markup={comment:/<!--[\w\W]*?-->/,prolog:/<\?[\w\W]+?\?>/,doctype:/<!DOCTYPE[\w\W]+?>/,cdata:/<!\[CDATA\[[\w\W]*?]]>/i,tag:{pattern:/<\/?(?!\d)[^\s>\/=.$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\w\W])*\1|[^\s'">=]+))?)*\s*\/?>/i,inside:{tag:{pattern:/^<\/?[^\s>\/]+/i,inside:{punctuation:/^<\/?/,namespace:/^[^\s>\/:]+:/}},"attr-value":{pattern:/=(?:('|")[\w\W]*?(\1)|[^\s>]+)/i,inside:{punctuation:/[=>"']/}},punctuation:/\/?>/,"attr-name":{pattern:/[^\s>\/]+/,inside:{namespace:/^[^\s>\/:]+:/}}}},entity:/&#?[\da-z]{1,8};/i},Prism.hooks.add("wrap",function(a){"entity"===a.type&&(a.attributes.title=a.content.replace(/&amp;/,"&"));}),Prism.languages.xml=Prism.languages.markup,Prism.languages.html=Prism.languages.markup,Prism.languages.mathml=Prism.languages.markup,Prism.languages.svg=Prism.languages.markup;
+  Prism.languages.css={comment:/\/\*[\w\W]*?\*\//,atrule:{pattern:/@[\w-]+?.*?(;|(?=\s*\{))/i,inside:{rule:/@[\w-]+/}},url:/url\((?:(["'])(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1|.*?)\)/i,selector:/[^\{\}\s][^\{\};]*?(?=\s*\{)/,string:/("|')(\\(?:\r\n|[\w\W])|(?!\1)[^\\\r\n])*\1/,property:/(\b|\B)[\w-]+(?=\s*:)/i,important:/\B!important\b/i,"function":/[-a-z0-9]+(?=\()/i,punctuation:/[(){};:]/},Prism.languages.css.atrule.inside.rest=Prism.util.clone(Prism.languages.css),Prism.languages.markup&&(Prism.languages.insertBefore("markup","tag",{style:{pattern:/(<style[\w\W]*?>)[\w\W]*?(?=<\/style>)/i,lookbehind:!0,inside:Prism.languages.css,alias:"language-css"}}),Prism.languages.insertBefore("inside","attr-value",{"style-attr":{pattern:/\s*style=("|').*?\1/i,inside:{"attr-name":{pattern:/^\s*style/i,inside:Prism.languages.markup.tag.inside},punctuation:/^\s*=\s*['"]|['"]\s*$/,"attr-value":{pattern:/.+/i,inside:Prism.languages.css}},alias:"language-css"}},Prism.languages.markup.tag));
+  Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+  Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,"function":/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0}}),Prism.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\`|\\?[^`])*`/,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript;
+
+  window.addEventListener('DOMContentLoaded', function() {
+    new Stickynav({ nav: '#sticky' });
+  });
+
+}());
